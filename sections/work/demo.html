@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work section demo</title>
+<!-- Paths in the fragment are relative to the site root, so the demo resolves from there. -->
+<base href="../../">
+<link rel="preload" href="fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sections/work/section.css">
+<style>body { background: #0a0a0b; } .demo-spacer { height: 80px; background: #0a0a0b; }</style>
+</head>
+<body>
+<div class="demo-spacer"></div>
+<!-- Pasted from sections/work/section.html. Regenerate this block if the fragment changes. -->
+<!-- Skills and side projects. Owner: sections/work (prefix wk-). Paths are relative to the site root. -->
+<section class="wk" id="work" aria-labelledby="wk-title">
+  <div class="wk-wrap">
+    <header class="wk-head">
+      <p class="wk-eyebrow">Skills and side projects</p>
+      <h2 class="wk-title" id="wk-title"><span class="wk-t1">Tools I built</span> <span class="wk-t2">and use for real.</span></h2>
+      <p class="wk-lede">Smaller tools for my own work, running every day. The 2nd Brain comes with a setup guide so you can build your own.</p>
+    </header>
+
+    <ol class="wk-grid">
+      <li class="wk-tile wk-feature" id="second-brain" data-wk-swap>
+        <div class="wk-media">
+          <img class="wk-img wk-img-a" src="img/work/brain-a-sm.webp" srcset="img/work/brain-a-sm.webp 800w, img/work/brain-a.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 700px" width="1600" height="1000" alt="The Build your own 2nd Brain guide, opening view with Obsidian, Claude and ChatGPT." loading="lazy" decoding="async">
+          <img class="wk-img wk-img-b" src="img/work/brain-b-sm.webp" srcset="img/work/brain-b-sm.webp 800w, img/work/brain-b.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 700px" width="1600" height="1000" alt="Phase 1 of the 2nd Brain guide, Build the vault, next to the assistant picker." loading="lazy" decoding="async">
+          <button class="wk-swap" type="button" aria-pressed="false" aria-label="Show the second image for 2nd Brain"><span class="wk-dots" aria-hidden="true"><i></i><i></i></span></button>
+        </div>
+        <div class="wk-copy">
+          <div class="wk-meta"><span class="wk-pill wk-on">Live, daily use</span><span class="wk-n" aria-hidden="true">01</span></div>
+          <h3 class="wk-h3">2nd Brain</h3>
+          <p class="wk-body">A personal operating system. An Obsidian vault holds my priorities, decision rules, people and projects. Claude skills read it at the start of every session, make calls the way I would, and write back what they learned.</p>
+          <ul class="wk-points">
+            <li><svg class="wk-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Loads only the context a task touches</li>
+            <li><svg class="wk-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Ranked priorities and triage rules in my own words</li>
+            <li><svg class="wk-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Synced through Google Drive, so it works from my phone too</li>
+          </ul>
+          <div class="wk-foot">
+            <ul class="wk-tags" aria-label="Built with"><li>Claude</li><li>Skills</li><li>Obsidian</li><li>Google Drive</li></ul>
+            <a class="wk-link" href="brain.html">Build your own, step by step<svg class="wk-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </li>
+      <li class="wk-tile wk-span-7" id="read-market-engine" data-wk-swap>
+        <div class="wk-media">
+          <img class="wk-img wk-img-a" src="img/work/read-a-sm.webp" srcset="img/work/read-a-sm.webp 800w, img/work/read-a.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 700px" width="1600" height="1000" alt="Two READ Market Engine pages: a trade idea, long oil on time-series momentum, and a close-of-day review." loading="lazy" decoding="async">
+          <img class="wk-img wk-img-b" src="img/work/read-b-sm.webp" srcset="img/work/read-b-sm.webp 800w, img/work/read-b.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 700px" width="1600" height="1000" alt="READ Market Engine close-of-day review grading a 2s10s flattener paper trade." loading="lazy" decoding="async">
+          <button class="wk-swap" type="button" aria-pressed="false" aria-label="Show the second image for READ Market Engine"><span class="wk-dots" aria-hidden="true"><i></i><i></i></span></button>
+        </div>
+        <div class="wk-copy">
+          <div class="wk-meta"><span class="wk-pill wk-on">Live, runs daily</span><span class="wk-n" aria-hidden="true">02</span></div>
+          <h3 class="wk-h3">READ Market Engine</h3>
+          <p class="wk-body">An automated sales and trading training desk. Every weekday at 8:35am ET it writes a cross-asset market packet, pitches one paper trade, and grades it at the close.</p>
+          <ul class="wk-points">
+            <li><svg class="wk-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>6-page packet: macro, rates, commodities, FX, equities, options</li>
+            <li><svg class="wk-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>2-page trade idea on a $100,000 paper book at 1% risk</li>
+            <li><svg class="wk-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Every number sourced and timestamped, “n/a” instead of a guess</li>
+          </ul>
+          <div class="wk-foot">
+            <ul class="wk-tags" aria-label="Built with"><li>Claude</li><li>Scheduled agents</li><li>PDF reporting</li></ul>
+          </div>
+        </div>
+      </li>
+      <li class="wk-tile wk-span-5" id="ccr-research-pipeline" data-wk-swap>
+        <div class="wk-media">
+          <img class="wk-img wk-img-a" src="img/work/ccr-a-sm.webp" srcset="img/work/ccr-a-sm.webp 800w, img/work/ccr-a.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 560px" width="1600" height="1000" alt="First page of a Commonwealth Capital Research article, The Chips That Finance Themselves." loading="lazy" decoding="async">
+          <img class="wk-img wk-img-b" src="img/work/ccr-b-sm.webp" srcset="img/work/ccr-b-sm.webp 800w, img/work/ccr-b.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 560px" width="1600" height="1000" alt="An exhibit from the same article: how investors, a data center SPV, Nvidia and AI tenants connect." loading="lazy" decoding="async">
+          <button class="wk-swap" type="button" aria-pressed="false" aria-label="Show the second image for CCR Research Pipeline"><span class="wk-dots" aria-hidden="true"><i></i><i></i></span></button>
+        </div>
+        <div class="wk-copy">
+          <div class="wk-meta"><span class="wk-pill">Live</span><span class="wk-n" aria-hidden="true">03</span></div>
+          <h3 class="wk-h3">CCR Research Pipeline</h3>
+          <p class="wk-stat">2<small>Claude skills</small></p>
+          <p class="wk-body">One deep-learns a finance topic into a research pack and talking points. The other writes and lays out a finished 700 to 1,100 word newsletter article for Commonwealth Capital Research.</p>
+          <div class="wk-foot">
+            <ul class="wk-tags" aria-label="Built with"><li>Claude skills</li><li>PDF</li></ul>
+          </div>
+        </div>
+      </li>
+      <li class="wk-tile wk-feature wk-flip" id="aim-resume-checker" data-wk-swap>
+        <div class="wk-media">
+          <img class="wk-img wk-img-a" src="img/work/resume-a-sm.webp" srcset="img/work/resume-a-sm.webp 800w, img/work/resume-a.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 700px" width="1600" height="1000" alt="Cover for AIM Resume Checker: a resume with feedback checks." loading="lazy" decoding="async">
+          <img class="wk-img wk-img-b" src="img/work/resume-b-sm.webp" srcset="img/work/resume-b-sm.webp 800w, img/work/resume-b.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 700px" width="1600" height="1000" alt="Cover for AIM Resume Checker: picking one of five business verticals." loading="lazy" decoding="async">
+          <button class="wk-swap" type="button" aria-pressed="false" aria-label="Show the second image for AIM Resume Checker"><span class="wk-dots" aria-hidden="true"><i></i><i></i></span></button>
+        </div>
+        <div class="wk-copy">
+          <div class="wk-meta"><span class="wk-pill wk-on">Live</span><span class="wk-n" aria-hidden="true">04</span></div>
+          <h3 class="wk-h3">AIM Resume Checker</h3>
+          <p class="wk-body">An in-browser resume checker for AI Multidisciplinary Society career workshops. Pick one of five business verticals and get feedback against what that field screens for.</p>
+          <div class="wk-foot">
+            <ul class="wk-tags" aria-label="Built with"><li>Lovable</li><li>Web app</li></ul>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+    <div class="wk-show" data-wk-show>
+      <div class="wk-show-stage" aria-hidden="true">
+        <div class="wk-col wk-up" style="--wk-dur:74s"><div class="wk-track"><div class="wk-set">
+          <img src="img/work/brain-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/ccr-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/read-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/resume-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/ccr-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+        </div></div></div>
+        <div class="wk-col wk-down" style="--wk-dur:62s"><div class="wk-track"><div class="wk-set">
+          <img src="img/work/resume-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/ccr-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/brain-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/resume-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/read-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+        </div></div></div>
+        <div class="wk-col wk-up" style="--wk-dur:86s"><div class="wk-track"><div class="wk-set">
+          <img src="img/work/resume-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/read-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/brain-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/ccr-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/read-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+        </div></div></div>
+        <div class="wk-col wk-down" style="--wk-dur:68s"><div class="wk-track"><div class="wk-set">
+          <img src="img/work/ccr-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/read-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/resume-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/ccr-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/brain-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+        </div></div></div>
+        <div class="wk-col wk-up" style="--wk-dur:80s"><div class="wk-track"><div class="wk-set">
+          <img src="img/work/ccr-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/brain-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/resume-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/read-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/brain-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+        </div></div></div>
+        <div class="wk-col wk-down" style="--wk-dur:58s"><div class="wk-track"><div class="wk-set">
+          <img src="img/work/read-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/brain-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/ccr-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/read-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          <img src="img/work/resume-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+        </div></div></div>
+      </div>
+      <p class="wk-show-cap"><span class="wk-t1">Built for</span> <span class="wk-t2">real work.</span></p>
+    </div>
+</section>
+<div class="demo-spacer"></div>
+<script src="sections/work/section.js"></script>
+</body>
+</html>

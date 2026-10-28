@@ -1,0 +1,26 @@
+<!-- Hero: Cole holding his check, name, one line and two buttons over a slowly rotating color wheel glow. Styles: sections/hero/section.css, script: sections/hero/section.js -->
+<section class="hx" id="hero" aria-labelledby="hx-title">
+  <div class="hx-bg" aria-hidden="true">
+    <div class="hx-spin"><div class="hx-wheel"></div></div>
+    <div class="hx-fade"></div>
+    <div class="hx-grain"></div>
+  </div>
+
+  <!-- Rendered width: min(88vw, 480px) under 900px, min(56.5vh, 706px) above (see .hx-figure in section.css) -->
+  <picture class="hx-figure">
+    <source media="(max-width: 899px)" srcset="img/hero/cole-check-cutout-sm.webp 600w" sizes="min(88vw, 480px)">
+    <img src="img/hero/cole-check-cutout.webp" srcset="img/hero/cole-check-cutout-sm.webp 600w, img/hero/cole-check-cutout.webp 896w" sizes="min(56.5vh, 706px)" width="896" height="1396" alt="Cole Stepanik in a navy suit holding a Manning School of Business check" fetchpriority="high" decoding="async">
+  </picture>
+
+  <div class="hx-inner">
+    <h1 class="hx-title" id="hx-title">
+      <span class="hx-l1">Cole Stepanik</span>
+      <span class="hx-l2">builds AI for finance.</span>
+    </h1>
+    <p class="hx-lede">Finance and Accounting senior at UMass Lowell. I cold call business owners for a search fund, so I built the workspace I wanted: Ownerhound.</p>
+    <div class="hx-cta">
+      <a class="hx-btn hx-btn-solid" href="#ownerhound">See Ownerhound</a>
+      <a class="hx-btn hx-btn-glass" href="#resume">Resume<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</section>

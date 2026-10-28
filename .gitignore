@@ -1,0 +1,15 @@
+﻿# Full-size original photos (web versions live in img/photos/gallery)
+img/photos/source/
+
+# Third-party reference captures and notes, internal only
+design/reference/
+
+# Raw captures the work section images were made from
+sections/work/_cap/
+
+# Cole's original logo files (processed versions live in img/umass)
+img/umass/raw/
+
+# Local Claude Code and preview-server setup
+.claude/
+

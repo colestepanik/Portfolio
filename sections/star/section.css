@@ -1,0 +1,23 @@
+/* Chrome star: a polished 5-armed asterisk rising out of black, meant to sit above the footer.
+   Layers in .st-stage: glow (::before), poster, canvas, fades to black (::after). */
+
+.st { position: relative; isolation: isolate; overflow: clip; background: var(--bg, #0a0a0b); }
+.st-stage { position: relative; height: clamp(380px, 52vw, 760px); }
+.st-stage::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(46% 62% at 50% 64%, rgb(255 255 255 / .065), rgb(255 255 255 / .02) 55%, transparent 78%);
+}
+.st-canvas { position: absolute; inset: 0; z-index: 1; display: block; width: 100%; height: 100%; }
+/* The live camera fits the star to the stage height, so the poster (rendered from the same camera) does too */
+.st-poster { position: absolute; top: 0; left: 50%; z-index: 1; display: block; height: 100%; width: auto; max-width: none; translate: -50% 0; transition: opacity 1.2s var(--ease, ease); }
+.st-canvas { opacity: 0; transition: opacity 1.4s var(--ease, ease); }
+.st-live .st-canvas { opacity: 1; }
+.st-live .st-poster { opacity: 0; }
+.st-stage::after {
+  content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: linear-gradient(180deg, var(--bg, #0a0a0b) 0%, rgb(10 10 11 / 0) 24%, rgb(10 10 11 / 0) 56%, rgb(10 10 11 / .7) 76%, var(--bg, #0a0a0b) 94%);
+}
+
+@media (max-width: 760px) {
+  .st-stage { height: clamp(320px, 96vw, 460px); }
+}

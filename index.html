@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-fx="crossfade">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +7,7 @@
 <meta name="description" content="Cole Stepanik is a Finance and Accounting senior at UMass Lowell (May 2027) who builds AI tools for markets, deal sourcing, and research. Portfolio of AI projects and full resume.">
 <meta name="author" content="Cole Stepanik">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta name="theme-color" content="#1a1a1c">
+<meta name="theme-color" content="#0a0a0b">
 <link rel="canonical" href="https://colestepanik.com/">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary">
 
@@ -15,15 +15,23 @@
 <meta property="og:title" content="Cole Stepanik | AI Projects and Resume">
 <meta property="og:description" content="Finance and Accounting senior at UMass Lowell building AI tools for markets, deal sourcing, and research.">
 <meta property="og:url" content="https://colestepanik.com/">
-<meta property="og:image" content="https://colestepanik.com/img/bg-peak.webp">
+<meta property="og:image" content="https://colestepanik.com/img/photos/cole-portrait.webp">
 <meta property="profile:first_name" content="Cole">
 <meta property="profile:last_name" content="Stepanik">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231a1a1c'/%3E%3Ctext x='32' y='41' font-family='Arial,sans-serif' font-weight='600' font-size='24' fill='%23ededf0' text-anchor='middle'%3ECS%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/bg-peak.webp" as="image" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
 <link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="sections/hero/section.css">
+<link rel="stylesheet" href="sections/ownerhound/section.css">
+<link rel="stylesheet" href="sections/work/section.css">
+<link rel="stylesheet" href="sections/about/section.css">
+<link rel="stylesheet" href="sections/umass/section.css">
+<link rel="stylesheet" href="sections/star/section.css">
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
 
 <!-- Structured data: what search engines and AI assistants read to understand who you are. -->
@@ -41,7 +49,7 @@
       "email": "mailto:colestepanik39@gmail.com",
       "contactPoint": {"@type": "ContactPoint", "contactType": "inquiries", "email": "cole_stepanik@student.uml.edu"},
       "jobTitle": "Finance and Accounting Student, UMass Lowell Class of 2027",
-      "description": "Finance and Accounting senior at the UMass Lowell Manning School of Business who builds AI tools for markets, deal sourcing, and research. Founder of Commonwealth Capital Research, Senior Class President, and co-captain of the UMass Lowell Intercollegiate Sales Team.",
+      "description": "Finance and Accounting senior at the UMass Lowell Manning School of Business who builds AI tools for markets, deal sourcing, and research. Founder of Commonwealth Capital Research, Senior Class President, and captain of the UMass Lowell Intercollegiate Sales Team.",
       "address": {"@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US"},
       "alumniOf": {
         "@type": "CollegeOrUniversity",
@@ -59,10 +67,9 @@
       "founder": {"@type": "Organization", "@id": "https://colestepanik.com/#ccr", "name": "Commonwealth Capital Research", "description": "Student-led investment research organization at UMass Lowell"},
       "memberOf": [
         {"@type": "Organization", "name": "UMass Lowell Class of 2027", "description": "Senior Class President"},
-        {"@type": "Organization", "name": "UMass Lowell Intercollegiate Sales Team", "description": "Co-Captain"},
-        {"@type": "Organization", "name": "AI Multidisciplinary Society (AIM), UMass Lowell", "description": "Head of Finance"},
-        {"@type": "Organization", "name": "UMass Lowell Accounting Society", "description": "Communications Chair"},
-        {"@type": "Organization", "name": "Manning Leadership Council", "description": "Board Member"}
+        {"@type": "Organization", "name": "UMass Lowell Intercollegiate Sales Team", "description": "Captain"},
+        {"@type": "Organization", "name": "AI Multidisciplinary Society (AIM), UMass Lowell", "description": "Finance Chair"},
+        {"@type": "Organization", "name": "UMass Lowell Accounting Society", "description": "Communications Chair"}
       ],
       "knowsAbout": ["Investment banking", "Sales and trading", "Private equity", "Search funds", "Deal sourcing", "Equity research", "Financial statement analysis", "Generative AI", "Claude", "Claude Code", "AI agents", "Workflow automation", "Excel VBA", "Tableau", "Bloomberg Terminal"],
       "award": ["1st Place, UML Manning Sales Challenge (Pfizer)", "1st Place, ALKU Sales Challenge", "1st Place, Medicus Sales Competition", "4th Place, CSI Invitational Collegiate Sales Challenge"],
@@ -81,13 +88,11 @@
       "@type": "ItemList",
       "name": "AI projects by Cole Stepanik",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "item": {"@type": "SoftwareApplication", "name": "READ Market Engine", "applicationCategory": "FinanceApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "Automated sales and trading training desk that produces a daily cross-asset market packet, a paper trade idea, and a close-of-day review."}},
+        {"@type": "ListItem", "position": 1, "item": {"@type": "SoftwareApplication", "name": "Ownerhound", "url": "https://ownerhound.com", "applicationCategory": "BusinessApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "Cold call workspace that verifies phones, owners, licenses, and business entities against company websites and state records, then runs each call on one screen."}},
         {"@type": "ListItem", "position": 2, "item": {"@type": "SoftwareApplication", "name": "2nd Brain", "applicationCategory": "ProductivityApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "Personal operating system built on an Obsidian vault and Claude skills that loads context, makes decisions by stated rules, and keeps a dated log."}},
-        {"@type": "ListItem", "position": 3, "item": {"@type": "SoftwareApplication", "name": "SIE Prep App", "applicationCategory": "EducationalApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "Single-file study app with 200 questions weighted to the FINRA SIE blueprint, used to pass the SIE in July 2026."}},
-        {"@type": "ListItem", "position": 4, "item": {"@type": "SoftwareApplication", "name": "Birddog", "applicationCategory": "BusinessApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "Deal sourcing engine for lower middle market acquisitions that outputs a scored, sourced target list."}},
-        {"@type": "ListItem", "position": 5, "item": {"@type": "SoftwareApplication", "name": "AIM Resume Checker", "applicationCategory": "EducationalApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "In-browser resume checker for AIM career workshops across five business verticals."}},
-        {"@type": "ListItem", "position": 6, "item": {"@type": "SoftwareApplication", "name": "CCR Research Pipeline", "applicationCategory": "BusinessApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "Two Claude skills that research a finance topic and produce a finished newsletter article for Commonwealth Capital Research."}},
-        {"@type": "ListItem", "position": 7, "item": {"@type": "SoftwareApplication", "name": "AIM Slack Bot", "applicationCategory": "CommunicationApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "Slack bot built on Slack Bolt and the Claude API that tracks events and projects across club teams and posts a weekly digest."}}
+        {"@type": "ListItem", "position": 3, "item": {"@type": "SoftwareApplication", "name": "READ Market Engine", "applicationCategory": "FinanceApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "Automated sales and trading training desk that produces a daily cross-asset market packet, a paper trade idea, and a close-of-day review."}},
+        {"@type": "ListItem", "position": 4, "item": {"@type": "SoftwareApplication", "name": "AIM Resume Checker", "applicationCategory": "EducationalApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "In-browser resume checker for AIM career workshops across five business verticals."}},
+        {"@type": "ListItem", "position": 5, "item": {"@type": "SoftwareApplication", "name": "CCR Research Pipeline", "applicationCategory": "BusinessApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "Two Claude skills that research a finance topic and produce a finished newsletter article for Commonwealth Capital Research."}}
       ]
     }
   ]
@@ -95,89 +100,15 @@
 </script>
 
 <style>
-/* ---------- Backdrop (Crossfade scroll mode) ----------
-   Each photo change is tied to scroll position: as a section's top travels from 75% to 25% of the viewport,
-   a bridge gradient (outgoing photo's bottom edge color to incoming photo's top edge color) rises, the photos
-   swap underneath it at the midpoint, and it falls away. Scrolling back up runs the same thing in reverse. */
-#work { view-timeline-name: --sc1; }
-#resume { view-timeline-name: --sc2; }
-#contact { view-timeline-name: --sc3; }
-.backdrop { position: fixed; inset: 0; z-index: -1; display: none; background: var(--bg); }
-.backdrop img, .backdrop .bridge { position: absolute; inset: 0; width: 100%; height: 100%; }
-.backdrop img { object-fit: cover; opacity: 0; }
-.backdrop img:first-child { opacity: 1; }
-.backdrop .bridge { opacity: 0; background: linear-gradient(180deg, var(--from, #1a1a1c) 0%, var(--mid, #1a1a1c) 50%, var(--to, #1a1a1c) 100%); }
-.backdrop::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(26 26 28 / .9), rgb(26 26 28 / .74) 50%, rgb(26 26 28 / .9)); opacity: .3; }
-html[data-fx="crossfade"] .backdrop { display: block; }
-html[data-fx="crossfade"] body { background: transparent; }
-html[data-tx="none"] .backdrop .bridge { display: none; }
-@supports (animation-timeline: view()) {
-  html[data-fx="crossfade"] .backdrop img:nth-child(2), html[data-fx="crossfade"] .backdrop .b1, html[data-fx="crossfade"] .backdrop::after { animation-timeline: --sc1; }
-  html[data-fx="crossfade"] .backdrop img:nth-child(3), html[data-fx="crossfade"] .backdrop .b2 { animation-timeline: --sc2; }
-  html[data-fx="crossfade"] .backdrop img:nth-child(4), html[data-fx="crossfade"] .backdrop .b3 { animation-timeline: --sc3; }
-  html[data-fx="crossfade"] .backdrop img:not(:first-child) { animation-name: bd-swap; animation-duration: auto; animation-timing-function: linear; animation-fill-mode: both; animation-range: entry 25vh entry 75vh; }
-  html[data-fx="crossfade"][data-tx="none"] .backdrop img:not(:first-child) { animation-name: bd-fade; }
-  html[data-fx="crossfade"] .backdrop .bridge { animation-name: bd-bridge; animation-duration: auto; animation-timing-function: linear; animation-fill-mode: both; animation-range: entry 25vh entry 75vh; }
-  html[data-fx="crossfade"] .backdrop::after { animation-name: bd-dim; animation-duration: auto; animation-timing-function: linear; animation-fill-mode: both; animation-range: entry 25vh entry 75vh; }
-}
-/* The slight smoothing: eased curves on every keyframe segment, so the blend never snaps */
-@keyframes bd-swap { 0%, 50% { opacity: 0; } 50.01%, 100% { opacity: 1; } }
-@keyframes bd-fade { 0% { opacity: 0; animation-timing-function: cubic-bezier(.45, 0, .55, 1); } 100% { opacity: 1; } }
-@keyframes bd-bridge { 0% { opacity: 0; animation-timing-function: cubic-bezier(.45, 0, .55, 1); } 38%, 62% { opacity: 1; animation-timing-function: cubic-bezier(.45, 0, .55, 1); } 100% { opacity: 0; } }
-@keyframes bd-dim { 0% { opacity: .3; animation-timing-function: cubic-bezier(.45, 0, .55, 1); } 60%, 100% { opacity: .84; } }
-/* Browsers without scroll-driven animations (Firefox today): a plain eased crossfade per section */
-@supports not (animation-timeline: view()) {
-  .backdrop img, .backdrop::after { transition: opacity .9s var(--ease); }
-  .backdrop .bridge { display: none; }
-  .backdrop[data-active="1"] img:nth-child(2), .backdrop[data-active="2"] img:nth-child(3), .backdrop[data-active="3"] img:nth-child(4) { opacity: 1; }
-  .backdrop:not([data-active="0"])::after { opacity: .84; }
-}
-
-/* ---------- Hero ---------- */
-.hero { position: relative; }
-.hero-stage { position: relative; height: 100vh; height: 100dvh; min-height: 620px; overflow: hidden; display: grid; place-items: center; }
-.hero-bg { position: absolute; inset: 0; }
-.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; transform-origin: 50% 65%; transform: scale(1.04); }
-.hero-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgb(26 26 28 / .55) 0%, rgb(26 26 28 / .1) 38%, rgb(26 26 28 / .35) 72%, var(--bg) 100%); }
-.hero-dim { position: absolute; inset: 0; background: var(--bg); opacity: 0; pointer-events: none; }
-.hero-content { position: relative; text-align: center; padding: var(--nav-h) 24px 0; max-width: 900px; margin-top: -8vh; }
-.hero-content .h1 .l2 { display: block; color: var(--fg-2); }
-.hero-content .lede { margin: 22px auto 34px; text-shadow: 0 1px 24px rgb(0 0 0 / .35); }
-.hero-content .cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-html[data-fx="crossfade"] .hero-bg, html[data-fx="crossfade"] .hero-dim { display: none; }
-html[data-fx="crossfade"] .hero-shade { background: linear-gradient(180deg, rgb(26 26 28 / .4), transparent 40%, transparent 70%, rgb(26 26 28 / .5)); }
-
-@media (prefers-reduced-motion: no-preference) {
-  .hero-content > * { animation: hero-in 1.2s var(--ease) both; animation-delay: calc(.15s + var(--i, 0) * .12s); }
-  .hero-bg img { animation: hero-img-in 2.4s var(--ease) both; }
-  @supports (animation-timeline: scroll()) {
-    /* Zoom: the photo stays pinned and slowly pushes in, then sinks into the grey */
-    html[data-fx="zoom"] .hero { height: 190vh; }
-    html[data-fx="zoom"] .hero-stage { position: sticky; top: 0; }
-    html[data-fx="zoom"] .hero-bg img { animation: hero-zoom linear both; animation-timeline: scroll(root); animation-range: 0 120vh; }
-    /* Parallax: the photo drifts slower than the page */
-    html[data-fx="parallax"] .hero-bg img { animation: hero-drift linear both; animation-timeline: scroll(root); animation-range: 0 100vh; }
-    html[data-fx="zoom"] .hero-dim, html[data-fx="parallax"] .hero-dim { animation: hero-dim linear both; animation-timeline: scroll(root); animation-range: 25vh 115vh; }
-    .hero-content { animation: hero-out linear both; animation-timeline: scroll(root); animation-range: 0 65vh; }
-  }
-}
-@keyframes hero-in { from { opacity: 0; transform: translateY(26px); } }
-@keyframes hero-img-in { from { opacity: 0; transform: scale(1.12); } }
-@keyframes hero-zoom { from { transform: scale(1.04); } to { transform: scale(1.32); } }
-@keyframes hero-drift { from { transform: scale(1.1) translateY(0); } to { transform: scale(1.1) translateY(24%); } }
-@keyframes hero-dim { to { opacity: .9; } }
-@keyframes hero-out { to { opacity: 0; transform: translateY(-60px) scale(.97); } }
-
 /* ---------- Roles marquee (the one marquee on the page) ---------- */
-.roles { overflow: hidden; padding: 30px 0; border-block: 1px solid var(--line); background: rgb(26 26 28 / .6); }
+.roles { overflow: hidden; padding: 30px 0; border-block: 1px solid var(--line); background: var(--bg); }
 .roles-track { display: flex; width: max-content; }
 .roles ul { display: flex; margin: 0; padding: 0; list-style: none; }
-.roles li { font: 460 clamp(18px, 1.9vw, 26px)/1 var(--sans); letter-spacing: -.01em; white-space: nowrap; padding: 0 30px; display: flex; align-items: center; gap: 60px; color: var(--mute); }
+.roles li { font: 460 clamp(18px, 1.9vw, 26px)/1 var(--sans); letter-spacing: -.01em; white-space: nowrap; padding: 0 30px; display: flex; align-items: center; gap: 30px; color: var(--mute); }
 .roles li::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--line-strong); margin-right: -30px; }
 .roles li strong { color: var(--fg); font-weight: 480; margin-right: 10px; }
 @media (prefers-reduced-motion: no-preference) {
   .roles-track { animation: marquee 48s linear infinite; }
-  .roles:hover .roles-track { animation-play-state: paused; }
 }
 @media (prefers-reduced-motion: reduce) {
   .roles ul[aria-hidden] { display: none; }
@@ -189,96 +120,15 @@ html[data-fx="crossfade"] .hero-shade { background: linear-gradient(180deg, rgb(
 .section { padding: 136px 0; position: relative; }
 .section-head { text-align: center; max-width: 760px; margin: 0 auto; }
 
-/* Featured: sticky stacking cards (CSS scroll-driven, after Bramus van Damme's pattern) */
-.stack { --numcards: 3; list-style: none; margin: 72px 0 0; padding: 0 0 calc(var(--numcards) * 20px); display: grid; gap: 32px; view-timeline-name: --stack; }
-.stack > li { --index0: calc(var(--index) - 1); --reverse-index: calc(var(--numcards) - var(--index0)); position: sticky; top: calc(var(--nav-h) + 16px); padding-top: calc(var(--index0) * 20px); }
-.card { transform-origin: 50% 0%; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; min-height: min(74vh, 620px); display: grid; grid-template-columns: 1fr 1.08fr; overflow: hidden; box-shadow: 0 -18px 50px rgb(0 0 0 / .25); }
-.card-copy { padding: 48px; display: flex; flex-direction: column; gap: 18px; }
-.card-copy p { color: var(--fg-2); margin: 0; max-width: 46ch; }
-.card-copy ul { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 11px; }
-.card-copy li { display: grid; grid-template-columns: 22px 1fr; color: var(--fg-2); font-size: 15px; }
-.card-copy li i { color: var(--fg); margin-top: 4px; }
-.card-copy .foot { margin-top: auto; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
-.card-visual { position: relative; overflow: hidden; isolation: isolate; }
-.card-visual > .scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; transform: scale(1.06); transition: transform 1.6s var(--ease); }
-.card-visual::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgb(26 26 28 / .1), rgb(26 26 28 / .45)); }
-.card:hover .card-visual > .scene { transform: scale(1.12); }
-.pages { position: absolute; inset: 0; }
-.pages img { position: absolute; width: 62%; border-radius: 10px; border: 1px solid var(--glass-line); box-shadow: 0 30px 70px rgb(0 0 0 / .45); transition: transform .9s var(--ease); }
-.pages img:first-child { top: 11%; left: 9%; transform: rotate(-4deg); }
-.pages img:last-child { top: 19%; left: 30%; transform: rotate(3deg); }
-.card:hover .pages img:first-child { transform: rotate(-7deg) translate(-4%, -2%); }
-.card:hover .pages img:last-child { transform: rotate(5deg) translate(3%, 2%); }
-.visual-pad { position: absolute; inset: 0; display: grid; place-items: center; padding: 40px; }
-.vault { list-style: none; margin: 0; padding: 14px; width: 100%; max-width: 440px; display: grid; gap: 2px; font-family: var(--mono); font-size: 14px; }
-.vault li { display: grid; grid-template-columns: 40px 1fr auto; align-items: baseline; gap: 10px; padding: 12px 14px; border-radius: 10px; color: var(--mute); transition: background-color .5s var(--ease), color .5s var(--ease); }
-.vault li b { font-weight: 500; color: var(--fg-2); }
-.vault li span:last-child { font-size: 12px; }
-.vault.lit li { animation: vault-row 4.2s var(--ease) both; animation-delay: calc(var(--i) * .5s); }
-@keyframes vault-row { 0%, 100% { background: transparent; } 12%, 30% { background: rgb(255 255 255 / .08); color: var(--fg); } }
-.quiz { width: 100%; max-width: 460px; padding: 28px; display: flex; flex-direction: column; gap: 16px; }
-.quiz-q { font: 480 19px/1.4 var(--sans); margin: 0; }
-.quiz-opts { display: grid; gap: 8px; }
-.quiz-opt { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; padding: 13px 18px; border-radius: 999px; border: 1px solid var(--glass-line); background: rgb(255 255 255 / .03); cursor: pointer; font-size: 15px; transition: background-color .25s, color .25s, border-color .25s, transform .4s var(--ease); }
-.quiz-opt:hover:not(:disabled) { border-color: var(--fg); }
-.quiz-opt:active:not(:disabled) { transform: scale(.98); }
-.quiz-opt .key { font: 500 12px/1 var(--mono); color: var(--mute); width: 14px; }
-.quiz-opt i { margin-left: auto; font-size: 18px; }
-.quiz-opt.right { background: var(--fg); color: #18181a; border-color: var(--fg); }
-.quiz-opt.right .key { color: #18181a; }
-.quiz-opt.wrong { border-style: dashed; color: var(--mute); text-decoration: line-through; }
-.quiz-opt:disabled { cursor: default; }
-.quiz-foot { min-height: 66px; font-size: 14px; color: var(--fg-2); }
-.quiz-foot .reset { margin-top: 10px; background: none; border: 0; padding: 0; cursor: pointer; color: var(--fg); font-size: 14px; display: inline-flex; gap: 6px; align-items: center; text-decoration: underline; text-underline-offset: 3px; }
-.text-link { color: var(--fg); font-weight: 500; font-size: 15px; display: inline-flex; gap: 6px; align-items: center; text-decoration: none; }
-.text-link i { transition: transform .5s var(--ease); }
-.text-link:hover i { transform: translateX(3px); }
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) and (min-width: 900px) {
-    .card { animation: stack-shrink linear forwards; animation-timeline: --stack; animation-range: exit-crossing calc(var(--index0) / var(--numcards) * 100%) exit-crossing calc(var(--index) / var(--numcards) * 100%); }
-  }
-}
-@keyframes stack-shrink { to { transform: scale(calc(1.08 - calc(.08 * var(--reverse-index)))); } }
-
-/* ---------- Build your own 2nd Brain ---------- */
-.combo-card { display: flex; align-items: center; justify-content: center; gap: 18px; }
-.combo-card .plus { font: 300 30px/1 var(--sans); color: var(--fg-2); }
-.ai-stack { display: grid; gap: 14px; justify-items: center; }
-.logo-tile { display: inline-flex; align-items: center; gap: 14px; height: 76px; padding: 0 26px 0 18px; border-radius: 999px; font: 480 20px/1 var(--sans); }
-.logo-tile img { width: 40px; height: 40px; padding: 8px; border-radius: 50%; background: rgb(255 255 255 / .08); }
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .logo-tile, .combo-card .plus { animation: pop linear both; animation-timeline: view(); animation-range: entry calc(10% + var(--i) * 12%) cover calc(30% + var(--i) * 5%); }
-  }
-}
-@keyframes pop { 0% { opacity: 0; transform: translateY(40px) scale(.6); } 70% { opacity: 1; transform: translateY(-4px) scale(1.04); } 100% { opacity: 1; transform: none; } }
-@supports not (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .js .logo-tile, .js .combo-card .plus { opacity: 0; transform: translateY(30px) scale(.7); transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: calc(var(--i) * 120ms); }
-    .js .combo-card.in .logo-tile, .js .combo-card.in .plus { opacity: 1; transform: none; }
-  }
-}
-
-/* ---------- More projects ---------- */
-.bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; margin-top: 64px; }
-.cell { border-radius: 20px; padding: 36px; min-height: 290px; display: flex; flex-direction: column; gap: 14px; border: 1px solid var(--line); background: var(--surface); position: relative; overflow: hidden; }
-.cell p { margin: 0; color: var(--fg-2); max-width: 48ch; }
-.cell .tags { margin-top: auto; }
-.cell.span-7 { grid-column: span 7; }
-.cell.span-5 { grid-column: span 5; }
-.cell.invert { background: var(--fg); color: #18181a; border-color: var(--fg); }
-.cell.invert p { color: #4c4c52; }
-.cell.invert .pill { border-color: rgb(0 0 0 / .25); color: #18181a; }
-.cell.invert .tag { background: rgb(0 0 0 / .07); color: #4c4c52; }
-.cell.dots { background-image: radial-gradient(var(--line-strong) 1px, transparent 1.2px); background-size: 18px 18px; }
-.big-num { font: 480 clamp(56px, 6vw, 84px)/.9 var(--sans); letter-spacing: -.04em; margin: 4px 0 6px; }
-.big-num small { font-size: .3em; color: var(--mute); font-weight: 460; margin-left: 8px; letter-spacing: 0; }
-.flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font: 400 13px/1 var(--mono); color: var(--fg-2); margin: 4px 0; }
-.flow span { padding: 9px 12px; border: 1px solid var(--line-strong); border-radius: 999px; }
-.flow i { color: var(--mute); }
-.cell.invert .flow { color: #18181a; }
-.cell.invert .flow span { border-color: rgb(0 0 0 / .22); }
-.cell.invert .flow i { color: #7a7a80; }
+/* ---------- Gallery: who's behind it ---------- */
+.photo { position: relative; overflow: hidden; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+.photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.photo:hover img { transform: scale(1.04); }
+.gallery { columns: 3 280px; column-gap: 16px; margin-top: 64px; }
+@media (max-width: 640px) { .gallery { columns: 2; column-gap: 10px; margin-top: 40px; } .gallery figure { margin-bottom: 10px; } }
+.gallery figure { break-inside: avoid; margin: 0 0 16px; }
+.gallery .photo { aspect-ratio: var(--ar, 4 / 5); }
+.gallery figcaption { position: absolute; left: 12px; bottom: 12px; padding: 7px 12px; border-radius: 999px; font: 460 13px/1 var(--sans); color: var(--fg); background: rgb(26 26 28 / .62); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 
 /* ---------- Resume: the timeline ----------
    One arrow runs down the middle. Each role is a branch off it: school to the left, career to the right.
@@ -381,24 +231,7 @@ html[data-fx="crossfade"] .hero-shade { background: linear-gradient(180deg, rgb(
 
 /* ---------- Inquiries ---------- */
 .contact { position: relative; overflow: hidden; isolation: isolate; padding: 136px 0 120px; text-align: center; }
-.contact > .scene { position: absolute; inset: -14% 0; width: 100%; height: 128%; object-fit: cover; z-index: -2; }
-.contact::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, var(--bg) 0%, rgb(26 26 28 / .55) 35%, rgb(26 26 28 / .65) 70%, var(--bg) 100%); }
-html[data-fx="crossfade"] .contact > .scene { display: none; }
-html[data-fx="crossfade"] .contact::before { background: none; }
-.contact .h2 { margin-bottom: 28px; }
-.contact .cta { display: flex; justify-content: center; }
-
-/* ---------- Background tester (visible only with ?test in the URL) ---------- */
-.tester { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 40; display: flex; align-items: center; gap: 14px; padding: 8px 10px 8px 16px; border-radius: 999px; font-size: 13px; color: var(--fg-2); box-shadow: 0 18px 50px rgb(0 0 0 / .4); }
-.tester[hidden] { display: none; }
-.tester .grp { display: flex; align-items: center; gap: 6px; }
-.tester .grp > span { margin-right: 4px; }
-.tester .sw { width: 34px; height: 34px; border-radius: 50%; border: 2px solid transparent; padding: 0; overflow: hidden; cursor: pointer; background: var(--surface); }
-.tester .sw img { width: 100%; height: 100%; object-fit: cover; }
-.tester .sw[aria-pressed="true"] { border-color: var(--fg); }
-.tester .seg { height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--glass-line); background: transparent; cursor: pointer; font-size: 13px; }
-.tester .seg[aria-pressed="true"] { background: var(--fg); color: #18181a; border-color: var(--fg); }
-.tester .div { width: 1px; height: 22px; background: var(--glass-line); }
+.contact .cta { display: flex; justify-content: center; margin-top: 28px; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 899px) {
@@ -418,30 +251,23 @@ html[data-fx="crossfade"] .contact::before { background: none; }
   .career .ev-date::after { content: "  Career"; color: var(--fg-2); }
   .school .ev-date::after { content: "  School"; color: var(--fg-2); }
 }
-}
 @media (max-width: 899px) {
-  .stack { gap: 20px; padding-bottom: 0; }
-  .stack > li { position: static; padding-top: 0; }
-  .card { grid-template-columns: 1fr; min-height: 0; }
-  .card-visual { min-height: 460px; }
-  .cell.span-7, .cell.span-5 { grid-column: span 12; }
   .r-sec { grid-template-columns: 1fr; gap: 16px; }
-  .tester { flex-wrap: wrap; justify-content: center; border-radius: 22px; width: calc(100% - 24px); }
+}
+/* Mobile QA: 16px body copy, 44px tap targets, roles wrap under reduced motion, contact spacing */
+@media (max-width: 899px) {
+  .ev-org, .job ul, .more-wins, .skills, .win span, .lead-grid div span, .coursework, .paper-contact { font-size: 16px; }
+  .paper-contact a { min-height: 44px; }
+  .contact .cta { margin-top: 28px; }
+  .btn { font-size: 16px; }
+}
+@media (max-width: 899px) and (prefers-reduced-motion: reduce) {
+  .roles-track { width: auto; }
+  .roles li { white-space: normal; padding: 0 16px; line-height: 1.25; }
+  .roles li::after { display: none; }
 }
 @media (max-width: 640px) {
   .section { padding: 92px 0; }
-  .hero-content { margin-top: -4vh; }
-  .card-copy { padding: 28px 22px; }
-  .visual-pad { padding: 16px; position: relative; inset: auto; min-height: 460px; }
-  .card-visual.read { min-height: 380px; }
-  .vault li { grid-template-columns: 30px 1fr; }
-  .vault li span:last-child { display: none; }
-  .quiz { padding: 22px 18px; }
-  .logo-tile { height: 60px; padding: 0 18px 0 12px; font-size: 17px; gap: 10px; }
-  .logo-tile img { width: 34px; height: 34px; padding: 7px; }
-  .combo-card { gap: 10px; }
-  .ai-stack { gap: 10px; }
-  .cell { padding: 26px 22px; min-height: 0; }
   .paper { padding: 36px 20px; }
   .edu-facts, .wins, .lead-grid { grid-template-columns: 1fr; }
   .more-wins li { flex-direction: column; gap: 2px; }
@@ -454,7 +280,7 @@ html[data-fx="crossfade"] .contact::before { background: none; }
   @page { margin: .45in; }
   :root { --paper: #fff; --paper-ink: #000; --paper-ink-2: #333; }
   html, body { background: #fff; color: #000; font-size: 10pt; }
-  .nav, .progress, .backdrop, .hero, .roles, #work, #building, .contact, footer, .resume-head, .tester { display: none !important; }
+  .nav, .progress, .backdrop, .hero, .roles, #hero, #ownerhound, #work, #about, #umass, #life, #star, .contact, footer, .resume-head, .tester { display: none !important; }
   .section { padding: 0; }
   .path { display: none !important; }
   .print-resume { display: block !important; }
@@ -475,17 +301,16 @@ html[data-fx="crossfade"] .contact::before { background: none; }
 </head>
 <body>
 
-<div class="backdrop" id="backdrop" data-active="0" aria-hidden="true">
-  <img alt="" src="img/bg-peak.webp"><img alt="" src="img/bg-peak.webp"><img alt="" src="img/bg-peak.webp"><img alt="" src="img/bg-peak.webp"><div class="bridge b1"></div><div class="bridge b2"></div><div class="bridge b3"></div>
-</div>
 <div class="progress" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#top">Cole Stepanik</a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#work">Work</a>
+      <a href="#ownerhound" class="hide-sm">Ownerhound</a>
+      <a href="#work" class="hide-sm">Projects</a>
       <a href="brain.html">2nd Brain</a>
+      <a href="#about" class="hide-sm">About</a>
       <a href="#resume" class="hide-sm">Resume</a>
     </nav>
     <a class="btn solid sm" href="#contact">Contact</a>
@@ -494,18 +319,29 @@ html[data-fx="crossfade"] .contact::before { background: none; }
 
 <main id="top">
 
-  <section class="hero" aria-label="Introduction" data-scene="0">
-    <div class="hero-stage">
-      <div class="hero-bg"><img id="hero-img" src="img/bg-peak.webp" width="2400" height="1607" alt="" fetchpriority="high"></div>
-      <div class="hero-shade"></div>
-      <div class="hero-dim"></div>
-      <div class="hero-content">
-        <h1 class="h1" style="--i:0">Cole Stepanik<span class="l2">builds AI for finance.</span></h1>
-        <p class="lede" style="--i:1">Finance and Accounting senior at UMass Lowell. I build and use AI systems for markets, deal sourcing, and study.</p>
-        <div class="cta" style="--i:2">
-          <a class="btn solid" href="#work">View work</a>
-          <a class="btn glass" href="#resume">Resume</a>
-        </div>
+  <!-- ================= HERO (sections/hero) ================= -->
+  <section class="hx" id="hero" aria-labelledby="hx-title">
+    <div class="hx-bg" aria-hidden="true">
+      <div class="hx-spin"><div class="hx-wheel"></div></div>
+      <div class="hx-fade"></div>
+      <div class="hx-grain"></div>
+    </div>
+
+    <!-- Rendered width: min(88vw, 480px) under 900px, min(56.5vh, 706px) above (see .hx-figure in section.css) -->
+    <picture class="hx-figure">
+      <source media="(max-width: 899px)" srcset="img/hero/cole-check-cutout-sm.webp 600w" sizes="min(88vw, 480px)">
+      <img src="img/hero/cole-check-cutout.webp" srcset="img/hero/cole-check-cutout-sm.webp 600w, img/hero/cole-check-cutout.webp 896w" sizes="min(56.5vh, 706px)" width="896" height="1396" alt="Cole Stepanik in a navy suit holding a Manning School of Business check" fetchpriority="high" decoding="async">
+    </picture>
+
+    <div class="hx-inner">
+      <h1 class="hx-title" id="hx-title">
+        <span class="hx-l1">Cole Stepanik</span>
+        <span class="hx-l2">builds AI for finance.</span>
+      </h1>
+      <p class="hx-lede">Finance and Accounting senior at UMass Lowell. I cold call business owners for a search fund, so I built the workspace I wanted: Ownerhound.</p>
+      <div class="hx-cta">
+        <a class="hx-btn hx-btn-solid" href="#ownerhound">See Ownerhound</a>
+        <a class="hx-btn hx-btn-glass" href="#resume">Resume<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
   </section>
@@ -516,151 +352,358 @@ html[data-fx="crossfade"] .contact::before { background: none; }
         <li><span><strong>Founder</strong>Commonwealth Capital Research</span></li>
         <li><span><strong>Lead Intern</strong>Anoush Holdings</span></li>
         <li><span><strong>Senior Class President</strong>UMass Lowell</span></li>
-        <li><span><strong>Co-Captain</strong>Intercollegiate Sales Team</span></li>
-        <li><span><strong>Head of Finance</strong>AI Multidisciplinary Society</span></li>
-        <li><span><strong>FINRA SIE</strong>Passed July 2026</span></li>
+        <li><span><strong>Captain</strong>Intercollegiate Sales Team</span></li>
+        <li><span><strong>Finance Chair</strong>AI Multidisciplinary Society</span></li>
+        <li><span><strong>FINRA SIE</strong>Passed summer 2026</span></li>
       </ul>
       <ul aria-hidden="true">
         <li><span><strong>Founder</strong>Commonwealth Capital Research</span></li>
         <li><span><strong>Lead Intern</strong>Anoush Holdings</span></li>
         <li><span><strong>Senior Class President</strong>UMass Lowell</span></li>
-        <li><span><strong>Co-Captain</strong>Intercollegiate Sales Team</span></li>
-        <li><span><strong>Head of Finance</strong>AI Multidisciplinary Society</span></li>
-        <li><span><strong>FINRA SIE</strong>Passed July 2026</span></li>
+        <li><span><strong>Captain</strong>Intercollegiate Sales Team</span></li>
+        <li><span><strong>Finance Chair</strong>AI Multidisciplinary Society</span></li>
+        <li><span><strong>FINRA SIE</strong>Passed summer 2026</span></li>
       </ul>
     </div>
   </div>
 
-  <!-- ================= SELECTED WORK ================= -->
-  <section class="section" id="work" aria-labelledby="work-title" data-scene="1">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="h2" id="work-title" data-reveal>Selected work</h2>
-        <p class="lede" data-reveal style="--i:1">Tools I built for my own work and use for real. A short walkthrough video of each is on the way.</p>
+  <!-- ================= FLAGSHIP: OWNERHOUND (sections/ownerhound) ================= -->
+  <section id="ownerhound" class="oh" aria-labelledby="oh-title">
+    <div class="oh-card">
+      <div class="oh-stage">
+        <div class="oh-glow" aria-hidden="true"></div>
+        <div class="oh-phone">
+          <div class="oh-bezel"><div class="oh-screen"><i class="oh-island" aria-hidden="true"></i>
+            <div class="oh-sb" aria-hidden="true"><span>9:41</span><i class="oh-sig"></i><i class="oh-bat"></i></div>
+            <video class="oh-video" muted loop playsinline controls preload="metadata" width="600" height="1298"
+              poster="img/ownerhound/phone-poster.webp"
+              aria-label="Ownerhound on a phone, sample data: the home page, how it works, a call card where the owner is confirmed and the call is logged, then three sample companies being verified.">
+              <source src="video/ownerhound/ownerhound-phone-sm.mp4" type="video/mp4" media="(max-width: 899px)">
+            <source src="video/ownerhound/ownerhound-phone.mp4" type="video/mp4">
+            </video>
+            <button class="oh-play" type="button" hidden aria-label="Play the Ownerhound demo">
+              <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>
+            </button>
+            <i class="oh-sheen" aria-hidden="true"></i>
+          </div></div>
+        </div>
+        <div class="oh-under">
+          <span>ownerhound.com, sample data</span>
+          <button class="oh-toggle" type="button" hidden aria-label="Pause the Ownerhound demo">
+            <svg class="oh-i-pause" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 3h2.2v10H4.5zM9.3 3h2.2v10H9.3z" fill="currentColor"/></svg>
+            <svg class="oh-i-play" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M5 3v10l8-5z" fill="currentColor"/></svg>
+          </button>
+        </div>
       </div>
 
-      <ol class="stack">
-        <li style="--index:1">
-          <article class="card" id="read-market-engine">
-            <div class="card-copy">
-              <div><span class="pill on">Live, runs daily</span></div>
-              <h3 class="h3">READ Market Engine</h3>
-              <p>An automated sales and trading training desk. Every weekday at 8:35am ET it writes a cross-asset market packet, pitches one paper trade, and grades it at the close.</p>
-              <ul>
-                <li><i class="ph ph-check" aria-hidden="true"></i>6-page packet: macro, rates, commodities, FX, equities, options</li>
-                <li><i class="ph ph-check" aria-hidden="true"></i>2-page trade idea on a $100,000 paper book at 1% risk</li>
-                <li><i class="ph ph-check" aria-hidden="true"></i>Every number sourced and timestamped, "n/a" instead of a guess</li>
-              </ul>
-              <div class="foot"><div class="tags"><span class="tag">Claude</span><span class="tag">Scheduled agents</span><span class="tag">PDF reporting</span></div></div>
-            </div>
-            <div class="card-visual read">
-              <img class="scene" src="img/bg-range-sm.webp" width="1200" height="800" alt="" loading="lazy">
-              <div class="pages">
-                <img src="img/read-review.webp" width="1100" height="1423" loading="lazy" alt="READ Market Engine close-of-day review page grading an open paper trade.">
-                <img src="img/read-trade-idea.webp" width="1100" height="1423" loading="lazy" alt="READ Market Engine trade idea page for October 16, 2026: long oil on time-series momentum, with thesis, invalidation, and sizing plan.">
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li style="--index:2">
-          <article class="card" id="second-brain">
-            <div class="card-copy">
-              <div><span class="pill on">Live, daily use</span></div>
-              <h3 class="h3">2nd Brain</h3>
-              <p>A personal operating system. An Obsidian vault holds my priorities, decision rules, people, and projects. Claude skills read it at the start of every session, make calls the way I would, and write back what they learned.</p>
-              <ul>
-                <li><i class="ph ph-check" aria-hidden="true"></i>Loads only the context a task touches</li>
-                <li><i class="ph ph-check" aria-hidden="true"></i>Ranked priorities and triage rules in my own words</li>
-                <li><i class="ph ph-check" aria-hidden="true"></i>Synced through Google Drive, so it works from my phone too</li>
-              </ul>
-              <div class="foot">
-                <div class="tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Obsidian</span><span class="tag">Google Drive</span></div>
-                <a class="text-link" href="brain.html">Build mine <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-              </div>
-            </div>
-            <div class="card-visual">
-              <img class="scene" src="img/bg-peak-sm.webp" width="1200" height="803" alt="" loading="lazy" style="object-position: 50% 80%">
-              <div class="visual-pad">
-                <div class="combo-card" id="combos" aria-label="Obsidian plus Claude or ChatGPT">
-                  <span class="logo-tile glass-panel" style="--i:0"><img src="img/logos/obsidian.svg" width="24" height="24" alt="">Obsidian</span>
-                  <span class="plus" style="--i:1" aria-hidden="true">+</span>
-                  <span class="ai-stack">
-                    <span class="logo-tile glass-panel" style="--i:2"><img src="img/logos/claude.svg" width="24" height="24" alt="">Claude</span>
-                    <span class="logo-tile glass-panel" style="--i:3"><img src="img/logos/openai.svg" width="24" height="24" alt="">ChatGPT</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li style="--index:3">
-          <article class="card" id="sie-prep-app">
-            <div class="card-copy">
-              <div><span class="pill on">Shipped, July 2026</span></div>
-              <h3 class="h3">SIE Prep App</h3>
-              <p>A single-file study app I built for the FINRA Securities Industry Essentials exam. I passed in July 2026. Try a question from it.</p>
-              <ul>
-                <li><i class="ph ph-check" aria-hidden="true"></i>200 questions weighted to the SIE content outline</li>
-                <li><i class="ph ph-check" aria-hidden="true"></i>Real-world examples and wrong-answer explanations on the first 40</li>
-                <li><i class="ph ph-check" aria-hidden="true"></i>Runs offline in any browser, no install</li>
-              </ul>
-              <div class="foot"><div class="tags"><span class="tag">Claude</span><span class="tag">HTML and JavaScript</span></div></div>
-            </div>
-            <div class="card-visual">
-              <img class="scene" src="img/bg-range-sm.webp" width="1200" height="800" alt="" loading="lazy" style="object-position: 50% 100%">
-              <div class="visual-pad">
-                <div class="quiz glass-panel" id="quiz">
-                  <p class="quiz-q">An investor buys a bond with a 6% coupon at a price of 95. What is the current yield?</p>
-                  <div class="quiz-opts" role="group" aria-label="Answer choices">
-                    <button class="quiz-opt" type="button" data-ok="0"><span class="key">A</span>5.70%</button>
-                    <button class="quiz-opt" type="button" data-ok="0"><span class="key">B</span>6.00%</button>
-                    <button class="quiz-opt" type="button" data-ok="1"><span class="key">C</span>6.32%</button>
-                    <button class="quiz-opt" type="button" data-ok="0"><span class="key">D</span>6.50%</button>
-                  </div>
-                  <div class="quiz-foot" id="quiz-foot" aria-live="polite">Pick an answer to see the explanation.</div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </li>
-      </ol>
+      <div class="oh-copy">
+        <div class="oh-pills"><span class="oh-pill">Flagship</span><span class="oh-pill oh-pill-on"><i class="oh-live" aria-hidden="true"></i>Live</span></div>
+        <div class="oh-title">
+          <img src="img/ownerhound/wolf.svg" width="64" height="64" alt="">
+          <h2 id="oh-title">Ownerhound</h2>
+        </div>
+        <p class="oh-line">A cold call workspace, <em>built by a cold caller.</em></p>
+        <ul class="oh-facts">
+          <li><strong>Verified before you dial.</strong> Phones, owners, licenses and entities checked against the company's own site and state records.</li>
+          <li><strong>One screen per call.</strong> Owner, number, checks and the outcome on a single call card.</li>
+          <li><strong>Built from the phone.</strong> I make owner calls every week for a search fund, so I built the tool I could not buy.</li>
+        </ul>
+        <ul class="oh-tags" aria-label="Built with"><li>Claude Code</li><li>Next.js</li><li>Supabase</li><li>Python</li><li>Vercel</li></ul>
+        <div class="oh-actions">
+          <a class="oh-btn" href="https://ownerhound.com" target="_blank" rel="noopener">Visit ownerhound.com
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="oh-btn oh-btn-ghost" href="https://app.ownerhound.com/demo" target="_blank" rel="noopener">Try the live demo
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ================= MORE PROJECTS ================= -->
-  <section class="section" id="building" aria-labelledby="building-title" style="padding-top:40px">
+  <!-- ================= SKILLS AND SIDE PROJECTS (sections/work) ================= -->
+  <section class="wk" id="work" aria-labelledby="wk-title">
+    <div class="wk-wrap">
+      <header class="wk-head">
+        <p class="wk-eyebrow">Skills and side projects</p>
+        <h2 class="wk-title" id="wk-title"><span class="wk-t1">Tools I built</span> <span class="wk-t2">and use for real.</span></h2>
+        <p class="wk-lede">Smaller tools for my own work, running every day. The 2nd Brain comes with a setup guide so you can build your own.</p>
+      </header>
+
+      <ol class="wk-grid">
+        <li class="wk-tile wk-feature" id="second-brain" data-wk-swap>
+          <div class="wk-media">
+            <img class="wk-img wk-img-a" src="img/work/brain-a-sm.webp" srcset="img/work/brain-a-sm.webp 800w, img/work/brain-a.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 700px" width="1600" height="1000" alt="The Build your own 2nd Brain guide, opening view with Obsidian, Claude and ChatGPT." loading="lazy" decoding="async">
+            <img class="wk-img wk-img-b" src="img/work/brain-b-sm.webp" srcset="img/work/brain-b-sm.webp 800w, img/work/brain-b.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 700px" width="1600" height="1000" alt="Phase 1 of the 2nd Brain guide, Build the vault, next to the assistant picker." loading="lazy" decoding="async">
+            <button class="wk-swap" type="button" aria-pressed="false" aria-label="Show the second image for 2nd Brain"><span class="wk-dots" aria-hidden="true"><i></i><i></i></span></button>
+          </div>
+          <div class="wk-copy">
+            <div class="wk-meta"><span class="wk-pill wk-on">Live, daily use</span><span class="wk-n" aria-hidden="true">01</span></div>
+            <h3 class="wk-h3">2nd Brain</h3>
+            <p class="wk-body">A personal operating system. An Obsidian vault holds my priorities, decision rules, people and projects. Claude skills read it at the start of every session, make calls the way I would, and write back what they learned.</p>
+            <ul class="wk-points">
+              <li><svg class="wk-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Loads only the context a task touches</li>
+              <li><svg class="wk-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Ranked priorities and triage rules in my own words</li>
+              <li><svg class="wk-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Synced through Google Drive, so it works from my phone too</li>
+            </ul>
+            <div class="wk-foot">
+              <ul class="wk-tags" aria-label="Built with"><li>Claude</li><li>Skills</li><li>Obsidian</li><li>Google Drive</li></ul>
+              <a class="wk-link" href="brain.html">Build your own, step by step<svg class="wk-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </div>
+          </div>
+        </li>
+        <li class="wk-tile wk-span-7" id="read-market-engine" data-wk-swap>
+          <div class="wk-media">
+            <img class="wk-img wk-img-a" src="img/work/read-a-sm.webp" srcset="img/work/read-a-sm.webp 800w, img/work/read-a.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 700px" width="1600" height="1000" alt="Two READ Market Engine pages: a trade idea, long oil on time-series momentum, and a close-of-day review." loading="lazy" decoding="async">
+            <img class="wk-img wk-img-b" src="img/work/read-b-sm.webp" srcset="img/work/read-b-sm.webp 800w, img/work/read-b.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 700px" width="1600" height="1000" alt="READ Market Engine close-of-day review grading a 2s10s flattener paper trade." loading="lazy" decoding="async">
+            <button class="wk-swap" type="button" aria-pressed="false" aria-label="Show the second image for READ Market Engine"><span class="wk-dots" aria-hidden="true"><i></i><i></i></span></button>
+          </div>
+          <div class="wk-copy">
+            <div class="wk-meta"><span class="wk-pill wk-on">Live, runs daily</span><span class="wk-n" aria-hidden="true">02</span></div>
+            <h3 class="wk-h3">READ Market Engine</h3>
+            <p class="wk-body">An automated sales and trading training desk. Every weekday at 8:35am ET it writes a cross-asset market packet, pitches one paper trade, and grades it at the close.</p>
+            <ul class="wk-points">
+              <li><svg class="wk-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>6-page packet: macro, rates, commodities, FX, equities, options</li>
+              <li><svg class="wk-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>2-page trade idea on a $100,000 paper book at 1% risk</li>
+              <li><svg class="wk-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg>Every number sourced and timestamped, “n/a” instead of a guess</li>
+            </ul>
+            <div class="wk-foot">
+              <ul class="wk-tags" aria-label="Built with"><li>Claude</li><li>Scheduled agents</li><li>PDF reporting</li></ul>
+            </div>
+          </div>
+        </li>
+        <li class="wk-tile wk-span-5" id="ccr-research-pipeline" data-wk-swap>
+          <div class="wk-media">
+            <img class="wk-img wk-img-a" src="img/work/ccr-a-sm.webp" srcset="img/work/ccr-a-sm.webp 800w, img/work/ccr-a.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 560px" width="1600" height="1000" alt="First page of a Commonwealth Capital Research article, The Chips That Finance Themselves." loading="lazy" decoding="async">
+            <img class="wk-img wk-img-b" src="img/work/ccr-b-sm.webp" srcset="img/work/ccr-b-sm.webp 800w, img/work/ccr-b.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 560px" width="1600" height="1000" alt="An exhibit from the same article: how investors, a data center SPV, Nvidia and AI tenants connect." loading="lazy" decoding="async">
+            <button class="wk-swap" type="button" aria-pressed="false" aria-label="Show the second image for CCR Research Pipeline"><span class="wk-dots" aria-hidden="true"><i></i><i></i></span></button>
+          </div>
+          <div class="wk-copy">
+            <div class="wk-meta"><span class="wk-pill">Live</span><span class="wk-n" aria-hidden="true">03</span></div>
+            <h3 class="wk-h3">CCR Research Pipeline</h3>
+            <p class="wk-stat">2<small>Claude skills</small></p>
+            <p class="wk-body">One deep-learns a finance topic into a research pack and talking points. The other writes and lays out a finished 700 to 1,100 word newsletter article for Commonwealth Capital Research.</p>
+            <div class="wk-foot">
+              <ul class="wk-tags" aria-label="Built with"><li>Claude skills</li><li>PDF</li></ul>
+            </div>
+          </div>
+        </li>
+        <li class="wk-tile wk-feature wk-flip" id="aim-resume-checker" data-wk-swap>
+          <div class="wk-media">
+            <img class="wk-img wk-img-a" src="img/work/resume-a-sm.webp" srcset="img/work/resume-a-sm.webp 800w, img/work/resume-a.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 700px" width="1600" height="1000" alt="Cover for AIM Resume Checker: a resume with feedback checks." loading="lazy" decoding="async">
+            <img class="wk-img wk-img-b" src="img/work/resume-b-sm.webp" srcset="img/work/resume-b-sm.webp 800w, img/work/resume-b.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 700px" width="1600" height="1000" alt="Cover for AIM Resume Checker: picking one of five business verticals." loading="lazy" decoding="async">
+            <button class="wk-swap" type="button" aria-pressed="false" aria-label="Show the second image for AIM Resume Checker"><span class="wk-dots" aria-hidden="true"><i></i><i></i></span></button>
+          </div>
+          <div class="wk-copy">
+            <div class="wk-meta"><span class="wk-pill wk-on">Live</span><span class="wk-n" aria-hidden="true">04</span></div>
+            <h3 class="wk-h3">AIM Resume Checker</h3>
+            <p class="wk-body">An in-browser resume checker for AI Multidisciplinary Society career workshops. Pick one of five business verticals and get feedback against what that field screens for.</p>
+            <div class="wk-foot">
+              <ul class="wk-tags" aria-label="Built with"><li>Lovable</li><li>Web app</li></ul>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+      <div class="wk-show" data-wk-show>
+        <div class="wk-show-stage" aria-hidden="true">
+          <div class="wk-col wk-up" style="--wk-dur:74s"><div class="wk-track"><div class="wk-set">
+            <img src="img/work/brain-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/ccr-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/read-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/resume-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/ccr-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          </div></div></div>
+          <div class="wk-col wk-down" style="--wk-dur:62s"><div class="wk-track"><div class="wk-set">
+            <img src="img/work/resume-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/ccr-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/brain-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/resume-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/read-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          </div></div></div>
+          <div class="wk-col wk-up" style="--wk-dur:86s"><div class="wk-track"><div class="wk-set">
+            <img src="img/work/resume-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/read-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/brain-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/ccr-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/read-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          </div></div></div>
+          <div class="wk-col wk-down" style="--wk-dur:68s"><div class="wk-track"><div class="wk-set">
+            <img src="img/work/ccr-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/read-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/resume-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/ccr-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/brain-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          </div></div></div>
+          <div class="wk-col wk-up" style="--wk-dur:80s"><div class="wk-track"><div class="wk-set">
+            <img src="img/work/ccr-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/brain-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/resume-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/read-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/brain-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          </div></div></div>
+          <div class="wk-col wk-down" style="--wk-dur:58s"><div class="wk-track"><div class="wk-set">
+            <img src="img/work/read-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/brain-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/ccr-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/read-a-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+            <img src="img/work/resume-b-sm.webp" width="800" height="500" alt="" loading="lazy" decoding="async">
+          </div></div></div>
+        </div>
+        <p class="wk-show-cap"><span class="wk-t1">Built for</span> <span class="wk-t2">real work.</span></p>
+      </div>
+  </section>
+
+  <!-- ================= ABOUT (sections/about) ================= -->
+  <section id="about" class="ab" aria-labelledby="ab-title">
+    <div class="ab-stage">
+      <h2 class="ab-word" id="ab-title">About</h2>
+      <figure class="ab-figure">
+        <!-- Placeholder until img/about/cole-suit-cutout.webp exists; section.js hides it once the photo loads -->
+        <svg class="ab-ph" viewBox="0 0 400 760" role="img" aria-label="Placeholder silhouette, photo coming soon">
+          <defs>
+            <linearGradient id="ab-ph-fill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#4a4a52"/>
+              <stop offset=".55" stop-color="#2a2a30"/>
+              <stop offset="1" stop-color="#18181b"/>
+            </linearGradient>
+          </defs>
+          <g fill="url(#ab-ph-fill)" stroke="rgb(255 255 255 / .28)" stroke-width="2" stroke-dasharray="7 7">
+            <path d="M172 176 C138 188 96 196 72 220 C48 244 42 292 40 344 L30 560 C28 602 34 642 44 684 L58 760 L342 760 L356 684 C366 642 372 602 370 560 L360 344 C358 292 352 244 328 220 C304 196 262 188 228 176 Z"/>
+            <ellipse cx="200" cy="96" rx="54" ry="66"/>
+          </g>
+          <path d="M176 182 L200 300 L224 182 Z" fill="#5a5a62"/>
+          <path d="M194 194 L206 194 L212 282 L200 304 L188 282 Z" fill="#1c1c20"/>
+          <path d="M168 180 L200 318 M232 180 L200 318" stroke="#1a1a1e" stroke-width="3" fill="none"/>
+          <text x="200" y="440" text-anchor="middle" class="ab-ph-label">PHOTO SLOT</text>
+          <text x="200" y="466" text-anchor="middle" class="ab-ph-label ab-ph-label--sub">cole-suit-cutout.webp</text>
+        </svg>
+        <picture>
+          <source media="(max-width: 700px)" srcset="img/about/cole-suit-cutout-sm.webp">
+          <img class="ab-photo" src="img/about/cole-suit-cutout.webp" alt="Cole Stepanik in a suit" decoding="async" loading="lazy">
+        </picture>
+      </figure>
+    </div>
+
+    <!-- DRAFT copy, awaiting Cole's approval (see sections/about/NOTES.md) -->
+    <div class="ab-body">
+      <p class="ab-lead">From the family farm in Agawam to <em>building AI tools.</em></p>
+      <div class="ab-text">
+        <p>I grew up on my family's farm in Agawam, Massachusetts. Now I study Finance and Accounting at UMass Lowell and graduate in May 2027. I co-founded Commonwealth Capital Research, serve as Senior Class President, and captain the Intercollegiate Sales Team.</p>
+        <p>I also build AI tools. My flagship is <a href="https://ownerhound.com" target="_blank" rel="noopener">Ownerhound</a>. Away from work it is rugby, powerlifting, snowboarding, and watches.</p>
+        <dl class="ab-facts">
+          <div><dt>Home</dt><dd>Agawam, MA</dd></div>
+          <div><dt>School</dt><dd>UMass Lowell, May 2027</dd></div>
+          <div><dt>Building</dt><dd>Ownerhound</dd></div>
+          <div><dt>Off the clock</dt><dd>Rugby, powerlifting, snowboarding, watches</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= UMASS LOWELL (sections/umass) ================= -->
+  <section id="umass" class="um" aria-labelledby="um-title">
+    <!-- Riverhawk watermark: white mark, faded to about 6% and masked into black at top and bottom -->
+    <div class="um-bg" aria-hidden="true">
+      <img class="um-hawk" src="img/umass/riverhawk-watermark.webp" alt="" width="992" height="654" decoding="async" loading="lazy">
+    </div>
+
+    <!-- DRAFT copy, awaiting Cole's approval (see sections/umass/NOTES.md) -->
+    <header class="um-head">
+      <p class="um-eyebrow"><span>Manning School of Business</span><span>Class of 2027</span></p>
+      <h2 class="um-title" id="um-title"><span>My time at</span> <em>UMass Lowell</em></h2>
+      <p class="um-intro">Finance and Accounting, graduating May 2027. Outside class, these are the clubs where I spent most of my time, and the roles I took on in each.</p>
+    </header>
+
+    <!-- Links: an <a> with no href renders as plain text. Add href="https://..." to a card's name link and the whole card becomes clickable (section.js opens external links in a new tab). -->
+    <div class="um-grid">
+      <article class="um-card um-card--feature" style="--i: 0">
+        <div class="um-logo"><img src="img/umass/aim.webp" alt="" width="760" height="243" decoding="async" loading="lazy"></div>
+        <div class="um-meta">
+          <p class="um-tag">Featured</p>
+          <h3 class="um-name"><a>AI Multidisciplinary Society</a></h3>
+          <p class="um-role">Finance Chair</p>
+          <p class="um-when">2026</p>
+          <p class="um-note">Mixed teams of students from every major building real AI projects, like AIM Flow and Coal2Core.</p>
+        </div>
+        <a class="um-cta" href="https://www.aimsociety.org/projects">Visit AIM <span class="um-cta-sub">aimsociety.org</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </article>
+
+      <article class="um-card" style="--i: 1; --s: .7">
+        <div class="um-logo"><img src="img/umass/ccr.webp" alt="" width="360" height="156" decoding="async" loading="lazy"></div>
+        <div class="um-meta">
+          <h3 class="um-name"><a>Commonwealth Capital Research</a></h3>
+          <p class="um-role">Co-Founder and President</p>
+          <p class="um-when">Since Jan 2025</p>
+          <p class="um-note">Student investment research group, 20+ members.</p>
+        </div>
+        <span class="um-go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </article>
+
+      <article class="um-card" style="--i: 2">
+        <div class="um-logo"><img src="img/umass/seniors.webp" alt="" width="300" height="286" decoding="async" loading="lazy"></div>
+        <div class="um-meta">
+          <h3 class="um-name"><a>UMass Lowell Seniors</a></h3>
+          <p class="um-role">Senior Class President</p>
+          <p class="um-when">Class of 2027, elected spring 2026</p>
+        </div>
+        <span class="um-go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </article>
+
+      <article class="um-card" style="--i: 3">
+        <div class="um-logo"><img src="img/umass/sales-team.webp" alt="" width="373" height="300" decoding="async" loading="lazy"></div>
+        <div class="um-meta">
+          <h3 class="um-name"><a>Intercollegiate Sales Team</a></h3>
+          <p class="um-role">Captain</p>
+          <p class="um-when">Member Oct 2025, Captain spring 2026</p>
+          <p class="um-note">1st place at the Pfizer, Medicus and ALKU sales competitions.</p>
+        </div>
+        <span class="um-go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </article>
+
+      <article class="um-card" style="--i: 4">
+        <div class="um-logo"><img src="img/umass/accounting-society.webp" alt="" width="466" height="200" decoding="async" loading="lazy"></div>
+        <div class="um-meta">
+          <h3 class="um-name"><a>Accounting Society</a></h3>
+          <p class="um-role">Communications Chair</p>
+          <p class="um-when">Since Feb 2025</p>
+        </div>
+        <span class="um-go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </article>
+
+      <article class="um-card" style="--i: 5">
+        <div class="um-logo"><img src="img/umass/umlfs.webp" alt="" width="480" height="166" decoding="async" loading="lazy"></div>
+        <div class="um-meta">
+          <h3 class="um-name"><a>UML Finance Society</a></h3>
+          <p class="um-role">Treasurer</p>
+          <p class="um-when">2024</p>
+        </div>
+        <span class="um-go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
+  <section class="section" id="life" aria-labelledby="life-title" style="padding-top:40px">
     <div class="wrap">
-      <div class="section-head"><h2 class="h2" id="building-title" data-reveal>More projects</h2></div>
-      <div class="bento">
-        <article class="cell span-7 invert" id="birddog" data-reveal>
-          <div><span class="pill">In development</span></div>
-          <h3 class="h3">Birddog</h3>
-          <p>A deal sourcing engine for lower middle market acquisitions. Give it a vertical and a geography; it returns a scored Excel target list with a source for every field.</p>
-          <div class="flow" aria-label="How Birddog works"><span>Vertical + metro</span><i class="ph ph-arrow-right" aria-hidden="true"></i><span>Find and enrich</span><i class="ph ph-arrow-right" aria-hidden="true"></i><span>Thesis score</span><i class="ph ph-arrow-right" aria-hidden="true"></i><span>Excel</span></div>
-          <div class="tags"><span class="tag">Claude Code</span><span class="tag">Python</span><span class="tag">Excel</span></div>
-        </article>
-        <article class="cell span-5 dots" id="aim-resume-checker" data-reveal style="--i:1">
-          <div><span class="pill on">Live</span></div>
-          <h3 class="h3">AIM Resume Checker</h3>
-          <p>An in-browser resume checker for AI Multidisciplinary Society career workshops. Pick one of five business verticals, get feedback against what that field screens for.</p>
-          <div class="tags"><span class="tag">Lovable</span><span class="tag">Web app</span></div>
-        </article>
-        <article class="cell span-5" id="ccr-research-pipeline" data-reveal>
-          <div><span class="pill on">Live</span></div>
-          <h3 class="h3">CCR Research Pipeline</h3>
-          <div class="big-num">2<small>Claude skills</small></div>
-          <p>One deep-learns a finance topic into a research pack and talking points. The other writes and lays out a finished 700 to 1,100 word newsletter article for Commonwealth Capital Research.</p>
-          <div class="tags"><span class="tag">Claude skills</span><span class="tag">PDF</span></div>
-        </article>
-        <article class="cell span-7" id="aim-slack-bot" data-reveal style="--i:1">
-          <div><span class="pill">In development</span></div>
-          <h3 class="h3">AIM Slack Bot</h3>
-          <p>Tracks events and projects across siloed club teams, posts a weekly digest, and answers member questions from the club's own documents.</p>
-          <div class="flow" aria-label="How the Slack bot works"><span>Team channels</span><i class="ph ph-arrow-right" aria-hidden="true"></i><span>Claude API</span><i class="ph ph-arrow-right" aria-hidden="true"></i><span>Weekly digest</span></div>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Slack Bolt</span><span class="tag">Claude API</span></div>
-        </article>
+      <div class="section-head">
+        <h2 class="h2" id="life-title" data-reveal>In the room</h2>
+        <p class="lede" data-reveal style="--i:1">Competitions, club events, and the people I build with.</p>
+      </div>
+      <div class="gallery">
+        <figure class="photo" style="--ar:9/16" data-reveal><img src="img/photos/gallery/gimage-sm.webp" srcset="img/photos/gallery/gimage-sm.webp 800w, img/photos/gallery/gimage.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole with fellow students at a business school event" loading="lazy"></figure>
+        <figure class="photo" style="--ar:3/4" data-reveal><img src="img/photos/gallery/g4-sm.webp" srcset="img/photos/gallery/g4-sm.webp 800w, img/photos/gallery/g4.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="The UMass Lowell Sales Team at the Medicus sales competition" loading="lazy"></figure>
+        <figure class="photo" style="--ar:3/2" data-reveal><img src="img/photos/gallery/g9-sm.webp" srcset="img/photos/gallery/g9-sm.webp 800w, img/photos/gallery/g9.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole and teammates walking through an office in suits" loading="lazy"></figure>
+        <figure class="photo" style="--ar:3/4" data-reveal><img src="img/photos/gallery/g12-sm.webp" srcset="img/photos/gallery/g12-sm.webp 800w, img/photos/gallery/g12.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole holding a presentation check at a Manning School of Business event" loading="lazy"></figure>
+        <figure class="photo" style="--ar:3/4" data-reveal><img src="img/photos/gallery/g7-sm.webp" srcset="img/photos/gallery/g7-sm.webp 800w, img/photos/gallery/g7.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole and teammates holding award certificates" loading="lazy"></figure>
+        <figure class="photo" style="--ar:4/3" data-reveal><img src="img/photos/gallery/g6-sm.webp" srcset="img/photos/gallery/g6-sm.webp 800w, img/photos/gallery/g6.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole with classmates and an industry guest" loading="lazy"></figure>
+        <figure class="photo" style="--ar:3/2" data-reveal><img src="img/photos/gallery/g11-sm.webp" srcset="img/photos/gallery/g11-sm.webp 800w, img/photos/gallery/g11.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole in a meeting across the table from a professional" loading="lazy"></figure>
+        <figure class="photo" style="--ar:4/3" data-reveal><img src="img/photos/gallery/g15-sm.webp" srcset="img/photos/gallery/g15-sm.webp 800w, img/photos/gallery/g15.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Group photo at a Manning Leaders Discussion event" loading="lazy"></figure>
+        <figure class="photo" style="--ar:3/4" data-reveal><img src="img/photos/gallery/g8-sm.webp" srcset="img/photos/gallery/g8-sm.webp 800w, img/photos/gallery/g8.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole and three teammates holding award certificates" loading="lazy"></figure>
+        <figure class="photo" style="--ar:4/3" data-reveal><img src="img/photos/gallery/g18-sm.webp" srcset="img/photos/gallery/g18-sm.webp 800w, img/photos/gallery/g18.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole with classmates on a rooftop under the Citgo sign in Boston" loading="lazy"></figure>
+        <figure class="photo" style="--ar:4/3" data-reveal><img src="img/photos/gallery/g3-sm.webp" srcset="img/photos/gallery/g3-sm.webp 800w, img/photos/gallery/g3.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole working on a case in a conference room" loading="lazy"></figure>
+        <figure class="photo" style="--ar:4/3" data-reveal><img src="img/photos/gallery/g14-sm.webp" srcset="img/photos/gallery/g14-sm.webp 800w, img/photos/gallery/g14.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Students and faculty at an awards event" loading="lazy"></figure>
       </div>
     </div>
   </section>
@@ -671,9 +714,9 @@ html[data-fx="crossfade"] .contact::before { background: none; }
       <div class="resume-head">
         <div>
           <h2 class="h2" id="resume-title" data-reveal>Resume</h2>
-          <p class="lede" data-reveal style="--i:1">School on the left, career on the right.</p>
+          <p class="lede" data-reveal style="--i:1">School and career, year by year.</p>
         </div>
-        <button class="btn" type="button" id="print-btn" data-reveal style="--i:2"><i class="ph ph-file-arrow-down" aria-hidden="true"></i>Full resume (PDF)</button>
+        <a class="btn" href="resume/Cole-Stepanik-Resume.pdf" target="_blank" rel="noopener" data-reveal style="--i:2"><i class="ph ph-file-arrow-down" aria-hidden="true"></i>Full resume (PDF)</a>
       </div>
 
       <div class="tl" id="timeline">
@@ -710,12 +753,8 @@ html[data-fx="crossfade"] .contact::before { background: none; }
               <div class="ev-txt"><span class="ev-date">Feb 2025</span><b>Communications Chair</b><span class="ev-org">Accounting Society</span></div>
             </li>
             <li class="ev" data-reveal style="--i:2">
-              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo icon"><i class="ph ph-users-three" aria-hidden="true"></i></span>
-              <div class="ev-txt"><span class="ev-date">2025</span><b>Board Member</b><span class="ev-org">Manning Leadership Council</span></div>
-            </li>
-            <li class="ev" data-reveal style="--i:3">
               <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo"><img src="img/logos/sales-white.webp" alt=""></span>
-              <div class="ev-txt"><span class="ev-date">Oct 2025</span><b>Captain</b><span class="ev-org">Intercollegiate Sales Team</span></div>
+              <div class="ev-txt"><span class="ev-date">Oct 2025 to Spring 2026</span><b>Member, then Captain</b><span class="ev-org">Intercollegiate Sales Team</span></div>
             </li>
           </ol>
           <ol class="band-side career" aria-label="Career, 2025">
@@ -738,21 +777,21 @@ html[data-fx="crossfade"] .contact::before { background: none; }
             </li>
             <li class="ev" data-reveal style="--i:1">
               <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo"><img src="img/logos/aim-white.webp" alt=""></span>
-              <div class="ev-txt"><span class="ev-date">2026</span><b>Head of Finance</b><span class="ev-org">AI Multidisciplinary Society</span></div>
+              <div class="ev-txt"><span class="ev-date">2026</span><b>Finance Chair</b><span class="ev-org">AI Multidisciplinary Society</span></div>
             </li>
           </ol>
           <ol class="band-side career" aria-label="Career, 2026">
             <li class="ev" data-reveal style="--i:0">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo icon"><i class="ph ph-seal-check" aria-hidden="true"></i></span>
+              <div class="ev-txt"><span class="ev-date">Summer 2026</span><b>Passed the FINRA SIE</b><span class="ev-org">Securities Industry Essentials</span></div>
+            </li>
+            <li class="ev" data-reveal style="--i:1">
               <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo"><img src="img/logos/anoush-white.webp" alt=""></span>
               <div class="ev-txt"><span class="ev-date">Summer 2026</span><b>Lead Intern, Search Fund</b><span class="ev-org">Anoush Holdings</span></div>
             </li>
-            <li class="ev" data-reveal style="--i:1">
-              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo icon"><i class="ph ph-seal-check" aria-hidden="true"></i></span>
-              <div class="ev-txt"><span class="ev-date">Jul 2026</span><b>Passed the FINRA SIE</b><span class="ev-org">Securities Industry Essentials</span></div>
-            </li>
             <li class="ev" data-reveal style="--i:2">
-              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo icon"><i class="ph ph-chart-bar" aria-hidden="true"></i></span>
-              <div class="ev-txt"><span class="ev-date">Oct 2026</span><b>Launched READ Market Engine</b><span class="ev-org">AI sales and trading desk</span></div>
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo icon"><i class="ph ph-presentation-chart" aria-hidden="true"></i></span>
+              <div class="ev-txt"><span class="ev-date">Fall 2026</span><b>Valuation Challenge</b><span class="ev-org">Georgia State University</span></div>
             </li>
           </ol>
         </div>
@@ -788,7 +827,7 @@ html[data-fx="crossfade"] .contact::before { background: none; }
             <div class="role">Bachelor of Business Administration, Finance and Accounting (dual concentration), Honors College</div>
             <div class="edu-facts">
               <div class="fact"><b>3.65</b><span>GPA</span></div>
-              <div class="fact"><b>SIE</b><span>FINRA, passed July 2026</span></div>
+              <div class="fact"><b>SIE</b><span>FINRA, passed summer 2026</span></div>
               <div class="fact"><b>Dean's List</b><span>2023 to 2025, Chancellor's List 2026</span></div>
             </div>
             <p class="coursework">Coursework: Corporate Finance, Financial Statement Analysis, Investment and Portfolio Analysis, Financial Derivatives, Federal Income Taxes, Accounting Information Systems</p>
@@ -840,10 +879,9 @@ html[data-fx="crossfade"] .contact::before { background: none; }
           <h4 class="r-label">Leadership</h4>
           <div class="lead-grid">
             <div><b>Senior Class President</b><span>UMass Lowell Class of 2027, elected, 2026 to Present</span></div>
-            <div><b>Co-Captain</b><span>Intercollegiate Sales Team, 2025 to Present</span></div>
-            <div><b>Head of Finance</b><span>AI Multidisciplinary Society (AIM), 2026 to Present</span></div>
+            <div><b>Captain</b><span>Intercollegiate Sales Team, Spring 2026 to Present (member since October 2025)</span></div>
+            <div><b>Finance Chair</b><span>AI Multidisciplinary Society (AIM), 2026 to Present</span></div>
             <div><b>Communications Chair</b><span>Accounting Society, 2025 to Present</span></div>
-            <div><b>Board Member</b><span>Manning Leadership Council, 2025 to Present</span></div>
           </div>
         </div>
 
@@ -858,7 +896,7 @@ html[data-fx="crossfade"] .contact::before { background: none; }
             <ul class="more-wins">
               <li><span>CSI Invitational, Oklahoma City, factoring and fuel-financing pitch, ~45 competitors</span><span>4th Place</span></li>
               <li><span>Northeast Intercollegiate Sales Competition, B2B analytics pitch, ~80 competitors</span><span>7th Place</span></li>
-              <li><span>Bloomberg Trading Challenge, $1M simulated portfolio</span><span>+15% return</span></li>
+              <li><span>Georgia State University Valuation Challenge: comparable companies, precedent transactions, sensitivity analysis and the final deck for a Texas Gulf Coast EPC contractor</span><span>Fall 2026</span></li>
             </ul>
           </div>
         </div>
@@ -878,12 +916,20 @@ html[data-fx="crossfade"] .contact::before { background: none; }
 
   <!-- ================= CONTACT ================= -->
   <section class="contact" id="contact" aria-labelledby="contact-title" data-scene="3">
-    <img class="scene" id="contact-img" src="img/bg-peak.webp" width="2400" height="1607" alt="" loading="lazy">
     <div class="wrap">
       <h2 class="h2" id="contact-title" data-reveal>Inquiries</h2>
       <div class="cta" data-reveal style="--i:1"><a class="btn solid" href="mailto:cole_stepanik@student.uml.edu">Email me</a></div>
     </div>
   </section>
+
+  <!-- ================= CHROME STAR (sections/star) ================= -->
+  <section id="star" class="st" aria-hidden="true">
+    <div class="st-stage">
+      <!-- Still poster: shown with no WebGL, with reduced motion, and until the live star draws its first frame -->
+      <img class="st-poster" src="img/star/star-poster.webp" srcset="img/star/star-poster-sm.webp 1000w, img/star/star-poster.webp 2400w" sizes="100vw" alt="" width="2400" height="1500" loading="lazy" decoding="async">
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-foot">
@@ -958,11 +1004,10 @@ html[data-fx="crossfade"] .contact::before { background: none; }
       </div>
       <nav class="foot-col" aria-label="Projects">
         <h2>Projects</h2>
-        <a href="#read-market-engine">READ Market Engine</a>
+        <a href="https://ownerhound.com" target="_blank" rel="noopener">Ownerhound</a>
         <a href="#second-brain">2nd Brain</a>
         <a href="brain.html">Build your own 2nd Brain</a>
-        <a href="#sie-prep-app">SIE Prep App</a>
-        <a href="#birddog">Birddog</a>
+        <a href="#read-market-engine">READ Market Engine</a>
       </nav>
       <div class="foot-col">
         <h2>Elsewhere</h2>
@@ -976,108 +1021,9 @@ html[data-fx="crossfade"] .contact::before { background: none; }
   </div>
 </footer>
 
-<!-- Background tester: add ?test to the URL to show it. A choice is also readable as ?look=1-6&tx=none|blend|black -->
-<div class="tester glass-panel" id="tester" hidden>
-  <div class="grp" role="group" aria-label="Background look">
-    <span>Look</span>
-    <button class="seg" type="button" data-look="1" title="Night peak in the hero, starry range for the rest">1 Peak, then stars</button>
-    <button class="seg" type="button" data-look="2" title="Starry range in the hero, night peak for the rest">2 Stars, then peak</button>
-    <button class="seg" type="button" data-look="3" title="Night peak the whole way, dimmed under the content">3 Peak only</button>
-    <button class="seg" type="button" data-look="4" title="Peak, range, peak, range by section">4 Alternating</button>
-    <button class="seg" type="button" data-look="5" title="Peak at the top, plain grey middle, range at the bottom">5 Bookends</button>
-    <button class="seg" type="button" data-look="6" title="Peak hero zooms in as you scroll, plain grey middle, range at the bottom">6 Zoom</button>
-  </div>
-  <span class="div" aria-hidden="true"></span>
-  <div class="grp" role="group" aria-label="Transition">
-    <span>Blend</span>
-    <button class="seg" type="button" data-tx="none">Dissolve</button>
-    <button class="seg" type="button" data-tx="blend">Edge colors</button>
-    <button class="seg" type="button" data-tx="black">Black</button>
-  </div>
-</div>
-
 <script>
 (function () {
-  var root = document.documentElement;
   document.getElementById('yr').textContent = new Date().getFullYear();
-  document.getElementById('print-btn').addEventListener('click', function () { window.print(); });
-
-  /* ---- Background looks: only the night peak and the starry range ---- */
-  var SIZES = { peak: [2400, 1607], range: [1470, 980] };
-  var GREY = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Crect width='8' height='8' fill='%231a1a1c'/%3E%3C/svg%3E";
-  // One photo per scene: hero, work, resume, contact (null = plain grey)
-  var LOOKS = {
-    1: { fx: 'crossfade', scenes: ['peak', 'range', 'range', 'range'] },
-    2: { fx: 'crossfade', scenes: ['range', 'peak', 'peak', 'peak'] },
-    3: { fx: 'crossfade', scenes: ['peak', 'peak', 'peak', 'peak'] },
-    4: { fx: 'crossfade', scenes: ['peak', 'range', 'peak', 'range'] },
-    5: { fx: 'crossfade', scenes: ['peak', null, null, 'range'] },
-    6: { fx: 'zoom', scenes: ['peak', null, null, 'range'] }
-  };
-  var TX = ['blend', 'black', 'none'];
-  // Average color of the top and bottom 10% of each photo (sampled from the files)
-  var EDGE = {
-    peak:  { top: '#2b2b2d', bottom: '#2a292c' },
-    range: { top: '#25262a', bottom: '#1d1d1d' },
-    grey:  { top: '#1a1a1c', bottom: '#1a1a1c' }
-  };
-  var params = new URLSearchParams(location.search);
-  var state = {
-    look: LOOKS[params.get('look')] ? +params.get('look') : 3,
-    tx: TX.indexOf(params.get('tx')) > -1 ? params.get('tx') : 'none'
-  };
-  var heroImg = document.getElementById('hero-img');
-  var contactImg = document.getElementById('contact-img');
-  var backdropImgs = document.querySelectorAll('#backdrop img');
-  var tester = document.getElementById('tester');
-
-  function mix(a, b) {
-    var x = parseInt(a.slice(1), 16), y = parseInt(b.slice(1), 16), out = '#';
-    [16, 8, 0].forEach(function (sh) { var v = Math.round((((x >> sh) & 255) + ((y >> sh) & 255)) / 2); out += ('0' + v.toString(16)).slice(-2); });
-    return out;
-  }
-  function setImg(el, name) {
-    if (!name) { el.src = GREY; el.removeAttribute('width'); el.removeAttribute('height'); return; }
-    var src = 'img/bg-' + name + '.webp';
-    if (el.getAttribute('src') !== src) el.src = src;
-    el.width = SIZES[name][0]; el.height = SIZES[name][1];
-  }
-  function apply(push) {
-    var look = LOOKS[state.look];
-    root.setAttribute('data-fx', look.fx);
-    root.setAttribute('data-tx', state.tx);
-    root.setAttribute('data-look', state.look);
-    setImg(heroImg, look.scenes[0]);
-    setImg(contactImg, look.scenes[3] || 'range');
-    for (var k = 0; k < 4; k++) setImg(backdropImgs[k], look.scenes[k]);
-    // Bridge k blends the bottom edge of scene k-1's photo into the top edge of scene k's photo
-    var bridges = document.querySelectorAll('#backdrop .bridge');
-    for (var j = 1; j < 4; j++) {
-      var up = look.scenes[j - 1] || 'grey', down = look.scenes[j] || 'grey';
-      var from = state.tx === 'black' ? '#0d0d0e' : EDGE[up].bottom;
-      var to = state.tx === 'black' ? '#0d0d0e' : EDGE[down].top;
-      var el = bridges[j - 1];
-      el.style.setProperty('--from', from); el.style.setProperty('--to', to); el.style.setProperty('--mid', mix(from, to));
-      // no bridge between a scene and itself
-      el.style.visibility = (look.scenes[j - 1] === look.scenes[j]) ? 'hidden' : '';
-    }
-    tester.querySelectorAll('.seg[data-look]').forEach(function (b) { b.setAttribute('aria-pressed', String(+b.dataset.look === state.look)); });
-    tester.querySelectorAll('.seg[data-tx]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.tx === state.tx)); });
-    if (push) {
-      var p = new URLSearchParams(location.search);
-      p.delete('bg'); p.delete('fx');
-      p.set('look', state.look); p.set('tx', state.tx);
-      history.replaceState(null, '', '?' + p.toString() + location.hash);
-    }
-  }
-  if (params.has('test')) tester.hidden = false;
-  tester.addEventListener('click', function (e) {
-    var b = e.target.closest('button'); if (!b) return;
-    if (b.dataset.look) state.look = +b.dataset.look;
-    if (b.dataset.tx) state.tx = b.dataset.tx;
-    apply(true);
-  });
-  apply(false);
 
   /* ---- Observers (no scroll listeners) ---- */
   var nav = document.getElementById('nav');
@@ -1087,62 +1033,20 @@ html[data-fx="crossfade"] .contact::before { background: none; }
 
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (e) { nav.classList.toggle('scrolled', !e[0].isIntersecting); }).observe(sentinel);
-
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
     }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-    document.querySelectorAll('[data-reveal], #combos, .path, #skyline').forEach(function (el) { io.observe(el); });
-
-
-    // Crossfade mode: swap the fixed backdrop as each scene reaches the middle of the screen
-    var backdrop = document.getElementById('backdrop');
-    // Only browsers without scroll-driven animations need this; everyone else is driven by CSS
-    if (!(window.CSS && CSS.supports('animation-timeline: view()'))) {
-      var sceneIO = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) { if (en.isIntersecting) backdrop.setAttribute('data-active', en.target.dataset.scene); });
-      }, { rootMargin: '-45% 0px -45% 0px' });
-      document.querySelectorAll('[data-scene]').forEach(function (el) { sceneIO.observe(el); });
-    }
-
-    // Resume path: tap or click a stop to pin its details open (hover and focus open them too)
-    document.querySelectorAll('.stop-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var item = btn.closest('.stop, .lead-item');
-        var open = !item.classList.contains('open');
-        document.querySelectorAll('.stop.open, .lead-item.open').forEach(function (o) { if (o !== item) { o.classList.remove('open'); o.querySelector('.stop-btn').setAttribute('aria-expanded', 'false'); } });
-        item.classList.toggle('open', open);
-        btn.setAttribute('aria-expanded', String(open));
-      });
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') document.querySelectorAll('.stop.open, .lead-item.open').forEach(function (o) { o.classList.remove('open'); o.querySelector('.stop-btn').setAttribute('aria-expanded', 'false'); });
-    });
+    document.querySelectorAll('[data-reveal], #skyline').forEach(function (el) { io.observe(el); });
   } else {
-    document.querySelectorAll('[data-reveal], #combos, .path, #skyline').forEach(function (el) { el.classList.add('in'); });
+    document.querySelectorAll('[data-reveal], #skyline').forEach(function (el) { el.classList.add('in'); });
   }
-
-  /* ---- SIE sample question ---- */
-  var foot = document.getElementById('quiz-foot');
-  var opts = Array.prototype.slice.call(document.querySelectorAll('.quiz-opt'));
-  var explain = 'Current yield is the annual coupon divided by the market price: $60 / $950 = 6.32%. A bond bought at a discount has a current yield above its coupon rate.';
-  function reset() {
-    opts.forEach(function (b) { b.disabled = false; b.classList.remove('right', 'wrong'); var i = b.querySelector('i'); if (i) i.remove(); });
-    foot.textContent = 'Pick an answer to see the explanation.';
-  }
-  opts.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var correct = btn.dataset.ok === '1';
-      opts.forEach(function (b) {
-        b.disabled = true;
-        if (b.dataset.ok === '1') { b.classList.add('right'); b.insertAdjacentHTML('beforeend', '<i class="ph ph-check" aria-hidden="true"></i>'); }
-      });
-      if (!correct) { btn.classList.add('wrong'); btn.insertAdjacentHTML('beforeend', '<i class="ph ph-x" aria-hidden="true"></i>'); }
-      foot.innerHTML = '<strong>' + (correct ? 'Correct.' : 'Not quite. The answer is C.') + '</strong> ' + explain +
-        '<br><button class="reset" type="button"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i>Try again</button>';
-      foot.querySelector('.reset').addEventListener('click', reset);
-    });
-  });
 })();
 </script>
+<script src="sections/hero/section.js" defer></script>
+<script src="sections/ownerhound/section.js" defer></script>
+<script src="sections/work/section.js" defer></script>
+<script src="sections/about/section.js" defer></script>
+<script src="sections/umass/section.js" defer></script>
+<script src="sections/star/section.js" defer></script>
 </body>
 </html>

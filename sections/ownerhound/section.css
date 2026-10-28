@@ -1,0 +1,158 @@
+/* Ownerhound flagship (sections/ownerhound). Every selector starts with #ownerhound or .oh-.
+   One card: phone with the click-through video on one side, the pitch on the other. Stacks phone first
+   at 900px and under. The section sits on black and ends on pure black. */
+
+#ownerhound {
+  --oh-black: var(--black, #0a0a0b);
+  --oh-surface: #141416;
+  --oh-fg: #f2f2f3;
+  --oh-fg-2: #a1a1a8;
+  --oh-mute: #6e6e76;
+  --oh-line: rgb(255 255 255 / .08);
+  --oh-ease: var(--ease, cubic-bezier(.16, 1, .3, 1));
+  --oh-serif: var(--serif, "Instrument Serif", ui-serif, Georgia, serif);
+  --oh-sans: var(--sans, "DM Sans", ui-sans-serif, system-ui, sans-serif);
+  --oh-mono: var(--mono, ui-monospace, Menlo, monospace);
+  --oh-pw: clamp(220px, 31vh, 292px); /* phone width; keeps the card within one viewport */
+  position: relative; isolation: isolate;
+  background: var(--oh-black); color: var(--oh-fg); font-family: var(--oh-sans);
+  padding: clamp(64px, 10vh, 120px) 32px clamp(80px, 12vh, 140px);
+}
+#ownerhound * { box-sizing: border-box; }
+/* Fade into black: the card's glow dies out well before the section's last pixel. */
+#ownerhound::after {
+  content: ""; position: absolute; inset: auto 0 0; height: 40%; z-index: -1; pointer-events: none;
+  background: linear-gradient(rgb(10 10 11 / 0), var(--oh-black) 85%);
+}
+
+/* ---------- Card ---------- */
+.oh-card {
+  position: relative; overflow: hidden; max-width: 1180px; margin: 0 auto;
+  display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); align-items: center;
+  gap: clamp(32px, 5vw, 80px); padding: clamp(32px, 4.5vw, 64px);
+  border-radius: 20px; border: 1px solid var(--oh-line);
+  background:
+    radial-gradient(70% 90% at 22% 55%, rgb(24 92 214 / .22), transparent 70%),
+    linear-gradient(180deg, #151518, #0e0e10);
+  box-shadow: 0 40px 120px -40px rgb(0 0 0 / .8);
+}
+
+/* ---------- Phone ---------- */
+.oh-stage { position: relative; display: grid; justify-items: center; gap: 18px; perspective: 1600px; }
+.oh-glow {
+  position: absolute; left: 50%; top: 46%; width: calc(var(--oh-pw) * 2); aspect-ratio: 1; translate: -50% -50%;
+  border-radius: 50%; z-index: 0; pointer-events: none; filter: blur(30px);
+  background: radial-gradient(closest-side, rgb(24 92 214 / .5), rgb(110 70 220 / .18) 55%, transparent 72%);
+}
+/* Frame drawn in CSS: 1em = 1% of the phone width. */
+.oh-phone {
+  position: relative; z-index: 1; width: var(--oh-pw); font-size: calc(var(--oh-pw) / 100);
+  padding: 1.1em; border-radius: 16.5em;
+  background: linear-gradient(140deg, #5b5b62 0%, #232327 18%, #3b3b41 46%, #141416 70%, #4a4a51 100%);
+  box-shadow: inset 0 0 0 .3em rgb(255 255 255 / .12), inset 0 .4em .8em rgb(255 255 255 / .1),
+    0 4em 9em -2em rgb(0 0 0 / .85), 0 1.5em 3em -1em rgb(0 0 0 / .6);
+  transform: rotateY(-9deg) rotateX(4deg) rotateZ(1.5deg);
+  transition: transform 1.2s var(--oh-ease);
+}
+.oh-card:hover .oh-phone { transform: rotateY(-3deg) rotateX(2deg) rotateZ(.5deg); }
+.oh-phone::before, .oh-phone::after { content: ""; position: absolute; width: .9em; border-radius: .6em; background: linear-gradient(90deg, #2a2a2e, #55555c); }
+.oh-phone::before { left: -.7em; top: 25%; height: 15em; box-shadow: 0 -10em 0 -1em #3a3a40, 0 18em 0 0 #3a3a40; }
+.oh-phone::after { right: -.7em; top: 32%; height: 22em; }
+.oh-bezel { border-radius: 15.4em; padding: 2.4em; background: #050506; box-shadow: inset 0 0 0 .25em #1a1a1d; }
+.oh-screen { position: relative; overflow: hidden; border-radius: 13em; aspect-ratio: 390 / 844; background: #f7fbfe; transform: translateZ(0); }
+.oh-island { position: absolute; z-index: 3; left: 50%; top: 1.4%; translate: -50% 0; width: 30%; height: 3.6%; border-radius: 999px; background: #000; }
+/* Status bar: 47/844 of the screen. section.js tints it to match the top edge of the current video frame. */
+.oh-screen { container-type: inline-size; }
+.oh-sb {
+  position: absolute; inset: 0 0 auto; z-index: 2; height: 5.57%; display: flex; align-items: center; gap: 1.6cqw;
+  padding: 1cqw 7cqw 0 12.5cqw; background: var(--oh-sb-bg, #f7fbfe); color: var(--oh-sb-fg, #0b0b0c);
+  font: 600 4.1cqw/1 -apple-system, "SF Pro Text", var(--oh-sans); transition: background-color .25s linear, color .25s linear;
+}
+.oh-sb span { margin-right: auto; }
+.oh-sig { width: 4.6cqw; height: 3cqw; background:
+  linear-gradient(currentColor 0 0) 0 100% / 20% 35% no-repeat, linear-gradient(currentColor 0 0) 33% 100% / 20% 60% no-repeat,
+  linear-gradient(currentColor 0 0) 66% 100% / 20% 80% no-repeat, linear-gradient(currentColor 0 0) 100% 100% / 20% 100% no-repeat; }
+.oh-bat { position: relative; width: 6.4cqw; height: 3cqw; border-radius: .9cqw; border: .3cqw solid currentColor; }
+.oh-bat::after { content: ""; position: absolute; inset: .4cqw 1.6cqw .4cqw .4cqw; border-radius: .4cqw; background: currentColor; }
+.oh-video { position: absolute; inset: auto 0 0; width: 100%; height: 94.43%; object-fit: cover; object-position: top; display: block; background: #f7fbfe; }
+.oh-sheen {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none; mix-blend-mode: screen;
+  background: linear-gradient(115deg, transparent 30%, rgb(255 255 255 / .1) 42%, transparent 54%);
+}
+.oh-play {
+  position: absolute; z-index: 4; left: 50%; top: 50%; translate: -50% -50%;
+  width: 64px; height: 64px; border-radius: 50%; border: 1px solid rgb(255 255 255 / .5); cursor: pointer;
+  display: grid; place-items: center; padding: 0 0 0 3px; color: #111113;
+  background: rgb(255 255 255 / .88); box-shadow: 0 10px 30px rgb(0 0 0 / .35);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  transition: transform .5s var(--oh-ease), background-color .25s;
+}
+.oh-play:hover { transform: scale(1.06); background: #fff; }
+.oh-play[hidden], .oh-toggle[hidden] { display: none; }
+.oh-under { position: relative; z-index: 1; display: flex; align-items: center; gap: 10px; font: 400 11px/1 var(--oh-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--oh-mute); }
+.oh-toggle {
+  display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border-radius: 50%; cursor: pointer;
+  border: 1px solid rgb(255 255 255 / .16); background: rgb(255 255 255 / .04); color: var(--oh-fg-2);
+}
+.oh-toggle:hover { color: var(--oh-fg); border-color: rgb(255 255 255 / .4); }
+.oh-toggle .oh-i-play, .oh-toggle.is-paused .oh-i-pause { display: none; }
+.oh-toggle.is-paused .oh-i-play { display: block; }
+
+/* ---------- Copy ---------- */
+.oh-copy { position: relative; z-index: 1; max-width: 520px; }
+.oh-pills { display: flex; gap: 8px; }
+.oh-pill {
+  display: inline-flex; align-items: center; gap: 7px; height: 28px; padding: 0 12px; border-radius: 999px;
+  font: 500 11px/1 var(--oh-mono); letter-spacing: .06em; text-transform: uppercase;
+  border: 1px solid rgb(255 255 255 / .16); color: var(--oh-fg-2);
+}
+.oh-pill-on { background: var(--oh-fg); border-color: var(--oh-fg); color: #111113; }
+.oh-live { width: 6px; height: 6px; border-radius: 50%; background: #1fb26b; box-shadow: 0 0 0 3px rgb(31 178 107 / .22); }
+.oh-title { display: flex; align-items: center; gap: 16px; margin-top: 26px; }
+.oh-title img { width: clamp(44px, 4.4vw, 60px); height: auto; border-radius: 22%; box-shadow: 0 0 0 1px rgb(255 255 255 / .1), 0 14px 40px -10px rgb(30 95 220 / .55); }
+.oh-title h2 { margin: 0; font: 300 clamp(44px, 5.6vw, 84px)/.95 var(--oh-sans); letter-spacing: -.035em; }
+.oh-line { margin: 16px 0 0; font: 300 clamp(22px, 2.2vw, 32px)/1.2 var(--oh-sans); letter-spacing: -.015em; color: var(--oh-fg-2); text-wrap: balance; }
+.oh-line em { font-family: var(--oh-serif); font-style: italic; font-weight: 400; color: var(--oh-fg); letter-spacing: -.01em; }
+.oh-facts { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 14px; }
+.oh-facts li { position: relative; padding-left: 22px; font: 400 15px/1.55 var(--oh-sans); color: var(--oh-fg-2); }
+.oh-facts li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid #7fb0ff; }
+.oh-facts strong { color: var(--oh-fg); font-weight: 500; }
+.oh-tags { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.oh-tags li { font: 400 12px/1 var(--oh-mono); color: var(--oh-fg-2); padding: 8px 11px; border-radius: 999px; background: rgb(255 255 255 / .06); border: 1px solid var(--oh-line); }
+.oh-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.oh-btn {
+  display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 24px; border-radius: 999px;
+  background: var(--oh-fg); color: #111113; text-decoration: none; font: 500 15px/1 var(--oh-sans); white-space: nowrap;
+  box-shadow: 0 10px 30px -10px rgb(255 255 255 / .35); transition: transform .5s var(--oh-ease), background-color .25s;
+}
+.oh-btn svg { transition: transform .5s var(--oh-ease); }
+.oh-btn:hover { background: #fff; }
+.oh-btn:hover svg { transform: translate(2px, -2px); }
+.oh-btn:active { transform: scale(.98); }
+.oh-btn-ghost { background: rgb(255 255 255 / .04); color: var(--oh-fg); border: 1px solid rgb(255 255 255 / .22); box-shadow: none; }
+.oh-btn-ghost:hover { background: rgb(255 255 255 / .1); border-color: rgb(255 255 255 / .4); }
+#ownerhound :focus-visible { outline: 2px solid var(--oh-fg); outline-offset: 3px; }
+
+/* ---------- Reveal (section.js adds .oh-js, then .is-in when the card is on screen) ---------- */
+.oh-js .oh-card { opacity: 0; transform: translateY(32px) scale(.985); transition: opacity 1s var(--oh-ease), transform 1.2s var(--oh-ease); }
+.oh-js .oh-card.is-in { opacity: 1; transform: none; }
+
+/* ---------- Phones and narrow tablets: stack, phone first ---------- */
+@media (max-width: 900px) {
+  #ownerhound { padding: 64px 16px 88px; --oh-pw: min(250px, 64vw); }
+  .oh-card { grid-template-columns: 1fr; gap: 36px; padding: 32px 20px 36px; text-align: left; }
+  .oh-card { background: radial-gradient(90% 50% at 50% 26%, rgb(24 92 214 / .24), transparent 70%), linear-gradient(180deg, #151518, #0e0e10); }
+  .oh-phone, .oh-card:hover .oh-phone { transform: none; }
+  .oh-copy { max-width: none; }
+  .oh-title h2 { font-size: clamp(40px, 12vw, 56px); }
+  /* Mobile QA: 16px copy, 44px pause target (hit area grows, the circle stays 28px) */
+  .oh-facts li { font-size: 16px; }
+  .oh-btn { font-size: 16px; }
+  .oh-toggle { position: relative; }
+  .oh-toggle::before { content: ""; position: absolute; inset: -8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oh-phone, .oh-card:hover .oh-phone { transform: none; transition: none; }
+  .oh-js .oh-card { opacity: 1; transform: none; transition: none; }
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Star demo</title>
+<!-- Resolve every path from the repo root, so the fragment's img/star/... paths work here as they will in index.html -->
+<base href="../../">
+<link rel="stylesheet" href="site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sections/star/section.css">
+<style>
+  /* Demo only: neighbours above and below, to show the section entering on scroll and melting into black */
+  html, body { background: #0a0a0b; }
+  .demo-solo .demo-gap { display: none; }
+  .demo-solo .st-poster, .demo-solo .st-canvas { transition: none; } /* stills: no cross-fade mid-screenshot */
+  /* ?st-poster: just the star on a transparent page, for rendering the poster image */
+  .demo-poster, .demo-poster body, .demo-poster .st { background: transparent !important; }
+  .demo-poster .st-stage { height: 100vh; }
+  .demo-poster .st-stage::before, .demo-poster .st-stage::after, .demo-poster .st-poster { display: none; }
+  .demo-poster .st-canvas { transition: none; }
+  .demo-gap { min-height: 80vh; display: grid; place-items: center; color: #6e6e76; font: 500 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+</style>
+<script>/* ?solo hides the neighbours, for screenshots */ if (/solo|st-poster/.test(location.search)) document.documentElement.classList.add("demo-solo"); if (/st-poster/.test(location.search)) document.documentElement.classList.add("demo-poster");</script>
+</head>
+<body>
+<div class="demo-gap">Previous section (scroll)</div>
+
+<!-- Fragment: sections/star/section.html -->
+<section id="star" class="st" aria-hidden="true">
+  <div class="st-stage">
+    <!-- Still poster: shown with no WebGL, with reduced motion, and until the live star draws its first frame -->
+    <img class="st-poster" src="img/star/star-poster.webp" srcset="img/star/star-poster-sm.webp 1000w, img/star/star-poster.webp 2400w" sizes="100vw" alt="" width="2400" height="1500" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<div class="demo-gap">Footer</div>
+<script src="sections/star/section.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+/* About: a huge "About" word with Cole cut out standing in front of it, then a short bio.
+   Layering inside .ab-stage: word (z 0), figure (z 1), fade to black (z 2).
+   Everything in the stage is sized in em off --ab-fs, so word and figure scale together. */
+
+.ab {
+  position: relative; isolation: isolate; overflow: clip;
+  background: var(--bg, #0a0a0b); color: var(--fg, #f2f2f3);
+  padding: clamp(72px, 10vw, 140px) 16px clamp(96px, 12vw, 160px);
+}
+
+/* Stage */
+.ab-stage {
+  --ab-fs: min(27vw, 340px);
+  position: relative; font-size: var(--ab-fs); height: 1.5em;
+  view-timeline: --ab-stage block;
+}
+.ab-word {
+  position: absolute; inset: .06em 0 auto; z-index: 0; margin: 0;
+  text-align: center; white-space: nowrap;
+  font: 560 1em/1 var(--sans); letter-spacing: -.035em;
+  background: linear-gradient(180deg, #ffffff 10%, #ececef 38%, #a3a3aa 70%, #6c6c73 96%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.ab-figure {
+  position: absolute; top: 0; left: 50%; z-index: 1; margin: 0; height: 1.5em;
+  translate: -50% 0;
+}
+.ab-ph { display: block; height: 100%; width: auto; aspect-ratio: 400 / 760; }
+.ab-ph-label { font: 600 17px/1 var(--mono); letter-spacing: .16em; fill: rgb(255 255 255 / .55); }
+.ab-ph-label--sub { font-size: 13px; font-weight: 500; letter-spacing: .02em; fill: rgb(255 255 255 / .34); }
+.ab-figure picture { position: absolute; top: 0; bottom: 0; left: 50%; translate: -50% 0; }
+.ab-photo { display: block; height: 100%; width: auto; max-width: none; opacity: 0; }
+.ab-has-photo .ab-photo { opacity: 1; }
+.ab-has-photo .ab-ph { visibility: hidden; }
+/* Soft glow behind the word; lives in the stage so the bottom fade melts it too */
+.ab-stage::before {
+  content: ""; position: absolute; inset: -.5em -16px 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(42% 58% at 50% 58%, rgb(255 255 255 / .06), transparent 72%);
+}
+.ab-stage::after {
+  content: ""; position: absolute; inset: auto -16px 0; height: .62em; z-index: 2; pointer-events: none;
+  background: linear-gradient(180deg, rgb(10 10 11 / 0), rgb(10 10 11 / .82) 55%, var(--bg, #0a0a0b) 92%);
+}
+
+/* Bio */
+.ab-body {
+  position: relative; z-index: 3; max-width: 1080px; margin: clamp(-48px, -3vw, -12px) auto 0;
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(28px, 6vw, 96px); align-items: start;
+}
+.ab-lead { margin: 0; font: 300 clamp(30px, 3.4vw, 46px)/1.1 var(--sans); letter-spacing: -.025em; color: var(--fg, #f2f2f3); text-wrap: balance; }
+.ab-lead em { font: italic 400 1.14em/1 var(--serif); letter-spacing: -.01em; }
+.ab-text p { margin: 0 0 16px; font-size: 17px; line-height: 1.65; color: var(--fg-2, #a1a1a8); }
+.ab-text a { color: var(--fg, #f2f2f3); text-decoration-color: rgb(255 255 255 / .3); text-underline-offset: 3px; transition: text-decoration-color .25s; }
+.ab-text a:hover { text-decoration-color: currentColor; }
+.ab-facts {
+  margin: 28px 0 0; padding-top: 20px; border-top: 1px solid var(--line, rgb(255 255 255 / .08));
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px;
+}
+.ab-facts dt { font: 500 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--mute, #6e6e76); }
+.ab-facts dd { margin: 8px 0 0; font-size: 15px; line-height: 1.4; color: var(--fg, #f2f2f3); }
+
+@media (max-width: 760px) {
+  .ab-stage { --ab-fs: 29vw; }
+  .ab-body { grid-template-columns: minmax(0, 1fr); gap: 24px; margin-top: -4px; }
+  .ab-text p { font-size: 16px; }
+  .ab-facts dd { font-size: 16px; }
+}
+
+/* Scroll-in: the word rises, then the figure settles. Scrubbed by scroll where supported. */
+@keyframes ab-rise { from { opacity: 0; transform: translateY(20%); filter: blur(8px); } to { opacity: 1; transform: none; filter: none; } }
+/* The figure never fades: any transparency would let the word show through him. It rises in solid. */
+@keyframes ab-settle { from { transform: translateY(9%) scale(1.06); } to { transform: none; } }
+@keyframes ab-fade { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .ab-word, .ab-figure, .ab-body { animation: ab-rise both cubic-bezier(.3, .7, .4, 1); animation-timeline: --ab-stage; }
+    .ab-word { animation-range: entry 5% cover 42%; }
+    .ab-figure { animation-name: ab-settle; animation-range: entry 25% cover 52%; transform-origin: 50% 100%; }
+    .ab-body { animation-name: ab-fade; animation-range: cover 30% cover 60%; }
+  }
+  /* Fallback for browsers without scroll timelines: section.js adds .ab-armed, then .ab-in on view */
+  .ab-armed .ab-word { opacity: 0; transform: translateY(20%); filter: blur(8px); transition: opacity 1.2s var(--ease), transform 1.6s var(--ease), filter 1.2s var(--ease); }
+  .ab-armed .ab-figure { transform: translateY(9%) scale(1.06); transform-origin: 50% 100%; transition: transform 1.8s var(--ease) .25s; }
+  .ab-armed .ab-body { opacity: 0; transform: translateY(24px); transition: opacity 1s var(--ease) .5s, transform 1.4s var(--ease) .5s; }
+  .ab-armed.ab-in .ab-word, .ab-armed.ab-in .ab-figure, .ab-armed.ab-in .ab-body { opacity: 1; transform: none; filter: none; }
+}

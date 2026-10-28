@@ -1,0 +1,164 @@
+/* My time at UMass Lowell: a faint Riverhawk watermark behind a bento of club cards, AIM first and biggest.
+   Layers: .um-bg (watermark, z 0, masked into black top and bottom), header and grid (z 1).
+   Card links: an <a> with no href inside .um-name is plain text; give it an href and it stretches over the card. */
+
+.um {
+  position: relative; isolation: isolate; overflow: clip;
+  background: var(--bg, #0a0a0b); color: var(--fg, #f2f2f3);
+  padding: clamp(80px, 10vw, 140px) clamp(16px, 4vw, 48px) clamp(96px, 12vw, 160px);
+}
+
+/* Watermark */
+.um-bg {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 24%, #000 68%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 24%, #000 68%, transparent 100%);
+}
+.um-hawk {
+  position: absolute; top: 50%; left: 50%; width: min(1500px, 118%); height: auto; max-width: none;
+  translate: -46% -50%; opacity: .065;
+  -webkit-mask-image: radial-gradient(70% 70% at 55% 50%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(70% 70% at 55% 50%, #000 55%, transparent 100%);
+  view-timeline: --um-hawk block;
+}
+
+.um-head, .um-grid { position: relative; z-index: 1; max-width: var(--max, 1240px); margin-inline: auto; }
+
+/* Header */
+.um-head {
+  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 20px clamp(28px, 5vw, 80px);
+  align-items: end; margin-bottom: clamp(40px, 6vw, 72px);
+}
+.um-eyebrow {
+  grid-column: 1 / -1; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 18px;
+  font: 500 12px/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--mute, #6e6e76);
+  white-space: nowrap;
+}
+.um-eyebrow span + span::before { content: ""; display: inline-block; width: 5px; height: 5px; margin-right: 18px; border-radius: 50%; background: var(--line-strong, rgb(255 255 255 / .16)); vertical-align: middle; translate: 0 -1px; }
+.um-title {
+  margin: 0; font: 300 clamp(44px, 7.2vw, 108px)/.98 var(--sans); letter-spacing: -.04em; text-wrap: balance;
+  background: linear-gradient(180deg, #ffffff 10%, #e6e6ea 52%, #8d8d95 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.um-title span { display: block; }
+.um-title em { font: italic 400 1.1em/1 var(--serif); letter-spacing: -.015em; padding-right: .06em; }
+.um-intro { margin: 0 0 .5em; font-size: 17px; line-height: 1.65; color: var(--fg-2, #a1a1a8); max-width: 42ch; }
+
+/* Grid: 3 columns, AIM spans 2x2 */
+.um-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.4vw, 18px); }
+.um-card--feature { grid-column: span 2; grid-row: span 2; }
+
+/* Card */
+.um-card {
+  position: relative; display: flex; flex-direction: column; gap: 22px; min-width: 0;
+  padding: clamp(20px, 2vw, 28px); border-radius: 20px;
+  background: linear-gradient(180deg, rgb(28 28 31 / .72), rgb(18 18 20 / .78));
+  border: 1px solid var(--line, rgb(255 255 255 / .08));
+  transition: border-color .4s var(--ease), background-color .4s var(--ease), translate .6s var(--ease);
+}
+.um-logo {
+  display: flex; align-items: center; justify-content: flex-start; height: 88px;
+}
+/* --s scales one logo down when its ink is heavier than the rest (set inline on the card) */
+.um-logo img { display: block; max-height: calc(100% * var(--s, 1)); max-width: min(78%, 220px); width: auto; height: auto; }
+.um-meta { display: flex; flex-direction: column; gap: 6px; margin-top: auto; }
+.um-tag { margin: 0 0 6px; font: 500 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--fg-2, #a1a1a8); }
+.um-name { margin: 0; font: 500 18px/1.25 var(--sans); letter-spacing: -.01em; color: var(--fg, #f2f2f3); }
+.um-name a { color: inherit; text-decoration: none; }
+.um-role { margin: 0; font-size: 16px; line-height: 1.4; color: var(--fg, #f2f2f3); }
+.um-when { margin: 0; font: 500 12px/1.4 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--mute, #6e6e76); }
+.um-note { margin: 6px 0 0; font-size: 15px; line-height: 1.55; color: var(--fg-2, #a1a1a8); }
+
+/* Linked cards: the name link covers the card, the corner arrow appears */
+.um-name a[href]::after { content: ""; position: absolute; inset: 0; z-index: 2; border-radius: inherit; }
+.um-name a[href]:focus-visible { outline: none; }
+.um-card:has(.um-name a[href]:focus-visible) { outline: 2px solid var(--fg, #f2f2f3); outline-offset: 3px; }
+.um-go {
+  position: absolute; top: 18px; right: 18px; display: grid; place-items: center; width: 36px; height: 36px;
+  border-radius: 999px; border: 1px solid var(--glass-line, rgb(255 255 255 / .14)); color: var(--fg, #f2f2f3);
+  opacity: 0; transition: opacity .3s var(--ease), background-color .3s var(--ease), color .3s var(--ease);
+}
+.um-go svg, .um-cta svg { width: 16px; height: 16px; }
+.um-card:has(.um-name a[href]) .um-go { opacity: .7; }
+
+/* Feature card (AIM) */
+.um-card--feature {
+  gap: 28px; padding: clamp(24px, 3vw, 44px);
+  background:
+    radial-gradient(90% 70% at 0% 0%, rgb(255 255 255 / .07), transparent 60%),
+    linear-gradient(180deg, rgb(30 30 34 / .8), rgb(16 16 18 / .86));
+  border-color: var(--line-strong, rgb(255 255 255 / .16));
+}
+.um-card--feature .um-logo { height: clamp(84px, 9vw, 128px); }
+.um-card--feature .um-logo img { max-width: min(100%, 400px); }
+.um-card--feature .um-name { font: 300 clamp(28px, 3vw, 42px)/1.08 var(--sans); letter-spacing: -.03em; }
+.um-card--feature .um-role { font-size: 18px; }
+.um-card--feature .um-note { font-size: 17px; max-width: 46ch; }
+.um-cta {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px;
+  border-radius: 999px; background: var(--fg, #f2f2f3); color: var(--paper-ink, #151517);
+  font: 500 16px/1 var(--sans); text-decoration: none;
+  transition: background-color .3s var(--ease), gap .4s var(--ease);
+}
+.um-cta-sub { font: 500 12px/1 var(--mono); letter-spacing: .02em; color: var(--paper-ink-2, #4c4c52); }
+/* The CTA covers the whole feature card */
+.um-cta::after { content: ""; position: absolute; inset: 0; z-index: 2; border-radius: 20px; }
+.um-cta:focus-visible { outline: 2px solid var(--fg, #f2f2f3); outline-offset: 3px; }
+
+@media (hover: hover) {
+  .um-card:has(a[href]):hover { border-color: var(--line-strong, rgb(255 255 255 / .16)); translate: 0 -3px; }
+  .um-card:has(.um-name a[href]):hover .um-go { opacity: 1; background: var(--fg, #f2f2f3); color: var(--paper-ink, #151517); }
+  .um-card--feature:hover .um-cta { background: #ffffff; gap: 14px; }
+  .um-card--feature:hover { border-color: rgb(255 255 255 / .26); }
+}
+
+/* Tablet: 2 columns, AIM full width, last card full width as a row */
+@media (max-width: 1000px) {
+  .um-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .um-card--feature { grid-column: 1 / -1; grid-row: auto; }
+  .um-card:last-child:nth-child(even) { grid-column: 1 / -1; flex-direction: row; align-items: center; }
+  .um-card:last-child:nth-child(even) .um-logo { flex: 0 0 40%; justify-content: center; }
+  .um-card:last-child:nth-child(even) .um-meta { margin-top: 0; }
+}
+
+/* Phone: one column; small cards become rows with a logo tile on the left */
+@media (max-width: 640px) {
+  .um-head { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .um-eyebrow { font-size: 11px; letter-spacing: .05em; gap: 6px 10px; }
+  .um-eyebrow span + span::before { margin-right: 10px; }
+  .um-intro { font-size: 16px; }
+  .um-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .um-card--feature { gap: 22px; }
+  .um-card--feature .um-logo { height: 76px; }
+  .um-card--feature .um-logo img { max-width: 100%; }
+  .um-cta { align-self: stretch; justify-content: center; }
+  .um-card:not(.um-card--feature), .um-card:last-child:nth-child(even) {
+    grid-column: auto; flex-direction: row; align-items: center; gap: 16px; padding: 16px 16px 16px 12px;
+  }
+  .um-card:not(.um-card--feature) .um-logo {
+    flex: 0 0 96px; height: 84px; justify-content: center; padding: 10px;
+    border-radius: 14px; background: rgb(255 255 255 / .03); border: 1px solid var(--line, rgb(255 255 255 / .08));
+  }
+  .um-card:not(.um-card--feature) .um-logo img { max-width: 100%; }
+  .um-card:not(.um-card--feature):last-child .um-logo { flex: 0 0 96px; }
+  .um-card:not(.um-card--feature) .um-meta { margin-top: 0; gap: 4px; }
+  .um-name { font-size: 17px; }
+  .um-note { font-size: 16px; }
+  .um-go { top: 10px; right: 10px; width: 30px; height: 30px; }
+  .um-hawk { width: 190%; translate: -58% -50%; opacity: .07; }
+}
+
+/* Motion: header and cards rise in once on view (section.js arms it); the hawk drifts with scroll */
+@media (prefers-reduced-motion: no-preference) {
+  .um-armed .um-head, .um-armed .um-card {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 1s var(--ease), transform 1.3s var(--ease);
+  }
+  .um-armed .um-card { transition-delay: calc(var(--i, 0) * 90ms + 120ms); }
+  .um-armed .um-in { opacity: 1; transform: none; }
+
+  @keyframes um-drift { from { transform: translateY(7%) scale(1.04); } to { transform: translateY(-7%) scale(1); } }
+  @supports (animation-timeline: view()) {
+    .um-hawk { animation: um-drift linear both; animation-timeline: --um-hawk; animation-range: cover 0% cover 100%; }
+  }
+}

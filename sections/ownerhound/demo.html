@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ownerhound section demo</title>
+<!-- Paths in the fragment are relative to the site root, like in index.html. -->
+<base href="../../">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="sections/ownerhound/section.css">
+<style>
+  body { background: #0a0a0b; margin: 0; }
+  .demo-pad { height: 50vh; display: grid; place-items: center; color: #6e6e76; font: 400 13px/1 ui-monospace, monospace; letter-spacing: .1em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="demo-pad">Hero above</div>
+<!-- ================= FLAGSHIP: OWNERHOUND (sections/ownerhound) =================
+     One card: a CSS-drawn phone playing a click-through of the public ownerhound.com on sample data
+     (video/ownerhound/ownerhound-phone.mp4), beside the pitch, three facts, tags and the link.
+     section.js plays the clip only while it is on screen and never autoplays under reduced motion. -->
+<section id="ownerhound" class="oh" aria-labelledby="oh-title">
+  <div class="oh-card">
+    <div class="oh-stage">
+      <div class="oh-glow" aria-hidden="true"></div>
+      <div class="oh-phone">
+        <div class="oh-bezel"><div class="oh-screen"><i class="oh-island" aria-hidden="true"></i>
+          <div class="oh-sb" aria-hidden="true"><span>9:41</span><i class="oh-sig"></i><i class="oh-bat"></i></div>
+          <video class="oh-video" muted loop playsinline controls preload="metadata" width="600" height="1298"
+            poster="img/ownerhound/phone-poster.webp"
+            aria-label="Ownerhound on a phone, sample data: the home page, how it works, a call card where the owner is confirmed and the call is logged, then three sample companies being verified.">
+            <source src="video/ownerhound/ownerhound-phone.mp4" type="video/mp4">
+          </video>
+          <button class="oh-play" type="button" hidden aria-label="Play the Ownerhound demo">
+            <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>
+          </button>
+          <i class="oh-sheen" aria-hidden="true"></i>
+        </div></div>
+      </div>
+      <div class="oh-under">
+        <span>ownerhound.com, sample data</span>
+        <button class="oh-toggle" type="button" hidden aria-label="Pause the Ownerhound demo">
+          <svg class="oh-i-pause" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 3h2.2v10H4.5zM9.3 3h2.2v10H9.3z" fill="currentColor"/></svg>
+          <svg class="oh-i-play" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M5 3v10l8-5z" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="oh-copy">
+      <div class="oh-pills"><span class="oh-pill">Flagship</span><span class="oh-pill oh-pill-on"><i class="oh-live" aria-hidden="true"></i>Live</span></div>
+      <div class="oh-title">
+        <img src="img/ownerhound/wolf.svg" width="64" height="64" alt="">
+        <h2 id="oh-title">Ownerhound</h2>
+      </div>
+      <p class="oh-line">A cold call workspace, <em>built by a cold caller.</em></p>
+      <ul class="oh-facts">
+        <li><strong>Verified before you dial.</strong> Phones, owners, licenses and entities checked against the company's own site and state records.</li>
+        <li><strong>One screen per call.</strong> Owner, number, checks and the outcome on a single call card.</li>
+        <li><strong>Built from the phone.</strong> I make owner calls every week for a search fund, so I built the tool I could not buy.</li>
+      </ul>
+      <ul class="oh-tags" aria-label="Built with"><li>Claude Code</li><li>Next.js</li><li>Supabase</li><li>Python</li><li>Vercel</li></ul>
+      <a class="oh-btn" href="https://ownerhound.com" target="_blank" rel="noopener">Visit ownerhound.com
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="demo-pad">Projects below</div>
+<script src="sections/ownerhound/section.js"></script>
+</body>
+</html>

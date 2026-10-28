@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero demo</title>
+<!-- Resolve every path from the repo root, so the fragment's img/hero/... path works here as it will in index.html -->
+<base href="../../">
+<link rel="stylesheet" href="site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sections/hero/section.css">
+<style>
+  /* Demo only: page base, a stand-in for the 68px fixed nav, and a next section to show the melt into black */
+  html, body { background: #0a0a0b; }
+  .demo-nav { position: fixed; inset: 0 0 auto; height: 68px; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; border-bottom: 1px dashed rgb(255 255 255 / .12); font: 500 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: #6e6e76; background: rgb(10 10 11 / .3); }
+  .demo-next { min-height: 70vh; display: grid; place-items: center; background: #0a0a0b; color: #6e6e76; font: 500 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+  .demo-switch { position: fixed; right: 16px; bottom: 16px; z-index: 30; display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: rgb(20 20 22 / .8); border: 1px solid rgb(255 255 255 / .1); }
+  .demo-switch button { border: 0; border-radius: 999px; padding: 8px 12px; background: none; color: #a1a1a8; font: 500 11px/1 var(--mono); cursor: pointer; }
+  .demo-switch button[aria-pressed="true"] { background: #f2f2f3; color: #111; }
+
+  /* The layout tried and not kept on desktop: Cole centered behind the text (see NOTES.md) */
+  @media (min-width: 900px) {
+    .hx.hx--behind { text-align: center; align-items: end; padding-bottom: clamp(90px, 13vh, 150px); }
+    .hx.hx--behind .hx-figure { right: auto; left: 50%; transform: translateX(-50%); -webkit-mask: linear-gradient(to bottom, #000 0%, #000 30%, rgb(0 0 0 / .4) 52%, rgb(0 0 0 / .18) 74%, transparent 94%); mask: linear-gradient(to bottom, #000 0%, #000 30%, rgb(0 0 0 / .4) 52%, rgb(0 0 0 / .18) 74%, transparent 94%); }
+    .hx.hx--behind .hx-inner > *, .hx.hx--behind .hx-lede { max-width: 980px; margin-left: auto; margin-right: auto; }
+    .hx.hx--behind .hx-lede { max-width: 46ch; }
+    .hx.hx--behind .hx-cta { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+<div class="demo-nav"><span>Nav (68px, owned by main session)</span><span>Contact</span></div>
+
+<main>
+<!-- Hero: Cole holding his check, name, one line and two buttons over a slowly rotating color wheel glow. Styles: sections/hero/section.css, script: sections/hero/section.js -->
+<section class="hx" id="hero" aria-labelledby="hx-title">
+  <div class="hx-bg" aria-hidden="true">
+    <div class="hx-spin"><div class="hx-wheel"></div></div>
+    <div class="hx-fade"></div>
+    <div class="hx-grain"></div>
+  </div>
+
+  <!-- Rendered width: min(88vw, 480px) under 900px, min(56.5vh, 706px) above (see .hx-figure in section.css) -->
+  <picture class="hx-figure">
+    <source media="(max-width: 899px)" srcset="img/hero/cole-check-cutout-sm.webp 600w" sizes="min(88vw, 480px)">
+    <img src="img/hero/cole-check-cutout.webp" srcset="img/hero/cole-check-cutout-sm.webp 600w, img/hero/cole-check-cutout.webp 896w" sizes="min(56.5vh, 706px)" width="896" height="1396" alt="Cole Stepanik in a navy suit holding a Manning School of Business check" fetchpriority="high" decoding="async">
+  </picture>
+
+  <div class="hx-inner">
+    <h1 class="hx-title" id="hx-title">
+      <span class="hx-l1">Cole Stepanik</span>
+      <span class="hx-l2">builds AI for finance.</span>
+    </h1>
+    <p class="hx-lede">Finance and Accounting senior at UMass Lowell. I cold call business owners for a search fund, so I built the workspace I wanted: Ownerhound.</p>
+    <div class="hx-cta">
+      <a class="hx-btn hx-btn-solid" href="#ownerhound">See Ownerhound</a>
+      <a class="hx-btn hx-btn-glass" href="#resume">Resume<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="demo-next" id="ownerhound">Next section (Ownerhound)</section>
+<section class="demo-next" id="resume">Resume</section>
+</main>
+
+<div class="demo-switch" role="group" aria-label="Demo layout">
+  <button type="button" data-layout="beside" aria-pressed="true">Beside text</button>
+  <button type="button" data-layout="behind" aria-pressed="false">Behind text</button>
+</div>
+
+<script src="sections/hero/section.js"></script>
+<script>
+  // Demo only: compare the two layouts. ?layout=behind opens the alternate.
+  // ?shot skips the entrance animations (for screenshots), ?start=120 sets the wheel's starting angle in degrees.
+  (() => {
+    const params = new URLSearchParams(location.search);
+    if (params.has('start')) document.querySelector('.hx').style.setProperty('--hx-start', params.get('start') + 'deg');
+    if (params.has('shot')) document.querySelector('.demo-switch').style.display = 'none';
+    if (params.has('shot')) requestAnimationFrame(() => document.getAnimations().forEach((a) => { if (a.animationName !== 'hx-turn') a.finish(); }));
+    const hero = document.querySelector('.hx');
+    const buttons = document.querySelectorAll('.demo-switch button');
+    const set = (layout) => {
+      hero.classList.toggle('hx--behind', layout === 'behind');
+      buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.layout === layout)));
+    };
+    buttons.forEach((b) => b.addEventListener('click', () => set(b.dataset.layout)));
+    if (params.get('layout') === 'behind') set('behind');
+  })();
+</script>
+</body>
+</html>

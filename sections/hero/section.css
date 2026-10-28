@@ -1,0 +1,151 @@
+/* Hero (prefix hx-): Cole holding his check, name and two buttons over a slowly rotating color wheel.
+   The wheel is a conic gradient, blurred once and masked to a soft ring. Only its parent rotates (transform),
+   so the blur is rasterized a single time and the compositor just turns the finished layer.
+   Stacking: .hx-bg (wheel, black fade, grain) at the back, then the cutout .hx-figure, then the text.
+   Desktop: text on the left, Cole on the right looking toward it. Under 900px he moves to the center behind the text.
+   His lower body and the check dissolve (mask-image) into the glow; the section still ends on black. */
+
+.hx {
+  --hx-black: #0a0a0b;
+  --hx-fg: #f2f2f3;
+  --hx-fg-2: #a1a1a8;
+  --hx-ease: var(--ease, cubic-bezier(.16, 1, .3, 1));
+  --hx-nav: var(--nav-h, 68px);
+  --hx-d: clamp(820px, 112vw, 1900px);  /* wheel diameter */
+  --hx-peak: 80%;                        /* where the top of the glow ring sits, from the top of the section */
+  --hx-turn: 80s;                        /* one full rotation */
+  position: relative; isolation: isolate; overflow: hidden; overflow: clip;
+  min-height: 100vh; min-height: 100svh;
+  display: grid; align-items: center;
+  padding: calc(var(--hx-nav) + clamp(28px, 5vh, 64px)) 16px clamp(120px, 18vh, 200px);
+  background: var(--hx-black); color: var(--hx-fg);
+}
+
+/* Background */
+.hx-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.hx-spin {
+  position: absolute; left: 50%;
+  top: calc(var(--hx-peak) + var(--hx-d) * .27);
+  width: var(--hx-d); aspect-ratio: 1;
+  margin: calc(var(--hx-d) / -2) 0 0 calc(var(--hx-d) / -2);
+  will-change: transform;
+  transform: rotate(var(--hx-start, -8deg));
+}
+/* Red and blue hold for about 80 degrees each; the other hues pass through in about 30 */
+.hx-wheel {
+  position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg,
+    #6d2fd6 0deg, #3a4cf2 42deg, #1d43ea 82deg, #1b3fd8 122deg,
+    #137fa6 152deg, #198a5a 180deg, #a88a1d 208deg, #cf521c 232deg,
+    #e8193f 256deg, #d4123b 318deg, #a8217f 342deg, #6d2fd6 360deg);
+  -webkit-mask: radial-gradient(closest-side, transparent 18%, #000 44%, #000 60%, transparent 100%);
+          mask: radial-gradient(closest-side, transparent 18%, #000 44%, #000 60%, transparent 100%);
+  filter: blur(calc(var(--hx-d) * .035));
+  opacity: .88;
+}
+/* Pure black above and below the glow, so the section edges melt into the page */
+.hx-fade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to bottom,
+      var(--hx-black) 0%, rgb(10 10 11 / .9) 22%, rgb(10 10 11 / .35) 48%, rgb(10 10 11 / 0) 66%,
+      rgb(10 10 11 / 0) 80%, rgb(10 10 11 / .7) 92%, var(--hx-black) 100%),
+    radial-gradient(130% 90% at 50% 70%, rgb(10 10 11 / 0) 50%, rgb(10 10 11 / .75) 100%);
+}
+.hx-grain {
+  position: absolute; inset: 0; opacity: .07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* The cutout. Sized from the viewport height so the img sizes attribute in section.html can match it exactly:
+   desktop height min(88vh, 1100px), so width min(56.5vh, 706px). Its lower part fades out to show the glow. */
+.hx-figure {
+  position: absolute; z-index: 0; bottom: 0; pointer-events: none;
+  right: max(0px, calc(50% - 640px));
+  width: min(56.5vh, 706px); aspect-ratio: 896 / 1396;
+  -webkit-mask: linear-gradient(to bottom, #000 0%, #000 58%, rgb(0 0 0 / .55) 76%, transparent 94%);
+          mask: linear-gradient(to bottom, #000 0%, #000 58%, rgb(0 0 0 / .55) 76%, transparent 94%);
+}
+.hx-figure img { width: 100%; height: 100%; object-fit: contain; object-position: bottom; }
+
+/* Content */
+.hx-inner { position: relative; z-index: 1; width: 100%; max-width: 1240px; margin: 0 auto; }
+.hx-inner > * { max-width: min(660px, 56%); }
+
+.hx-title { margin: 0; font-weight: inherit; text-wrap: balance; }
+.hx-l1 {
+  display: block;
+  font: 250 clamp(42px, 5.6vw, 84px)/1.02 var(--sans, system-ui, sans-serif);
+  letter-spacing: -.03em;
+}
+.hx-l2 {
+  display: block; margin-top: .02em;
+  font: italic 400 clamp(52px, 7.6vw, 118px)/.98 var(--serif, Georgia, serif);
+  letter-spacing: -.012em;
+}
+.hx-lede {
+  max-width: min(42ch, 56%); margin: clamp(18px, 2.6vh, 26px) 0 0;
+  font: 400 clamp(16px, 1.3vw, 18.5px)/1.6 var(--sans, system-ui, sans-serif);
+  color: var(--hx-fg-2); text-wrap: balance;
+}
+.hx-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: clamp(26px, 3.6vh, 34px); }
+
+.hx-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  height: 48px; padding: 0 24px; border-radius: 999px;
+  font: 460 15px/1 var(--sans, system-ui, sans-serif); text-decoration: none; white-space: nowrap;
+  border: 1px solid transparent;
+  transition: transform .5s var(--hx-ease), background-color .25s, border-color .25s;
+}
+.hx-btn svg { transition: transform .5s var(--hx-ease); }
+.hx-btn:hover svg { transform: translateX(3px); }
+.hx-btn:active { transform: scale(.98); }
+.hx-btn:focus-visible { outline: 2px solid var(--hx-fg); outline-offset: 3px; }
+.hx-btn-solid { background: var(--hx-fg); color: #111113; }
+.hx-btn-solid:hover { background: #fff; }
+.hx-btn-glass {
+  background: rgb(30 30 34 / .55); color: var(--hx-fg); border-color: rgb(255 255 255 / .14);
+  -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%);
+}
+.hx-btn-glass:hover { background: rgb(52 52 58 / .65); border-color: rgb(255 255 255 / .24); }
+
+/* Under 900px: Cole centered behind the text, face clear above the headline, body dimmed under it.
+   Figure width min(88vw, 480px) matches the sizes attribute of the -sm source. */
+@media (max-width: 899px) {
+  .hx {
+    --hx-fig-w: min(88vw, 480px);
+    align-items: end; text-align: center;
+    padding-top: calc(var(--hx-nav) + var(--hx-fig-w) * .62);
+    padding-bottom: clamp(72px, 12vh, 140px);
+  }
+  .hx-figure {
+    right: auto; left: 50%; bottom: auto; top: calc(var(--hx-nav) + 4px);
+    width: var(--hx-fig-w); transform: translateX(-50%);
+    -webkit-mask: linear-gradient(to bottom, #000 0%, #000 24%, rgb(0 0 0 / .3) 48%, rgb(0 0 0 / .14) 70%, transparent 90%);
+            mask: linear-gradient(to bottom, #000 0%, #000 24%, rgb(0 0 0 / .3) 48%, rgb(0 0 0 / .14) 70%, transparent 90%);
+  }
+  .hx-inner > *, .hx-lede { max-width: 46ch; margin-left: auto; margin-right: auto; }
+  .hx-cta { justify-content: center; }
+}
+@media (max-width: 560px) {
+  .hx { --hx-peak: 86%; }
+  .hx-cta .hx-btn { flex: 1 1 140px; }
+}
+
+/* Motion: the wheel turns, the content rises in once. Paused while the hero is off screen (section.js adds .hx-off). */
+@media (prefers-reduced-motion: no-preference) {
+  .hx-spin { animation: hx-turn var(--hx-turn) linear infinite; }
+  .hx-off .hx-spin { animation-play-state: paused; }
+  .hx-inner > * { animation: hx-rise 1.2s var(--hx-ease) both; }
+  .hx-inner > :nth-child(2) { animation-delay: .1s; }
+  .hx-inner > :nth-child(3) { animation-delay: .2s; }
+  .hx-figure { animation: hx-fade-in 1.6s ease-out both; }
+  .hx-bg { animation: hx-fade-in 2.4s ease-out both; }
+}
+@keyframes hx-turn { from { transform: rotate(var(--hx-start, -8deg)); } to { transform: rotate(calc(var(--hx-start, -8deg) + 1turn)); } }
+@keyframes hx-rise { from { opacity: 0; transform: translateY(18px); } }
+@keyframes hx-fade-in { from { opacity: 0; } }
+
+@media (prefers-reduced-transparency: reduce) {
+  .hx-btn-glass { background: #1c1c1f; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
