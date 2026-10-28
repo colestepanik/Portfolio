@@ -1,0 +1,34 @@
+# Cole Stepanik
+
+> Cole Stepanik is a Finance and Accounting senior at the University of Massachusetts Lowell Manning School of Business (Honors College, GPA 3.65, graduating May 2027) who builds AI tools for markets, deal sourcing, and research. He is recruiting for 2027 analyst roles in sales and trading and investment banking. Contact: cole_stepanik@student.uml.edu (inquiries) or colestepanik39@gmail.com. LinkedIn: https://www.linkedin.com/in/cole-stepanik/
+
+## Current roles
+- Lead Intern, Anoush Holdings (search fund, Cambridge, MA), Summer 2026 to present: proprietary outbound sourcing, owner qualification, CRM of about 350 targets, first-pass CIM screens, trains incoming interns.
+- Co-Founder and President, Commonwealth Capital Research (CCR), UMass Lowell, January 2025 to present: student investment research organization, 20+ members, five sector teams.
+- Senior Class President, UMass Lowell Class of 2027.
+- Co-Captain, UMass Lowell Intercollegiate Sales Team. 1st place at the UML Manning Sales Challenge (Pfizer), ALKU Sales Challenge, and Medicus Sales Competition; 4th at the CSI Invitational.
+- Head of Finance, AI Multidisciplinary Society (AIM), UMass Lowell.
+- Communications Chair, UMass Lowell Accounting Society. Board Member, Manning Leadership Council.
+
+## Past experience
+- Investor Services Intern, Franklin Templeton, Boston, MA, from June 2025.
+- Accountant and Farmhand, Richard Stepanik Farms, Agawam, MA (family business).
+
+## Credentials
+- FINRA Securities Industry Essentials (SIE), passed July 2026.
+
+## AI projects
+- READ Market Engine: automated sales and trading training desk. Weekday 8:35am ET run producing a 6-page cross-asset market packet, a 2-page paper trade idea ($100,000 paper book, 1% risk per idea), and a close-of-day review. Every number sourced and timestamped.
+- 2nd Brain: personal operating system built on an Obsidian vault and Claude skills, synced through Google Drive; loads context per task, applies written decision rules, writes back, keeps a dated daily log. Public build guide at https://colestepanik.com/brain.html
+- SIE Prep App: single-file HTML study app, 200 questions weighted to the FINRA SIE blueprint with real-world examples and wrong-answer explanations. Used to pass the SIE in July 2026.
+- Birddog (in development): deal sourcing engine for lower middle market acquisitions; outputs a scored, fully sourced Excel target list.
+- AIM Resume Checker: in-browser resume checker for AIM career workshops across five business verticals, built in Lovable.
+- CCR Research Pipeline: two Claude skills that deep-learn a finance topic and produce a finished newsletter article as a PDF.
+- AIM Slack Bot (in development): Python Slack Bolt and Claude API bot that tracks club events and projects and posts a weekly digest.
+
+## Skills
+Claude, Claude Code, Claude API, agent and skill design, Lovable, Excel (VBA), Bloomberg Terminal, Tableau, SAP/ERP.
+
+## Pages
+- [Portfolio and full resume](https://colestepanik.com/)
+- [Build your own 2nd Brain](https://colestepanik.com/brain.html): free beginner guide by Cole Stepanik to building an Obsidian vault that Claude or ChatGPT reads every chat, synced through Google Drive. Windows and Mac, about 45 minutes, with a vault template, a /brain skill or ChatGPT Project instructions, and interview questions.

@@ -1,0 +1,1148 @@
+<!doctype html>
+<html lang="en" data-fx="crossfade">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cole Stepanik | AI Projects and Resume</title>
+<meta name="description" content="Cole Stepanik is a Finance and Accounting senior at UMass Lowell (May 2027) who builds AI tools for markets, deal sourcing, and research. Portfolio of AI projects and full resume.">
+<meta name="author" content="Cole Stepanik">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="theme-color" content="#1a1a1c">
+<link rel="canonical" href="https://colestepanik.com/">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Cole Stepanik | AI Projects and Resume">
+<meta property="og:description" content="Finance and Accounting senior at UMass Lowell building AI tools for markets, deal sourcing, and research.">
+<meta property="og:url" content="https://colestepanik.com/">
+<meta property="og:image" content="https://colestepanik.com/img/bg-peak.webp">
+<meta property="profile:first_name" content="Cole">
+<meta property="profile:last_name" content="Stepanik">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231a1a1c'/%3E%3Ctext x='32' y='41' font-family='Arial,sans-serif' font-weight='600' font-size='24' fill='%23ededf0' text-anchor='middle'%3ECS%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/bg-peak.webp" as="image" type="image/webp">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+
+<!-- Structured data: what search engines and AI assistants read to understand who you are. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://colestepanik.com/#person",
+      "name": "Cole Stepanik",
+      "givenName": "Cole",
+      "familyName": "Stepanik",
+      "url": "https://colestepanik.com/",
+      "email": "mailto:colestepanik39@gmail.com",
+      "contactPoint": {"@type": "ContactPoint", "contactType": "inquiries", "email": "cole_stepanik@student.uml.edu"},
+      "jobTitle": "Finance and Accounting Student, UMass Lowell Class of 2027",
+      "description": "Finance and Accounting senior at the UMass Lowell Manning School of Business who builds AI tools for markets, deal sourcing, and research. Founder of Commonwealth Capital Research, Senior Class President, and co-captain of the UMass Lowell Intercollegiate Sales Team.",
+      "address": {"@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US"},
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Massachusetts Lowell",
+        "department": "Manning School of Business",
+        "url": "https://www.uml.edu/"
+      },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "FINRA Securities Industry Essentials (SIE)",
+        "credentialCategory": "certification",
+        "recognizedBy": {"@type": "Organization", "name": "FINRA"}
+      },
+      "worksFor": {"@type": "Organization", "name": "Anoush Holdings"},
+      "founder": {"@type": "Organization", "@id": "https://colestepanik.com/#ccr", "name": "Commonwealth Capital Research", "description": "Student-led investment research organization at UMass Lowell"},
+      "memberOf": [
+        {"@type": "Organization", "name": "UMass Lowell Class of 2027", "description": "Senior Class President"},
+        {"@type": "Organization", "name": "UMass Lowell Intercollegiate Sales Team", "description": "Co-Captain"},
+        {"@type": "Organization", "name": "AI Multidisciplinary Society (AIM), UMass Lowell", "description": "Head of Finance"},
+        {"@type": "Organization", "name": "UMass Lowell Accounting Society", "description": "Communications Chair"},
+        {"@type": "Organization", "name": "Manning Leadership Council", "description": "Board Member"}
+      ],
+      "knowsAbout": ["Investment banking", "Sales and trading", "Private equity", "Search funds", "Deal sourcing", "Equity research", "Financial statement analysis", "Generative AI", "Claude", "Claude Code", "AI agents", "Workflow automation", "Excel VBA", "Tableau", "Bloomberg Terminal"],
+      "award": ["1st Place, UML Manning Sales Challenge (Pfizer)", "1st Place, ALKU Sales Challenge", "1st Place, Medicus Sales Competition", "4th Place, CSI Invitational Collegiate Sales Challenge"],
+      "sameAs": ["https://www.linkedin.com/in/cole-stepanik/"]
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://colestepanik.com/#page",
+      "url": "https://colestepanik.com/",
+      "name": "Cole Stepanik | AI Projects and Resume",
+      "mainEntity": {"@id": "https://colestepanik.com/#person"},
+      "dateModified": "2026-10-18",
+      "hasPart": {"@type": "HowTo", "name": "Build your own 2nd Brain with Obsidian and Claude or ChatGPT", "url": "https://colestepanik.com/brain.html"}
+    },
+    {
+      "@type": "ItemList",
+      "name": "AI projects by Cole Stepanik",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "item": {"@type": "SoftwareApplication", "name": "READ Market Engine", "applicationCategory": "FinanceApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "Automated sales and trading training desk that produces a daily cross-asset market packet, a paper trade idea, and a close-of-day review."}},
+        {"@type": "ListItem", "position": 2, "item": {"@type": "SoftwareApplication", "name": "2nd Brain", "applicationCategory": "ProductivityApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "Personal operating system built on an Obsidian vault and Claude skills that loads context, makes decisions by stated rules, and keeps a dated log."}},
+        {"@type": "ListItem", "position": 3, "item": {"@type": "SoftwareApplication", "name": "SIE Prep App", "applicationCategory": "EducationalApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "Single-file study app with 200 questions weighted to the FINRA SIE blueprint, used to pass the SIE in July 2026."}},
+        {"@type": "ListItem", "position": 4, "item": {"@type": "SoftwareApplication", "name": "Birddog", "applicationCategory": "BusinessApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "Deal sourcing engine for lower middle market acquisitions that outputs a scored, sourced target list."}},
+        {"@type": "ListItem", "position": 5, "item": {"@type": "SoftwareApplication", "name": "AIM Resume Checker", "applicationCategory": "EducationalApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "In-browser resume checker for AIM career workshops across five business verticals."}},
+        {"@type": "ListItem", "position": 6, "item": {"@type": "SoftwareApplication", "name": "CCR Research Pipeline", "applicationCategory": "BusinessApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "Two Claude skills that research a finance topic and produce a finished newsletter article for Commonwealth Capital Research."}},
+        {"@type": "ListItem", "position": 7, "item": {"@type": "SoftwareApplication", "name": "AIM Slack Bot", "applicationCategory": "CommunicationApplication", "author": {"@id": "https://colestepanik.com/#person"}, "description": "Slack bot built on Slack Bolt and the Claude API that tracks events and projects across club teams and posts a weekly digest."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* ---------- Backdrop (Crossfade scroll mode) ----------
+   Each photo change is tied to scroll position: as a section's top travels from 75% to 25% of the viewport,
+   a bridge gradient (outgoing photo's bottom edge color to incoming photo's top edge color) rises, the photos
+   swap underneath it at the midpoint, and it falls away. Scrolling back up runs the same thing in reverse. */
+#work { view-timeline-name: --sc1; }
+#resume { view-timeline-name: --sc2; }
+#contact { view-timeline-name: --sc3; }
+.backdrop { position: fixed; inset: 0; z-index: -1; display: none; background: var(--bg); }
+.backdrop img, .backdrop .bridge { position: absolute; inset: 0; width: 100%; height: 100%; }
+.backdrop img { object-fit: cover; opacity: 0; }
+.backdrop img:first-child { opacity: 1; }
+.backdrop .bridge { opacity: 0; background: linear-gradient(180deg, var(--from, #1a1a1c) 0%, var(--mid, #1a1a1c) 50%, var(--to, #1a1a1c) 100%); }
+.backdrop::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(26 26 28 / .9), rgb(26 26 28 / .74) 50%, rgb(26 26 28 / .9)); opacity: .3; }
+html[data-fx="crossfade"] .backdrop { display: block; }
+html[data-fx="crossfade"] body { background: transparent; }
+html[data-tx="none"] .backdrop .bridge { display: none; }
+@supports (animation-timeline: view()) {
+  html[data-fx="crossfade"] .backdrop img:nth-child(2), html[data-fx="crossfade"] .backdrop .b1, html[data-fx="crossfade"] .backdrop::after { animation-timeline: --sc1; }
+  html[data-fx="crossfade"] .backdrop img:nth-child(3), html[data-fx="crossfade"] .backdrop .b2 { animation-timeline: --sc2; }
+  html[data-fx="crossfade"] .backdrop img:nth-child(4), html[data-fx="crossfade"] .backdrop .b3 { animation-timeline: --sc3; }
+  html[data-fx="crossfade"] .backdrop img:not(:first-child) { animation-name: bd-swap; animation-duration: auto; animation-timing-function: linear; animation-fill-mode: both; animation-range: entry 25vh entry 75vh; }
+  html[data-fx="crossfade"][data-tx="none"] .backdrop img:not(:first-child) { animation-name: bd-fade; }
+  html[data-fx="crossfade"] .backdrop .bridge { animation-name: bd-bridge; animation-duration: auto; animation-timing-function: linear; animation-fill-mode: both; animation-range: entry 25vh entry 75vh; }
+  html[data-fx="crossfade"] .backdrop::after { animation-name: bd-dim; animation-duration: auto; animation-timing-function: linear; animation-fill-mode: both; animation-range: entry 25vh entry 75vh; }
+}
+/* The slight smoothing: eased curves on every keyframe segment, so the blend never snaps */
+@keyframes bd-swap { 0%, 50% { opacity: 0; } 50.01%, 100% { opacity: 1; } }
+@keyframes bd-fade { 0% { opacity: 0; animation-timing-function: cubic-bezier(.45, 0, .55, 1); } 100% { opacity: 1; } }
+@keyframes bd-bridge { 0% { opacity: 0; animation-timing-function: cubic-bezier(.45, 0, .55, 1); } 38%, 62% { opacity: 1; animation-timing-function: cubic-bezier(.45, 0, .55, 1); } 100% { opacity: 0; } }
+@keyframes bd-dim { 0% { opacity: .3; animation-timing-function: cubic-bezier(.45, 0, .55, 1); } 60%, 100% { opacity: .84; } }
+/* Browsers without scroll-driven animations (Firefox today): a plain eased crossfade per section */
+@supports not (animation-timeline: view()) {
+  .backdrop img, .backdrop::after { transition: opacity .9s var(--ease); }
+  .backdrop .bridge { display: none; }
+  .backdrop[data-active="1"] img:nth-child(2), .backdrop[data-active="2"] img:nth-child(3), .backdrop[data-active="3"] img:nth-child(4) { opacity: 1; }
+  .backdrop:not([data-active="0"])::after { opacity: .84; }
+}
+
+/* ---------- Hero ---------- */
+.hero { position: relative; }
+.hero-stage { position: relative; height: 100vh; height: 100dvh; min-height: 620px; overflow: hidden; display: grid; place-items: center; }
+.hero-bg { position: absolute; inset: 0; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; transform-origin: 50% 65%; transform: scale(1.04); }
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgb(26 26 28 / .55) 0%, rgb(26 26 28 / .1) 38%, rgb(26 26 28 / .35) 72%, var(--bg) 100%); }
+.hero-dim { position: absolute; inset: 0; background: var(--bg); opacity: 0; pointer-events: none; }
+.hero-content { position: relative; text-align: center; padding: var(--nav-h) 24px 0; max-width: 900px; margin-top: -8vh; }
+.hero-content .h1 .l2 { display: block; color: var(--fg-2); }
+.hero-content .lede { margin: 22px auto 34px; text-shadow: 0 1px 24px rgb(0 0 0 / .35); }
+.hero-content .cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+html[data-fx="crossfade"] .hero-bg, html[data-fx="crossfade"] .hero-dim { display: none; }
+html[data-fx="crossfade"] .hero-shade { background: linear-gradient(180deg, rgb(26 26 28 / .4), transparent 40%, transparent 70%, rgb(26 26 28 / .5)); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-content > * { animation: hero-in 1.2s var(--ease) both; animation-delay: calc(.15s + var(--i, 0) * .12s); }
+  .hero-bg img { animation: hero-img-in 2.4s var(--ease) both; }
+  @supports (animation-timeline: scroll()) {
+    /* Zoom: the photo stays pinned and slowly pushes in, then sinks into the grey */
+    html[data-fx="zoom"] .hero { height: 190vh; }
+    html[data-fx="zoom"] .hero-stage { position: sticky; top: 0; }
+    html[data-fx="zoom"] .hero-bg img { animation: hero-zoom linear both; animation-timeline: scroll(root); animation-range: 0 120vh; }
+    /* Parallax: the photo drifts slower than the page */
+    html[data-fx="parallax"] .hero-bg img { animation: hero-drift linear both; animation-timeline: scroll(root); animation-range: 0 100vh; }
+    html[data-fx="zoom"] .hero-dim, html[data-fx="parallax"] .hero-dim { animation: hero-dim linear both; animation-timeline: scroll(root); animation-range: 25vh 115vh; }
+    .hero-content { animation: hero-out linear both; animation-timeline: scroll(root); animation-range: 0 65vh; }
+  }
+}
+@keyframes hero-in { from { opacity: 0; transform: translateY(26px); } }
+@keyframes hero-img-in { from { opacity: 0; transform: scale(1.12); } }
+@keyframes hero-zoom { from { transform: scale(1.04); } to { transform: scale(1.32); } }
+@keyframes hero-drift { from { transform: scale(1.1) translateY(0); } to { transform: scale(1.1) translateY(24%); } }
+@keyframes hero-dim { to { opacity: .9; } }
+@keyframes hero-out { to { opacity: 0; transform: translateY(-60px) scale(.97); } }
+
+/* ---------- Roles marquee (the one marquee on the page) ---------- */
+.roles { overflow: hidden; padding: 30px 0; border-block: 1px solid var(--line); background: rgb(26 26 28 / .6); }
+.roles-track { display: flex; width: max-content; }
+.roles ul { display: flex; margin: 0; padding: 0; list-style: none; }
+.roles li { font: 460 clamp(18px, 1.9vw, 26px)/1 var(--sans); letter-spacing: -.01em; white-space: nowrap; padding: 0 30px; display: flex; align-items: center; gap: 60px; color: var(--mute); }
+.roles li::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--line-strong); margin-right: -30px; }
+.roles li strong { color: var(--fg); font-weight: 480; margin-right: 10px; }
+@media (prefers-reduced-motion: no-preference) {
+  .roles-track { animation: marquee 48s linear infinite; }
+  .roles:hover .roles-track { animation-play-state: paused; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .roles ul[aria-hidden] { display: none; }
+  .roles ul { flex-wrap: wrap; row-gap: 16px; }
+}
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ---------- Sections ---------- */
+.section { padding: 136px 0; position: relative; }
+.section-head { text-align: center; max-width: 760px; margin: 0 auto; }
+
+/* Featured: sticky stacking cards (CSS scroll-driven, after Bramus van Damme's pattern) */
+.stack { --numcards: 3; list-style: none; margin: 72px 0 0; padding: 0 0 calc(var(--numcards) * 20px); display: grid; gap: 32px; view-timeline-name: --stack; }
+.stack > li { --index0: calc(var(--index) - 1); --reverse-index: calc(var(--numcards) - var(--index0)); position: sticky; top: calc(var(--nav-h) + 16px); padding-top: calc(var(--index0) * 20px); }
+.card { transform-origin: 50% 0%; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; min-height: min(74vh, 620px); display: grid; grid-template-columns: 1fr 1.08fr; overflow: hidden; box-shadow: 0 -18px 50px rgb(0 0 0 / .25); }
+.card-copy { padding: 48px; display: flex; flex-direction: column; gap: 18px; }
+.card-copy p { color: var(--fg-2); margin: 0; max-width: 46ch; }
+.card-copy ul { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 11px; }
+.card-copy li { display: grid; grid-template-columns: 22px 1fr; color: var(--fg-2); font-size: 15px; }
+.card-copy li i { color: var(--fg); margin-top: 4px; }
+.card-copy .foot { margin-top: auto; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
+.card-visual { position: relative; overflow: hidden; isolation: isolate; }
+.card-visual > .scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; transform: scale(1.06); transition: transform 1.6s var(--ease); }
+.card-visual::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgb(26 26 28 / .1), rgb(26 26 28 / .45)); }
+.card:hover .card-visual > .scene { transform: scale(1.12); }
+.pages { position: absolute; inset: 0; }
+.pages img { position: absolute; width: 62%; border-radius: 10px; border: 1px solid var(--glass-line); box-shadow: 0 30px 70px rgb(0 0 0 / .45); transition: transform .9s var(--ease); }
+.pages img:first-child { top: 11%; left: 9%; transform: rotate(-4deg); }
+.pages img:last-child { top: 19%; left: 30%; transform: rotate(3deg); }
+.card:hover .pages img:first-child { transform: rotate(-7deg) translate(-4%, -2%); }
+.card:hover .pages img:last-child { transform: rotate(5deg) translate(3%, 2%); }
+.visual-pad { position: absolute; inset: 0; display: grid; place-items: center; padding: 40px; }
+.vault { list-style: none; margin: 0; padding: 14px; width: 100%; max-width: 440px; display: grid; gap: 2px; font-family: var(--mono); font-size: 14px; }
+.vault li { display: grid; grid-template-columns: 40px 1fr auto; align-items: baseline; gap: 10px; padding: 12px 14px; border-radius: 10px; color: var(--mute); transition: background-color .5s var(--ease), color .5s var(--ease); }
+.vault li b { font-weight: 500; color: var(--fg-2); }
+.vault li span:last-child { font-size: 12px; }
+.vault.lit li { animation: vault-row 4.2s var(--ease) both; animation-delay: calc(var(--i) * .5s); }
+@keyframes vault-row { 0%, 100% { background: transparent; } 12%, 30% { background: rgb(255 255 255 / .08); color: var(--fg); } }
+.quiz { width: 100%; max-width: 460px; padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+.quiz-q { font: 480 19px/1.4 var(--sans); margin: 0; }
+.quiz-opts { display: grid; gap: 8px; }
+.quiz-opt { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; padding: 13px 18px; border-radius: 999px; border: 1px solid var(--glass-line); background: rgb(255 255 255 / .03); cursor: pointer; font-size: 15px; transition: background-color .25s, color .25s, border-color .25s, transform .4s var(--ease); }
+.quiz-opt:hover:not(:disabled) { border-color: var(--fg); }
+.quiz-opt:active:not(:disabled) { transform: scale(.98); }
+.quiz-opt .key { font: 500 12px/1 var(--mono); color: var(--mute); width: 14px; }
+.quiz-opt i { margin-left: auto; font-size: 18px; }
+.quiz-opt.right { background: var(--fg); color: #18181a; border-color: var(--fg); }
+.quiz-opt.right .key { color: #18181a; }
+.quiz-opt.wrong { border-style: dashed; color: var(--mute); text-decoration: line-through; }
+.quiz-opt:disabled { cursor: default; }
+.quiz-foot { min-height: 66px; font-size: 14px; color: var(--fg-2); }
+.quiz-foot .reset { margin-top: 10px; background: none; border: 0; padding: 0; cursor: pointer; color: var(--fg); font-size: 14px; display: inline-flex; gap: 6px; align-items: center; text-decoration: underline; text-underline-offset: 3px; }
+.text-link { color: var(--fg); font-weight: 500; font-size: 15px; display: inline-flex; gap: 6px; align-items: center; text-decoration: none; }
+.text-link i { transition: transform .5s var(--ease); }
+.text-link:hover i { transform: translateX(3px); }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 900px) {
+    .card { animation: stack-shrink linear forwards; animation-timeline: --stack; animation-range: exit-crossing calc(var(--index0) / var(--numcards) * 100%) exit-crossing calc(var(--index) / var(--numcards) * 100%); }
+  }
+}
+@keyframes stack-shrink { to { transform: scale(calc(1.08 - calc(.08 * var(--reverse-index)))); } }
+
+/* ---------- Build your own 2nd Brain ---------- */
+.combo-card { display: flex; align-items: center; justify-content: center; gap: 18px; }
+.combo-card .plus { font: 300 30px/1 var(--sans); color: var(--fg-2); }
+.ai-stack { display: grid; gap: 14px; justify-items: center; }
+.logo-tile { display: inline-flex; align-items: center; gap: 14px; height: 76px; padding: 0 26px 0 18px; border-radius: 999px; font: 480 20px/1 var(--sans); }
+.logo-tile img { width: 40px; height: 40px; padding: 8px; border-radius: 50%; background: rgb(255 255 255 / .08); }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .logo-tile, .combo-card .plus { animation: pop linear both; animation-timeline: view(); animation-range: entry calc(10% + var(--i) * 12%) cover calc(30% + var(--i) * 5%); }
+  }
+}
+@keyframes pop { 0% { opacity: 0; transform: translateY(40px) scale(.6); } 70% { opacity: 1; transform: translateY(-4px) scale(1.04); } 100% { opacity: 1; transform: none; } }
+@supports not (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .js .logo-tile, .js .combo-card .plus { opacity: 0; transform: translateY(30px) scale(.7); transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: calc(var(--i) * 120ms); }
+    .js .combo-card.in .logo-tile, .js .combo-card.in .plus { opacity: 1; transform: none; }
+  }
+}
+
+/* ---------- More projects ---------- */
+.bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; margin-top: 64px; }
+.cell { border-radius: 20px; padding: 36px; min-height: 290px; display: flex; flex-direction: column; gap: 14px; border: 1px solid var(--line); background: var(--surface); position: relative; overflow: hidden; }
+.cell p { margin: 0; color: var(--fg-2); max-width: 48ch; }
+.cell .tags { margin-top: auto; }
+.cell.span-7 { grid-column: span 7; }
+.cell.span-5 { grid-column: span 5; }
+.cell.invert { background: var(--fg); color: #18181a; border-color: var(--fg); }
+.cell.invert p { color: #4c4c52; }
+.cell.invert .pill { border-color: rgb(0 0 0 / .25); color: #18181a; }
+.cell.invert .tag { background: rgb(0 0 0 / .07); color: #4c4c52; }
+.cell.dots { background-image: radial-gradient(var(--line-strong) 1px, transparent 1.2px); background-size: 18px 18px; }
+.big-num { font: 480 clamp(56px, 6vw, 84px)/.9 var(--sans); letter-spacing: -.04em; margin: 4px 0 6px; }
+.big-num small { font-size: .3em; color: var(--mute); font-weight: 460; margin-left: 8px; letter-spacing: 0; }
+.flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font: 400 13px/1 var(--mono); color: var(--fg-2); margin: 4px 0; }
+.flow span { padding: 9px 12px; border: 1px solid var(--line-strong); border-radius: 999px; }
+.flow i { color: var(--mute); }
+.cell.invert .flow { color: #18181a; }
+.cell.invert .flow span { border-color: rgb(0 0 0 / .22); }
+.cell.invert .flow i { color: #7a7a80; }
+
+/* ---------- Resume: the timeline ----------
+   One arrow runs down the middle. Each role is a branch off it: school to the left, career to the right.
+   Grouped by time segment, start dates only, not drawn to scale. */
+.print-resume { display: none; }
+.tl { --mid: 56px; --branch: 72px; --spine: rgb(255 255 255 / .12); position: relative; margin-top: 64px; padding-bottom: 72px; view-timeline-name: --tl; }
+.tl-line { position: absolute; left: 50%; top: 56px; bottom: 34px; width: 2px; margin-left: -1px; background: var(--spine); border-radius: 2px; overflow: hidden; }
+.tl-line span { position: absolute; inset: 0; background: var(--fg-2); transform-origin: 50% 0; }
+.tl-arrow { position: absolute; left: 50%; bottom: 30px; width: 14px; height: 14px; margin-left: -7px; border-right: 2px solid var(--fg-2); border-bottom: 2px solid var(--fg-2); transform: rotate(45deg); }
+.tl-heads { display: grid; grid-template-columns: 1fr var(--mid) 1fr; font: 500 12px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--mute); margin-bottom: 18px; }
+.tl-heads span:first-child { text-align: right; padding-right: var(--branch); }
+.tl-heads span:last-child { padding-left: var(--branch); }
+.band { display: grid; grid-template-columns: 1fr var(--mid) 1fr; align-items: start; padding: 22px 0 30px; }
+.band-year { grid-column: 2; grid-row: 1; justify-self: center; position: sticky; top: calc(var(--nav-h) + 18px); z-index: 2; }
+.band-year span { display: inline-block; padding: 8px 14px; border-radius: 999px; font: 500 13px/1 var(--mono); letter-spacing: .06em; color: var(--fg); background: var(--surface-2); border: 1px solid var(--line-strong); box-shadow: 0 0 0 6px var(--bg); white-space: nowrap; }
+.band-side { list-style: none; margin: 0; padding: 56px 0 0; display: grid; gap: 26px; grid-row: 1; }
+.band-side.school { grid-column: 1; }
+.band-side.career { grid-column: 3; }
+.ev { position: relative; display: flex; align-items: center; gap: 14px; min-height: 48px; }
+.school .ev { flex-direction: row-reverse; text-align: right; padding-right: var(--branch); }
+.career .ev { padding-left: var(--branch); }
+/* the branch: from the arrow out to the role, with a joint on the arrow */
+.ev-branch { position: absolute; top: 50%; height: 2px; margin-top: -1px; width: calc(var(--mid) / 2 + var(--branch) - 10px); background: rgb(255 255 255 / .28); border-radius: 2px; }
+.school .ev-branch { right: calc(-1 * var(--mid) / 2); transform-origin: 100% 50%; }
+.career .ev-branch { left: calc(-1 * var(--mid) / 2); transform-origin: 0 50%; }
+.ev::after { content: ""; position: absolute; top: 50%; width: 10px; height: 10px; margin-top: -5px; border-radius: 50%; background: var(--fg-2); box-shadow: 0 0 0 4px var(--bg); }
+.school .ev::after { right: calc(-1 * var(--mid) / 2 - 5px); }
+.career .ev::after { left: calc(-1 * var(--mid) / 2 - 5px); }
+.ev-logo { flex: none; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; padding: 7px; background: var(--surface-2); border: 1px solid var(--line-strong); }
+.ev-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.ev-logo.icon { font-size: 21px; color: var(--fg); }
+.ev-txt { min-width: 0; }
+.ev-date { display: block; font: 500 11.5px/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--mute); margin-bottom: 4px; }
+.ev b { display: block; font: 500 17px/1.25 var(--sans); color: var(--fg); }
+.ev-org { display: block; font-size: 14px; color: var(--fg-2); margin-top: 2px; }
+@media (prefers-reduced-motion: no-preference) {
+  /* branch grows out of the arrow, then the role fades in at its tip */
+  .js .ev[data-reveal] { opacity: 1; transform: none; }
+  .js .ev .ev-branch { transform: scaleX(0); transition: transform .7s var(--ease); transition-delay: calc(var(--i) * 90ms); }
+  .js .ev::after { transform: scale(0); transition: transform .4s var(--ease); transition-delay: calc(var(--i) * 90ms); }
+  .js .ev .ev-logo, .js .ev .ev-txt { opacity: 0; transform: translateX(var(--nudge, 14px)); transition: opacity .6s var(--ease), transform .6s var(--ease); transition-delay: calc(var(--i) * 90ms + 380ms); }
+  .js .school .ev { --nudge: -14px; }
+  .js .ev.in .ev-branch, .js .ev.in::after { transform: none; }
+  .js .ev.in .ev-logo, .js .ev.in .ev-txt { opacity: 1; transform: none; }
+  .js .band-year[data-reveal] { transform: scale(.8); }
+  .js .band-year[data-reveal].in { transform: none; }
+  .js .tl-arrow[data-reveal] { transform: rotate(45deg) translate(-6px, -6px); }
+  .js .tl-arrow[data-reveal].in { transform: rotate(45deg); }
+  @supports (animation-timeline: view()) {
+    .tl-line span { animation: tl-fill linear both; animation-timeline: --tl; animation-range: entry 35% exit 55%; }
+  }
+}
+@keyframes tl-fill { from { transform: scaleY(0); } }
+
+/* ---------- Resume: the printable sheet ---------- */
+.resume-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.paper { margin-top: 0; background: var(--paper); color: var(--paper-ink); border-radius: 20px; padding: 64px clamp(24px, 5vw, 72px); transform-origin: 50% 0%; box-shadow: 0 40px 100px rgb(0 0 0 / .35); }
+.paper a { color: var(--paper-ink); text-underline-offset: 3px; text-decoration-color: var(--paper-line); }
+.paper a:hover { text-decoration-color: currentColor; }
+.paper-top { display: flex; justify-content: space-between; align-items: end; gap: 24px 48px; flex-wrap: wrap; padding-bottom: 28px; border-bottom: 2px solid var(--paper-ink); }
+.paper-top h3 { font: 500 clamp(32px, 3.6vw, 46px)/1 var(--sans); letter-spacing: -.03em; margin: 0; }
+.paper-contact { display: flex; flex-wrap: wrap; gap: 6px 24px; font-size: 14px; }
+.paper-contact a, .paper-contact span { display: inline-flex; align-items: center; gap: 6px; color: var(--paper-ink-2); }
+.r-sec { display: grid; grid-template-columns: 200px 1fr; gap: 32px; padding: 36px 0; border-bottom: 1px solid var(--paper-line); }
+.r-sec:last-child { border-bottom: 0; padding-bottom: 0; }
+.r-label { font: 500 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--paper-ink-2); margin: 3px 0 0; }
+.job + .job { margin-top: 32px; }
+.job-top { display: flex; justify-content: space-between; gap: 6px 20px; flex-wrap: wrap; }
+.job-top strong { font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+.job-top .when { font: 400 13px/1.7 var(--mono); color: var(--paper-ink-2); white-space: nowrap; }
+.job .role { color: var(--paper-ink-2); margin-top: 2px; }
+.job ul { margin: 12px 0 0; padding-left: 18px; color: #2b2b2e; font-size: 15px; }
+.job li { margin-bottom: 6px; }
+.job li::marker { color: #9a9aa0; }
+.edu-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+.fact { border: 1px solid var(--paper-line); border-radius: 14px; padding: 14px 16px; }
+.fact b { display: block; font: 600 22px/1.1 var(--sans); letter-spacing: -.02em; }
+.fact span { font-size: 13px; color: var(--paper-ink-2); }
+.coursework { font-size: 14px; color: var(--paper-ink-2); margin: 14px 0 0; }
+.lead-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 32px; }
+.lead-grid div b { display: block; font-weight: 600; }
+.lead-grid div span { font-size: 14px; color: var(--paper-ink-2); }
+.wins { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.win { background: var(--paper-ink); color: var(--paper); border-radius: 14px; padding: 18px 18px 20px; }
+.win b { display: block; font: 600 34px/1 var(--sans); letter-spacing: -.03em; margin-bottom: 10px; }
+.win span { font-size: 14px; line-height: 1.4; color: #c9c9cf; }
+.more-wins { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 10px; font-size: 15px; }
+.more-wins li { display: flex; justify-content: space-between; gap: 16px; }
+.more-wins li span:last-child { font: 500 13px/1.6 var(--mono); white-space: nowrap; }
+.skills { margin: 0; display: grid; gap: 10px; font-size: 15px; color: #2b2b2e; }
+.skills div { display: grid; grid-template-columns: 90px 1fr; gap: 12px; }
+.skills dt { font-weight: 600; color: var(--paper-ink); }
+.skills dd { margin: 0; }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .paper { animation: paper-rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+  }
+}
+@keyframes paper-rise { from { transform: translateY(96px) scale(.94); opacity: .3; } }
+
+/* ---------- Inquiries ---------- */
+.contact { position: relative; overflow: hidden; isolation: isolate; padding: 136px 0 120px; text-align: center; }
+.contact > .scene { position: absolute; inset: -14% 0; width: 100%; height: 128%; object-fit: cover; z-index: -2; }
+.contact::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, var(--bg) 0%, rgb(26 26 28 / .55) 35%, rgb(26 26 28 / .65) 70%, var(--bg) 100%); }
+html[data-fx="crossfade"] .contact > .scene { display: none; }
+html[data-fx="crossfade"] .contact::before { background: none; }
+.contact .h2 { margin-bottom: 28px; }
+.contact .cta { display: flex; justify-content: center; }
+
+/* ---------- Background tester (visible only with ?test in the URL) ---------- */
+.tester { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 40; display: flex; align-items: center; gap: 14px; padding: 8px 10px 8px 16px; border-radius: 999px; font-size: 13px; color: var(--fg-2); box-shadow: 0 18px 50px rgb(0 0 0 / .4); }
+.tester[hidden] { display: none; }
+.tester .grp { display: flex; align-items: center; gap: 6px; }
+.tester .grp > span { margin-right: 4px; }
+.tester .sw { width: 34px; height: 34px; border-radius: 50%; border: 2px solid transparent; padding: 0; overflow: hidden; cursor: pointer; background: var(--surface); }
+.tester .sw img { width: 100%; height: 100%; object-fit: cover; }
+.tester .sw[aria-pressed="true"] { border-color: var(--fg); }
+.tester .seg { height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--glass-line); background: transparent; cursor: pointer; font-size: 13px; }
+.tester .seg[aria-pressed="true"] { background: var(--fg); color: #18181a; border-color: var(--fg); }
+.tester .div { width: 1px; height: 22px; background: var(--glass-line); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 899px) {
+  .tl { --mid: 0px; --branch: 0px; margin-top: 40px; padding-bottom: 56px; }
+  .tl-line { left: 21px; top: 8px; bottom: 28px; }
+  .tl-arrow { left: 21px; bottom: 24px; }
+  .tl-heads { display: none; }
+  .band { grid-template-columns: 1fr; padding: 10px 0 18px; }
+  .band-year, .band-side { grid-column: 1 !important; grid-row: auto !important; }
+  .band-year { justify-self: start; position: relative; top: auto; }
+  .band-side { padding: 20px 0 0; gap: 20px; }
+  .band-side:empty { display: none; }
+  .school .ev, .career .ev { flex-direction: row; text-align: left; padding: 0 0 0 66px; }
+  .school .ev-branch, .career .ev-branch { left: 22px; right: auto; width: 34px; transform-origin: 0 50%; }
+  .school .ev::after, .career .ev::after { left: 16px; right: auto; }
+  .js .school .ev { --nudge: 14px; }
+  .career .ev-date::after { content: "  Career"; color: var(--fg-2); }
+  .school .ev-date::after { content: "  School"; color: var(--fg-2); }
+}
+}
+@media (max-width: 899px) {
+  .stack { gap: 20px; padding-bottom: 0; }
+  .stack > li { position: static; padding-top: 0; }
+  .card { grid-template-columns: 1fr; min-height: 0; }
+  .card-visual { min-height: 460px; }
+  .cell.span-7, .cell.span-5 { grid-column: span 12; }
+  .r-sec { grid-template-columns: 1fr; gap: 16px; }
+  .tester { flex-wrap: wrap; justify-content: center; border-radius: 22px; width: calc(100% - 24px); }
+}
+@media (max-width: 640px) {
+  .section { padding: 92px 0; }
+  .hero-content { margin-top: -4vh; }
+  .card-copy { padding: 28px 22px; }
+  .visual-pad { padding: 16px; position: relative; inset: auto; min-height: 460px; }
+  .card-visual.read { min-height: 380px; }
+  .vault li { grid-template-columns: 30px 1fr; }
+  .vault li span:last-child { display: none; }
+  .quiz { padding: 22px 18px; }
+  .logo-tile { height: 60px; padding: 0 18px 0 12px; font-size: 17px; gap: 10px; }
+  .logo-tile img { width: 34px; height: 34px; padding: 7px; }
+  .combo-card { gap: 10px; }
+  .ai-stack { gap: 10px; }
+  .cell { padding: 26px 22px; min-height: 0; }
+  .paper { padding: 36px 20px; }
+  .edu-facts, .wins, .lead-grid { grid-template-columns: 1fr; }
+  .more-wins li { flex-direction: column; gap: 2px; }
+  .skills div { grid-template-columns: 1fr; gap: 2px; }
+  .contact { padding: 104px 0 96px; }
+}
+
+/* ---------- Print: only the resume ---------- */
+@media print {
+  @page { margin: .45in; }
+  :root { --paper: #fff; --paper-ink: #000; --paper-ink-2: #333; }
+  html, body { background: #fff; color: #000; font-size: 10pt; }
+  .nav, .progress, .backdrop, .hero, .roles, #work, #building, .contact, footer, .resume-head, .tester { display: none !important; }
+  .section { padding: 0; }
+  .path { display: none !important; }
+  .print-resume { display: block !important; }
+  .paper { margin: 0; padding: 0; border-radius: 0; box-shadow: none; animation: none !important; transform: none !important; opacity: 1 !important; }
+  .r-sec { grid-template-columns: 120px 1fr; gap: 16px; padding: 10px 0; break-inside: avoid; }
+  .job + .job { margin-top: 10px; }
+  .job ul { margin-top: 4px; font-size: 9.5pt; }
+  .job li { margin-bottom: 2px; }
+  .win { background: #fff; color: #000; border: 1px solid #000; padding: 8px 10px; }
+  .win b { font-size: 16pt; margin-bottom: 4px; }
+  .win span { color: #000; }
+  .fact { padding: 6px 10px; }
+  .fact b { font-size: 13pt; }
+  a { text-decoration: none; }
+}
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<div class="backdrop" id="backdrop" data-active="0" aria-hidden="true">
+  <img alt="" src="img/bg-peak.webp"><img alt="" src="img/bg-peak.webp"><img alt="" src="img/bg-peak.webp"><img alt="" src="img/bg-peak.webp"><div class="bridge b1"></div><div class="bridge b2"></div><div class="bridge b3"></div>
+</div>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Cole Stepanik</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="brain.html">2nd Brain</a>
+      <a href="#resume" class="hide-sm">Resume</a>
+    </nav>
+    <a class="btn solid sm" href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-label="Introduction" data-scene="0">
+    <div class="hero-stage">
+      <div class="hero-bg"><img id="hero-img" src="img/bg-peak.webp" width="2400" height="1607" alt="" fetchpriority="high"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-dim"></div>
+      <div class="hero-content">
+        <h1 class="h1" style="--i:0">Cole Stepanik<span class="l2">builds AI for finance.</span></h1>
+        <p class="lede" style="--i:1">Finance and Accounting senior at UMass Lowell. I build and use AI systems for markets, deal sourcing, and study.</p>
+        <div class="cta" style="--i:2">
+          <a class="btn solid" href="#work">View work</a>
+          <a class="btn glass" href="#resume">Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="roles" aria-label="Current roles">
+    <div class="roles-track">
+      <ul>
+        <li><span><strong>Founder</strong>Commonwealth Capital Research</span></li>
+        <li><span><strong>Lead Intern</strong>Anoush Holdings</span></li>
+        <li><span><strong>Senior Class President</strong>UMass Lowell</span></li>
+        <li><span><strong>Co-Captain</strong>Intercollegiate Sales Team</span></li>
+        <li><span><strong>Head of Finance</strong>AI Multidisciplinary Society</span></li>
+        <li><span><strong>FINRA SIE</strong>Passed July 2026</span></li>
+      </ul>
+      <ul aria-hidden="true">
+        <li><span><strong>Founder</strong>Commonwealth Capital Research</span></li>
+        <li><span><strong>Lead Intern</strong>Anoush Holdings</span></li>
+        <li><span><strong>Senior Class President</strong>UMass Lowell</span></li>
+        <li><span><strong>Co-Captain</strong>Intercollegiate Sales Team</span></li>
+        <li><span><strong>Head of Finance</strong>AI Multidisciplinary Society</span></li>
+        <li><span><strong>FINRA SIE</strong>Passed July 2026</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ================= SELECTED WORK ================= -->
+  <section class="section" id="work" aria-labelledby="work-title" data-scene="1">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2" id="work-title" data-reveal>Selected work</h2>
+        <p class="lede" data-reveal style="--i:1">Tools I built for my own work and use for real. A short walkthrough video of each is on the way.</p>
+      </div>
+
+      <ol class="stack">
+        <li style="--index:1">
+          <article class="card" id="read-market-engine">
+            <div class="card-copy">
+              <div><span class="pill on">Live, runs daily</span></div>
+              <h3 class="h3">READ Market Engine</h3>
+              <p>An automated sales and trading training desk. Every weekday at 8:35am ET it writes a cross-asset market packet, pitches one paper trade, and grades it at the close.</p>
+              <ul>
+                <li><i class="ph ph-check" aria-hidden="true"></i>6-page packet: macro, rates, commodities, FX, equities, options</li>
+                <li><i class="ph ph-check" aria-hidden="true"></i>2-page trade idea on a $100,000 paper book at 1% risk</li>
+                <li><i class="ph ph-check" aria-hidden="true"></i>Every number sourced and timestamped, "n/a" instead of a guess</li>
+              </ul>
+              <div class="foot"><div class="tags"><span class="tag">Claude</span><span class="tag">Scheduled agents</span><span class="tag">PDF reporting</span></div></div>
+            </div>
+            <div class="card-visual read">
+              <img class="scene" src="img/bg-range-sm.webp" width="1200" height="800" alt="" loading="lazy">
+              <div class="pages">
+                <img src="img/read-review.webp" width="1100" height="1423" loading="lazy" alt="READ Market Engine close-of-day review page grading an open paper trade.">
+                <img src="img/read-trade-idea.webp" width="1100" height="1423" loading="lazy" alt="READ Market Engine trade idea page for October 16, 2026: long oil on time-series momentum, with thesis, invalidation, and sizing plan.">
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li style="--index:2">
+          <article class="card" id="second-brain">
+            <div class="card-copy">
+              <div><span class="pill on">Live, daily use</span></div>
+              <h3 class="h3">2nd Brain</h3>
+              <p>A personal operating system. An Obsidian vault holds my priorities, decision rules, people, and projects. Claude skills read it at the start of every session, make calls the way I would, and write back what they learned.</p>
+              <ul>
+                <li><i class="ph ph-check" aria-hidden="true"></i>Loads only the context a task touches</li>
+                <li><i class="ph ph-check" aria-hidden="true"></i>Ranked priorities and triage rules in my own words</li>
+                <li><i class="ph ph-check" aria-hidden="true"></i>Synced through Google Drive, so it works from my phone too</li>
+              </ul>
+              <div class="foot">
+                <div class="tags"><span class="tag">Claude</span><span class="tag">Skills</span><span class="tag">Obsidian</span><span class="tag">Google Drive</span></div>
+                <a class="text-link" href="brain.html">Build mine <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+            <div class="card-visual">
+              <img class="scene" src="img/bg-peak-sm.webp" width="1200" height="803" alt="" loading="lazy" style="object-position: 50% 80%">
+              <div class="visual-pad">
+                <div class="combo-card" id="combos" aria-label="Obsidian plus Claude or ChatGPT">
+                  <span class="logo-tile glass-panel" style="--i:0"><img src="img/logos/obsidian.svg" width="24" height="24" alt="">Obsidian</span>
+                  <span class="plus" style="--i:1" aria-hidden="true">+</span>
+                  <span class="ai-stack">
+                    <span class="logo-tile glass-panel" style="--i:2"><img src="img/logos/claude.svg" width="24" height="24" alt="">Claude</span>
+                    <span class="logo-tile glass-panel" style="--i:3"><img src="img/logos/openai.svg" width="24" height="24" alt="">ChatGPT</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li style="--index:3">
+          <article class="card" id="sie-prep-app">
+            <div class="card-copy">
+              <div><span class="pill on">Shipped, July 2026</span></div>
+              <h3 class="h3">SIE Prep App</h3>
+              <p>A single-file study app I built for the FINRA Securities Industry Essentials exam. I passed in July 2026. Try a question from it.</p>
+              <ul>
+                <li><i class="ph ph-check" aria-hidden="true"></i>200 questions weighted to the SIE content outline</li>
+                <li><i class="ph ph-check" aria-hidden="true"></i>Real-world examples and wrong-answer explanations on the first 40</li>
+                <li><i class="ph ph-check" aria-hidden="true"></i>Runs offline in any browser, no install</li>
+              </ul>
+              <div class="foot"><div class="tags"><span class="tag">Claude</span><span class="tag">HTML and JavaScript</span></div></div>
+            </div>
+            <div class="card-visual">
+              <img class="scene" src="img/bg-range-sm.webp" width="1200" height="800" alt="" loading="lazy" style="object-position: 50% 100%">
+              <div class="visual-pad">
+                <div class="quiz glass-panel" id="quiz">
+                  <p class="quiz-q">An investor buys a bond with a 6% coupon at a price of 95. What is the current yield?</p>
+                  <div class="quiz-opts" role="group" aria-label="Answer choices">
+                    <button class="quiz-opt" type="button" data-ok="0"><span class="key">A</span>5.70%</button>
+                    <button class="quiz-opt" type="button" data-ok="0"><span class="key">B</span>6.00%</button>
+                    <button class="quiz-opt" type="button" data-ok="1"><span class="key">C</span>6.32%</button>
+                    <button class="quiz-opt" type="button" data-ok="0"><span class="key">D</span>6.50%</button>
+                  </div>
+                  <div class="quiz-foot" id="quiz-foot" aria-live="polite">Pick an answer to see the explanation.</div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= MORE PROJECTS ================= -->
+  <section class="section" id="building" aria-labelledby="building-title" style="padding-top:40px">
+    <div class="wrap">
+      <div class="section-head"><h2 class="h2" id="building-title" data-reveal>More projects</h2></div>
+      <div class="bento">
+        <article class="cell span-7 invert" id="birddog" data-reveal>
+          <div><span class="pill">In development</span></div>
+          <h3 class="h3">Birddog</h3>
+          <p>A deal sourcing engine for lower middle market acquisitions. Give it a vertical and a geography; it returns a scored Excel target list with a source for every field.</p>
+          <div class="flow" aria-label="How Birddog works"><span>Vertical + metro</span><i class="ph ph-arrow-right" aria-hidden="true"></i><span>Find and enrich</span><i class="ph ph-arrow-right" aria-hidden="true"></i><span>Thesis score</span><i class="ph ph-arrow-right" aria-hidden="true"></i><span>Excel</span></div>
+          <div class="tags"><span class="tag">Claude Code</span><span class="tag">Python</span><span class="tag">Excel</span></div>
+        </article>
+        <article class="cell span-5 dots" id="aim-resume-checker" data-reveal style="--i:1">
+          <div><span class="pill on">Live</span></div>
+          <h3 class="h3">AIM Resume Checker</h3>
+          <p>An in-browser resume checker for AI Multidisciplinary Society career workshops. Pick one of five business verticals, get feedback against what that field screens for.</p>
+          <div class="tags"><span class="tag">Lovable</span><span class="tag">Web app</span></div>
+        </article>
+        <article class="cell span-5" id="ccr-research-pipeline" data-reveal>
+          <div><span class="pill on">Live</span></div>
+          <h3 class="h3">CCR Research Pipeline</h3>
+          <div class="big-num">2<small>Claude skills</small></div>
+          <p>One deep-learns a finance topic into a research pack and talking points. The other writes and lays out a finished 700 to 1,100 word newsletter article for Commonwealth Capital Research.</p>
+          <div class="tags"><span class="tag">Claude skills</span><span class="tag">PDF</span></div>
+        </article>
+        <article class="cell span-7" id="aim-slack-bot" data-reveal style="--i:1">
+          <div><span class="pill">In development</span></div>
+          <h3 class="h3">AIM Slack Bot</h3>
+          <p>Tracks events and projects across siloed club teams, posts a weekly digest, and answers member questions from the club's own documents.</p>
+          <div class="flow" aria-label="How the Slack bot works"><span>Team channels</span><i class="ph ph-arrow-right" aria-hidden="true"></i><span>Claude API</span><i class="ph ph-arrow-right" aria-hidden="true"></i><span>Weekly digest</span></div>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Slack Bolt</span><span class="tag">Claude API</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESUME ================= -->
+  <section class="section" id="resume" aria-labelledby="resume-title" style="padding-top:32px" data-scene="2">
+    <div class="wrap">
+      <div class="resume-head">
+        <div>
+          <h2 class="h2" id="resume-title" data-reveal>Resume</h2>
+          <p class="lede" data-reveal style="--i:1">School on the left, career on the right.</p>
+        </div>
+        <button class="btn" type="button" id="print-btn" data-reveal style="--i:2"><i class="ph ph-file-arrow-down" aria-hidden="true"></i>Full resume (PDF)</button>
+      </div>
+
+      <div class="tl" id="timeline">
+        <div class="tl-line" aria-hidden="true"><span></span></div>
+        <div class="tl-heads" aria-hidden="true"><span>School</span><span></span><span>Career</span></div>
+        <div class="band">
+          <div class="band-year" data-reveal><span>2023-2024</span></div>
+          <ol class="band-side school" aria-label="School, 2023-2024">
+            <li class="ev" data-reveal style="--i:0">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo"><img src="img/logos/uml-white.webp" alt=""></span>
+              <div class="ev-txt"><span class="ev-date">Fall 2023</span><b>Started at UMass Lowell</b><span class="ev-org">Manning School of Business</span></div>
+            </li>
+            <li class="ev" data-reveal style="--i:1">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo icon"><i class="ph ph-coins" aria-hidden="true"></i></span>
+              <div class="ev-txt"><span class="ev-date">2024</span><b>Treasurer</b><span class="ev-org">Finance Society</span></div>
+            </li>
+          </ol>
+          <ol class="band-side career" aria-label="Career, 2023-2024">
+            <li class="ev" data-reveal style="--i:0">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo icon"><i class="ph ph-barn" aria-hidden="true"></i></span>
+              <div class="ev-txt"><span class="ev-date">Seasonal</span><b>Accountant and farmhand</b><span class="ev-org">Richard Stepanik Farms</span></div>
+            </li>
+          </ol>
+        </div>
+        <div class="band">
+          <div class="band-year" data-reveal><span>2025</span></div>
+          <ol class="band-side school" aria-label="School, 2025">
+            <li class="ev" data-reveal style="--i:0">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo"><img src="img/logos/ccr-white.webp" alt=""></span>
+              <div class="ev-txt"><span class="ev-date">Jan 2025</span><b>Co-Founder and President</b><span class="ev-org">Commonwealth Capital Research</span></div>
+            </li>
+            <li class="ev" data-reveal style="--i:1">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo"><img src="img/logos/acct-white.webp" alt=""></span>
+              <div class="ev-txt"><span class="ev-date">Feb 2025</span><b>Communications Chair</b><span class="ev-org">Accounting Society</span></div>
+            </li>
+            <li class="ev" data-reveal style="--i:2">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo icon"><i class="ph ph-users-three" aria-hidden="true"></i></span>
+              <div class="ev-txt"><span class="ev-date">2025</span><b>Board Member</b><span class="ev-org">Manning Leadership Council</span></div>
+            </li>
+            <li class="ev" data-reveal style="--i:3">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo"><img src="img/logos/sales-white.webp" alt=""></span>
+              <div class="ev-txt"><span class="ev-date">Oct 2025</span><b>Captain</b><span class="ev-org">Intercollegiate Sales Team</span></div>
+            </li>
+          </ol>
+          <ol class="band-side career" aria-label="Career, 2025">
+            <li class="ev" data-reveal style="--i:0">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo"><img src="img/logos/ft-white.webp" alt=""></span>
+              <div class="ev-txt"><span class="ev-date">Jun 2025</span><b>Investor Services Intern</b><span class="ev-org">Franklin Templeton</span></div>
+            </li>
+            <li class="ev" data-reveal style="--i:1">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo icon"><i class="ph ph-chart-line-up" aria-hidden="true"></i></span>
+              <div class="ev-txt"><span class="ev-date">2025</span><b>Bloomberg Trading Challenge</b><span class="ev-org">+15% on $1M simulated</span></div>
+            </li>
+          </ol>
+        </div>
+        <div class="band">
+          <div class="band-year" data-reveal><span>2026</span></div>
+          <ol class="band-side school" aria-label="School, 2026">
+            <li class="ev" data-reveal style="--i:0">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo"><img src="img/logos/seniors-white.webp" alt=""></span>
+              <div class="ev-txt"><span class="ev-date">Spring 2026</span><b>Senior Class President</b><span class="ev-org">UMass Lowell Class of 2027</span></div>
+            </li>
+            <li class="ev" data-reveal style="--i:1">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo"><img src="img/logos/aim-white.webp" alt=""></span>
+              <div class="ev-txt"><span class="ev-date">2026</span><b>Head of Finance</b><span class="ev-org">AI Multidisciplinary Society</span></div>
+            </li>
+          </ol>
+          <ol class="band-side career" aria-label="Career, 2026">
+            <li class="ev" data-reveal style="--i:0">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo"><img src="img/logos/anoush-white.webp" alt=""></span>
+              <div class="ev-txt"><span class="ev-date">Summer 2026</span><b>Lead Intern, Search Fund</b><span class="ev-org">Anoush Holdings</span></div>
+            </li>
+            <li class="ev" data-reveal style="--i:1">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo icon"><i class="ph ph-seal-check" aria-hidden="true"></i></span>
+              <div class="ev-txt"><span class="ev-date">Jul 2026</span><b>Passed the FINRA SIE</b><span class="ev-org">Securities Industry Essentials</span></div>
+            </li>
+            <li class="ev" data-reveal style="--i:2">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo icon"><i class="ph ph-chart-bar" aria-hidden="true"></i></span>
+              <div class="ev-txt"><span class="ev-date">Oct 2026</span><b>Launched READ Market Engine</b><span class="ev-org">AI sales and trading desk</span></div>
+            </li>
+          </ol>
+        </div>
+        <div class="band">
+          <div class="band-year" data-reveal><span>2027</span></div>
+          <ol class="band-side school" aria-label="School, 2027">
+            <li class="ev" data-reveal style="--i:0">
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo"><img src="img/logos/uml-white.webp" alt=""></span>
+              <div class="ev-txt"><span class="ev-date">May 2027</span><b>Graduating</b><span class="ev-org">BBA, Finance and Accounting</span></div>
+            </li>
+          </ol>
+          <ol class="band-side career" aria-label="Career, 2027"></ol>
+        </div>
+        <div class="tl-arrow" aria-hidden="true" data-reveal></div>
+      </div>
+
+      <!-- The full resume stays in the page for search engines, AI crawlers, and the PDF button. It only shows when printed. -->
+      <div class="print-resume">
+      <div class="paper" itemscope itemtype="https://schema.org/Person">
+        <div class="paper-top">
+          <h3 itemprop="name">Cole Stepanik</h3>
+          <div class="paper-contact">
+            <a href="mailto:colestepanik39@gmail.com" itemprop="email"><i class="ph ph-envelope-simple" aria-hidden="true"></i>colestepanik39@gmail.com</a>
+            <a href="https://www.linkedin.com/in/cole-stepanik" itemprop="sameAs" rel="me"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>linkedin.com/in/cole-stepanik</a>
+            <span itemprop="homeLocation"><i class="ph ph-map-pin" aria-hidden="true"></i>Massachusetts</span>
+          </div>
+        </div>
+
+        <div class="r-sec">
+          <h4 class="r-label">Education</h4>
+          <div class="job" itemprop="alumniOf" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+            <div class="job-top"><strong itemprop="name">University of Massachusetts Lowell, Manning School of Business</strong><span class="when">Expected May 2027</span></div>
+            <div class="role">Bachelor of Business Administration, Finance and Accounting (dual concentration), Honors College</div>
+            <div class="edu-facts">
+              <div class="fact"><b>3.65</b><span>GPA</span></div>
+              <div class="fact"><b>SIE</b><span>FINRA, passed July 2026</span></div>
+              <div class="fact"><b>Dean's List</b><span>2023 to 2025, Chancellor's List 2026</span></div>
+            </div>
+            <p class="coursework">Coursework: Corporate Finance, Financial Statement Analysis, Investment and Portfolio Analysis, Financial Derivatives, Federal Income Taxes, Accounting Information Systems</p>
+          </div>
+        </div>
+
+        <div class="r-sec">
+          <h4 class="r-label">Experience</h4>
+          <div>
+            <div class="job">
+              <div class="job-top"><strong>Anoush Holdings, Cambridge, MA</strong><span class="when">Summer 2026 to Present</span></div>
+              <div class="role">Lead Intern, Search Fund</div>
+              <ul>
+                <li>Run proprietary outbound sourcing to owners of lower middle market businesses: cold calling, gatekeeper navigation, and owner qualification</li>
+                <li>Maintain a CRM of about 350 target companies and manage follow-up and seller-facing materials</li>
+                <li>Write first-pass screens of brokered CIMs against the fund's acquisition criteria</li>
+                <li>Interview, train, and oversee incoming sourcing interns</li>
+              </ul>
+            </div>
+            <div class="job">
+              <div class="job-top"><strong>Commonwealth Capital Research, UMass Lowell</strong><span class="when">January 2025 to Present</span></div>
+              <div class="role">Co-Founder and President</div>
+              <ul>
+                <li>Co-founded and scaled a student-led investment research organization to 20+ members targeting investment banking, private equity, and corporate development</li>
+                <li>Lead five sector teams (TMT, FIG, Healthcare, Industrials, Consumer) publishing research on M&amp;A and PE deal flow using the Bloomberg Terminal</li>
+                <li>Secured speakers from IB, PE, asset management, and corporate development to expand member exposure and networks</li>
+              </ul>
+            </div>
+            <div class="job">
+              <div class="job-top"><strong>Franklin Templeton, Boston, MA</strong><span class="when">June 2025 to 2026</span></div>
+              <div class="role">Investor Services Intern</div>
+              <ul>
+                <li>Processed high-volume mutual fund and shareholder transactions across multiple asset classes in SAP/ERP systems under FINRA and SEC requirements</li>
+                <li>Managed trust and estate account workflows to legal, compliance, and internal audit standards</li>
+                <li>Performed portfolio reconciliations and resolved complex client and financial-advisor account inquiries</li>
+              </ul>
+            </div>
+            <div class="job">
+              <div class="job-top"><strong>Richard Stepanik Farms, Agawam, MA</strong><span class="when">Seasonal</span></div>
+              <div class="role">Accountant and Farmhand (family business)</div>
+              <ul>
+                <li>Ran variance analysis and multi-year P&amp;L review to find operating inefficiencies and align budget forecasts with seasonal revenue cycles</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="r-sec">
+          <h4 class="r-label">Leadership</h4>
+          <div class="lead-grid">
+            <div><b>Senior Class President</b><span>UMass Lowell Class of 2027, elected, 2026 to Present</span></div>
+            <div><b>Co-Captain</b><span>Intercollegiate Sales Team, 2025 to Present</span></div>
+            <div><b>Head of Finance</b><span>AI Multidisciplinary Society (AIM), 2026 to Present</span></div>
+            <div><b>Communications Chair</b><span>Accounting Society, 2025 to Present</span></div>
+            <div><b>Board Member</b><span>Manning Leadership Council, 2025 to Present</span></div>
+          </div>
+        </div>
+
+        <div class="r-sec">
+          <h4 class="r-label">Competitions</h4>
+          <div>
+            <div class="wins">
+              <div class="win"><b>1st</b><span>UML Manning Sales Challenge (Pfizer), ~35 competitors</span></div>
+              <div class="win"><b>1st</b><span>ALKU Sales Challenge, B2B staffing role-play</span></div>
+              <div class="win"><b>1st</b><span>Medicus Sales Competition, ~20 competitors</span></div>
+            </div>
+            <ul class="more-wins">
+              <li><span>CSI Invitational, Oklahoma City, factoring and fuel-financing pitch, ~45 competitors</span><span>4th Place</span></li>
+              <li><span>Northeast Intercollegiate Sales Competition, B2B analytics pitch, ~80 competitors</span><span>7th Place</span></li>
+              <li><span>Bloomberg Trading Challenge, $1M simulated portfolio</span><span>+15% return</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="r-sec">
+          <h4 class="r-label">Skills</h4>
+          <dl class="skills">
+            <div><dt>AI</dt><dd>Claude, Claude Code, Claude API, agent and skill design, scheduled automations, Lovable</dd></div>
+            <div><dt>Finance</dt><dd>Excel (VBA, PivotTables, lookups), Bloomberg Terminal, Tableau, SAP/ERP</dd></div>
+            <div><dt>Interests</dt><dd>Rugby, powerlifting, snowboarding, watches, biking</dd></div>
+          </dl>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="contact" id="contact" aria-labelledby="contact-title" data-scene="3">
+    <img class="scene" id="contact-img" src="img/bg-peak.webp" width="2400" height="1607" alt="" loading="lazy">
+    <div class="wrap">
+      <h2 class="h2" id="contact-title" data-reveal>Inquiries</h2>
+      <div class="cta" data-reveal style="--i:1"><a class="btn solid" href="mailto:cole_stepanik@student.uml.edu">Email me</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="skyline" id="skyline" aria-hidden="true">
+  <svg class="sk" viewBox="0 0 1200 210" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+    <g class="d" style="--g:0"><path pathLength="1" d="M0 176 H1200"/></g>
+    <g class="d" style="--g:1"><path pathLength="1" d="M60 176 V118 L76 94 L115 76 L154 94 L170 118 V176"/>
+<path pathLength="1" d="M60 118 H170"/>
+<rect pathLength="1" x="98" y="132" width="34" height="44"/>
+<path pathLength="1" d="M98 132 L132 176 M132 132 L98 176"/>
+<rect pathLength="1" x="108" y="96" width="14" height="14"/>
+<path pathLength="1" d="M184 176 V96 A16 16 0 0 1 216 96 V176"/>
+<path pathLength="1" d="M184 120 H216 M184 146 H216"/>
+<path pathLength="1" d="M230 176 V152 M246 176 V152 M262 176 V152 M278 176 V152 M230 158 H278 M230 168 H278"/></g>
+    <g class="d" style="--g:2"><rect pathLength="1" x="312" y="124" width="170" height="52"/>
+<rect pathLength="1" x="324" y="134" width="8" height="11"/>
+<rect pathLength="1" x="324" y="154" width="8" height="11"/>
+<rect pathLength="1" x="342" y="134" width="8" height="11"/>
+<rect pathLength="1" x="342" y="154" width="8" height="11"/>
+<rect pathLength="1" x="360" y="134" width="8" height="11"/>
+<rect pathLength="1" x="360" y="154" width="8" height="11"/>
+<rect pathLength="1" x="414" y="134" width="8" height="11"/>
+<rect pathLength="1" x="414" y="154" width="8" height="11"/>
+<rect pathLength="1" x="432" y="134" width="8" height="11"/>
+<rect pathLength="1" x="432" y="154" width="8" height="11"/>
+<rect pathLength="1" x="450" y="134" width="8" height="11"/>
+<rect pathLength="1" x="450" y="154" width="8" height="11"/>
+<rect pathLength="1" x="468" y="134" width="8" height="11"/>
+<rect pathLength="1" x="468" y="154" width="8" height="11"/>
+<path pathLength="1" d="M382 124 V82 H412 V124"/>
+<path pathLength="1" d="M382 82 L397 60 L412 82"/>
+<circle pathLength="1" cx="397" cy="99" r="8"/>
+<path pathLength="1" d="M397 99 V94 M397 99 L401 101"/>
+<path pathLength="1" d="M450 124 L453 66 H461 L464 124"/>
+<path pathLength="1" d="M452 76 H462"/></g>
+    <g class="d" style="--g:3"><rect pathLength="1" x="540" y="146" width="36" height="30"/>
+<path pathLength="1" d="M586 176 V100 H616 V176"/>
+<path pathLength="1" d="M586 100 L601 76 L616 100"/>
+<path pathLength="1" d="M601 76 V62"/>
+<path pathLength="1" d="M636 176 V64 H688 V176"/>
+<path pathLength="1" d="M648 64 V54 H676 V64"/>
+<path pathLength="1" d="M662 54 V32"/>
+<path pathLength="1" d="M636 78 H688 M636 90 H688 M636 102 H688 M636 114 H688 M636 126 H688 M636 138 H688 M636 150 H688 M636 162 H688"/>
+<path pathLength="1" d="M704 176 V48 L746 40 V176"/>
+<path pathLength="1" d="M714 46.1 V176 M725 44.0 V176 M736 41.9 V176"/>
+<rect pathLength="1" x="758" y="128" width="40" height="48"/>
+<path pathLength="1" d="M766 140 H790 M766 152 H790 M766 164 H790"/>
+<rect pathLength="1" x="806" y="150" width="34" height="26"/></g>
+    <g class="d" style="--g:4"><rect pathLength="1" x="882" y="124" width="112" height="52"/>
+<path pathLength="1" d="M876 124 H1000"/>
+<path pathLength="1" d="M896 132 V176 M908 132 V176 M920 132 V176 M932 132 V176 M944 132 V176 M956 132 V176 M968 132 V176 M980 132 V176"/>
+<path pathLength="1" d="M908 124 A30 22 0 0 1 968 124"/>
+<path pathLength="1" d="M938 102 V92"/>
+<circle pathLength="1" cx="938" cy="89.5" r="2.5"/>
+<path pathLength="1" d="M1012 176 V136 L1042 116 L1072 136 V176"/>
+<path pathLength="1" d="M1036 116 V100 H1048 V116"/>
+<path pathLength="1" d="M1036 100 L1042 84 L1048 100"/>
+<rect pathLength="1" x="1035" y="150" width="14" height="26"/></g>
+    <g class="sk-labels">
+      <text x="168" y="200">AGAWAM</text>
+      <text x="397" y="200">LOWELL</text>
+      <text x="690" y="200">BOSTON</text>
+      <text x="976" y="200">CAMBRIDGE</text>
+    </g>
+  </svg>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-id">
+        <b class="foot-name">Cole Stepanik</b>
+        <p>Grew up on a farm in Agawam. Finance and Accounting at UMass Lowell. Building AI tools for the work finance runs on.</p>
+      </div>
+      <nav class="foot-col" aria-label="Projects">
+        <h2>Projects</h2>
+        <a href="#read-market-engine">READ Market Engine</a>
+        <a href="#second-brain">2nd Brain</a>
+        <a href="brain.html">Build your own 2nd Brain</a>
+        <a href="#sie-prep-app">SIE Prep App</a>
+        <a href="#birddog">Birddog</a>
+      </nav>
+      <div class="foot-col">
+        <h2>Elsewhere</h2>
+        <a href="https://www.linkedin.com/in/cole-stepanik/" rel="me noopener" target="_blank"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>LinkedIn</a>
+        <a href="mailto:cole_stepanik@student.uml.edu"><i class="ph ph-envelope-simple" aria-hidden="true"></i>Email</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© <span id="yr">2026</span> Cole Stepanik</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Background tester: add ?test to the URL to show it. A choice is also readable as ?look=1-6&tx=none|blend|black -->
+<div class="tester glass-panel" id="tester" hidden>
+  <div class="grp" role="group" aria-label="Background look">
+    <span>Look</span>
+    <button class="seg" type="button" data-look="1" title="Night peak in the hero, starry range for the rest">1 Peak, then stars</button>
+    <button class="seg" type="button" data-look="2" title="Starry range in the hero, night peak for the rest">2 Stars, then peak</button>
+    <button class="seg" type="button" data-look="3" title="Night peak the whole way, dimmed under the content">3 Peak only</button>
+    <button class="seg" type="button" data-look="4" title="Peak, range, peak, range by section">4 Alternating</button>
+    <button class="seg" type="button" data-look="5" title="Peak at the top, plain grey middle, range at the bottom">5 Bookends</button>
+    <button class="seg" type="button" data-look="6" title="Peak hero zooms in as you scroll, plain grey middle, range at the bottom">6 Zoom</button>
+  </div>
+  <span class="div" aria-hidden="true"></span>
+  <div class="grp" role="group" aria-label="Transition">
+    <span>Blend</span>
+    <button class="seg" type="button" data-tx="none">Dissolve</button>
+    <button class="seg" type="button" data-tx="blend">Edge colors</button>
+    <button class="seg" type="button" data-tx="black">Black</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.getElementById('print-btn').addEventListener('click', function () { window.print(); });
+
+  /* ---- Background looks: only the night peak and the starry range ---- */
+  var SIZES = { peak: [2400, 1607], range: [1470, 980] };
+  var GREY = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Crect width='8' height='8' fill='%231a1a1c'/%3E%3C/svg%3E";
+  // One photo per scene: hero, work, resume, contact (null = plain grey)
+  var LOOKS = {
+    1: { fx: 'crossfade', scenes: ['peak', 'range', 'range', 'range'] },
+    2: { fx: 'crossfade', scenes: ['range', 'peak', 'peak', 'peak'] },
+    3: { fx: 'crossfade', scenes: ['peak', 'peak', 'peak', 'peak'] },
+    4: { fx: 'crossfade', scenes: ['peak', 'range', 'peak', 'range'] },
+    5: { fx: 'crossfade', scenes: ['peak', null, null, 'range'] },
+    6: { fx: 'zoom', scenes: ['peak', null, null, 'range'] }
+  };
+  var TX = ['blend', 'black', 'none'];
+  // Average color of the top and bottom 10% of each photo (sampled from the files)
+  var EDGE = {
+    peak:  { top: '#2b2b2d', bottom: '#2a292c' },
+    range: { top: '#25262a', bottom: '#1d1d1d' },
+    grey:  { top: '#1a1a1c', bottom: '#1a1a1c' }
+  };
+  var params = new URLSearchParams(location.search);
+  var state = {
+    look: LOOKS[params.get('look')] ? +params.get('look') : 3,
+    tx: TX.indexOf(params.get('tx')) > -1 ? params.get('tx') : 'none'
+  };
+  var heroImg = document.getElementById('hero-img');
+  var contactImg = document.getElementById('contact-img');
+  var backdropImgs = document.querySelectorAll('#backdrop img');
+  var tester = document.getElementById('tester');
+
+  function mix(a, b) {
+    var x = parseInt(a.slice(1), 16), y = parseInt(b.slice(1), 16), out = '#';
+    [16, 8, 0].forEach(function (sh) { var v = Math.round((((x >> sh) & 255) + ((y >> sh) & 255)) / 2); out += ('0' + v.toString(16)).slice(-2); });
+    return out;
+  }
+  function setImg(el, name) {
+    if (!name) { el.src = GREY; el.removeAttribute('width'); el.removeAttribute('height'); return; }
+    var src = 'img/bg-' + name + '.webp';
+    if (el.getAttribute('src') !== src) el.src = src;
+    el.width = SIZES[name][0]; el.height = SIZES[name][1];
+  }
+  function apply(push) {
+    var look = LOOKS[state.look];
+    root.setAttribute('data-fx', look.fx);
+    root.setAttribute('data-tx', state.tx);
+    root.setAttribute('data-look', state.look);
+    setImg(heroImg, look.scenes[0]);
+    setImg(contactImg, look.scenes[3] || 'range');
+    for (var k = 0; k < 4; k++) setImg(backdropImgs[k], look.scenes[k]);
+    // Bridge k blends the bottom edge of scene k-1's photo into the top edge of scene k's photo
+    var bridges = document.querySelectorAll('#backdrop .bridge');
+    for (var j = 1; j < 4; j++) {
+      var up = look.scenes[j - 1] || 'grey', down = look.scenes[j] || 'grey';
+      var from = state.tx === 'black' ? '#0d0d0e' : EDGE[up].bottom;
+      var to = state.tx === 'black' ? '#0d0d0e' : EDGE[down].top;
+      var el = bridges[j - 1];
+      el.style.setProperty('--from', from); el.style.setProperty('--to', to); el.style.setProperty('--mid', mix(from, to));
+      // no bridge between a scene and itself
+      el.style.visibility = (look.scenes[j - 1] === look.scenes[j]) ? 'hidden' : '';
+    }
+    tester.querySelectorAll('.seg[data-look]').forEach(function (b) { b.setAttribute('aria-pressed', String(+b.dataset.look === state.look)); });
+    tester.querySelectorAll('.seg[data-tx]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.tx === state.tx)); });
+    if (push) {
+      var p = new URLSearchParams(location.search);
+      p.delete('bg'); p.delete('fx');
+      p.set('look', state.look); p.set('tx', state.tx);
+      history.replaceState(null, '', '?' + p.toString() + location.hash);
+    }
+  }
+  if (params.has('test')) tester.hidden = false;
+  tester.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.look) state.look = +b.dataset.look;
+    if (b.dataset.tx) state.tx = b.dataset.tx;
+    apply(true);
+  });
+  apply(false);
+
+  /* ---- Observers (no scroll listeners) ---- */
+  var nav = document.getElementById('nav');
+  var sentinel = document.createElement('div');
+  sentinel.style.cssText = 'position:absolute;top:0;height:40px;width:1px;pointer-events:none';
+  document.body.prepend(sentinel);
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) { nav.classList.toggle('scrolled', !e[0].isIntersecting); }).observe(sentinel);
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('[data-reveal], #combos, .path, #skyline').forEach(function (el) { io.observe(el); });
+
+
+    // Crossfade mode: swap the fixed backdrop as each scene reaches the middle of the screen
+    var backdrop = document.getElementById('backdrop');
+    // Only browsers without scroll-driven animations need this; everyone else is driven by CSS
+    if (!(window.CSS && CSS.supports('animation-timeline: view()'))) {
+      var sceneIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) backdrop.setAttribute('data-active', en.target.dataset.scene); });
+      }, { rootMargin: '-45% 0px -45% 0px' });
+      document.querySelectorAll('[data-scene]').forEach(function (el) { sceneIO.observe(el); });
+    }
+
+    // Resume path: tap or click a stop to pin its details open (hover and focus open them too)
+    document.querySelectorAll('.stop-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.stop, .lead-item');
+        var open = !item.classList.contains('open');
+        document.querySelectorAll('.stop.open, .lead-item.open').forEach(function (o) { if (o !== item) { o.classList.remove('open'); o.querySelector('.stop-btn').setAttribute('aria-expanded', 'false'); } });
+        item.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', String(open));
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') document.querySelectorAll('.stop.open, .lead-item.open').forEach(function (o) { o.classList.remove('open'); o.querySelector('.stop-btn').setAttribute('aria-expanded', 'false'); });
+    });
+  } else {
+    document.querySelectorAll('[data-reveal], #combos, .path, #skyline').forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---- SIE sample question ---- */
+  var foot = document.getElementById('quiz-foot');
+  var opts = Array.prototype.slice.call(document.querySelectorAll('.quiz-opt'));
+  var explain = 'Current yield is the annual coupon divided by the market price: $60 / $950 = 6.32%. A bond bought at a discount has a current yield above its coupon rate.';
+  function reset() {
+    opts.forEach(function (b) { b.disabled = false; b.classList.remove('right', 'wrong'); var i = b.querySelector('i'); if (i) i.remove(); });
+    foot.textContent = 'Pick an answer to see the explanation.';
+  }
+  opts.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var correct = btn.dataset.ok === '1';
+      opts.forEach(function (b) {
+        b.disabled = true;
+        if (b.dataset.ok === '1') { b.classList.add('right'); b.insertAdjacentHTML('beforeend', '<i class="ph ph-check" aria-hidden="true"></i>'); }
+      });
+      if (!correct) { btn.classList.add('wrong'); btn.insertAdjacentHTML('beforeend', '<i class="ph ph-x" aria-hidden="true"></i>'); }
+      foot.innerHTML = '<strong>' + (correct ? 'Correct.' : 'Not quite. The answer is C.') + '</strong> ' + explain +
+        '<br><button class="reset" type="button"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i>Try again</button>';
+      foot.querySelector('.reset').addEventListener('click', reset);
+    });
+  });
+})();
+</script>
+</body>
+</html>

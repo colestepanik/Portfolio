@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build Your 2nd Brain | Obsidian with Claude or ChatGPT</title>
+<meta name="description" content="A free, beginner-friendly guide to building a 2nd Brain: an Obsidian vault that Claude or ChatGPT reads every chat, synced through Google Drive so it works on your phone. Windows and Mac. About 45 minutes. By Cole Stepanik.">
+<meta name="author" content="Cole Stepanik">
+<meta name="theme-color" content="#1a1a1c">
+<link rel="canonical" href="https://colestepanik.com/brain.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Build your own 2nd Brain with Obsidian and Claude or ChatGPT">
+<meta property="og:description" content="A vault of your notes that your AI reads every chat, so it works the way you do. Free guide, about 45 minutes.">
+<meta property="og:url" content="https://colestepanik.com/brain.html">
+<meta property="og:image" content="https://colestepanik.com/img/bg-range.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231a1a1c'/%3E%3Ctext x='32' y='41' font-family='Arial,sans-serif' font-weight='600' font-size='24' fill='%23ededf0' text-anchor='middle'%3ECS%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Build your own 2nd Brain with Obsidian and Claude or ChatGPT",
+  "description": "Create an Obsidian vault of your priorities, rules, people, and projects, have Claude or ChatGPT interview you to fill it, teach the AI to read it every chat, and sync it through Google Drive so it works on your phone.",
+  "totalTime": "PT45M",
+  "author": {"@type": "Person", "name": "Cole Stepanik", "url": "https://colestepanik.com/"},
+  "tool": [{"@type": "HowToTool", "name": "Obsidian"}, {"@type": "HowToTool", "name": "Claude or ChatGPT"}, {"@type": "HowToTool", "name": "Google Drive for desktop"}],
+  "supply": [{"@type": "HowToSupply", "name": "Vault template"}, {"@type": "HowToSupply", "name": "Brain instructions template"}, {"@type": "HowToSupply", "name": "Interview questions"}],
+  "step": [
+    {"@type": "HowToSection", "name": "Build the vault", "itemListElement": [
+      {"@type": "HowToStep", "name": "Install Obsidian and create a vault called 2nd Brain in Documents"},
+      {"@type": "HowToStep", "name": "Create the folder structure"},
+      {"@type": "HowToStep", "name": "Have your AI interview you"},
+      {"@type": "HowToStep", "name": "Turn the interview into your core files"},
+      {"@type": "HowToStep", "name": "Seed notes for your main areas, people, and companies"}]},
+    {"@type": "HowToSection", "name": "Teach your AI to use it", "itemListElement": [
+      {"@type": "HowToStep", "name": "Turn on memory"},
+      {"@type": "HowToStep", "name": "Add the /brain skill (Claude) or a 2nd Brain Project (ChatGPT)"},
+      {"@type": "HowToStep", "name": "Tell it to use the brain every chat"}]},
+    {"@type": "HowToSection", "name": "Sync the vault to Google Drive", "itemListElement": [
+      {"@type": "HowToStep", "name": "Install Google Drive for desktop and set it to Mirror files"},
+      {"@type": "HowToStep", "name": "Add the vault folder and choose Sync with Google Drive"},
+      {"@type": "HowToStep", "name": "Confirm the folder on drive.google.com and in Obsidian"}]},
+    {"@type": "HowToSection", "name": "Connect your AI and test", "itemListElement": [
+      {"@type": "HowToStep", "name": "Connect Google Drive in your AI's settings"},
+      {"@type": "HowToStep", "name": "Run the read, write, and round-trip tests"},
+      {"@type": "HowToStep", "name": "Ask what you did today from your phone"}]}
+  ]
+}
+</script>
+
+<style>
+/* ---------- Hero ---------- */
+.g-hero { position: relative; min-height: 88vh; min-height: 88dvh; display: grid; place-items: center; overflow: hidden; isolation: isolate; text-align: center; padding: calc(var(--nav-h) + 48px) 0 96px; }
+.g-hero > .scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; z-index: -2; }
+.g-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgb(26 26 28 / .5), rgb(26 26 28 / .2) 40%, rgb(26 26 28 / .55) 75%, var(--bg)); }
+.g-hero .h1 { max-width: 16ch; margin: 0 auto; }
+.logos { display: flex; justify-content: center; align-items: center; gap: 14px; margin: 40px 0 36px; flex-wrap: wrap; }
+.logos .plus, .logos .or { color: var(--fg-2); font: 300 22px/1 var(--sans); }
+.logos .or { font-size: 15px; font-weight: 400; }
+.chip-logo { display: inline-flex; align-items: center; gap: 10px; height: 54px; padding: 0 20px 0 12px; border-radius: 999px; font: 480 17px/1 var(--sans); }
+.chip-logo img { width: 32px; height: 32px; padding: 6px; border-radius: 50%; background: rgb(255 255 255 / .08); }
+@media (prefers-reduced-motion: no-preference) {
+  .g-hero .h1, .g-hero .lede, .g-hero .cta { animation: rise 1.1s var(--ease) both; animation-delay: calc(.1s + var(--i, 0) * .12s); }
+  .logos > * { animation: pop-in .9s var(--ease) both; animation-delay: calc(.5s + var(--i) * .12s); }
+  @supports (animation-timeline: scroll()) {
+    .g-hero > .scene { animation: drift linear both; animation-timeline: scroll(root); animation-range: 0 90vh; }
+  }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } }
+@keyframes pop-in { 0% { opacity: 0; transform: translateY(26px) scale(.6); } 70% { opacity: 1; transform: translateY(-3px) scale(1.04); } 100% { opacity: 1; transform: none; } }
+@keyframes drift { to { transform: translateY(14%) scale(1.06); } }
+
+/* ---------- Chooser ---------- */
+.choose { padding: 112px 0 48px; }
+.pick { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 920px; margin: 48px auto 0; }
+.pick-card {
+  text-align: left; cursor: pointer; padding: 32px; border-radius: 20px; border: 1px solid var(--line); background: var(--surface);
+  display: flex; flex-direction: column; gap: 18px; min-height: 260px; position: relative;
+  transition: border-color .3s, background-color .3s, transform .5s var(--ease);
+}
+.pick-card:hover { border-color: var(--line-strong); }
+.pick-card:active { transform: scale(.99); }
+.pick-card[aria-pressed="true"] { border-color: var(--fg); background: var(--surface-2); }
+.pick-card .top { display: flex; align-items: center; justify-content: space-between; }
+.pick-card .mark { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: rgb(255 255 255 / .07); }
+.pick-card .mark img { width: 28px; height: 28px; }
+.pick-card .check { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line-strong); display: grid; place-items: center; font-size: 14px; color: transparent; }
+.pick-card[aria-pressed="true"] .check { background: var(--fg); color: #18181a; border-color: var(--fg); }
+.pick-card b { font: 500 26px/1.1 var(--sans); letter-spacing: -.015em; }
+.pick-card p { margin: 0; color: var(--fg-2); }
+.pick-card .need { margin-top: auto; font-size: 13px; color: var(--mute); }
+.reader { text-align: center; color: var(--mute); font-size: 14px; margin: 24px auto 0; max-width: 60ch; }
+
+/* ---------- Guide layout ---------- */
+.js:not([data-ai]) .guide { display: none; }
+.guide { padding: 56px 0 120px; }
+.g-grid { display: grid; grid-template-columns: 240px 1fr; gap: 56px; align-items: start; }
+.rail { position: sticky; top: calc(var(--nav-h) + 24px); display: grid; gap: 20px; }
+.rail nav { display: grid; gap: 2px; }
+.rail nav a { display: flex; justify-content: space-between; gap: 8px; padding: 9px 12px; border-radius: 10px; text-decoration: none; color: var(--fg-2); font-size: 14px; }
+.rail nav a:hover { background: rgb(255 255 255 / .05); color: var(--fg); }
+.rail nav a .n { font: 400 12px/1.6 var(--mono); color: var(--mute); }
+.rail nav a.done .n { color: var(--fg); }
+.toggle { display: inline-flex; padding: 4px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--bg-2); }
+.toggle button { height: 32px; padding: 0 14px; border-radius: 999px; border: 0; background: transparent; cursor: pointer; font-size: 13px; color: var(--fg-2); display: inline-flex; align-items: center; gap: 6px; }
+.toggle button[aria-pressed="true"] { background: var(--fg); color: #18181a; }
+.toggle button img { width: 14px; height: 14px; }
+.toggle button[aria-pressed="true"] img { filter: invert(1); }
+.rail-label { font-size: 12px; color: var(--mute); margin-bottom: 8px; }
+.content { min-width: 0; display: grid; gap: 64px; }
+
+/* Blocks */
+.block-h { margin: 0 0 20px; }
+.block-h .h3 { margin-bottom: 8px; }
+.block-h p { margin: 0; color: var(--fg-2); max-width: 62ch; }
+.box { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 28px; }
+.needs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 18px; }
+.need-item { display: grid; grid-template-columns: 28px 1fr; gap: 6px; padding: 14px 16px; border-radius: 14px; background: var(--bg-2); font-size: 15px; color: var(--fg-2); }
+.need-item i { font-size: 20px; color: var(--fg); }
+.need-item b { color: var(--fg); font-weight: 500; display: block; }
+.terms { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.term { padding: 18px 20px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg-2); }
+.term b { display: block; font-weight: 500; margin-bottom: 4px; }
+.term span { color: var(--fg-2); font-size: 15px; }
+.kit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.kit a { display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); text-decoration: none; transition: border-color .3s, transform .5s var(--ease); }
+.kit a:hover { border-color: var(--line-strong); transform: translateY(-2px); }
+.kit a i { font-size: 26px; }
+.kit a b { font-weight: 500; }
+.kit a span { color: var(--fg-2); font-size: 14px; }
+.kit a small { margin-top: auto; color: var(--mute); font: 400 12px/1 var(--mono); }
+
+/* Prompt box */
+.prompt { border-radius: 20px; border: 1px solid var(--line-strong); background: var(--bg-2); overflow: hidden; }
+.prompt-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px 14px 20px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.prompt-top .who { display: inline-flex; align-items: center; gap: 10px; font-weight: 500; }
+.prompt-top .who img { width: 22px; height: 22px; }
+.prompt-top .acts { display: flex; gap: 8px; }
+.prompt pre { margin: 0; padding: 20px; white-space: pre-wrap; font: 400 14px/1.65 var(--mono); color: var(--fg-2); max-height: 340px; overflow: auto; }
+
+/* Phases and steps */
+.phase-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.phase-head .kick { font: 400 13px/1 var(--mono); color: var(--mute); display: block; margin-bottom: 10px; }
+.phase-meter { font: 400 13px/1 var(--mono); color: var(--fg-2); white-space: nowrap; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.step { display: grid; grid-template-columns: 34px 1fr; gap: 16px; padding: 20px 22px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); transition: border-color .3s, opacity .3s; }
+.step.is-done { opacity: .62; }
+.step .tick { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line-strong); background: transparent; cursor: pointer; display: grid; place-items: center; font-size: 15px; color: transparent; padding: 0; transition: background-color .25s, color .25s, border-color .25s, transform .4s var(--ease); }
+.step .tick:active { transform: scale(.92); }
+.step.is-done .tick { background: var(--fg); color: #18181a; border-color: var(--fg); }
+.step h4 { margin: 3px 0 6px; font: 500 17px/1.35 var(--sans); }
+.step h4 .num { color: var(--mute); font: 400 13px/1 var(--mono); margin-right: 8px; }
+.step p { margin: 0 0 8px; color: var(--fg-2); font-size: 15px; }
+.step p:last-child { margin-bottom: 0; }
+.step ul { margin: 6px 0 8px; padding-left: 18px; color: var(--fg-2); font-size: 15px; }
+.path { font: 400 13.5px/1.6 var(--mono); color: var(--fg); background: rgb(255 255 255 / .06); padding: 2px 7px; border-radius: 6px; white-space: nowrap; }
+.step code, .term code, .fix code, .done-when code { font: 400 13.5px/1.6 var(--mono); color: var(--fg); background: rgb(255 255 255 / .06); padding: 2px 6px; border-radius: 6px; }
+.badge { display: inline-flex; align-items: center; height: 22px; padding: 0 9px; border-radius: 999px; font: 500 11px/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; border: 1px solid var(--line-strong); color: var(--fg-2); vertical-align: 2px; margin-left: 6px; }
+.copy-line { display: flex; align-items: center; gap: 10px; margin-top: 10px; padding: 10px 10px 10px 14px; border-radius: 12px; background: var(--bg-2); border: 1px solid var(--line); }
+.copy-line span { font: 400 13.5px/1.5 var(--mono); color: var(--fg); flex: 1; }
+.done-when { display: grid; grid-template-columns: 26px 1fr; gap: 10px; margin-top: 14px; padding: 16px 18px; border-radius: 16px; border: 1px dashed var(--line-strong); color: var(--fg-2); font-size: 15px; }
+.done-when i { font-size: 20px; color: var(--fg); margin-top: 1px; }
+.done-when b { color: var(--fg); font-weight: 500; }
+.fixes { display: grid; gap: 10px; }
+.fix { border-radius: 16px; border: 1px solid var(--line); background: var(--surface); }
+.fix summary { cursor: pointer; padding: 18px 22px; font-weight: 500; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+.fix summary::-webkit-details-marker { display: none; }
+.fix summary i { transition: transform .4s var(--ease); color: var(--fg-2); }
+.fix[open] summary i { transform: rotate(45deg); }
+.fix div { padding: 0 22px 20px; color: var(--fg-2); font-size: 15px; }
+.fix div p { margin: 0 0 8px; }
+.finish { text-align: center; padding: 56px 28px; border-radius: 20px; border: 1px solid var(--line); background: var(--surface); }
+.finish .cta { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+
+/* Filtering: which assistant and which computer */
+html[data-ai="claude"] .only-chatgpt, html[data-ai="chatgpt"] .only-claude { display: none !important; }
+html[data-os="win"] .only-mac, html[data-os="mac"] .only-win { display: none !important; }
+
+@media (max-width: 960px) {
+  .g-grid { grid-template-columns: 1fr; gap: 28px; }
+  .rail { position: sticky; top: calc(var(--nav-h) + 8px); z-index: 5; grid-template-columns: 1fr 1fr; align-items: center; padding: 10px; border-radius: 22px; background: rgb(36 36 40 / .7); border: 1px solid var(--glass-line); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+  .rail nav { display: none; }
+  .rail-label { display: none; }
+  .rail > div { justify-self: start; }
+  .rail > div:last-child { justify-self: end; }
+}
+@media (max-width: 720px) {
+  .pick, .needs, .terms, .kit { grid-template-columns: 1fr; }
+  .pick-card { min-height: 0; padding: 24px; }
+  .box { padding: 22px 18px; }
+  .step { grid-template-columns: 30px 1fr; gap: 12px; padding: 18px 16px; }
+  .rail { position: static; grid-template-columns: 1fr; justify-items: center; }
+  .rail > div, .rail > div:last-child { justify-self: center; }
+  .path { white-space: normal; }
+  .chip-logo { height: 46px; font-size: 15px; padding: 0 16px 0 10px; }
+  .chip-logo img { width: 28px; height: 28px; }
+  .logos { gap: 8px; }
+}
+@media print { .nav, .progress, .g-hero, .choose, .rail, .tick, .prompt .acts { display: none !important; } .guide { display: block !important; } }
+</style>
+<script>
+  (function () {
+    var root = document.documentElement; root.classList.add('js');
+    var p = new URLSearchParams(location.search), ai = p.get('ai'), os = p.get('os');
+    try { ai = ai || localStorage.getItem('cs-brain-ai'); os = os || localStorage.getItem('cs-brain-os'); } catch (e) {}
+    if (ai === 'claude' || ai === 'chatgpt') root.setAttribute('data-ai', ai);
+    if (os !== 'win' && os !== 'mac') { var plat = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || ''; os = /mac/i.test(plat) ? 'mac' : 'win'; }
+    root.setAttribute('data-os', os);
+  })();
+</script>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Cole Stepanik</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#work">Work</a>
+      <a href="brain.html" aria-current="page">2nd Brain</a>
+      <a href="index.html#resume" class="hide-sm">Resume</a>
+    </nav>
+    <a class="btn solid sm" href="index.html#contact">Contact</a>
+  </div>
+</header>
+
+<main>
+  <section class="g-hero" aria-labelledby="g-title">
+    <img class="scene" src="img/bg-range.webp" width="1470" height="980" alt="" fetchpriority="high">
+    <div class="wrap">
+      <h1 class="h1" id="g-title" style="--i:0">Build your own <span style="white-space:nowrap">2nd Brain.</span></h1>
+      <p class="lede" style="--i:1">A folder of your notes that your AI reads every chat, so it works the way you do. Free, about 45 minutes.</p>
+      <div class="logos" aria-label="Obsidian plus Claude or ChatGPT">
+        <span class="chip-logo glass-panel" style="--i:0"><img src="img/logos/obsidian.svg" width="20" height="20" alt="">Obsidian</span>
+        <span class="plus" style="--i:1" aria-hidden="true">+</span>
+        <span class="chip-logo glass-panel" style="--i:2"><img src="img/logos/claude.svg" width="20" height="20" alt="">Claude</span>
+        <span class="or" style="--i:3">or</span>
+        <span class="chip-logo glass-panel" style="--i:4"><img src="img/logos/openai.svg" width="20" height="20" alt="">ChatGPT</span>
+      </div>
+      <div class="cta" style="--i:2"><a class="btn solid" href="#choose">Build mine <i class="ph ph-arrow-down" aria-hidden="true"></i></a></div>
+    </div>
+  </section>
+
+  <section class="choose" id="choose" aria-labelledby="choose-title">
+    <div class="wrap">
+      <div class="section-head center">
+        <h2 class="h2" id="choose-title" data-reveal>Who should interview you?</h2>
+        <p class="lede" data-reveal style="--i:1">Pick the assistant you already use. The guide below changes to match it.</p>
+      </div>
+      <div class="pick" role="group" aria-label="Choose your assistant">
+        <button class="pick-card" type="button" data-pick="claude" aria-pressed="false" data-reveal>
+          <span class="top"><span class="mark"><img src="img/logos/claude.svg" width="28" height="28" alt=""></span><span class="check"><i class="ph ph-check" aria-hidden="true"></i></span></span>
+          <b>Claude</b>
+          <p>Claude will interview you to get to know how you work, to best help you.</p>
+          <span class="need">Uses memory, a /brain skill, and the Google Drive connector.</span>
+        </button>
+        <button class="pick-card" type="button" data-pick="chatgpt" aria-pressed="false" data-reveal style="--i:1">
+          <span class="top"><span class="mark"><img src="img/logos/openai.svg" width="28" height="28" alt=""></span><span class="check"><i class="ph ph-check" aria-hidden="true"></i></span></span>
+          <b>ChatGPT</b>
+          <p>ChatGPT will interview you to get to know how you work, to best help you.</p>
+          <span class="need">Uses memory, a Project with instructions, and the Google Drive app.</span>
+        </button>
+      </div>
+      <p class="reader">Written for someone who uses Claude or ChatGPT but has never opened Obsidian. Already comfortable? Skim the bold parts.</p>
+    </div>
+  </section>
+
+  <section class="guide" id="guide" aria-label="The guide">
+    <div class="wrap g-grid">
+      <aside class="rail" aria-label="Guide controls">
+        <div>
+          <div class="rail-label">Assistant</div>
+          <div class="toggle" role="group" aria-label="Assistant">
+            <button type="button" data-set-ai="claude"><img src="img/logos/claude.svg" alt="">Claude</button>
+            <button type="button" data-set-ai="chatgpt"><img src="img/logos/openai.svg" alt="">ChatGPT</button>
+          </div>
+        </div>
+        <div>
+          <div class="rail-label">Computer</div>
+          <div class="toggle" role="group" aria-label="Computer">
+            <button type="button" data-set-os="win"><i class="ph ph-windows-logo" aria-hidden="true"></i>Windows</button>
+            <button type="button" data-set-os="mac"><i class="ph ph-apple-logo" aria-hidden="true"></i>Mac</button>
+          </div>
+        </div>
+        <nav aria-label="Guide sections">
+          <a href="#start">Before you start</a>
+          <a href="#kit">Starter kit</a>
+          <a href="#phase-1" data-phase="1">Build the vault <span class="n"></span></a>
+          <a href="#phase-2" data-phase="2">Teach your AI <span class="n"></span></a>
+          <a href="#phase-3" data-phase="3">The problem <span class="n"></span></a>
+          <a href="#phase-4" data-phase="4">Sync to Drive <span class="n"></span></a>
+          <a href="#phase-5" data-phase="5">Connect and test <span class="n"></span></a>
+          <a href="#fixes">Troubleshooting</a>
+        </nav>
+      </aside>
+
+      <div class="content">
+
+        <!-- Before you start -->
+        <div id="start">
+          <div class="block-h">
+            <h2 class="h3">Before you start</h2>
+            <p><b>What this does:</b> you write down how you work once, and from then on your AI reads it at the start of every chat, on your laptop or your phone.</p>
+          </div>
+          <div class="box">
+            <div class="needs">
+              <div class="need-item"><i class="ph ph-user-circle" aria-hidden="true"></i><div><b class="only-claude">A Claude account</b><b class="only-chatgpt">A ChatGPT account</b><span class="only-claude">You need memory, skills, and connectors. These usually need a paid plan, so check yours under Settings.</span><span class="only-chatgpt">You need memory, Projects, and the Google Drive app. These usually need a paid plan, so check yours under Settings.</span></div></div>
+              <div class="need-item"><i class="ph ph-notebook" aria-hidden="true"></i><div><b>Obsidian</b>Free, from obsidian.md. It's just a notes app for a folder of text files.</div></div>
+              <div class="need-item"><i class="ph ph-google-drive-logo" aria-hidden="true"></i><div><b>A Google account</b>Any free Gmail works. Drive is how your phone reaches the notes.</div></div>
+              <div class="need-item"><i class="ph ph-clock" aria-hidden="true"></i><div><b>About 45 minutes</b>On <span class="only-win">Windows</span><span class="only-mac">a Mac</span>. Switch computers with the toggle anytime.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terms -->
+        <div id="terms">
+          <div class="block-h"><h2 class="h3">Four words you'll see</h2></div>
+          <div class="terms">
+            <div class="term"><b>Vault</b><span>Obsidian's name for a folder of notes. Your 2nd Brain is one folder full of plain text <code>.md</code> files that any app can open.</span></div>
+            <div class="term only-claude"><b>Skill</b><span>A saved set of instructions Claude loads by name. Yours will be called <code>/brain</code>.</span></div>
+            <div class="term only-chatgpt"><b>Project instructions</b><span>Instructions that apply to every chat inside one ChatGPT Project. Yours will live in a Project called 2nd Brain.</span></div>
+            <div class="term only-claude"><b>Connector</b><span>A link that lets Claude read and write files in another service. You'll use the Google Drive one.</span></div>
+            <div class="term only-chatgpt"><b>App (connector)</b><span>A link that lets ChatGPT search and read files in another service, and sometimes edit them. You'll use Google Drive.</span></div>
+            <div class="term"><b>Mirror vs Stream</b><span>Google Drive's two modes. Mirror keeps a real copy on your computer, which Obsidian needs. Stream leaves files in the cloud until you open them.</span></div>
+          </div>
+        </div>
+
+        <!-- Starter kit -->
+        <div id="kit">
+          <div class="block-h">
+            <h2 class="h3">Your starter kit</h2>
+            <p>Three files so you never start from a blank page. Download them now; the steps tell you when to use each one.</p>
+          </div>
+          <div class="kit">
+            <a href="kit/2nd-brain-vault-template.zip" download><i class="ph ph-folder-simple" aria-hidden="true"></i><b>Vault template</b><span>The folder structure with starter notes. Unzip it into Documents.</span><small>.zip</small></a>
+            <a class="only-claude" href="kit/brain-skill.zip" download><i class="ph ph-brain" aria-hidden="true"></i><b>/brain skill</b><span>Tells Claude what to read, how to decide, and what to log. Works as is.</span><small>.zip, upload to Claude</small></a>
+            <a class="only-chatgpt" href="kit/chatgpt-project-instructions.md" download><i class="ph ph-brain" aria-hidden="true"></i><b>Project instructions</b><span>Tells ChatGPT what to read, how to decide, and what to log.</span><small>.md, paste into your Project</small></a>
+            <a href="kit/interview-questions.md" download><i class="ph ph-chats-circle" aria-hidden="true"></i><b>Interview questions</b><span>25 questions grouped by topic, so the interview goes deep.</span><small>.md</small></a>
+          </div>
+        </div>
+
+        <!-- Phase 1 -->
+        <div id="phase-1" class="phase" data-phase="1">
+          <div class="phase-head">
+            <div><span class="kick">Phase 1, about 20 minutes</span><h2 class="h3">Build the vault</h2></div>
+            <span class="phase-meter"></span>
+          </div>
+          <ol class="steps">
+            <li class="step" data-step="1-1"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">01</span>Install Obsidian and make your vault</h4>
+              <p>Download Obsidian from obsidian.md and open it. The easiest start: unzip the <b>vault template</b> into your Documents folder, then in Obsidian choose <b>Open folder as vault</b> and pick the <code>2nd Brain</code> folder.</p>
+              <p>Starting from scratch instead? Choose <b>Create new vault</b>, name it <code>2nd Brain</code>, and save it in Documents: <span class="path only-win">C:\Users\your-name\Documents\2nd Brain</span><span class="path only-mac">~/Documents/2nd Brain</span>.</p>
+              <p><b>Don't put it in Downloads.</b> <span class="only-win">Windows can clean that folder out automatically.</span><span class="only-mac">It's easy to delete by accident when you tidy up.</span></p>
+            </div></li>
+            <li class="step" data-step="1-2"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">02</span>Check the folders</h4>
+              <p>If you used the template, these already exist. If not, right-click the left sidebar in Obsidian and choose <b>New folder</b> for each:</p>
+              <p><code>00 Core</code> <code>01 Areas</code> <code>02 People</code> <code>02 Companies</code> <code>03 Projects</code> <code>05 Log</code> <code>06 Archive</code> <code>_interview</code></p>
+              <!-- SCREENSHOT (must have): Obsidian sidebar showing the folder tree -->
+            </div></li>
+            <li class="step" data-step="1-3"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">03</span>Let <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> interview you</h4>
+              <p>Copy the prompt below, open a new chat, paste it, and answer one question at a time. Paste the interview questions file too if you want it to go deeper. Plan on about 20 minutes; talking with voice dictation is faster than typing.</p>
+              <div class="prompt" style="margin-top:14px">
+                <div class="prompt-top">
+                  <span class="who"><img class="only-claude" src="img/logos/claude.svg" alt=""><img class="only-chatgpt" src="img/logos/openai.svg" alt=""><span class="only-claude">Paste into Claude</span><span class="only-chatgpt">Paste into ChatGPT</span></span>
+                  <span class="acts">
+                    <button class="btn sm solid" type="button" data-copy="#interview-prompt"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy prompt</span></button>
+                    <a class="btn sm glass only-claude" href="https://claude.ai/new" target="_blank" rel="noopener">Open Claude</a>
+                    <a class="btn sm glass only-chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener">Open ChatGPT</a>
+                  </span>
+                </div>
+<pre id="interview-prompt">Interview me so you can work the way I do. I'm building a "2nd Brain": a folder of notes you'll read at the start of every chat.
+
+Rules: ask one question at a time and wait for my answer. If an answer is vague, ask one follow-up. Keep it to about 25 questions. If I paste a question list, use it.
+
+Cover:
+1. What I'm working on right now, ranked by priority
+2. A real day when two things collided, and what I did first
+3. Rules I always or never break
+4. How I want you to talk to me (length, tone, how hard to push back)
+5. The people who matter in my work and what each one is to me
+6. The tools I use and what each one is for
+7. What a good week and a wasted week look like
+
+When we're done, write four markdown files, each in its own code block with the file name on top:
+- Operating Manual.md: my priorities and decision rules, in my own words
+- Identity.md: who you are to me and how you should talk to me
+- Tool Roles.md: what each tool is for
+- interview-[today's date].md: the full questions and answers, word for word</pre>
+              </div>
+            </div></li>
+            <li class="step" data-step="1-4"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">04</span>Save the four files</h4>
+              <p>In Obsidian, right-click <code>00 Core</code>, choose <b>New note</b>, name it <code>Operating Manual</code>, and paste in what the AI wrote. Do the same for <code>Identity</code> and <code>Tool Roles</code> (the template already has empty versions you can paste over). The transcript goes in <code>_interview</code>.</p>
+            </div></li>
+            <li class="step" data-step="1-5"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">05</span>Seed a few notes</h4>
+              <p>Make one short note for each main part of your life in <code>01 Areas</code> (a class, a job, a club), one for each key person in <code>02 People</code>, and one per organization in <code>02 Companies</code>. Two lines each is plenty. Your AI fills them in over time.</p>
+            </div></li>
+          </ol>
+          <div class="done-when"><i class="ph ph-flag-checkered" aria-hidden="true"></i><div><b>You're done when</b> <code>00 Core</code> has three notes with your real answers in them, and your transcript is in <code>_interview</code>.</div></div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div id="phase-2" class="phase" data-phase="2">
+          <div class="phase-head">
+            <div><span class="kick">Phase 2, about 5 minutes</span><h2 class="h3">Teach <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> to use it</h2></div>
+            <span class="phase-meter"></span>
+          </div>
+          <ol class="steps">
+            <li class="step only-claude" data-step="2-1c"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">06</span>Turn on memory</h4>
+              <p>In Claude, open <b>Settings</b>, find the <b>Memory</b> section, and turn on the setting that generates memory from your chats.</p>
+            </div></li>
+            <li class="step only-claude" data-step="2-2c"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">07</span>Add the /brain skill</h4>
+              <p>Go to <b>Settings</b>, then <b>Capabilities</b>, then <b>Skills</b>, and upload <code>brain-skill.zip</code> from your starter kit. No editing needed: it reads your <code>00 Core</code> notes, so it already knows you.</p>
+              <p>Don't see Skills? Turn on code execution and file creation on the same page first.</p>
+            </div></li>
+            <li class="step only-claude" data-step="2-3c"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">08</span>Tell Claude to use it every chat</h4>
+              <p>In <b>Settings</b>, open your <b>Profile</b> and paste this into the personal preferences box:</p>
+              <div class="copy-line"><span id="pref-claude">Apply /brain at the start of every chat. Keep a dated daily log in the vault.</span><button class="btn sm" type="button" data-copy="#pref-claude"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
+              <!-- SCREENSHOT (must have): the preference text saved in Claude settings -->
+            </div></li>
+            <li class="step only-chatgpt" data-step="2-1g"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">06</span>Turn on memory</h4>
+              <p>In ChatGPT, open <b>Settings</b>, then <b>Personalization</b>, and turn on <b>Memory</b> (saved memories and chat history).</p>
+            </div></li>
+            <li class="step only-chatgpt" data-step="2-2g"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">07</span>Make a 2nd Brain Project</h4>
+              <p>In the sidebar, choose <b>New project</b> and name it <code>2nd Brain</code>. Open the project's settings, find <b>Instructions</b>, and paste in everything below the line from <code>chatgpt-project-instructions.md</code>.</p>
+            </div></li>
+            <li class="step only-chatgpt" data-step="2-3g"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">08</span>Start brain chats inside the Project</h4>
+              <p>Anything you want your 2nd Brain for, start it from the 2nd Brain Project, on your laptop and in the phone app. Optional: add this to <b>Settings</b>, <b>Personalization</b>, <b>Custom instructions</b>:</p>
+              <div class="copy-line"><span id="pref-gpt">When I say /brain, I mean my 2nd Brain Project and the vault in my Google Drive.</span><button class="btn sm" type="button" data-copy="#pref-gpt"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
+            </div></li>
+          </ol>
+          <div class="done-when"><i class="ph ph-flag-checkered" aria-hidden="true"></i><div><b>You're done when</b> <span class="only-claude">you type <code>/brain</code> in a new chat and Claude recognizes the skill.</span><span class="only-chatgpt">a new chat inside the 2nd Brain Project tries to look for your vault.</span> It will say it can't find the vault yet. That's expected; the next two phases fix it.</div></div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div id="phase-3" class="phase" data-phase="3">
+          <div class="phase-head">
+            <div><span class="kick">Phase 3, 1 minute</span><h2 class="h3">The problem</h2></div>
+            <span class="phase-meter"></span>
+          </div>
+          <ol class="steps">
+            <li class="step" data-step="3-1"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">09</span>See why you need the next phase</h4>
+              <p>Your vault is a folder on your computer. <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> on your phone or the web can't see it, and Obsidian has no official connector. Try it: on your phone, ask "What's in my Operating Manual?" It can't answer yet.</p>
+              <p>The fix is to sync the folder to Google Drive, which your AI can reach from anywhere.</p>
+            </div></li>
+          </ol>
+          <div class="done-when"><i class="ph ph-flag-checkered" aria-hidden="true"></i><div><b>You're done when</b> you've seen your AI say it can't reach the vault. Now you know what the next phase fixes.</div></div>
+        </div>
+
+        <!-- Phase 4 -->
+        <div id="phase-4" class="phase" data-phase="4">
+          <div class="phase-head">
+            <div><span class="kick">Phase 4, about 10 minutes</span><h2 class="h3">Sync the vault to Google Drive</h2></div>
+            <span class="phase-meter"></span>
+          </div>
+          <ol class="steps">
+            <li class="step" data-step="4-1"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">10</span>Install Google Drive for desktop</h4>
+              <p>Download it from google.com/drive/download, install it, and sign in with your Google account.</p>
+            </div></li>
+            <li class="step" data-step="4-2"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">11</span>Set it to Mirror files</h4>
+              <p class="only-win">Click the Drive icon in the system tray, at the bottom right by the clock (it may be hidden under the little up arrow). Click the gear, then <b>Preferences</b>, then <b>Google Drive</b>, and choose <b>Mirror files</b>.</p>
+              <p class="only-mac">Click the Drive icon in the menu bar at the top right of your screen. Click the gear, then <b>Preferences</b>, then <b>Google Drive</b>, and choose <b>Mirror files</b>.</p>
+              <!-- SCREENSHOT (must have): the Mirror files setting -->
+            </div></li>
+            <li class="step" data-step="4-3"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">12</span>Add your vault folder</h4>
+              <p>Still in Preferences, open <b class="only-win">My Computer</b><b class="only-mac">My Mac</b>, click <b>Add folder</b>, pick your <code>2nd Brain</code> folder, and choose <b>Sync with Google Drive</b>. Click Done, then Save.</p>
+              <!-- SCREENSHOT (must have): Add folder with "Sync with Google Drive" selected -->
+            </div></li>
+            <li class="step" data-step="4-4"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">13</span>Check the folder on your computer</h4>
+              <p class="only-win">Open File Explorer and go to Documents. Your <code>2nd Brain</code> folder should show a small Google Drive icon.</p>
+              <p class="only-mac">Open Finder and go to Documents. Your <code>2nd Brain</code> folder may show a small sync badge. If you don't see one, step 14 is the real check.</p>
+              <!-- SCREENSHOT (must have): the Drive icon on the folder -->
+            </div></li>
+            <li class="step" data-step="4-5"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">14</span>Check it on drive.google.com</h4>
+              <p>Open drive.google.com, click <b>Computers</b> in the left menu, then your computer. <code>2nd Brain</code> should be there with all its folders.</p>
+            </div></li>
+            <li class="step" data-step="4-6"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">15</span>Make sure Obsidian opens the right folder</h4>
+              <p>In Obsidian, click your vault name at the bottom left, then <b>Manage vaults</b>. Look at the path under each vault. Open the folder that has <code>00 Core</code> directly inside it, not the folder above it. Remove any extra entries with <b>Remove from list</b> (this doesn't delete files).</p>
+              <!-- SCREENSHOT (must have): Manage vaults with the paths visible -->
+            </div></li>
+            <li class="step only-win" data-step="4-7"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">16</span>Only if your vault is in Downloads<span class="badge">Windows</span></h4>
+              <p>Open <b>Settings</b>, then <b>System</b>, then <b>Storage</b>, then <b>Storage Sense</b>, and set the Downloads cleanup to <b>Never</b>. Better: move the vault to Documents and redo step 15.</p>
+            </div></li>
+          </ol>
+          <div class="done-when"><i class="ph ph-flag-checkered" aria-hidden="true"></i><div><b>You're done when</b> <span class="only-win">you see the Drive icon on your <code>2nd Brain</code> folder</span><span class="only-mac">you see <code>2nd Brain</code> under Computers on drive.google.com</span>, and Obsidian lists exactly one 2nd Brain vault.</div></div>
+        </div>
+
+        <!-- Phase 5 -->
+        <div id="phase-5" class="phase" data-phase="5">
+          <div class="phase-head">
+            <div><span class="kick">Phase 5, about 10 minutes</span><h2 class="h3">Connect <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> and test</h2></div>
+            <span class="phase-meter"></span>
+          </div>
+          <ol class="steps">
+            <li class="step" data-step="5-1"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">17</span>Connect Google Drive</h4>
+              <p class="only-claude">In Claude, open <b>Settings</b>, then <b>Connectors</b>, find <b>Google Drive</b>, and click Connect. Sign in with the same Google account as step 10.</p>
+              <p class="only-chatgpt">In ChatGPT, open <b>Settings</b>, then <b>Apps</b> (some accounts call it Connectors), find <b>Google Drive</b>, and click Connect. Sign in with the same Google account as step 10.</p>
+              <!-- SCREENSHOT (must have): the connector page -->
+            </div></li>
+            <li class="step" data-step="5-2"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">18</span>Read test</h4>
+              <p><span class="only-chatgpt">Inside your 2nd Brain Project, </span><span class="only-claude">In a new chat, </span>ask:</p>
+              <div class="copy-line"><span id="t-read">Find my 2nd Brain folder in Google Drive and list what's in it.</span><button class="btn sm" type="button" data-copy="#t-read"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
+            </div></li>
+            <li class="step" data-step="5-3"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">19</span>Write test</h4>
+              <div class="copy-line"><span id="t-write">Create a note called Sync Test.md in my 2nd Brain folder that says "hello from my AI".</span><button class="btn sm" type="button" data-copy="#t-write"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
+              <p style="margin-top:10px">Wait a minute, then check Obsidian. The note should appear on its own.</p>
+              <p class="only-chatgpt"><b>If ChatGPT says it can't create that file on your plan,</b> that's fine. Ask it for the note text instead and paste it into a new note yourself. From then on, end brain chats with "Give me today's log entry" and paste it into <code>05 Log</code>. Your project instructions already ask for this.</p>
+              <!-- SCREENSHOT (must have): the test note showing in Obsidian -->
+            </div></li>
+            <li class="step" data-step="5-4"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">20</span>Round-trip test</h4>
+              <p>Add a line to Sync Test in Obsidian, wait a minute for Drive to sync, then ask your AI to read the note back. If it sees your new line, the loop works both ways.</p>
+            </div></li>
+            <li class="step only-claude" data-step="5-5c"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">21</span>Point /brain at Drive</h4>
+              <div class="copy-line"><span id="t-skill-c">Update my /brain skill to use my Google Drive 2nd Brain folder by default. Add its folder ID, and keep the safety rules: plain markdown, edit in place, one log file per date.</span><button class="btn sm" type="button" data-copy="#t-skill-c"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
+              <p style="margin-top:10px">When Claude shows the updated skill card, click to save it.</p>
+              <!-- SCREENSHOT (must have): the skill save card -->
+            </div></li>
+            <li class="step only-chatgpt" data-step="5-5g"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">21</span>Add the folder link to your Project</h4>
+              <p>Open your 2nd Brain folder on drive.google.com, copy the link from the address bar, and paste it on the last line of your Project instructions where it says "Vault folder link".</p>
+            </div></li>
+            <li class="step" data-step="5-6"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">22</span>The real test, from your phone</h4>
+              <p>Open the <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> app on your phone, start a new chat<span class="only-chatgpt"> inside the 2nd Brain Project</span>, and ask:</p>
+              <div class="copy-line"><span id="t-phone">What did I do today?</span><button class="btn sm" type="button" data-copy="#t-phone"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
+              <!-- SCREENSHOT (must have): the phone chat answering -->
+            </div></li>
+          </ol>
+          <div class="done-when"><i class="ph ph-flag-checkered" aria-hidden="true"></i><div><b>You're done when</b> your phone answers "What did I do today?" from your vault. Delete the Sync Test note whenever you like.</div></div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div id="fixes">
+          <div class="block-h">
+            <h2 class="h3">If something goes wrong</h2>
+            <p>The three things most likely to trip you up, and how to fix each one. Menu names also change as these apps update; if one doesn't match, look for the closest option or ask your AI where that setting lives today.</p>
+          </div>
+          <div class="fixes">
+            <details class="fix"><summary>Two "2nd Brain" vaults show up in Obsidian <i class="ph ph-plus" aria-hidden="true"></i></summary><div>
+              <p>You probably opened the folder above your vault, or a copy of it. In <b>Manage vaults</b>, check the path under each one. Keep the one that has <code>00 Core</code> directly inside it and click <b>Remove from list</b> on the rest. Removing doesn't delete any files.</p>
+            </div></details>
+            <details class="fix"><summary>Obsidian still opens the old location <i class="ph ph-plus" aria-hidden="true"></i></summary><div>
+              <p>If you moved the folder after creating the vault, Obsidian remembers the old path. Choose <b>Open folder as vault</b>, pick the folder in its new location, then remove the old entry from <b>Manage vaults</b>. If you'd already added the old folder to Google Drive, re-add the new location in Drive's Preferences too.</p>
+            </div></details>
+            <details class="fix"><summary>The test note never shows up <i class="ph ph-plus" aria-hidden="true"></i></summary><div>
+              <p>Drive sync is usually paused or still catching up. Click the Drive icon in the <span class="only-win">system tray</span><span class="only-mac">menu bar</span>: if it says paused, resume it, and wait until it says it's up to date. Check drive.google.com first. If the note is there, Obsidian shows it within a few seconds; clicking the folder refreshes it.</p>
+            </div></details>
+          </div>
+        </div>
+
+        <div class="finish">
+          <h2 class="h2">That's your 2nd Brain.</h2>
+          <p class="lede" style="margin-left:auto;margin-right:auto">The more you use it, the better it gets. Keep your notes in your own words and correct your AI when it's wrong; corrections become rules.</p>
+          <div class="cta"><a class="btn solid" href="index.html#work">See my other projects</a><a class="btn" href="index.html#contact">Questions? Email me</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="skyline" id="skyline" aria-hidden="true">
+  <svg class="sk" viewBox="0 0 1200 210" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+    <g class="d" style="--g:0"><path pathLength="1" d="M0 176 H1200"/></g>
+    <g class="d" style="--g:1"><path pathLength="1" d="M60 176 V118 L76 94 L115 76 L154 94 L170 118 V176"/>
+<path pathLength="1" d="M60 118 H170"/>
+<rect pathLength="1" x="98" y="132" width="34" height="44"/>
+<path pathLength="1" d="M98 132 L132 176 M132 132 L98 176"/>
+<rect pathLength="1" x="108" y="96" width="14" height="14"/>
+<path pathLength="1" d="M184 176 V96 A16 16 0 0 1 216 96 V176"/>
+<path pathLength="1" d="M184 120 H216 M184 146 H216"/>
+<path pathLength="1" d="M230 176 V152 M246 176 V152 M262 176 V152 M278 176 V152 M230 158 H278 M230 168 H278"/></g>
+    <g class="d" style="--g:2"><rect pathLength="1" x="312" y="124" width="170" height="52"/>
+<rect pathLength="1" x="324" y="134" width="8" height="11"/>
+<rect pathLength="1" x="324" y="154" width="8" height="11"/>
+<rect pathLength="1" x="342" y="134" width="8" height="11"/>
+<rect pathLength="1" x="342" y="154" width="8" height="11"/>
+<rect pathLength="1" x="360" y="134" width="8" height="11"/>
+<rect pathLength="1" x="360" y="154" width="8" height="11"/>
+<rect pathLength="1" x="414" y="134" width="8" height="11"/>
+<rect pathLength="1" x="414" y="154" width="8" height="11"/>
+<rect pathLength="1" x="432" y="134" width="8" height="11"/>
+<rect pathLength="1" x="432" y="154" width="8" height="11"/>
+<rect pathLength="1" x="450" y="134" width="8" height="11"/>
+<rect pathLength="1" x="450" y="154" width="8" height="11"/>
+<rect pathLength="1" x="468" y="134" width="8" height="11"/>
+<rect pathLength="1" x="468" y="154" width="8" height="11"/>
+<path pathLength="1" d="M382 124 V82 H412 V124"/>
+<path pathLength="1" d="M382 82 L397 60 L412 82"/>
+<circle pathLength="1" cx="397" cy="99" r="8"/>
+<path pathLength="1" d="M397 99 V94 M397 99 L401 101"/>
+<path pathLength="1" d="M450 124 L453 66 H461 L464 124"/>
+<path pathLength="1" d="M452 76 H462"/></g>
+    <g class="d" style="--g:3"><rect pathLength="1" x="540" y="146" width="36" height="30"/>
+<path pathLength="1" d="M586 176 V100 H616 V176"/>
+<path pathLength="1" d="M586 100 L601 76 L616 100"/>
+<path pathLength="1" d="M601 76 V62"/>
+<path pathLength="1" d="M636 176 V64 H688 V176"/>
+<path pathLength="1" d="M648 64 V54 H676 V64"/>
+<path pathLength="1" d="M662 54 V32"/>
+<path pathLength="1" d="M636 78 H688 M636 90 H688 M636 102 H688 M636 114 H688 M636 126 H688 M636 138 H688 M636 150 H688 M636 162 H688"/>
+<path pathLength="1" d="M704 176 V48 L746 40 V176"/>
+<path pathLength="1" d="M714 46.1 V176 M725 44.0 V176 M736 41.9 V176"/>
+<rect pathLength="1" x="758" y="128" width="40" height="48"/>
+<path pathLength="1" d="M766 140 H790 M766 152 H790 M766 164 H790"/>
+<rect pathLength="1" x="806" y="150" width="34" height="26"/></g>
+    <g class="d" style="--g:4"><rect pathLength="1" x="882" y="124" width="112" height="52"/>
+<path pathLength="1" d="M876 124 H1000"/>
+<path pathLength="1" d="M896 132 V176 M908 132 V176 M920 132 V176 M932 132 V176 M944 132 V176 M956 132 V176 M968 132 V176 M980 132 V176"/>
+<path pathLength="1" d="M908 124 A30 22 0 0 1 968 124"/>
+<path pathLength="1" d="M938 102 V92"/>
+<circle pathLength="1" cx="938" cy="89.5" r="2.5"/>
+<path pathLength="1" d="M1012 176 V136 L1042 116 L1072 136 V176"/>
+<path pathLength="1" d="M1036 116 V100 H1048 V116"/>
+<path pathLength="1" d="M1036 100 L1042 84 L1048 100"/>
+<rect pathLength="1" x="1035" y="150" width="14" height="26"/></g>
+    <g class="sk-labels">
+      <text x="168" y="200">AGAWAM</text>
+      <text x="397" y="200">LOWELL</text>
+      <text x="690" y="200">BOSTON</text>
+      <text x="976" y="200">CAMBRIDGE</text>
+    </g>
+  </svg>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-id">
+        <b class="foot-name">Cole Stepanik</b>
+        <p>Grew up on a farm in Agawam. Finance and Accounting at UMass Lowell. Building AI tools for the work finance runs on.</p>
+      </div>
+      <nav class="foot-col" aria-label="Projects">
+        <h2>Projects</h2>
+        <a href="index.html#read-market-engine">READ Market Engine</a>
+        <a href="index.html#second-brain">2nd Brain</a>
+        <a href="brain.html">Build your own 2nd Brain</a>
+        <a href="index.html#sie-prep-app">SIE Prep App</a>
+        <a href="index.html#birddog">Birddog</a>
+      </nav>
+      <div class="foot-col">
+        <h2>Elsewhere</h2>
+        <a href="https://www.linkedin.com/in/cole-stepanik/" rel="me noopener" target="_blank"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>LinkedIn</a>
+        <a href="mailto:cole_stepanik@student.uml.edu"><i class="ph ph-envelope-simple" aria-hidden="true"></i>Email</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© <span id="yr">2026</span> Cole Stepanik</span>
+      <span>Obsidian, Claude, and ChatGPT are trademarks of their owners. This guide isn't affiliated with them.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var KEY = 'cs-brain-steps';
+  var done = {};
+  try { done = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { done = {}; }
+  function save(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+  function syncToggles() {
+    var ai = root.getAttribute('data-ai'), os = root.getAttribute('data-os');
+    document.querySelectorAll('[data-pick]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.pick === ai)); });
+    document.querySelectorAll('[data-set-ai]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.setAi === ai)); });
+    document.querySelectorAll('[data-set-os]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.setOs === os)); });
+    meters();
+  }
+  function setParam(k, v) {
+    var p = new URLSearchParams(location.search); p.set(k, v);
+    history.replaceState(null, '', '?' + p.toString() + location.hash);
+  }
+  function setAI(ai, jump) {
+    var first = !root.hasAttribute('data-ai');
+    root.setAttribute('data-ai', ai); save('cs-brain-ai', ai); setParam('ai', ai); syncToggles();
+    if (jump || first) {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.getElementById('guide').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    }
+  }
+  document.querySelectorAll('[data-pick]').forEach(function (b) { b.addEventListener('click', function () { setAI(b.dataset.pick, true); }); });
+  document.querySelectorAll('[data-set-ai]').forEach(function (b) { b.addEventListener('click', function () { setAI(b.dataset.setAi, false); }); });
+  document.querySelectorAll('[data-set-os]').forEach(function (b) {
+    b.addEventListener('click', function () { root.setAttribute('data-os', b.dataset.setOs); save('cs-brain-os', b.dataset.setOs); setParam('os', b.dataset.setOs); syncToggles(); });
+  });
+
+  // Step checkboxes and phase meters (only count steps visible for this assistant and computer)
+  function meters() {
+    document.querySelectorAll('.phase').forEach(function (ph) {
+      var steps = Array.prototype.filter.call(ph.querySelectorAll('.step'), function (s) { return getComputedStyle(s).display !== 'none'; });
+      var n = steps.filter(function (s) { return s.classList.contains('is-done'); }).length;
+      var label = n + ' of ' + steps.length + ' done';
+      ph.querySelector('.phase-meter').textContent = label;
+      var link = document.querySelector('.rail nav a[data-phase="' + ph.dataset.phase + '"]');
+      if (link) { link.querySelector('.n').textContent = n + '/' + steps.length; link.classList.toggle('done', steps.length > 0 && n === steps.length); }
+    });
+  }
+  document.querySelectorAll('.step').forEach(function (s) {
+    var id = s.dataset.step, btn = s.querySelector('.tick');
+    if (done[id]) s.classList.add('is-done');
+    btn.setAttribute('aria-pressed', String(!!done[id]));
+    btn.addEventListener('click', function () {
+      done[id] = !done[id]; s.classList.toggle('is-done', done[id]); btn.setAttribute('aria-pressed', String(done[id]));
+      save(KEY, JSON.stringify(done)); meters();
+    });
+  });
+
+  // Copy buttons
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = document.querySelector(b.dataset.copy).textContent;
+      var label = b.querySelector('span'), old = label.textContent;
+      function ok() { label.textContent = 'Copied'; setTimeout(function () { label.textContent = old; }, 1600); }
+      if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(text).then(ok, fallback); } else { fallback(); }
+      function fallback() {
+        var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); ok(); } catch (e) { label.textContent = 'Select and copy'; }
+        ta.remove();
+      }
+    });
+  });
+
+  // Nav state and reveals
+  var nav = document.getElementById('nav');
+  var sentinel = document.createElement('div');
+  sentinel.style.cssText = 'position:absolute;top:0;height:40px;width:1px;pointer-events:none';
+  document.body.prepend(sentinel);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) { nav.classList.toggle('scrolled', !e[0].isIntersecting); }).observe(sentinel);
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('[data-reveal], #skyline').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('[data-reveal], #skyline').forEach(function (el) { el.classList.add('in'); });
+  }
+  syncToggles();
+})();
+</script>
+</body>
+</html>
