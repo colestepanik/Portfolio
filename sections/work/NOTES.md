@@ -6,11 +6,20 @@ Preview: `work` server on 8772, open `http://localhost:8772/sections/work/demo.h
 
 ## What it does
 
-- **Head:** "Tools I built" in light sans over "and use for real." in big italic serif, then the lede.
+- **Head:** "Tools I Built" in light sans over "and Use." in big italic serif, then the lede.
 - **Tiles** (12 column grid): 2nd Brain as a wide feature tile (image left), then READ Market Engine (7) next to CCR Research Pipeline (5), then AIM Resume Checker as a wide feature tile with the image on the right. Below 960px every tile is full width, so there are no holes at any width. Every tile keeps its facts, pills, points and tags from the old page. 2nd Brain links to `brain.html` ("Build your own, step by step").
 - **Hover swap:** each tile has a cover and a second image. On hover, the second image is revealed by a circle that grows from where the pointer enters and follows it, while the cover dims and eases in. Keyboard focus anywhere in the tile does the same from the center. The whole image is a toggle button (`aria-pressed`), and two dots in its corner show which image is up.
   - Phones (`hover: none`): each tile cycles on its own every 3.4 to 4.4 s while on screen; a tap swaps it by hand and stops that tile's cycle.
   - Reduced motion: no circle, no scale, a plain 0.35 s crossfade, no auto cycle.
+- **2nd Brain graph (Oct 28, 2026):** on the 2nd Brain tile the second view is not a screenshot but an Obsidian style graph view that builds itself in 3D (tile has `data-wk-graph`; `makeGraph` in `section.js` adds a `<canvas class="wk-graph">` over the image area).
+  - 58 notes and 7 labeled hubs (Daily log, Projects, Ownerhound, CCR, Recruiting, People, Skills; generic, nothing private). Seeded, so it is the same graph every time, laid out once with a small 3D force simulation at load (a few ms).
+  - Build: notes appear over about 4.8 s, slow at first then quicker. Each pops in with a small overshoot and slides out of the note it links to, so its link grows with it; extra backlinks draw out to it after. The newest notes and links are Obsidian purple (#7f6df2) and settle to grey in about 1.5 s. Node size follows link count.
+  - Turns slowly around Y with a slight tilt; nearer nodes are bigger and brighter. Canvas 2D with its own projection, no WebGL, no library. About 0.7 ms per frame (p95 1.2 ms) at 1440.
+  - Shown while hovered, keyboard focused (`:focus-visible` inside the tile) or toggled with the dots button. Mouse out crossfades back to the cover in 0.6 s. Leave mid build and it resumes; come back after it finished (and at least 1.5 s away) and it builds again.
+  - Renders only while shown and on screen (IntersectionObserver), stops 0.7 s after it hides. Canvas is sized to the media box, devicePixelRatio capped at 2, and follows resizes.
+  - Phones: the auto cycle holds the graph for 9 s, then the cover for the usual 3.4 s. A tap toggles it, as before.
+  - Reduced motion: one finished, still frame on hover, focus or toggle, with a plain crossfade.
+  - Fallback: `brain-b` stays in the markup. With no JS or no canvas it swaps in as before; with the graph running, CSS hides it (`.wk-has-graph .wk-img-b`).
 - **Rotating portfolio (showcase):** a tilted grid of six columns that drift up and down in opposite directions at different speeds (58 to 86 s per loop), all edges masked into black, with "Built for real work." over the middle.
   - Why a tilted grid and not a 3D ring: the images are 16:10 screenshots with small text. A grid keeps every one flat and readable, it is the look of Cole's reference (`06-template-grid-step1.png`), it costs only CSS transforms, and it fills a 375 wide phone. A ring shows half its panels edge-on or from behind and needs much more height on a phone.
   - Pauses on hover and when off screen (IntersectionObserver). The "Pause motion" button was removed at Cole's request; note this drops the WCAG 2.2.2 pause control for desktop keyboard and touch users, and reduced motion is now the only way to stop it.

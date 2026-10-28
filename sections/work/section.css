@@ -60,6 +60,15 @@
   .wk-tile:focus-within .wk-img-b { clip-path: circle(150% at var(--wk-x) var(--wk-y)); transform: none; }
 }
 
+/* 2nd Brain: a canvas graph (added by section.js) takes the place of the second image. Without JS or canvas, brain-b still swaps in. */
+.wk-graph {
+  position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; display: block; pointer-events: none;
+  background: radial-gradient(60% 70% at 50% 50%, rgb(127 109 242 / .07), transparent 70%), var(--wk-bg);
+  opacity: 0; transition: opacity .6s var(--wk-ease);
+}
+.wk-has-graph .wk-img-b { display: none; }
+.wk-has-graph.is-graph .wk-graph { opacity: 1; }
+
 /* The whole image is the toggle (tap on phones, click or Enter elsewhere). Dots show which image is up. */
 .wk-swap { position: absolute; inset: 0; z-index: 2; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; border-radius: inherit; -webkit-tap-highlight-color: transparent; }
 .wk-swap:focus-visible { outline: 2px solid var(--wk-fg); outline-offset: -4px; }
@@ -151,6 +160,7 @@
   .wk-img-b { clip-path: none !important; transform: none !important; opacity: 0; transition: opacity .35s linear; }
   .wk-tile.is-b .wk-img-b, .wk-tile:has(:focus-visible) .wk-img-b { opacity: 1; }
   .wk-img-a { transform: none !important; }
+  .wk-graph { transition: opacity .35s linear; }
 }
 @media (prefers-reduced-motion: reduce) and (hover: hover) {
   .wk-tile:hover .wk-img-b { opacity: 1; }
