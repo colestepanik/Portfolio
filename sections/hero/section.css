@@ -58,11 +58,11 @@
 }
 
 /* The cutout. Sized from the viewport height so the img sizes attribute in section.html can match it exactly:
-   desktop height min(88vh, 1100px), so width min(54.2vh, 677px). Its lower part fades out to show the glow. */
+   desktop height min(88vh, 1100px), so width min(58.2vh, 728px). Its lower part fades out to show the glow. */
 .hx-figure {
   position: absolute; z-index: 0; bottom: 0; pointer-events: none;
   right: max(0px, calc(50% - 640px));
-  width: min(54.2vh, 677px); aspect-ratio: 1000 / 1625;
+  width: min(58.2vh, 728px); aspect-ratio: 1000 / 1512;
   -webkit-mask: linear-gradient(to bottom, #000 0%, #000 58%, rgb(0 0 0 / .55) 76%, transparent 94%);
           mask: linear-gradient(to bottom, #000 0%, #000 58%, rgb(0 0 0 / .55) 76%, transparent 94%);
 }
@@ -80,9 +80,11 @@
 }
 .hx-l2 {
   display: block; margin-top: .02em;
-  font: italic 400 clamp(52px, 7.6vw, 118px)/.98 var(--serif, Georgia, serif);
+  font: italic 400 clamp(52px, 7.6vw, 100px)/.98 var(--serif, Georgia, serif);
   letter-spacing: -.012em;
 }
+/* Desktop: break only between the two phrases ("does the work," / "then automates it."); 100px max keeps the longer one inside the text column */
+@media (min-width: 900px) { .hx-nb { white-space: nowrap; } }
 .hx-lede {
   max-width: min(42ch, 56%); margin: clamp(18px, 2.6vh, 26px) 0 0;
   font: 400 clamp(16px, 1.3vw, 18.5px)/1.6 var(--sans, system-ui, sans-serif);

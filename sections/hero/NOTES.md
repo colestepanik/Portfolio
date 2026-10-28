@@ -46,7 +46,7 @@ Checked: 1440 x 900, 1280 x 720, 1024 x 768 (text right edge 572, figure left ed
 Tuning knobs (set on `.hx`): `--hx-d` wheel diameter, `--hx-peak` how high the glow rises, `--hx-turn` seconds per turn, `--hx-start` starting angle. To change his size, edit `.hx-figure` width and update both `sizes` attributes to match.
 
 ## Headline
-Default (built): "Cole Stepanik" in thin DM Sans (weight 250), "builds AI for finance." in big italic Instrument Serif.
+Default (built; Cole changed it on Oct 28, 2026 from "builds AI for finance."): "Cole Stepanik" in thin DM Sans (weight 250), "does the work, then automates it." in big italic Instrument Serif.
 Alternates, same pairing:
 1. "Cole Stepanik" / "turns finance work into software."
 2. "I'm Cole." / "I build the tools I need."
