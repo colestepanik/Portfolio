@@ -21,4 +21,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://colestepanik.com/sitemap.xml
+Sitemap: https://colestepanik.vercel.app/sitemap.xml

@@ -23,7 +23,7 @@
 ## AI projects
 - Ownerhound (flagship, live at https://ownerhound.com): cold call workspace built by Cole. Verifies phones, owners, licenses, and business entities against company websites, state license records, and business filings before a caller dials, then runs each call on one screen (script, log, follow-up email or text, next touch). For agencies, contractors, sales teams, and searchers.
 - READ Market Engine: automated sales and trading training desk. Weekday 8:35am ET run producing a 6-page cross-asset market packet, a 2-page paper trade idea ($100,000 paper book, 1% risk per idea), and a close-of-day review. Every number sourced and timestamped.
-- 2nd Brain: personal operating system built on an Obsidian vault and Claude skills, synced through Google Drive; loads context per task, applies written decision rules, writes back, keeps a dated daily log. Public build guide at https://colestepanik.com/brain.html
+- 2nd Brain: personal operating system built on an Obsidian vault and Claude skills, synced through Google Drive; loads context per task, applies written decision rules, writes back, keeps a dated daily log. Public build guide at https://colestepanik.vercel.app/brain.html
 - AIM Resume Checker: in-browser resume checker for AIM career workshops across five business verticals, built in Lovable.
 - CCR Research Pipeline: two Claude skills that deep-learn a finance topic and produce a finished newsletter article as a PDF.
 
@@ -31,5 +31,5 @@
 Claude, Claude Code, Claude API, agent and skill design, Lovable, Excel (VBA), Bloomberg Terminal, Tableau, SAP/ERP.
 
 ## Pages
-- [Portfolio and full resume](https://colestepanik.com/)
-- [Build your own 2nd Brain](https://colestepanik.com/brain.html): free beginner guide by Cole Stepanik to building an Obsidian vault that Claude or ChatGPT reads every chat, synced through Google Drive. Windows and Mac, about 45 minutes, with a vault template, a /brain skill or ChatGPT Project instructions, and interview questions.
+- [Portfolio and full resume](https://colestepanik.vercel.app/)
+- [Build your own 2nd Brain](https://colestepanik.vercel.app/brain.html): free beginner guide by Cole Stepanik to building an Obsidian vault that Claude or ChatGPT reads every chat, synced through Google Drive. Windows and Mac, about 45 minutes, with a vault template, a /brain skill or ChatGPT Project instructions, and interview questions.
