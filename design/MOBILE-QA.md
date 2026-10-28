@@ -76,3 +76,11 @@ Passing everywhere: `scrollX` 0, no unclipped overflow (the Riverhawk watermark 
 CSS changed this pass: `sections/ownerhound/section.css` only (inside the `max-width: 900px` query). Screenshots of pass 3 layouts were inspected but not saved as before/after pairs, since nothing visual changed.
 
 **PM, Oct 28 (after pass 3):** open #1 closed. Added `video/ownerhound/ownerhound-phone-sm.mp4` (420 px wide, 723 KB, was 1.68 MB) as a `<source media="(max-width: 899px)">` ahead of the full file. Verified: 390 wide plays the -sm file, 1440 plays the full file, both autoplay.
+
+## Pass 4: 2026-10-28 (standing suit hero, new timeline logos, trimmed video)
+Widths: 360, 375, 390, 430 (reduced motion for stills). No CSS changes this pass.
+
+- **Hero:** OK. `cole-suit-standing-sm.webp` loads at every width (317 to 378 px displayed). Face sits well clear above the headline (headline top at 342 at 360, 543 at 430, image ends above it), torso fades into the glow, text and buttons readable, `scrollX` 0 and no overflow.
+- **Timeline logos:** all 14 tiles are 44x44 and aligned with their text at 360 and 390. Bloomberg B and the Franklin portrait (fills the tile) are clearly legible. **UMLFS is readable but small:** the wordmark is 28 px wide, letters about 7 px tall; fine at 2x, borderline on a 1x phone. Report only, per brief. Same limit applies to the older Accounting Society (28x12) and Sales Team (28x18) marks, which read as texture, not names; the role text next to them carries the meaning.
+- **Video, 375 reduced motion:** new poster (the Verify list) shows, 64 px play button centered over it, no video bytes load. Duration 16.8 s, muted and `playsinline` unchanged. The play button covers the first company row of the poster; harmless.
+- **Open (unchanged):** gallery `sizes`, real-device star and iOS video check.

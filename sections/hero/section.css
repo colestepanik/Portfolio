@@ -58,11 +58,11 @@
 }
 
 /* The cutout. Sized from the viewport height so the img sizes attribute in section.html can match it exactly:
-   desktop height min(88vh, 1100px), so width min(56.5vh, 706px). Its lower part fades out to show the glow. */
+   desktop height min(88vh, 1100px), so width min(54.2vh, 677px). Its lower part fades out to show the glow. */
 .hx-figure {
   position: absolute; z-index: 0; bottom: 0; pointer-events: none;
   right: max(0px, calc(50% - 640px));
-  width: min(56.5vh, 706px); aspect-ratio: 1013 / 1600;
+  width: min(54.2vh, 677px); aspect-ratio: 1000 / 1625;
   -webkit-mask: linear-gradient(to bottom, #000 0%, #000 58%, rgb(0 0 0 / .55) 76%, transparent 94%);
           mask: linear-gradient(to bottom, #000 0%, #000 58%, rgb(0 0 0 / .55) 76%, transparent 94%);
 }
