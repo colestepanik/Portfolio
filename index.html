@@ -160,6 +160,8 @@
 .ev-logo { flex: none; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; padding: 7px; background: var(--surface-2); border: 1px solid var(--line-strong); }
 .ev-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
 .ev-logo.icon { font-size: 21px; color: var(--fg); }
+.ev-logo.fill { padding: 0; overflow: hidden; }
+.ev-logo.fill img { width: 100%; height: 100%; max-width: none; max-height: none; object-fit: cover; }
 .ev-txt { min-width: 0; }
 .ev-date { display: block; font: 500 11.5px/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--mute); margin-bottom: 4px; }
 .ev b { display: block; font: 500 17px/1.25 var(--sans); color: var(--fg); }
@@ -329,8 +331,8 @@
 
     <!-- Rendered width: min(88vw, 480px) under 900px, min(56.5vh, 706px) above (see .hx-figure in section.css) -->
     <picture class="hx-figure">
-      <source media="(max-width: 899px)" srcset="img/hero/cole-check-cutout-sm.webp 600w" sizes="min(88vw, 480px)">
-      <img src="img/hero/cole-check-cutout.webp" srcset="img/hero/cole-check-cutout-sm.webp 600w, img/hero/cole-check-cutout.webp 896w" sizes="min(56.5vh, 706px)" width="896" height="1396" alt="Cole Stepanik in a navy suit holding a Manning School of Business check" fetchpriority="high" decoding="async">
+      <source media="(max-width: 899px)" srcset="img/hero/cole-suit-standing-sm.webp 570w" sizes="min(88vw, 480px)">
+      <img src="img/hero/cole-suit-standing.webp" srcset="img/hero/cole-suit-standing-sm.webp 570w, img/hero/cole-suit-standing.webp 1013w" sizes="min(56.5vh, 706px)" width="1013" height="1600" alt="Cole Stepanik smiling in a navy suit and white shirt" fetchpriority="high" decoding="async">
     </picture>
 
     <div class="hx-inner">
@@ -730,7 +732,7 @@
               <div class="ev-txt"><span class="ev-date">Fall 2023</span><b>Started at UMass Lowell</b><span class="ev-org">Manning School of Business</span></div>
             </li>
             <li class="ev" data-reveal style="--i:1">
-              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo icon"><i class="ph ph-coins" aria-hidden="true"></i></span>
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo"><img src="img/logos/umlfs-white.webp" alt=""></span>
               <div class="ev-txt"><span class="ev-date">2024</span><b>Treasurer</b><span class="ev-org">Finance Society</span></div>
             </li>
           </ol>
@@ -759,11 +761,11 @@
           </ol>
           <ol class="band-side career" aria-label="Career, 2025">
             <li class="ev" data-reveal style="--i:0">
-              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo"><img src="img/logos/ft-white.webp" alt=""></span>
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo fill"><img src="img/logos/franklin-tile.webp" alt=""></span>
               <div class="ev-txt"><span class="ev-date">Jun 2025</span><b>Investor Services Intern</b><span class="ev-org">Franklin Templeton</span></div>
             </li>
             <li class="ev" data-reveal style="--i:1">
-              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo icon"><i class="ph ph-chart-line-up" aria-hidden="true"></i></span>
+              <span class="ev-branch" aria-hidden="true"></span><span class="ev-logo"><img src="img/logos/bloomberg-white.webp" alt=""></span>
               <div class="ev-txt"><span class="ev-date">2025</span><b>Bloomberg Trading Challenge</b><span class="ev-org">+15% on $1M simulated</span></div>
             </li>
           </ol>

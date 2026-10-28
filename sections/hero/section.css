@@ -1,9 +1,9 @@
-/* Hero (prefix hx-): Cole holding his check, name and two buttons over a slowly rotating color wheel.
+/* Hero (prefix hx-): Cole in his suit, name and two buttons over a slowly rotating color wheel.
    The wheel is a conic gradient, blurred once and masked to a soft ring. Only its parent rotates (transform),
    so the blur is rasterized a single time and the compositor just turns the finished layer.
    Stacking: .hx-bg (wheel, black fade, grain) at the back, then the cutout .hx-figure, then the text.
    Desktop: text on the left, Cole on the right looking toward it. Under 900px he moves to the center behind the text.
-   His lower body and the check dissolve (mask-image) into the glow; the section still ends on black. */
+   His torso dissolves (mask-image) into the glow; the section still ends on black. */
 
 .hx {
   --hx-black: #0a0a0b;
@@ -62,7 +62,7 @@
 .hx-figure {
   position: absolute; z-index: 0; bottom: 0; pointer-events: none;
   right: max(0px, calc(50% - 640px));
-  width: min(56.5vh, 706px); aspect-ratio: 896 / 1396;
+  width: min(56.5vh, 706px); aspect-ratio: 1013 / 1600;
   -webkit-mask: linear-gradient(to bottom, #000 0%, #000 58%, rgb(0 0 0 / .55) 76%, transparent 94%);
           mask: linear-gradient(to bottom, #000 0%, #000 58%, rgb(0 0 0 / .55) 76%, transparent 94%);
 }
