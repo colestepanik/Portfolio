@@ -59,7 +59,11 @@
 .oh-phone::before { left: -.7em; top: 25%; height: 15em; box-shadow: 0 -10em 0 -1em #3a3a40, 0 18em 0 0 #3a3a40; }
 .oh-phone::after { right: -.7em; top: 32%; height: 22em; }
 .oh-bezel { border-radius: 15.4em; padding: 2.4em; background: #050506; box-shadow: inset 0 0 0 .25em #1a1a1d; }
-.oh-screen { position: relative; overflow: hidden; border-radius: 13em; aspect-ratio: 390 / 844; background: #f7fbfe; transform: translateZ(0); }
+/* clip-path and the mask keep mobile Safari from painting the video's square corners over the rounded frame. */
+.oh-screen {
+  position: relative; overflow: hidden; border-radius: 13em; aspect-ratio: 390 / 844; background: #f7fbfe; transform: translateZ(0);
+  clip-path: inset(0 round 13em); -webkit-mask-image: -webkit-radial-gradient(#fff, #000);
+}
 .oh-island { position: absolute; z-index: 3; left: 50%; top: 1.4%; translate: -50% 0; width: 30%; height: 3.6%; border-radius: 999px; background: #000; }
 /* Status bar: 47/844 of the screen. section.js tints it to match the top edge of the current video frame. */
 .oh-screen { container-type: inline-size; }
@@ -74,7 +78,7 @@
   linear-gradient(currentColor 0 0) 66% 100% / 20% 80% no-repeat, linear-gradient(currentColor 0 0) 100% 100% / 20% 100% no-repeat; }
 .oh-bat { position: relative; width: 6.4cqw; height: 3cqw; border-radius: .9cqw; border: .3cqw solid currentColor; }
 .oh-bat::after { content: ""; position: absolute; inset: .4cqw 1.6cqw .4cqw .4cqw; border-radius: .4cqw; background: currentColor; }
-.oh-video { position: absolute; inset: auto 0 0; width: 100%; height: 94.43%; object-fit: cover; object-position: top; display: block; background: #f7fbfe; }
+.oh-video { position: absolute; inset: auto 0 0; width: 100%; height: 94.43%; object-fit: cover; object-position: top; display: block; background: #f7fbfe; border-radius: 0 0 13em 13em; }
 .oh-sheen {
   position: absolute; inset: 0; z-index: 2; pointer-events: none; mix-blend-mode: screen;
   background: linear-gradient(115deg, transparent 30%, rgb(255 255 255 / .1) 42%, transparent 54%);
