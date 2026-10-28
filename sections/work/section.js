@@ -149,13 +149,14 @@
     edges.forEach(function (e) { e.t0 = e.b.t0 + (e.extra ? .2 : 0); });
 
     /* Drawing */
-    var W = 0, H = 0, dpr = 1, font = '';
+    var W = 0, H = 0, dpr = 1, font = '', FS = 11, ldt = 0;
     var GREY = [168, 168, 178], NODE = [206, 206, 212], ACC = [127, 109, 242];
     function size() {
       var r = media.getBoundingClientRect();
       W = r.width; H = r.height; dpr = Math.min(2, window.devicePixelRatio || 1);
       cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
-      font = '500 ' + (W < 480 ? 10 : 11) + 'px ' + getComputedStyle(tile).fontFamily;
+      FS = W < 500 ? 9.5 : 11;
+      font = '500 ' + FS + 'px ' + getComputedStyle(tile).fontFamily;
     }
     function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
     function out(v) { return 1 - Math.pow(1 - v, 3); }
@@ -208,11 +209,28 @@
         }
         ctx.fillStyle = mix(NODE, ACC, fr, al * (a.hub ? 1 : .85));
         ctx.beginPath(); ctx.arc(a.sx, a.sy, r, 0, 6.283); ctx.fill();
-        if (a.label && W >= 300) {
-          ctx.fillStyle = mix(NODE, ACC, fr, al * .75 * clamp((t - a.t0 - .2) / .5));
-          ctx.fillText(a.label, a.sx, a.sy + r + 5);
-        }
+        a.sr = r;
       });
+      // Hub labels: nearest first, and any label that would overlap one already placed fades out,
+      // so the front ones win as the graph turns. ldt 0 snaps (still frames), otherwise a short ease.
+      if (W < 300) return;
+      var placed = [];
+      for (var j = shown.length - 1; j >= 0; j--) {
+        var b = shown[j];
+        if (!b.label) continue;
+        var lw = b.lw || (b.lw = {}), w = lw[font] || (lw[font] = ctx.measureText(b.label).width);
+        var bx = b.sx - w / 2 - 3, by = b.sy + b.sr + 3, bw = w + 6, bh = FS + 4, hit = false;
+        for (var q = 0; q < placed.length && !hit; q++) {
+          var o = placed[q];
+          hit = bx < o[0] + o[2] && o[0] < bx + bw && by < o[1] + o[3] && o[1] < by + bh;
+        }
+        if (!hit) placed.push([bx, by, bw, bh]);
+        var goal = hit ? 0 : 1;
+        b.lo = ldt ? (b.lo == null ? goal : b.lo + (goal - b.lo) * Math.min(1, ldt * 9)) : goal;
+        if (b.lo < .02) continue;
+        ctx.fillStyle = mix(NODE, ACC, fresh(t, b.t0), (.35 + .65 * b.near) * .75 * b.lo * clamp((t - b.t0 - .2) / .5));
+        ctx.fillText(b.label, b.sx, b.sy + b.sr + 5);
+      }
     }
 
     /* State: rebuild when it comes back after a pause at the end; resume if the mouse left mid build. */
@@ -223,11 +241,12 @@
       last = now;
       if (active) t = Math.min(t + dt, END);
       yaw += dt * SPIN;
+      ldt = dt;
       draw(t, yaw);
       raf = (active || now - leftAt < FADE) && visible ? requestAnimationFrame(frame) : 0;
     }
     function run() {
-      if (reduce.matches) { draw(END, .6); return; } // one finished, still frame
+      if (reduce.matches) { ldt = 0; draw(END, .6); return; } // one finished, still frame
       if (!raf && visible) { last = performance.now(); raf = requestAnimationFrame(frame); }
     }
     function update() {
@@ -256,7 +275,7 @@
       }).observe(tile);
     }
     if ('ResizeObserver' in window) {
-      new ResizeObserver(function () { if (!W) return; size(); if (active) { if (reduce.matches) draw(END, .6); else draw(t, yaw); } }).observe(media);
+      new ResizeObserver(function () { if (!W) return; size(); if (active) { ldt = 0; if (reduce.matches) draw(END, .6); else draw(t, yaw); } }).observe(media);
     }
     return { tile: tile, update: update };
   }
