@@ -105,35 +105,11 @@
 </script>
 
 <style>
-/* ---------- Roles marquee (the one marquee on the page) ---------- */
-.roles { overflow: hidden; padding: 30px 0; border-block: 1px solid var(--line); background: var(--bg); }
-.roles-track { display: flex; width: max-content; }
-.roles ul { display: flex; margin: 0; padding: 0; list-style: none; }
-.roles li { font: 460 clamp(18px, 1.9vw, 26px)/1 var(--sans); letter-spacing: -.01em; white-space: nowrap; padding: 0 30px; display: flex; align-items: center; gap: 30px; color: var(--mute); }
-.roles li::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--line-strong); margin-right: -30px; }
-.roles li strong { color: var(--fg); font-weight: 480; margin-right: 10px; }
-@media (prefers-reduced-motion: no-preference) {
-  .roles-track { animation: marquee 48s linear infinite; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .roles ul[aria-hidden] { display: none; }
-  .roles ul { flex-wrap: wrap; row-gap: 16px; }
-}
-@keyframes marquee { to { transform: translateX(-50%); } }
 
 /* ---------- Sections ---------- */
 .section { padding: 136px 0; position: relative; }
 .section-head { text-align: center; max-width: 760px; margin: 0 auto; }
 
-/* ---------- Gallery: who's behind it ---------- */
-.photo { position: relative; overflow: hidden; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
-.photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
-.photo:hover img { transform: scale(1.04); }
-.gallery { columns: 3 280px; column-gap: 16px; margin-top: 64px; }
-@media (max-width: 640px) { .gallery { columns: 2; column-gap: 10px; margin-top: 40px; } .gallery figure { margin-bottom: 10px; } }
-.gallery figure { break-inside: avoid; margin: 0 0 16px; }
-.gallery .photo { aspect-ratio: var(--ar, 4 / 5); }
-.gallery figcaption { position: absolute; left: 12px; bottom: 12px; padding: 7px 12px; border-radius: 999px; font: 460 13px/1 var(--sans); color: var(--fg); background: rgb(26 26 28 / .62); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 
 /* ---------- Resume: the timeline ----------
    One arrow runs down the middle. Each role is a branch off it: school to the left, career to the right.
@@ -261,17 +237,12 @@
 @media (max-width: 899px) {
   .r-sec { grid-template-columns: 1fr; gap: 16px; }
 }
-/* Mobile QA: 16px body copy, 44px tap targets, roles wrap under reduced motion, contact spacing */
+/* Mobile QA: 16px body copy, 44px tap targets, contact spacing */
 @media (max-width: 899px) {
   .ev-org, .job ul, .more-wins, .skills, .win span, .lead-grid div span, .coursework, .paper-contact { font-size: 16px; }
   .paper-contact a { min-height: 44px; }
   .contact .cta { margin-top: 28px; }
   .btn { font-size: 16px; }
-}
-@media (max-width: 899px) and (prefers-reduced-motion: reduce) {
-  .roles-track { width: auto; }
-  .roles li { white-space: normal; padding: 0 16px; line-height: 1.25; }
-  .roles li::after { display: none; }
 }
 @media (max-width: 640px) {
   .section { padding: 92px 0; }
@@ -287,7 +258,7 @@
   @page { margin: .45in; }
   :root { --paper: #fff; --paper-ink: #000; --paper-ink-2: #333; }
   html, body { background: #fff; color: #000; font-size: 10pt; }
-  .nav, .progress, .backdrop, .hero, .roles, #hero, #ownerhound, #work, #about, #umass, #life, #star, .contact, footer, .resume-head, .tester { display: none !important; }
+  .nav, .progress, .backdrop, .hero, #hero, #ownerhound, #work, #about, #umass, #star, .contact, footer, .resume-head, .tester { display: none !important; }
   .section { padding: 0; }
   .path { display: none !important; }
   .print-resume { display: block !important; }
@@ -310,17 +281,16 @@
 
 <div class="progress" aria-hidden="true"></div>
 
-<header class="nav" id="nav">
+<header class="nav nav--pill nav-on-light" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top">Cole Stepanik</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#ownerhound" class="hide-sm">Ownerhound</a>
+    <a class="brand" href="#top" aria-label="Cole Stepanik, home">cs.</a>
+    <nav class="nav-pill" aria-label="Primary">
+      <a href="#ownerhound">Ownerhound</a>
       <a href="#work" class="hide-sm">Projects</a>
-      <a href="brain.html" class="hide-sm">2nd Brain</a>
       <a href="#about" class="hide-sm">About</a>
-      <a href="#resume" class="hide-sm">Resume</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact" class="nav-cta">Contact</a>
     </nav>
-    <a class="btn solid sm" href="#contact">Contact</a>
   </div>
 </header>
 
@@ -328,51 +298,24 @@
 
   <!-- ================= HERO (sections/hero) ================= -->
   <section class="hx" id="hero" aria-labelledby="hx-title">
-    <div class="hx-bg" aria-hidden="true">
-      <div class="hx-spin"><div class="hx-wheel"></div></div>
-      <div class="hx-fade"></div>
-      <div class="hx-grain"></div>
-    </div>
-
-    <!-- Rendered width: min(88vw, 480px) under 900px, min(58.2vh, 728px) above (see .hx-figure in section.css) -->
-    <picture class="hx-figure">
-      <source media="(max-width: 899px)" srcset="img/hero/cole-rooftop-2-sm.webp 570w" sizes="min(88vw, 480px)">
-      <img src="img/hero/cole-rooftop-2.webp" srcset="img/hero/cole-rooftop-2-sm.webp 570w, img/hero/cole-rooftop-2.webp 1000w" sizes="min(58.2vh, 728px)" width="1000" height="1512" alt="Cole Stepanik smiling in a navy suit and white shirt, hands in his pockets" fetchpriority="high" decoding="async">
-    </picture>
+    <div class="hx-grain" aria-hidden="true"></div>
 
     <div class="hx-inner">
-      <h1 class="hx-title" id="hx-title">
-        <span class="hx-l1">Cole Stepanik</span>
-        <span class="hx-l2"><span class="hx-nb">does the work,</span> <span class="hx-nb">then automates it.</span></span>
-      </h1>
-      <p class="hx-lede">Finance and Accounting senior at UMass Lowell. I cold call business owners for a search fund, so I built the workspace I wanted: Ownerhound.</p>
-      <div class="hx-cta">
-        <a class="hx-btn hx-btn-solid" href="#ownerhound">See Ownerhound</a>
-        <a class="hx-btn hx-btn-glass" href="#resume">Resume<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <h1 class="hx-title" id="hx-title"><span class="hx-name"><span>Cole</span> <span>Stepanik</span></span><span class="hx-sr"> does the work, then automates it.</span></h1>
+      <div class="hx-sub">
+        <p class="hx-lede">Finance and Accounting senior at UMass Lowell. I cold call business owners for a search fund, so I built the workspace I wanted: Ownerhound.</p>
+        <p class="hx-talk"><span class="hx-talk-k">Let's talk</span> <a class="hx-mail" href="mailto:colestepanik39@gmail.com">colestepanik39@gmail.com</a></p>
+      </div>
+    </div>
+
+    <!-- Photos from competitions and club events. The second group is a copy, so the loop has no seam. -->
+    <div class="hx-band hx-band--photos">
+      <div class="hx-track">
+        <div class="hx-group"><img src="img/hero/band/gimage.webp" width="237" height="420" alt="Cole with fellow students at a business school event" decoding="async"><img src="img/hero/band/g4.webp" width="315" height="420" alt="The UMass Lowell Sales Team at the Medicus sales competition" decoding="async"><img src="img/hero/band/g9.webp" width="630" height="420" alt="Cole and teammates walking through an office in suits" decoding="async"><img src="img/hero/band/g12.webp" width="318" height="420" alt="Cole holding a presentation check at a Manning School of Business event" decoding="async"><img src="img/hero/band/g7.webp" width="315" height="420" alt="Cole and teammates holding award certificates" decoding="async"><img src="img/hero/band/g6.webp" width="560" height="420" alt="Cole with classmates and an industry guest" decoding="async"><img src="img/hero/band/g11.webp" width="630" height="420" alt="Cole in a meeting across the table from a professional" decoding="async"><img src="img/hero/band/g15.webp" width="560" height="420" alt="Group photo at a Manning Leaders Discussion event" decoding="async"><img src="img/hero/band/g8.webp" width="315" height="420" alt="Cole and three teammates holding award certificates" decoding="async"><img src="img/hero/band/g18.webp" width="560" height="420" alt="Cole with classmates on a rooftop under the Citgo sign in Boston" decoding="async"><img src="img/hero/band/g3.webp" width="560" height="420" alt="Cole working on a case in a conference room" decoding="async"><img src="img/hero/band/g14.webp" width="560" height="420" alt="Students and faculty at an awards event" decoding="async"></div>
+        <div class="hx-group" aria-hidden="true"><img src="img/hero/band/gimage.webp" width="237" height="420" alt="" decoding="async"><img src="img/hero/band/g4.webp" width="315" height="420" alt="" decoding="async"><img src="img/hero/band/g9.webp" width="630" height="420" alt="" decoding="async"><img src="img/hero/band/g12.webp" width="318" height="420" alt="" decoding="async"><img src="img/hero/band/g7.webp" width="315" height="420" alt="" decoding="async"><img src="img/hero/band/g6.webp" width="560" height="420" alt="" decoding="async"><img src="img/hero/band/g11.webp" width="630" height="420" alt="" decoding="async"><img src="img/hero/band/g15.webp" width="560" height="420" alt="" decoding="async"><img src="img/hero/band/g8.webp" width="315" height="420" alt="" decoding="async"><img src="img/hero/band/g18.webp" width="560" height="420" alt="" decoding="async"><img src="img/hero/band/g3.webp" width="560" height="420" alt="" decoding="async"><img src="img/hero/band/g14.webp" width="560" height="420" alt="" decoding="async"></div>
       </div>
     </div>
   </section>
-
-  <div class="roles" aria-label="Current roles">
-    <div class="roles-track">
-      <ul>
-        <li><span><strong>Founder</strong>Commonwealth Capital Research</span></li>
-        <li><span><strong>Lead Intern</strong>Anoush Holdings</span></li>
-        <li><span><strong>Senior Class President</strong>UMass Lowell</span></li>
-        <li><span><strong>Captain</strong>Intercollegiate Sales Team</span></li>
-        <li><span><strong>Finance Chair</strong>AI Multidisciplinary Society</span></li>
-        <li><span><strong>FINRA SIE</strong>Passed summer 2026</span></li>
-      </ul>
-      <ul aria-hidden="true">
-        <li><span><strong>Founder</strong>Commonwealth Capital Research</span></li>
-        <li><span><strong>Lead Intern</strong>Anoush Holdings</span></li>
-        <li><span><strong>Senior Class President</strong>UMass Lowell</span></li>
-        <li><span><strong>Captain</strong>Intercollegiate Sales Team</span></li>
-        <li><span><strong>Finance Chair</strong>AI Multidisciplinary Society</span></li>
-        <li><span><strong>FINRA SIE</strong>Passed summer 2026</span></li>
-      </ul>
-    </div>
-  </div>
 
   <!-- ================= FLAGSHIP: OWNERHOUND (sections/ownerhound) ================= -->
   <section id="ownerhound" class="oh" aria-labelledby="oh-title">
@@ -688,30 +631,6 @@
         </div>
         <span class="um-go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </article>
-    </div>
-  </section>
-
-  <!-- ================= GALLERY ================= -->
-  <section class="section" id="life" aria-labelledby="life-title" style="padding-top:40px">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="h2" id="life-title" data-reveal>In the room</h2>
-        <p class="lede" data-reveal style="--i:1">Competitions, club events, and the people I build with.</p>
-      </div>
-      <div class="gallery">
-        <figure class="photo" style="--ar:9/16" data-reveal><img src="img/photos/gallery/gimage-sm.webp" srcset="img/photos/gallery/gimage-sm.webp 800w, img/photos/gallery/gimage.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole with fellow students at a business school event" loading="lazy"></figure>
-        <figure class="photo" style="--ar:3/4" data-reveal><img src="img/photos/gallery/g4-sm.webp" srcset="img/photos/gallery/g4-sm.webp 800w, img/photos/gallery/g4.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="The UMass Lowell Sales Team at the Medicus sales competition" loading="lazy"></figure>
-        <figure class="photo" style="--ar:3/2" data-reveal><img src="img/photos/gallery/g9-sm.webp" srcset="img/photos/gallery/g9-sm.webp 800w, img/photos/gallery/g9.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole and teammates walking through an office in suits" loading="lazy"></figure>
-        <figure class="photo" style="--ar:3/4" data-reveal><img src="img/photos/gallery/g12-sm.webp" srcset="img/photos/gallery/g12-sm.webp 800w, img/photos/gallery/g12.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole holding a presentation check at a Manning School of Business event" loading="lazy"></figure>
-        <figure class="photo" style="--ar:3/4" data-reveal><img src="img/photos/gallery/g7-sm.webp" srcset="img/photos/gallery/g7-sm.webp 800w, img/photos/gallery/g7.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole and teammates holding award certificates" loading="lazy"></figure>
-        <figure class="photo" style="--ar:4/3" data-reveal><img src="img/photos/gallery/g6-sm.webp" srcset="img/photos/gallery/g6-sm.webp 800w, img/photos/gallery/g6.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole with classmates and an industry guest" loading="lazy"></figure>
-        <figure class="photo" style="--ar:3/2" data-reveal><img src="img/photos/gallery/g11-sm.webp" srcset="img/photos/gallery/g11-sm.webp 800w, img/photos/gallery/g11.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole in a meeting across the table from a professional" loading="lazy"></figure>
-        <figure class="photo" style="--ar:4/3" data-reveal><img src="img/photos/gallery/g15-sm.webp" srcset="img/photos/gallery/g15-sm.webp 800w, img/photos/gallery/g15.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Group photo at a Manning Leaders Discussion event" loading="lazy"></figure>
-        <figure class="photo" style="--ar:3/4" data-reveal><img src="img/photos/gallery/g8-sm.webp" srcset="img/photos/gallery/g8-sm.webp 800w, img/photos/gallery/g8.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole and three teammates holding award certificates" loading="lazy"></figure>
-        <figure class="photo" style="--ar:4/3" data-reveal><img src="img/photos/gallery/g18-sm.webp" srcset="img/photos/gallery/g18-sm.webp 800w, img/photos/gallery/g18.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole with classmates on a rooftop under the Citgo sign in Boston" loading="lazy"></figure>
-        <figure class="photo" style="--ar:4/3" data-reveal><img src="img/photos/gallery/g3-sm.webp" srcset="img/photos/gallery/g3-sm.webp 800w, img/photos/gallery/g3.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Cole working on a case in a conference room" loading="lazy"></figure>
-        <figure class="photo" style="--ar:4/3" data-reveal><img src="img/photos/gallery/g14-sm.webp" srcset="img/photos/gallery/g14-sm.webp 800w, img/photos/gallery/g14.webp 1600w" sizes="(max-width: 640px) 50vw, (max-width: 899px) 33vw, 400px" alt="Students and faculty at an awards event" loading="lazy"></figure>
-      </div>
     </div>
   </section>
 

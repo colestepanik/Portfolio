@@ -1,65 +1,39 @@
 # Hero (`sections/hero/`, prefix `hx-`)
 
-Cole in his navy suit holding the Manning School of Business check, cut out and set into the background, with his name, one line and two buttons in front. A slowly rotating color wheel glows up from the bottom, and his lower body and the bottom of the check dissolve into it. The section still ends on pure black.
+Type only on light "Concrete", after a brutalist personal site Cole picked (Oct 28, 2026). Replaces the suit cutout over the color wheel.
 
-Preview: start the `hero` server, open `http://localhost:8771/sections/hero/demo.html`.
-Demo flags: `?layout=behind` shows the layout that was not kept, `?start=120` sets the wheel's starting angle, `?shot` skips the entrance animation (used for the screenshots).
+Preview: any server on the repo root (e.g. `work` on 8772), open `/sections/hero/demo.html` or `/index.html`.
+
+## What it does
+- **Background:** `#dcdcda` with the old SVG grain, its color matrix flipped to black specks, at 16% opacity. Ink `#0e0e0f`, muted `#4e4e52`.
+- **Name:** "Cole Stepanik", DM Sans 600, letter-spacing -.045em, line-height .92. Sized with container query units off `.hx-inner` (`16.2cqi`, so about 98% of the 1176px column at 1440; `15vw` fallback). Under 640px each word is its own line at `28cqi` ("Stepanik" fills about 95% of the column at 375). It is the h1.
+- **Headline for screen readers:** the h1 also holds " does the work, then automates it." as visually hidden text (`.hx-sr`), so it is read once. The band is `aria-hidden`.
+- **Lede:** the old text, unchanged, 15 to 16px, `max-width: 31em` (3 lines on desktop and tablet, 4 on phones).
+- **Let's talk:** semibold label, then `colestepanik39@gmail.com` as a mailto link. Replaces the two buttons; Ownerhound and Resume are in the nav at every width.
+- **Band:** full width `#0e0e0f`, concrete colored text, "does the work, then automates it." in DM Sans 600 at `clamp(64px, 10.5vw, 168px)`. Two identical groups of two copies; the track moves exactly one group (`translateX(-50%)`) in 36 s, so there is no seam. Paused while the hero is off screen. The band is the bridge into the black page below.
+- **Entrance:** the name rises in, then the lede, then the band fades in (about 1.5 s total).
+- **Reduced motion:** every animation sits inside `prefers-reduced-motion: no-preference`, so the band stands still at its start ("does the work, then automates it." readable from the left edge) and nothing rises in.
+
+## The nav (lives in `index.html` and `site.css`, not here)
+- Markup in `index.html`: `<header class="nav nav--pill nav-on-light">`, brand "cs." (bold, tight, `aria-label="Cole Stepanik, home"`), and one `.nav-pill` holding Ownerhound, Projects, About, Resume and Contact (Contact is the light pill inside; Cole dropped 2nd Brain from it on Oct 28, 2026). The old roles ticker under the hero was removed the same day, and the band's top now fades from the concrete into the black (`--hx-fade`).
+
+Band (Oct 28, 2026): the band scrolls 12 event photos (`.hx-band--photos`, 70 s loop) instead of the headline. Cole cut the "In the room" gallery section, so these are the only photos of him at events; the first group carries the alt text and the copy is aria-hidden. The files are `img/hero/band/*.webp`, 420px tall (2x the 210px band), webp q72, about 200 KB for all 12, made from `img/photos/gallery/`. To go back to text, swap the band's inner groups for `<div class="hx-group"><span>does the work, then automates it.</span><span>does the work, then automates it.</span></div>` (twice) and drop the `hx-band--photos` class. Under 760px only Ownerhound, Resume and Contact show; the pill items are 44px tall under 900px.
+- Styles at the end of `site.css` under `.nav--pill` / `.nav-pill` / `.nav-on-light`. `brain.html` keeps the old nav, untouched.
+- Over the light hero (`.nav-on-light`): ink "cs.", black pill, concrete text, concrete Contact pill. No bar until you scroll; then a light frosted bar so the name reads under it.
+- Past the hero: the usual dark frosted bar, glass pill, light text, white Contact pill. Colors ease over .3 to .4 s.
+- `section.js` sets `.nav-on-light` with an IntersectionObserver on `.hx-inner` whose root margin leaves only a nav-height strip at the top, so it flips exactly when the black band reaches the nav. Rebuilt on resize. `index.html` ships the class already on, so there is no flash at load.
+- The 2px scroll progress line now uses `mix-blend-mode: difference`, so it shows as ink over the concrete.
 
 ## Files
 | File | What it is |
 |---|---|
 | `section.html` | The fragment: one `<section class="hx" id="hero">`. |
-| `section.css` | All styles, every selector starts with `.hx`. Tokens live on `.hx` as `--hx-*`. |
-| `section.js` | One IIFE: pauses the wheel while the hero is off screen. |
-| `demo.html` | Standalone preview with a 68px nav stand-in and a black next section. |
-| `screenshot-desktop-1440.png` | 1440 x 900, the kept layout. |
-| `screenshot-phone-375.png` | 375 x 812 at 2x. |
-| `screenshot-alt-behind-1440.png` | The desktop layout tried and not kept. |
+| `section.css` | All styles, every selector starts with `.hx` (plus `@keyframes hx-`). |
+| `section.js` | One IIFE: pauses the band off screen, toggles `.nav-on-light` on `#nav`. |
+| `demo.html` | Standalone preview with the real nav markup and a black next section. Paste `section.html` in again if it changes. |
+| `screenshot-*.png` | Out of date: they show the old suit and color wheel hero. |
 
-Images: `img/hero/cole-check-cutout.webp` (896 x 1396, transparent) and `img/hero/cole-check-cutout-sm.webp` (600 wide). The old framed portrait and `img/photos/cole-portrait.webp` are no longer used by the hero.
+`img/hero/` is no longer used by the hero; left in place for the PM to clean up. The og:image tags still describe the old photo (Media will reshoot).
 
-## Layers, back to front
-1. `.hx-bg`: the color wheel, the black fade (top, bottom, vignette) and a faint grain.
-2. `.hx-figure`: the cutout, a `<picture>` positioned absolutely. A `mask-image` gradient keeps him solid down to about 58% of his height, then dissolves him to nothing by 94%, so the glow shows through his legs and the bottom of the check. Below that the section's own fade takes it to black.
-3. `.hx-inner`: the headline, lede and buttons.
-
-## Layout decision
-Both were built and compared at 1440 x 900.
-- Kept on desktop: text on the left, Cole on the right. He is looking toward the viewer's left, so his gaze leads into the headline. His face, the "$750" and his name on the check all stay readable, and nothing sits on top of him. The headline wraps to three lines in the left column, which reads fine at this size.
-- Not kept: Cole centered behind the text. The headline lands on his chest and the check, so he has to be dimmed a lot, the check turns into a grey block, and the photo becomes clutter behind the type.
-- Under 900px there is no room beside him, so he moves to the center behind the text: face and shoulders are clear between the nav and the headline, and his body is dimmed to about 30% then 14% under the text. The text sits at the bottom of the screen over the glow.
-
-Sizes:
-- Desktop: height `min(88vh, 1100px)` (so width `min(56.5vh, 706px)`), bottom anchored, right edge lined up with the 1240px content edge. That caps him at 1100 CSS px tall, as the source resolution allows.
-- Under 900px: width `min(88vw, 480px)`, top at the nav's bottom edge.
-- `sizes` on the `<img>` and the `<source>` match those widths exactly. Under 900px the `<source>` offers only the `-sm` file, so phones always get it. Above 900px the browser picks between the two by density: a 1x laptop gets `-sm`, a 2x screen gets the full file.
-
-Checked: 1440 x 900, 1280 x 720, 1024 x 768 (text right edge 572, figure left edge 590, no overlap), 820 x 1180, 375 x 812 and 360 x 740. No horizontal scroll at any of them.
-
-## The color wheel
-- A conic gradient with the full spectrum, weighted so red and blue each hold about 80 degrees while cyan, green, yellow and orange pass in about 30 and are a little darker. At the starting angle red sits left, violet in the middle and blue right, like Cole's reference.
-- It is masked to a soft ring and blurred once (`filter` on `.hx-wheel`, never animated). Only the parent `.hx-spin` rotates, with `transform`, one turn every 80 seconds.
-- Measured in headless Chrome over DevTools for 3 seconds of rotation with the figure in place: 60fps median and p95 at 1440 x 900 and at 375 x 812 @3x, no main thread Paint events, about 40 raster tasks. A control that changed the blur every frame produced over 2,000.
-- `section.js` pauses the rotation when the hero leaves the viewport.
-- Reduced motion: the wheel holds still at its starting angle, the figure is static (no fade in), and all text is visible immediately.
-
-Tuning knobs (set on `.hx`): `--hx-d` wheel diameter, `--hx-peak` how high the glow rises, `--hx-turn` seconds per turn, `--hx-start` starting angle. To change his size, edit `.hx-figure` width and update both `sizes` attributes to match.
-
-## Headline
-Default (built; Cole changed it on Oct 28, 2026 from "builds AI for finance."): "Cole Stepanik" in thin DM Sans (weight 250), "does the work, then automates it." in big italic Instrument Serif.
-Alternates, same pairing:
-1. "Cole Stepanik" / "turns finance work into software."
-2. "I'm Cole." / "I build the tools I need."
-
-## Integration steps (main session)
-1. `<head>`: keep or add the Instrument Serif link from DESIGN.md, then `<link rel="stylesheet" href="sections/hero/section.css">` after `site.css`. Replace any portrait preload with `<link rel="preload" as="image" href="img/hero/cole-check-cutout.webp" imagesrcset="img/hero/cole-check-cutout-sm.webp 600w, img/hero/cole-check-cutout.webp 896w" imagesizes="min(56.5vh, 706px)">` if you want one (optional; the img already has `fetchpriority="high"`).
-2. Replace the current hero `<section>` in `index.html` with the contents of `section.html`. If the old photo scene script still references the hero (scene 0), drop it there or add `data-scene="0"` to `.hx`.
-3. Before `</body>`: `<script src="sections/hero/section.js" defer></script>`.
-4. The section pads its top by `var(--nav-h, 68px)`, so the fixed nav can sit over it. It ends on `#0a0a0b`; start the next section on the same black.
-5. The buttons point at `#ownerhound` and `#resume`; both ids must exist. The section's own id is `hero`.
-6. Buttons are self-contained (`.hx-btn-solid`, `.hx-btn-glass`) and do not depend on `.btn` in `site.css`.
-
-## Open asks for Cole
-- Pick the headline: the default or one of the two alternates.
-- Glow strength and speed: one turn every 80 seconds at 88% opacity. Easy to make calmer or brighter.
-- The cutout has a slightly hard edge along his left sleeve. A higher-resolution source photo would allow a cleaner cut and a taller figure on big screens.
+## Checked
+1440, 1024, 768, 390 and 375: no horizontal scroll, the name fills the column, the nav reads over the hero and after scrolling, the pill fits (at 390 it spans x 99 to 374 beside "cs.").

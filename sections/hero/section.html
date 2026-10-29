@@ -1,26 +1,20 @@
-<!-- Hero: Cole standing in his suit, name, one line and two buttons over a slowly rotating color wheel glow. Styles: sections/hero/section.css, script: sections/hero/section.js -->
+<!-- Hero: type only on light concrete. Huge name, the lede, "Let's talk" with the email, and a black band with the headline scrolling sideways. Styles: sections/hero/section.css, script: sections/hero/section.js -->
 <section class="hx" id="hero" aria-labelledby="hx-title">
-  <div class="hx-bg" aria-hidden="true">
-    <div class="hx-spin"><div class="hx-wheel"></div></div>
-    <div class="hx-fade"></div>
-    <div class="hx-grain"></div>
-  </div>
-
-  <!-- Rendered width: min(88vw, 480px) under 900px, min(58.2vh, 728px) above (see .hx-figure in section.css) -->
-  <picture class="hx-figure">
-    <source media="(max-width: 899px)" srcset="img/hero/cole-rooftop-2-sm.webp 570w" sizes="min(88vw, 480px)">
-    <img src="img/hero/cole-rooftop-2.webp" srcset="img/hero/cole-rooftop-2-sm.webp 570w, img/hero/cole-rooftop-2.webp 1000w" sizes="min(58.2vh, 728px)" width="1000" height="1512" alt="Cole Stepanik smiling in a navy suit and white shirt, hands in his pockets" fetchpriority="high" decoding="async">
-  </picture>
+  <div class="hx-grain" aria-hidden="true"></div>
 
   <div class="hx-inner">
-    <h1 class="hx-title" id="hx-title">
-      <span class="hx-l1">Cole Stepanik</span>
-      <span class="hx-l2"><span class="hx-nb">does the work,</span> <span class="hx-nb">then automates it.</span></span>
-    </h1>
-    <p class="hx-lede">Finance and Accounting senior at UMass Lowell. I cold call business owners for a search fund, so I built the workspace I wanted: Ownerhound.</p>
-    <div class="hx-cta">
-      <a class="hx-btn hx-btn-solid" href="#ownerhound">See Ownerhound</a>
-      <a class="hx-btn hx-btn-glass" href="#resume">Resume<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <h1 class="hx-title" id="hx-title"><span class="hx-name"><span>Cole</span> <span>Stepanik</span></span><span class="hx-sr"> does the work, then automates it.</span></h1>
+    <div class="hx-sub">
+      <p class="hx-lede">Finance and Accounting senior at UMass Lowell. I cold call business owners for a search fund, so I built the workspace I wanted: Ownerhound.</p>
+      <p class="hx-talk"><span class="hx-talk-k">Let's talk</span> <a class="hx-mail" href="mailto:colestepanik39@gmail.com">colestepanik39@gmail.com</a></p>
+    </div>
+  </div>
+
+  <!-- Photos from competitions and club events. The second group is a copy, so the loop has no seam. -->
+  <div class="hx-band hx-band--photos">
+    <div class="hx-track">
+      <div class="hx-group"><img src="img/hero/band/gimage.webp" width="237" height="420" alt="Cole with fellow students at a business school event" decoding="async"><img src="img/hero/band/g4.webp" width="315" height="420" alt="The UMass Lowell Sales Team at the Medicus sales competition" decoding="async"><img src="img/hero/band/g9.webp" width="630" height="420" alt="Cole and teammates walking through an office in suits" decoding="async"><img src="img/hero/band/g12.webp" width="318" height="420" alt="Cole holding a presentation check at a Manning School of Business event" decoding="async"><img src="img/hero/band/g7.webp" width="315" height="420" alt="Cole and teammates holding award certificates" decoding="async"><img src="img/hero/band/g6.webp" width="560" height="420" alt="Cole with classmates and an industry guest" decoding="async"><img src="img/hero/band/g11.webp" width="630" height="420" alt="Cole in a meeting across the table from a professional" decoding="async"><img src="img/hero/band/g15.webp" width="560" height="420" alt="Group photo at a Manning Leaders Discussion event" decoding="async"><img src="img/hero/band/g8.webp" width="315" height="420" alt="Cole and three teammates holding award certificates" decoding="async"><img src="img/hero/band/g18.webp" width="560" height="420" alt="Cole with classmates on a rooftop under the Citgo sign in Boston" decoding="async"><img src="img/hero/band/g3.webp" width="560" height="420" alt="Cole working on a case in a conference room" decoding="async"><img src="img/hero/band/g14.webp" width="560" height="420" alt="Students and faculty at an awards event" decoding="async"></div>
+      <div class="hx-group" aria-hidden="true"><img src="img/hero/band/gimage.webp" width="237" height="420" alt="" decoding="async"><img src="img/hero/band/g4.webp" width="315" height="420" alt="" decoding="async"><img src="img/hero/band/g9.webp" width="630" height="420" alt="" decoding="async"><img src="img/hero/band/g12.webp" width="318" height="420" alt="" decoding="async"><img src="img/hero/band/g7.webp" width="315" height="420" alt="" decoding="async"><img src="img/hero/band/g6.webp" width="560" height="420" alt="" decoding="async"><img src="img/hero/band/g11.webp" width="630" height="420" alt="" decoding="async"><img src="img/hero/band/g15.webp" width="560" height="420" alt="" decoding="async"><img src="img/hero/band/g8.webp" width="315" height="420" alt="" decoding="async"><img src="img/hero/band/g18.webp" width="560" height="420" alt="" decoding="async"><img src="img/hero/band/g3.webp" width="560" height="420" alt="" decoding="async"><img src="img/hero/band/g14.webp" width="560" height="420" alt="" decoding="async"></div>
     </div>
   </div>
 </section>
