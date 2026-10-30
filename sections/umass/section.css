@@ -59,8 +59,8 @@
 .um-logo {
   display: flex; align-items: center; justify-content: flex-start; height: 88px;
 }
-/* --s scales one logo down when its ink is heavier than the rest (set inline on the card) */
-.um-logo img { display: block; max-height: calc(100% * var(--s, 1)); max-width: min(78%, 220px); width: auto; height: auto; }
+/* --s scales one logo down when its ink is heavier than the rest, --w widens a wide wordmark (both set inline on the card) */
+.um-logo img { display: block; max-height: calc(100% * var(--s, 1)); max-width: min(78%, var(--w, 220px)); width: auto; height: auto; }
 .um-meta { display: flex; flex-direction: column; gap: 6px; margin-top: auto; }
 .um-tag { margin: 0 0 6px; font: 500 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--fg-2, #a1a1a8); }
 .um-name { margin: 0; font: 500 18px/1.25 var(--sans); letter-spacing: -.01em; color: var(--fg, #f2f2f3); }

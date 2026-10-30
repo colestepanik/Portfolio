@@ -19,6 +19,7 @@ Sits directly under About. A big "My time at *UMass Lowell*" heading (thin sans 
 | `seniors.webp` | `16.png` | dark wavy background knocked out, white mark kept | 300x286, 10 KB |
 | `sales-team.webp` | `20.png` | dark background knocked out, white mark kept | 373x300, 13 KB |
 | `accounting-society.webp` | `18.png` | already transparent (white type, gold column), trimmed | 466x200, 14 KB |
+| `accounting-society-2.webp` | the file above | all white (Oct 29, 2026), trimmed to the ink; the card sets `--w: 270px` so it shows about 20% bigger | 436x169, 10 KB |
 | `umlfs.webp` | `21.png` | white background knocked out; navy "FS" turned white so it reads on black; blue "UML", navy bar and green ticker kept | 480x166, 12 KB |
 
 Total image weight for the section: about 79 KB.
