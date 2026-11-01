@@ -30,9 +30,13 @@
   "tool": [{"@type": "HowToTool", "name": "Obsidian"}, {"@type": "HowToTool", "name": "Claude or ChatGPT"}, {"@type": "HowToTool", "name": "Google Drive for desktop"}],
   "supply": [{"@type": "HowToSupply", "name": "Vault template"}, {"@type": "HowToSupply", "name": "Brain instructions template"}, {"@type": "HowToSupply", "name": "Interview questions"}],
   "step": [
-    {"@type": "HowToSection", "name": "Build the vault", "itemListElement": [
-      {"@type": "HowToStep", "name": "Install Obsidian and create a vault called 2nd Brain in Documents"},
-      {"@type": "HowToStep", "name": "Create the folder structure"},
+    {"@type": "HowToSection", "name": "Set up the foundation", "itemListElement": [
+      {"@type": "HowToStep", "name": "Install Obsidian and put the vault template in Documents"},
+      {"@type": "HowToStep", "name": "Install Google Drive for desktop, set it to Mirror files, and sync the vault folder"},
+      {"@type": "HowToStep", "name": "Check the folder on drive.google.com"},
+      {"@type": "HowToStep", "name": "Make sure Obsidian opens the right folder"}]},
+    {"@type": "HowToSection", "name": "Fill it with how you work", "itemListElement": [
+      {"@type": "HowToStep", "name": "Check the folder structure"},
       {"@type": "HowToStep", "name": "Have your AI interview you"},
       {"@type": "HowToStep", "name": "Turn the interview into your core files"},
       {"@type": "HowToStep", "name": "Seed notes for your main areas, people, and companies"}]},
@@ -40,10 +44,6 @@
       {"@type": "HowToStep", "name": "Turn on memory"},
       {"@type": "HowToStep", "name": "Add the /brain skill (Claude) or a 2nd Brain Project (ChatGPT)"},
       {"@type": "HowToStep", "name": "Tell it to use the brain every chat"}]},
-    {"@type": "HowToSection", "name": "Sync the vault to Google Drive", "itemListElement": [
-      {"@type": "HowToStep", "name": "Install Google Drive for desktop and set it to Mirror files"},
-      {"@type": "HowToStep", "name": "Add the vault folder and choose Sync with Google Drive"},
-      {"@type": "HowToStep", "name": "Confirm the folder on drive.google.com and in Obsidian"}]},
     {"@type": "HowToSection", "name": "Connect your AI and test", "itemListElement": [
       {"@type": "HowToStep", "name": "Connect Google Drive in your AI's settings"},
       {"@type": "HowToStep", "name": "Run the read, write, and round-trip tests"},
@@ -118,6 +118,38 @@
 .rail .rail-steps a.is-done { color: var(--fg-2); text-decoration: line-through; text-decoration-color: var(--mute); }
 .rail .rail-steps a.is-current { color: var(--fg); background: rgb(255 255 255 / .06); text-decoration: none; }
 .step { scroll-margin-top: calc(var(--nav-h) + 24px); }
+
+/* Step 1: the two downloads. Same look as the Ownerhound card: a dark card with a soft backlight behind the logo,
+   purple for Obsidian and blue for Drive. Lifts on hover and the backlight brightens. */
+.step .dl-title { margin: 12px 0 10px; font: 500 12px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--mute); }
+.dl { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.dl-card {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: grid; grid-template-columns: 48px 1fr 20px; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 16px;
+  color: #fff; text-decoration: none; border: 1px solid rgb(255 255 255 / .08);
+  background: radial-gradient(70% 140% at 12% 50%, var(--dl-tint), transparent 70%), linear-gradient(180deg, #151518, #0e0e10);
+  box-shadow: 0 18px 40px -22px rgb(0 0 0 / .8);
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .3s;
+}
+.dl-obsidian { --dl-tint: rgb(124 58 237 / .22); --dl-glow: rgb(124 58 237 / .55); }
+.dl-drive { --dl-tint: rgb(24 92 214 / .22); --dl-glow: rgb(24 92 214 / .55); }
+.dl-card:hover { transform: translateY(-4px); border-color: rgb(255 255 255 / .16); box-shadow: 0 26px 50px -22px rgb(0 0 0 / .9); }
+.dl-card:active { transform: translateY(-1px); }
+.dl-card:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+.dl-mark { position: relative; width: 48px; height: 48px; border-radius: 13px; display: grid; place-items: center; background: rgb(255 255 255 / .06); border: 1px solid rgb(255 255 255 / .1); }
+.dl-mark::before {
+  content: ""; position: absolute; inset: -26px; z-index: -1; border-radius: 50%; pointer-events: none; filter: blur(14px);
+  background: radial-gradient(closest-side, var(--dl-glow), transparent 72%); opacity: .8; transition: opacity .45s var(--ease), transform .45s var(--ease);
+}
+.dl-card:hover .dl-mark::before { opacity: 1; transform: scale(1.12); }
+.dl-mark img { width: 28px; height: 28px; }
+.dl-mark i { font-size: 28px; }
+.dl-txt { display: grid; gap: 2px; min-width: 0; }
+.dl-txt b { font: 500 16px/1.25 var(--sans); }
+.dl-txt span { font-size: 13px; color: rgb(255 255 255 / .72); }
+.dl-card > .ph-download-simple { font-size: 19px; opacity: .8; transition: transform .45s var(--ease); }
+.dl-card:hover > .ph-download-simple { transform: translateY(2px); opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .dl-card, .dl-card:hover { transform: none; } }
 .toggle { display: inline-flex; padding: 4px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--bg-2); }
 .toggle button { height: 32px; padding: 0 14px; border-radius: 999px; border: 0; background: transparent; cursor: pointer; font-size: 13px; color: var(--fg-2); display: inline-flex; align-items: center; gap: 6px; }
 .toggle button[aria-pressed="true"] { background: var(--fg); color: #18181a; }
@@ -204,7 +236,7 @@ html[data-os="win"] .only-mac, html[data-os="mac"] .only-win { display: none !im
   .rail > div:last-child { justify-self: end; }
 }
 @media (max-width: 720px) {
-  .pick, .needs, .kit, .term { grid-template-columns: 1fr; }
+  .pick, .needs, .kit, .term, .dl { grid-template-columns: 1fr; }
   .pick-card { min-height: 0; padding: 24px; }
   .box { padding: 22px 18px; }
   .step { grid-template-columns: 30px 1fr; gap: 12px; padding: 18px 16px; }
@@ -289,10 +321,16 @@ STARTER KIT (tell me to download these first)
 - /brain skill: https://colestepanik.vercel.app/kit/brain-skill.zip
 - Interview questions: https://colestepanik.vercel.app/kit/interview-questions.md
 
-PHASE 1: BUILD THE VAULT (about 20 minutes)
-1. Install Obsidian and make the vault. Easiest: unzip the vault template into Documents, then in Obsidian choose "Open folder as vault" and pick the 2nd Brain folder. From scratch: "Create new vault", name it 2nd Brain, save it in Documents (Windows: C:\Users\your-name\Documents\2nd Brain, Mac: ~/Documents/2nd Brain). Never in Downloads.
-2. Check the folders exist (the template has them): 00 Core, 01 Areas, 02 People, 02 Companies, 03 Projects, 05 Log, 06 Archive, _interview. If not, right-click the left sidebar and choose New folder for each.
-3. Interview me, right here in this chat. Ask one question at a time and wait for my answer. If an answer is vague, ask one follow-up. Keep it to about 25 questions. If I paste the interview questions file, use it. Suggest I use voice dictation. Cover:
+PHASE 1: SET UP THE FOUNDATION (about 15 minutes)
+1. Install Obsidian (https://obsidian.md/download). Download the vault template and unzip it where it will live for good. Documents is best (Windows: C:\Users\your-name\Documents\2nd Brain, Mac: ~/Documents/2nd Brain). Never in Downloads. In Obsidian, choose "Open folder as vault" and pick that 2nd Brain folder. From scratch instead: "Create new vault", name it 2nd Brain, save it in Documents.
+2. Install Google Drive for desktop (https://www.google.com/drive/download/) and sign in. This is the foundation: the vault lives on my computer and in Drive, so you can reach it from anywhere. Set it to Mirror files: Windows, the Drive icon in the system tray by the clock (maybe under the up arrow); Mac, the Drive icon in the menu bar. Then the gear, Preferences, Google Drive, Mirror files. Still in Preferences, open My Computer (Windows) or My Mac, click Add folder, pick the 2nd Brain folder, choose Sync with Google Drive, click Done, then Save.
+3. Check that it synced. Windows: File Explorer, Documents, the folder shows a small Drive icon. Mac: Finder, Documents, maybe a sync badge. The real check: drive.google.com, Computers, then my computer. 2nd Brain should be there with all its folders.
+4. In Obsidian, click the vault name at the bottom left, then Manage vaults. Open the folder with 00 Core directly inside it, not the folder above. Remove extra entries with Remove from list (this doesn't delete files).
+Done when: 2nd Brain shows under Computers on drive.google.com, and Obsidian lists exactly one 2nd Brain vault.
+
+PHASE 2: FILL IT WITH HOW I WORK (about 20 minutes)
+5. Check the folders exist (the template has them): 00 Core, 01 Areas, 02 People, 02 Companies, 03 Projects, 05 Log, 06 Archive, _interview. If not, right-click the left sidebar and choose New folder for each.
+6. Interview me, right here in this chat. Ask one question at a time and wait for my answer. If an answer is vague, ask one follow-up. Keep it to about 25 questions. If I paste the interview questions file, use it. Suggest I use voice dictation. Cover:
    a. What I'm working on right now, ranked by priority
    b. A real day when two things collided, and what I did first
    c. Rules I always or never break
@@ -305,36 +343,23 @@ PHASE 1: BUILD THE VAULT (about 20 minutes)
    - Identity.md: who you are to me and how you should talk to me
    - Tool Roles.md: what each tool is for
    - interview-[today's date].md: the full questions and answers, word for word
-4. Save the files. In Obsidian, right-click 00 Core, choose New note, name it Operating Manual, and paste. Same for Identity and Tool Roles (the template has empty versions to paste over). The transcript goes in _interview.
-5. Seed a few notes: one short note per main part of my life in 01 Areas (a class, a job, a club), one per key person in 02 People, one per organization in 02 Companies. Two lines each is plenty.
-Done when: 00 Core has three notes with my real answers, and the transcript is in _interview.
+7. Save the files. In Obsidian, right-click 00 Core, choose New note, name it Operating Manual, and paste. Same for Identity and Tool Roles (the template has empty versions to paste over). The transcript goes in _interview.
+8. Seed a few notes: one short note per main part of my life in 01 Areas (a class, a job, a club), one per key person in 02 People, one per organization in 02 Companies. Two lines each is plenty.
+Done when: 00 Core has three notes with my real answers, and the transcript is in _interview. Drive syncs them on its own.
 
-PHASE 2: TEACH CLAUDE TO USE IT (about 5 minutes)
-6. Turn on memory: Settings, Memory section, turn on generating memory from chats.
-7. Add the /brain skill: Settings, Capabilities, Skills, upload brain-skill.zip. No editing needed. If Skills is missing, turn on code execution and file creation on the same page first.
-8. In Settings, Profile, paste this into personal preferences: "Apply /brain at the start of every chat. Keep a dated daily log in the vault."
-Done when: typing /brain in a new chat is recognized. It will say it can't find the vault yet. That's expected; the next phases fix it.
+PHASE 3: TEACH CLAUDE TO USE IT (about 5 minutes)
+9. Turn on memory: Settings, Memory section, turn on generating memory from chats.
+10. Add the /brain skill: Settings, Capabilities, Skills, upload brain-skill.zip. No editing needed. If Skills is missing, turn on code execution and file creation on the same page first.
+11. In Settings, Profile, paste this into personal preferences: "Apply /brain at the start of every chat. Keep a dated daily log in the vault."
+Done when: typing /brain in a new chat is recognized. It may say it can't find the vault yet. That's expected; the next phase connects it.
 
-PHASE 3: THE PROBLEM (1 minute)
-9. Explain that the vault lives on my computer, so Claude on my phone or the web can't see it, and Obsidian has no official connector. The fix is syncing the folder to Google Drive, which Claude can reach from anywhere.
-
-PHASE 4: SYNC THE VAULT TO GOOGLE DRIVE (about 10 minutes)
-10. Install Google Drive for desktop from google.com/drive/download and sign in.
-11. Set it to Mirror files. Windows: the Drive icon in the system tray by the clock (maybe under the up arrow). Mac: the Drive icon in the menu bar. Then the gear, Preferences, Google Drive, Mirror files.
-12. Still in Preferences, open My Computer (Windows) or My Mac, click Add folder, pick the 2nd Brain folder, choose Sync with Google Drive, click Done, then Save.
-13. Check the folder: Windows, File Explorer, Documents, the folder shows a small Drive icon. Mac: Finder, Documents, maybe a sync badge (step 14 is the real check).
-14. On drive.google.com, click Computers, then my computer. 2nd Brain should be there with all its folders.
-15. In Obsidian, click the vault name at the bottom left, then Manage vaults. Open the folder with 00 Core directly inside it, not the folder above. Remove extra entries with Remove from list (this doesn't delete files).
-16. Windows only, if the vault is in Downloads: Settings, System, Storage, Storage Sense, set Downloads cleanup to Never. Better: move the vault to Documents and redo step 15.
-Done when: 2nd Brain shows under Computers on drive.google.com, and Obsidian lists exactly one 2nd Brain vault.
-
-PHASE 5: CONNECT CLAUDE AND TEST (about 10 minutes)
-17. Settings, Connectors, Google Drive, Connect, using the same Google account as step 10.
-18. Read test: I ask "Find my 2nd Brain folder in Google Drive and list what's in it."
-19. Write test: I ask you to create Sync Test.md in my 2nd Brain folder that says "hello from my AI". After a minute it should appear in Obsidian on its own.
-20. Round trip: I add a line to Sync Test in Obsidian, wait a minute, and ask you to read it back.
-21. Point /brain at Drive: "Update my /brain skill to use my Google Drive 2nd Brain folder by default. Add its folder ID, and keep the safety rules: plain markdown, edit in place, one log file per date." Then I click to save the updated skill card.
-22. The real test: in the Claude app on my phone, a new chat, ask "What did I do today?"
+PHASE 4: CONNECT CLAUDE AND TEST (about 10 minutes)
+12. Settings, Connectors, Google Drive, Connect, using the same Google account as step 2.
+13. Read test: I ask "Find my 2nd Brain folder in Google Drive and list what's in it."
+14. Write test: I ask you to create Sync Test.md in my 2nd Brain folder that says "hello from my AI". After a minute it should appear in Obsidian on its own.
+15. Round trip: I add a line to Sync Test in Obsidian, wait a minute, and ask you to read it back.
+16. Point /brain at Drive: "Update my /brain skill to use my Google Drive 2nd Brain folder by default. Add its folder ID, and keep the safety rules: plain markdown, edit in place, one log file per date." Then I click to save the updated skill card.
+17. The real test: in the Claude app on my phone, a new chat, ask "What did I do today?"
 Done when: my phone answers from the vault. I can delete Sync Test whenever I like.
 
 TROUBLESHOOTING
@@ -393,11 +418,10 @@ Start now: ask whether I'm on Windows or a Mac.</pre>
         <nav aria-label="Guide sections">
           <a href="#start">Before you start</a>
           <a href="#kit">Starter kit</a>
-          <a href="#phase-1" data-phase="1">Build the vault <span class="n"></span></a>
-          <a href="#phase-2" data-phase="2">Teach your AI <span class="n"></span></a>
-          <a href="#phase-3" data-phase="3">The problem <span class="n"></span></a>
-          <a href="#phase-4" data-phase="4">Sync to Drive <span class="n"></span></a>
-          <a href="#phase-5" data-phase="5">Connect and test <span class="n"></span></a>
+          <a href="#phase-1" data-phase="1">Foundation <span class="n"></span></a>
+          <a href="#phase-2" data-phase="2">Fill it <span class="n"></span></a>
+          <a href="#phase-3" data-phase="3">Teach your AI <span class="n"></span></a>
+          <a href="#phase-4" data-phase="4">Connect and test <span class="n"></span></a>
           <a href="#fixes">Troubleshooting</a>
         </nav>
       </aside>
@@ -450,24 +474,70 @@ Start now: ask whether I'm on Windows or a Mac.</pre>
         <!-- Phase 1 -->
         <div id="phase-1" class="phase" data-phase="1">
           <div class="phase-head">
-            <div><span class="kick">Phase 1, about 20 minutes</span><h2 class="h3">Build the vault</h2></div>
+            <div><span class="kick">Phase 1, about 15 minutes</span><h2 class="h3">Set up the foundation</h2></div>
             <span class="phase-meter"></span>
           </div>
           <ol class="steps">
             <li class="step" data-step="1-1"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">01</span>Install Obsidian and make your vault</h4>
-              <p>Download Obsidian from obsidian.md and open it. The easiest start: unzip the <b>vault template</b> into your Documents folder, then in Obsidian choose <b>Open folder as vault</b> and pick the <code>2nd Brain</code> folder.</p>
-              <p>Starting from scratch instead? Choose <b>Create new vault</b>, name it <code>2nd Brain</code>, and save it in Documents: <span class="path only-win">C:\Users\your-name\Documents\2nd Brain</span><span class="path only-mac">~/Documents/2nd Brain</span>.</p>
+              <h4><span class="num">01</span>Install Obsidian and pick where your vault lives</h4>
+              <p class="dl-title">All you'll need to download</p>
+              <div class="dl">
+                <a class="dl-card dl-obsidian" href="https://obsidian.md/download" target="_blank" rel="noopener">
+                  <span class="dl-mark"><img src="img/logos/obsidian.svg" width="30" height="30" alt=""></span>
+                  <span class="dl-txt"><b>Obsidian</b><span>Free notes app, obsidian.md</span></span>
+                  <i class="ph ph-download-simple" aria-hidden="true"></i>
+                </a>
+                <a class="dl-card dl-drive" href="https://www.google.com/drive/download/" target="_blank" rel="noopener">
+                  <span class="dl-mark"><i class="ph ph-google-drive-logo" aria-hidden="true"></i></span>
+                  <span class="dl-txt"><b>Google Drive for desktop</b><span>Free, sign in with Google</span></span>
+                  <i class="ph ph-download-simple" aria-hidden="true"></i>
+                </a>
+              </div>
+              <p>Download both now and install Obsidian first; Google Drive is the very next step.</p>
+              <p>Then download the <a href="kit/2nd-brain-vault-template.zip" download><b>vault template</b></a> and unzip it where it will live for good. <b>Documents is best:</b> <span class="path only-win">C:\Users\your-name\Documents\2nd Brain</span><span class="path only-mac">~/Documents/2nd Brain</span>. In Obsidian, choose <b>Open folder as vault</b> and pick that <code>2nd Brain</code> folder.</p>
+              <p>Starting from scratch instead? Choose <b>Create new vault</b>, name it <code>2nd Brain</code>, and save it in Documents.</p>
               <p><b>Don't put it in Downloads.</b> <span class="only-win">Windows can clean that folder out automatically.</span><span class="only-mac">It's easy to delete by accident when you tidy up.</span></p>
             </div></li>
+            <li class="step" data-step="4-2"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">02</span>Install Google Drive and mirror your vault</h4>
+              <p>This is the foundation: your vault lives on your computer and in Google Drive, so your AI can reach it from anywhere, even your phone.</p>
+              <p>Install <b>Google Drive for desktop</b> (the blue card above) and sign in with your Google account.</p>
+              <p class="only-win">Click the Drive icon in the system tray, at the bottom right by the clock (it may be hidden under the little up arrow). Click the gear, then <b>Preferences</b>, then <b>Google Drive</b>, and choose <b>Mirror files</b>.</p>
+              <p class="only-mac">Click the Drive icon in the menu bar at the top right of your screen. Click the gear, then <b>Preferences</b>, then <b>Google Drive</b>, and choose <b>Mirror files</b>.</p>
+              <p>Still in Preferences, open <b class="only-win">My Computer</b><b class="only-mac">My Mac</b>, click <b>Add folder</b>, pick your <code>2nd Brain</code> folder, and choose <b>Sync with Google Drive</b>. Click Done, then Save.</p>
+              <!-- SCREENSHOT (must have): the Mirror files setting, and Add folder with "Sync with Google Drive" selected -->
+            </div></li>
+            <li class="step" data-step="4-4"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">03</span>Check that it synced</h4>
+              <p class="only-win">Open File Explorer and go to Documents. Your <code>2nd Brain</code> folder should show a small Google Drive icon.</p>
+              <p class="only-mac">Open Finder and go to Documents. Your <code>2nd Brain</code> folder may show a small sync badge.</p>
+              <p>The real check: open drive.google.com, click <b>Computers</b> in the left menu, then your computer. <code>2nd Brain</code> should be there with all its folders.</p>
+              <!-- SCREENSHOT (must have): the Drive icon on the folder -->
+            </div></li>
+            <li class="step" data-step="4-6"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">04</span>Make sure Obsidian opens the right folder</h4>
+              <p>In Obsidian, click your vault name at the bottom left, then <b>Manage vaults</b>. Look at the path under each vault. Open the folder that has <code>00 Core</code> directly inside it, not the folder above it. Remove any extra entries with <b>Remove from list</b> (this doesn't delete files).</p>
+              <!-- SCREENSHOT (must have): Manage vaults with the paths visible -->
+            </div></li>
+          </ol>
+          <div class="done-when"><i class="ph ph-flag-checkered" aria-hidden="true"></i><div><b>You're done when</b> <code>2nd Brain</code> shows under Computers on drive.google.com, and Obsidian lists exactly one 2nd Brain vault.</div></div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div id="phase-2" class="phase" data-phase="2">
+          <div class="phase-head">
+            <div><span class="kick">Phase 2, about 20 minutes</span><h2 class="h3">Fill it with how you work</h2></div>
+            <span class="phase-meter"></span>
+          </div>
+          <ol class="steps">
             <li class="step" data-step="1-2"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">02</span>Check the folders</h4>
+              <h4><span class="num">05</span>Check the folders</h4>
               <p>If you used the template, these already exist. If not, right-click the left sidebar in Obsidian and choose <b>New folder</b> for each:</p>
               <p><code>00 Core</code> <code>01 Areas</code> <code>02 People</code> <code>02 Companies</code> <code>03 Projects</code> <code>05 Log</code> <code>06 Archive</code> <code>_interview</code></p>
               <!-- SCREENSHOT (must have): Obsidian sidebar showing the folder tree -->
             </div></li>
             <li class="step" data-step="1-3"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">03</span>Let <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> interview you</h4>
+              <h4><span class="num">06</span>Let <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> interview you</h4>
               <p>Copy the prompt below, open a new chat, paste it, and answer one question at a time. Paste the interview questions file too if you want it to go deeper. Plan on about 20 minutes; talking with voice dictation is faster than typing.</p>
               <div class="prompt" style="margin-top:14px">
                 <div class="prompt-top">
@@ -499,158 +569,97 @@ When we're done, write four markdown files, each in its own code block with the 
               </div>
             </div></li>
             <li class="step" data-step="1-4"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">04</span>Save the four files</h4>
+              <h4><span class="num">07</span>Save the four files</h4>
               <p>In Obsidian, right-click <code>00 Core</code>, choose <b>New note</b>, name it <code>Operating Manual</code>, and paste in what the AI wrote. Do the same for <code>Identity</code> and <code>Tool Roles</code> (the template already has empty versions you can paste over). The transcript goes in <code>_interview</code>.</p>
             </div></li>
             <li class="step" data-step="1-5"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">05</span>Seed a few notes</h4>
+              <h4><span class="num">08</span>Seed a few notes</h4>
               <p>Make one short note for each main part of your life in <code>01 Areas</code> (a class, a job, a club), one for each key person in <code>02 People</code>, and one per organization in <code>02 Companies</code>. Two lines each is plenty. Your AI fills them in over time.</p>
             </div></li>
           </ol>
-          <div class="done-when"><i class="ph ph-flag-checkered" aria-hidden="true"></i><div><b>You're done when</b> <code>00 Core</code> has three notes with your real answers in them, and your transcript is in <code>_interview</code>.</div></div>
-        </div>
-
-        <!-- Phase 2 -->
-        <div id="phase-2" class="phase" data-phase="2">
-          <div class="phase-head">
-            <div><span class="kick">Phase 2, about 5 minutes</span><h2 class="h3">Teach <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> to use it</h2></div>
-            <span class="phase-meter"></span>
-          </div>
-          <ol class="steps">
-            <li class="step only-claude" data-step="2-1c"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">06</span>Turn on memory</h4>
-              <p>In Claude, open <b>Settings</b>, find the <b>Memory</b> section, and turn on the setting that generates memory from your chats.</p>
-            </div></li>
-            <li class="step only-claude" data-step="2-2c"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">07</span>Add the /brain skill</h4>
-              <p>Go to <b>Settings</b>, then <b>Capabilities</b>, then <b>Skills</b>, and upload <code>brain-skill.zip</code> from your starter kit. No editing needed: it reads your <code>00 Core</code> notes, so it already knows you.</p>
-              <p>Don't see Skills? Turn on code execution and file creation on the same page first.</p>
-            </div></li>
-            <li class="step only-claude" data-step="2-3c"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">08</span>Tell Claude to use it every chat</h4>
-              <p>In <b>Settings</b>, open your <b>Profile</b> and paste this into the personal preferences box:</p>
-              <div class="copy-line"><span id="pref-claude">Apply /brain at the start of every chat. Keep a dated daily log in the vault.</span><button class="btn sm" type="button" data-copy="#pref-claude"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
-              <!-- SCREENSHOT (must have): the preference text saved in Claude settings -->
-            </div></li>
-            <li class="step only-chatgpt" data-step="2-1g"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">06</span>Turn on memory</h4>
-              <p>In ChatGPT, open <b>Settings</b>, then <b>Personalization</b>, and turn on <b>Memory</b> (saved memories and chat history).</p>
-            </div></li>
-            <li class="step only-chatgpt" data-step="2-2g"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">07</span>Make a 2nd Brain Project</h4>
-              <p>In the sidebar, choose <b>New project</b> and name it <code>2nd Brain</code>. Open the project's settings, find <b>Instructions</b>, and paste in everything below the line from <code>chatgpt-project-instructions.md</code>.</p>
-            </div></li>
-            <li class="step only-chatgpt" data-step="2-3g"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">08</span>Start brain chats inside the Project</h4>
-              <p>Anything you want your 2nd Brain for, start it from the 2nd Brain Project, on your laptop and in the phone app. Optional: add this to <b>Settings</b>, <b>Personalization</b>, <b>Custom instructions</b>:</p>
-              <div class="copy-line"><span id="pref-gpt">When I say /brain, I mean my 2nd Brain Project and the vault in my Google Drive.</span><button class="btn sm" type="button" data-copy="#pref-gpt"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
-            </div></li>
-          </ol>
-          <div class="done-when"><i class="ph ph-flag-checkered" aria-hidden="true"></i><div><b>You're done when</b> <span class="only-claude">you type <code>/brain</code> in a new chat and Claude recognizes the skill.</span><span class="only-chatgpt">a new chat inside the 2nd Brain Project tries to look for your vault.</span> It will say it can't find the vault yet. That's expected; the next two phases fix it.</div></div>
+          <div class="done-when"><i class="ph ph-flag-checkered" aria-hidden="true"></i><div><b>You're done when</b> <code>00 Core</code> has three notes with your real answers in them, and your transcript is in <code>_interview</code>. Drive syncs them on its own.</div></div>
         </div>
 
         <!-- Phase 3 -->
         <div id="phase-3" class="phase" data-phase="3">
           <div class="phase-head">
-            <div><span class="kick">Phase 3, 1 minute</span><h2 class="h3">The problem</h2></div>
+            <div><span class="kick">Phase 3, about 5 minutes</span><h2 class="h3">Teach <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> to use it</h2></div>
             <span class="phase-meter"></span>
           </div>
           <ol class="steps">
-            <li class="step" data-step="3-1"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">09</span>See why you need the next phase</h4>
-              <p>Your vault is a folder on your computer. <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> on your phone or the web can't see it, and Obsidian has no official connector. Try it: on your phone, ask "What's in my Operating Manual?" It can't answer yet.</p>
-              <p>The fix is to sync the folder to Google Drive, which your AI can reach from anywhere.</p>
+            <li class="step only-claude" data-step="2-1c"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">09</span>Turn on memory</h4>
+              <p>In Claude, open <b>Settings</b>, find the <b>Memory</b> section, and turn on the setting that generates memory from your chats.</p>
+            </div></li>
+            <li class="step only-claude" data-step="2-2c"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">10</span>Add the /brain skill</h4>
+              <p>Go to <b>Settings</b>, then <b>Capabilities</b>, then <b>Skills</b>, and upload <code>brain-skill.zip</code> from your starter kit. No editing needed: it reads your <code>00 Core</code> notes, so it already knows you.</p>
+              <p>Don't see Skills? Turn on code execution and file creation on the same page first.</p>
+            </div></li>
+            <li class="step only-claude" data-step="2-3c"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">11</span>Tell Claude to use it every chat</h4>
+              <p>In <b>Settings</b>, open your <b>Profile</b> and paste this into the personal preferences box:</p>
+              <div class="copy-line"><span id="pref-claude">Apply /brain at the start of every chat. Keep a dated daily log in the vault.</span><button class="btn sm" type="button" data-copy="#pref-claude"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
+              <!-- SCREENSHOT (must have): the preference text saved in Claude settings -->
+            </div></li>
+            <li class="step only-chatgpt" data-step="2-1g"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">09</span>Turn on memory</h4>
+              <p>In ChatGPT, open <b>Settings</b>, then <b>Personalization</b>, and turn on <b>Memory</b> (saved memories and chat history).</p>
+            </div></li>
+            <li class="step only-chatgpt" data-step="2-2g"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">10</span>Make a 2nd Brain Project</h4>
+              <p>In the sidebar, choose <b>New project</b> and name it <code>2nd Brain</code>. Open the project's settings, find <b>Instructions</b>, and paste in everything below the line from <code>chatgpt-project-instructions.md</code>.</p>
+            </div></li>
+            <li class="step only-chatgpt" data-step="2-3g"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
+              <h4><span class="num">11</span>Start brain chats inside the Project</h4>
+              <p>Anything you want your 2nd Brain for, start it from the 2nd Brain Project, on your laptop and in the phone app. Optional: add this to <b>Settings</b>, <b>Personalization</b>, <b>Custom instructions</b>:</p>
+              <div class="copy-line"><span id="pref-gpt">When I say /brain, I mean my 2nd Brain Project and the vault in my Google Drive.</span><button class="btn sm" type="button" data-copy="#pref-gpt"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
             </div></li>
           </ol>
-          <div class="done-when"><i class="ph ph-flag-checkered" aria-hidden="true"></i><div><b>You're done when</b> you've seen your AI say it can't reach the vault. Now you know what the next phase fixes.</div></div>
+          <div class="done-when"><i class="ph ph-flag-checkered" aria-hidden="true"></i><div><b>You're done when</b> <span class="only-claude">you type <code>/brain</code> in a new chat and Claude recognizes the skill.</span><span class="only-chatgpt">a new chat inside the 2nd Brain Project tries to look for your vault.</span> It may say it can't find the vault yet. That's expected; the next phase connects it.</div></div>
         </div>
 
         <!-- Phase 4 -->
         <div id="phase-4" class="phase" data-phase="4">
           <div class="phase-head">
-            <div><span class="kick">Phase 4, about 10 minutes</span><h2 class="h3">Sync the vault to Google Drive</h2></div>
-            <span class="phase-meter"></span>
-          </div>
-          <ol class="steps">
-            <li class="step" data-step="4-1"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">10</span>Install Google Drive for desktop</h4>
-              <p>Download it from google.com/drive/download, install it, and sign in with your Google account.</p>
-            </div></li>
-            <li class="step" data-step="4-2"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">11</span>Set it to Mirror files</h4>
-              <p class="only-win">Click the Drive icon in the system tray, at the bottom right by the clock (it may be hidden under the little up arrow). Click the gear, then <b>Preferences</b>, then <b>Google Drive</b>, and choose <b>Mirror files</b>.</p>
-              <p class="only-mac">Click the Drive icon in the menu bar at the top right of your screen. Click the gear, then <b>Preferences</b>, then <b>Google Drive</b>, and choose <b>Mirror files</b>.</p>
-              <!-- SCREENSHOT (must have): the Mirror files setting -->
-            </div></li>
-            <li class="step" data-step="4-3"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">12</span>Add your vault folder</h4>
-              <p>Still in Preferences, open <b class="only-win">My Computer</b><b class="only-mac">My Mac</b>, click <b>Add folder</b>, pick your <code>2nd Brain</code> folder, and choose <b>Sync with Google Drive</b>. Click Done, then Save.</p>
-              <!-- SCREENSHOT (must have): Add folder with "Sync with Google Drive" selected -->
-            </div></li>
-            <li class="step" data-step="4-4"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">13</span>Check the folder on your computer</h4>
-              <p class="only-win">Open File Explorer and go to Documents. Your <code>2nd Brain</code> folder should show a small Google Drive icon.</p>
-              <p class="only-mac">Open Finder and go to Documents. Your <code>2nd Brain</code> folder may show a small sync badge. If you don't see one, step 14 is the real check.</p>
-              <!-- SCREENSHOT (must have): the Drive icon on the folder -->
-            </div></li>
-            <li class="step" data-step="4-5"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">14</span>Check it on drive.google.com</h4>
-              <p>Open drive.google.com, click <b>Computers</b> in the left menu, then your computer. <code>2nd Brain</code> should be there with all its folders.</p>
-            </div></li>
-            <li class="step" data-step="4-6"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">15</span>Make sure Obsidian opens the right folder</h4>
-              <p>In Obsidian, click your vault name at the bottom left, then <b>Manage vaults</b>. Look at the path under each vault. Open the folder that has <code>00 Core</code> directly inside it, not the folder above it. Remove any extra entries with <b>Remove from list</b> (this doesn't delete files).</p>
-              <!-- SCREENSHOT (must have): Manage vaults with the paths visible -->
-            </div></li>
-            <li class="step only-win" data-step="4-7"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">16</span>Only if your vault is in Downloads<span class="badge">Windows</span></h4>
-              <p>Open <b>Settings</b>, then <b>System</b>, then <b>Storage</b>, then <b>Storage Sense</b>, and set the Downloads cleanup to <b>Never</b>. Better: move the vault to Documents and redo step 15.</p>
-            </div></li>
-          </ol>
-          <div class="done-when"><i class="ph ph-flag-checkered" aria-hidden="true"></i><div><b>You're done when</b> <span class="only-win">you see the Drive icon on your <code>2nd Brain</code> folder</span><span class="only-mac">you see <code>2nd Brain</code> under Computers on drive.google.com</span>, and Obsidian lists exactly one 2nd Brain vault.</div></div>
-        </div>
-
-        <!-- Phase 5 -->
-        <div id="phase-5" class="phase" data-phase="5">
-          <div class="phase-head">
-            <div><span class="kick">Phase 5, about 10 minutes</span><h2 class="h3">Connect <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> and test</h2></div>
+            <div><span class="kick">Phase 4, about 10 minutes</span><h2 class="h3">Connect <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> and test</h2></div>
             <span class="phase-meter"></span>
           </div>
           <ol class="steps">
             <li class="step" data-step="5-1"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">17</span>Connect Google Drive</h4>
-              <p class="only-claude">In Claude, open <b>Settings</b>, then <b>Connectors</b>, find <b>Google Drive</b>, and click Connect. Sign in with the same Google account as step 10.</p>
-              <p class="only-chatgpt">In ChatGPT, open <b>Settings</b>, then <b>Apps</b> (some accounts call it Connectors), find <b>Google Drive</b>, and click Connect. Sign in with the same Google account as step 10.</p>
+              <h4><span class="num">12</span>Connect Google Drive</h4>
+              <p class="only-claude">In Claude, open <b>Settings</b>, then <b>Connectors</b>, find <b>Google Drive</b>, and click Connect. Sign in with the same Google account as step 2.</p>
+              <p class="only-chatgpt">In ChatGPT, open <b>Settings</b>, then <b>Apps</b> (some accounts call it Connectors), find <b>Google Drive</b>, and click Connect. Sign in with the same Google account as step 2.</p>
               <!-- SCREENSHOT (must have): the connector page -->
             </div></li>
             <li class="step" data-step="5-2"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">18</span>Read test</h4>
+              <h4><span class="num">13</span>Read test</h4>
               <p><span class="only-chatgpt">Inside your 2nd Brain Project, </span><span class="only-claude">In a new chat, </span>ask:</p>
               <div class="copy-line"><span id="t-read">Find my 2nd Brain folder in Google Drive and list what's in it.</span><button class="btn sm" type="button" data-copy="#t-read"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
             </div></li>
             <li class="step" data-step="5-3"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">19</span>Write test</h4>
+              <h4><span class="num">14</span>Write test</h4>
               <div class="copy-line"><span id="t-write">Create a note called Sync Test.md in my 2nd Brain folder that says "hello from my AI".</span><button class="btn sm" type="button" data-copy="#t-write"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
               <p style="margin-top:10px">Wait a minute, then check Obsidian. The note should appear on its own.</p>
               <p class="only-chatgpt"><b>If ChatGPT says it can't create that file on your plan,</b> that's fine. Ask it for the note text instead and paste it into a new note yourself. From then on, end brain chats with "Give me today's log entry" and paste it into <code>05 Log</code>. Your project instructions already ask for this.</p>
               <!-- SCREENSHOT (must have): the test note showing in Obsidian -->
             </div></li>
             <li class="step" data-step="5-4"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">20</span>Round-trip test</h4>
+              <h4><span class="num">15</span>Round-trip test</h4>
               <p>Add a line to Sync Test in Obsidian, wait a minute for Drive to sync, then ask your AI to read the note back. If it sees your new line, the loop works both ways.</p>
             </div></li>
             <li class="step only-claude" data-step="5-5c"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">21</span>Point /brain at Drive</h4>
+              <h4><span class="num">16</span>Point /brain at Drive</h4>
               <div class="copy-line"><span id="t-skill-c">Update my /brain skill to use my Google Drive 2nd Brain folder by default. Add its folder ID, and keep the safety rules: plain markdown, edit in place, one log file per date.</span><button class="btn sm" type="button" data-copy="#t-skill-c"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
               <p style="margin-top:10px">When Claude shows the updated skill card, click to save it.</p>
               <!-- SCREENSHOT (must have): the skill save card -->
             </div></li>
             <li class="step only-chatgpt" data-step="5-5g"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">21</span>Add the folder link to your Project</h4>
+              <h4><span class="num">16</span>Add the folder link to your Project</h4>
               <p>Open your 2nd Brain folder on drive.google.com, copy the link from the address bar, and paste it on the last line of your Project instructions where it says "Vault folder link".</p>
             </div></li>
             <li class="step" data-step="5-6"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
-              <h4><span class="num">22</span>The real test, from your phone</h4>
+              <h4><span class="num">17</span>The real test, from your phone</h4>
               <p>Open the <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> app on your phone, start a new chat<span class="only-chatgpt"> inside the 2nd Brain Project</span>, and ask:</p>
               <div class="copy-line"><span id="t-phone">What did I do today?</span><button class="btn sm" type="button" data-copy="#t-phone"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
               <!-- SCREENSHOT (must have): the phone chat answering -->
