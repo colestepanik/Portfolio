@@ -30,4 +30,4 @@ Claude, Claude Code, Claude API, agent and skill design, Lovable, Excel (VBA), B
 
 ## Pages
 - [Portfolio and full resume](https://colestepanik.vercel.app/)
-- [Build your own 2nd Brain](https://colestepanik.vercel.app/brain.html): free beginner guide by Cole Stepanik to building an Obsidian vault that Claude or ChatGPT reads every chat, synced through Google Drive. Windows and Mac, about 45 minutes, with a vault template, a /brain skill or ChatGPT Project instructions, and interview questions.
+- [Build your own 2nd Brain](https://colestepanik.vercel.app/brain.html): free beginner guide by Cole Stepanik to building an Obsidian vault that Claude or ChatGPT reads every chat, synced through Google Drive. Windows and Mac, about 45 minutes. Nothing to unzip: after Google Drive is connected, one prompt has the AI create the vault's folders, interview you, write your notes, and make the /brain skill or ChatGPT Project instructions.
