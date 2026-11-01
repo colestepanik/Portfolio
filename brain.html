@@ -145,6 +145,13 @@
 .dl-card > .ph-download-simple { font-size: 19px; opacity: .8; transition: transform .45s var(--ease); }
 .dl-card:hover > .ph-download-simple { transform: translateY(2px); opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .dl-card, .dl-card:hover { transform: none; } }
+
+/* Step 10: an Obsidian style graph view that builds the vault the prompt writes */
+.gv { margin: 4px 0 10px; border-radius: 14px; border: 1px solid var(--line); overflow: hidden;
+  background: radial-gradient(70% 80% at 50% 50%, rgb(127 109 242 / .08), transparent 70%), #141416; }
+.gv-top { display: flex; justify-content: space-between; gap: 12px; padding: 10px 14px; border-bottom: 1px solid var(--line); font: 500 11px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--mute); }
+.gv canvas { display: block; width: 100%; aspect-ratio: 16 / 9; }
+@media (max-width: 720px) { .gv canvas { aspect-ratio: 4 / 3; } }
 .toggle { display: inline-flex; padding: 4px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--bg-2); }
 .toggle button { height: 32px; padding: 0 14px; border-radius: 999px; border: 0; background: transparent; cursor: pointer; font-size: 13px; color: var(--fg-2); display: inline-flex; align-items: center; gap: 6px; }
 .toggle button[aria-pressed="true"] { background: var(--fg); color: #18181a; }
@@ -317,12 +324,12 @@ Done when: 2nd Brain shows under My Drive on drive.google.com, and Obsidian list
 PHASE 2: CONNECT CLAUDE (about 5 minutes)
 5. Turn on memory: Settings, Memory section, turn on generating memory from chats.
 6. Settings, Connectors, Google Drive, Connect, using the same Google account as step 2. Then make sure Google Drive is turned on for this chat.
-7. Find my 2nd Brain folder in Google Drive and tell me what's in it. It should be empty.
+7. Find my 2nd Brain folder in Google Drive and tell me what's in it. It should be empty. If you can't find it, tell me to attach the folder to this chat: the + in the message box, add from Google Drive, pick 2nd Brain.
 Done when: you can see my empty 2nd Brain folder.
 
 PHASE 3: BUILD IT (about 25 minutes, you do the work)
 8. Set up the vault. In the 2nd Brain folder, create these folders, each with a short README.md that says what goes in it: 00 Core, 01 Areas, 02 People, 02 Companies, 03 Projects, 05 Log, 06 Archive, _interview. Work in that folder only, plain markdown.
-9. Interview me so you can work the way I do. Ask one question at a time and wait for my answer. If an answer is vague, ask one follow-up. Keep it to about 25 questions. Suggest I use voice dictation. Cover:
+9. Interview me so you can work the way I do. List all your questions at once, numbered, about 25 of them, so I can answer them all in one reply. Suggest I use voice dictation. When I've answered, check you have everything you need and ask only the follow-ups you need. Cover:
    a. What I'm working on right now, ranked by priority
    b. A real day when two things collided, and what I did first
    c. Rules I always or never break
@@ -342,7 +349,7 @@ Done when: 00 Core in Obsidian has my three notes, and typing /brain in a new ch
 
 PHASE 4: TEST (about 5 minutes)
 13. Round trip: I add a line to my Operating Manual in Obsidian, wait a minute, and ask you to read it back. If you see my new line, the loop works both ways.
-14. The real test: in the Claude app on my phone, a new chat, ask "What did I do today?"
+14. The real test: in the Claude app on my phone, a new chat, ask "What did I do today?" Explain that the phone app can't open Obsidian; it reads the vault's copy in Google Drive, which is why we mirrored it.
 Done when: my phone answers from the vault.
 
 TROUBLESHOOTING
@@ -516,6 +523,7 @@ Start now: ask whether I'm on Windows or a Mac.</pre>
               <p>In a new chat, ask:</p>
               <div class="copy-line"><span id="t-read">Find my 2nd Brain folder in Google Drive and list what's in it.</span><button class="btn sm" type="button" data-copy="#t-read"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
               <p style="margin-top:10px">It should find <code>2nd Brain</code> and tell you it's empty. That's right: it fills it next.</p>
+              <p>Can't find it? You may have to attach the folder to the chat: click the <b>+</b> in the message box, add from <b>Google Drive</b>, and pick your <code>2nd Brain</code> folder. Then ask again.</p>
             </div></li>
           </ol>
           <div class="done-when"><i class="ph ph-flag-checkered" aria-hidden="true"></i><div><b>You're done when</b> <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> finds your empty <code>2nd Brain</code> folder in Google Drive.</div></div>
@@ -530,7 +538,7 @@ Start now: ask whether I'm on Windows or a Mac.</pre>
           <ol class="steps">
             <li class="step" data-step="b-build"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
               <h4><span class="num">08</span>Let <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> build your vault</h4>
-              <p>Copy this prompt into a new chat and answer one question at a time. Plan on about 20 minutes; talking with voice dictation is faster than typing. When the interview ends, it writes your notes into the <code>2nd Brain</code> folder <span class="only-claude">and makes your <code>/brain</code> skill</span><span class="only-chatgpt">and your Project instructions</span>.</p>
+              <p>Copy this prompt into a new chat. It lists all its questions at once; answer them in one reply, then it asks follow-ups only where it needs more. Plan on about 20 minutes; talking with voice dictation is faster than typing. When the interview ends, it writes your notes into the <code>2nd Brain</code> folder <span class="only-claude">and makes your <code>/brain</code> skill</span><span class="only-chatgpt">and your Project instructions</span>.</p>
               <div class="prompt only-claude" style="margin-top:14px">
                 <div class="prompt-top">
                   <span class="who"><img src="img/logos/claude.svg" alt=""><span>Paste into Claude</span></span>
@@ -543,7 +551,7 @@ Start now: ask whether I'm on Windows or a Mac.</pre>
 
 1. Set it up. Create these folders, each with a short README.md that says what goes in it: 00 Core, 01 Areas, 02 People, 02 Companies, 03 Projects, 05 Log, 06 Archive, _interview.
 
-2. Interview me so you can work the way I do. Ask one question at a time and wait for my answer. If an answer is vague, ask one follow-up. Keep it to about 25 questions. Cover:
+2. Interview me so you can work the way I do. List all your questions at once, numbered, about 25 of them, so I can answer them all in one reply. Cover:
 - What I'm working on right now, ranked by priority
 - A real day when two things collided, and what I did first
 - Rules I always or never break
@@ -551,6 +559,7 @@ Start now: ask whether I'm on Windows or a Mac.</pre>
 - The people who matter in my work and what each one is to me
 - The tools I use and what each one is for
 - What a good week and a wasted week look like
+When I've answered, check you have everything you need. If an answer is vague or missing, ask only those follow-ups.
 
 3. Write my vault. When the interview is done, create:
 - 00 Core/Operating Manual.md: my priorities and decision rules, in my own words
@@ -578,7 +587,7 @@ Show me the skill so I can save it.</pre>
 
 1. Set it up. The folders are: 00 Core, 01 Areas, 02 People, 02 Companies, 03 Projects, 05 Log, 06 Archive, _interview. If you can create them in my Drive, do it, each with a short README.md that says what goes in it. If you can't on my plan, list them and I'll make them in Obsidian.
 
-2. Interview me so you can work the way I do. Ask one question at a time and wait for my answer. If an answer is vague, ask one follow-up. Keep it to about 25 questions. Cover:
+2. Interview me so you can work the way I do. List all your questions at once, numbered, about 25 of them, so I can answer them all in one reply. Cover:
 - What I'm working on right now, ranked by priority
 - A real day when two things collided, and what I did first
 - Rules I always or never break
@@ -586,6 +595,7 @@ Show me the skill so I can save it.</pre>
 - The people who matter in my work and what each one is to me
 - The tools I use and what each one is for
 - What a good week and a wasted week look like
+When I've answered, check you have everything you need. If an answer is vague or missing, ask only those follow-ups.
 
 3. Write my vault. When the interview is done, write these files. Create them in my Drive if you can; if not, give me each one in its own code block with its folder and file name on top so I can paste it into Obsidian:
 - 00 Core/Operating Manual.md: my priorities and decision rules, in my own words
@@ -613,12 +623,18 @@ Show me the skill so I can save it.</pre>
             <li class="step" data-step="b-check"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
               <h4><span class="num">10</span>Look it over in Obsidian</h4>
               <p>Open Obsidian. Within a minute or two the folders and notes appear on their own as Drive syncs. Read the three notes in <code>00 Core</code>. Anything that isn't how you'd say it, tell your AI and it edits the note for you; corrections become rules.</p>
+              <p>Open <b>Graph view</b> (the dotted icon in the left ribbon) to watch it link up, something like this:</p>
+              <div class="gv" aria-hidden="true">
+                <div class="gv-top"><span>Graph view</span><span>2nd Brain</span></div>
+                <canvas></canvas>
+              </div>
               <p class="only-chatgpt">If ChatGPT gave you code blocks instead, make each folder (right-click the left sidebar, <b>New folder</b>) and paste each file in as a new note.</p>
             </div></li>
             <li class="step" data-step="5-6"><button class="tick" type="button" aria-label="Mark step done"><i class="ph ph-check" aria-hidden="true"></i></button><div>
               <h4><span class="num">11</span>The real test, from your phone</h4>
               <p>Open the <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> app on your phone, start a new chat<span class="only-chatgpt"> inside the 2nd Brain Project</span>, and ask:</p>
               <div class="copy-line"><span id="t-phone">What did I do today?</span><button class="btn sm" type="button" data-copy="#t-phone"><i class="ph ph-copy" aria-hidden="true"></i><span>Copy</span></button></div>
+              <p style="margin-top:10px">The phone app can't open Obsidian; Obsidian only lives on your computer. Instead, <span class="only-claude">Claude</span><span class="only-chatgpt">ChatGPT</span> goes to the copy of your vault in Google Drive, which is why Phase 1 mirrored it there. Anything you change in Obsidian reaches your phone through Drive, and anything your AI writes from your phone shows up in Obsidian the same way.</p>
               <!-- SCREENSHOT (must have): the phone chat answering -->
             </div></li>
           </ol>
@@ -879,6 +895,164 @@ Show me the skill so I can save it.</pre>
     document.querySelectorAll('[data-reveal], #skyline').forEach(function (el) { el.classList.add('in'); });
   }
   syncToggles();
+})();
+</script>
+<script>
+/* Step 10: graph view building itself. The notes are the ones the build prompt writes: the interview, the three core notes,
+   areas, people, companies, tools, projects and the daily log. Each note appears next to the note it links to, glows purple
+   like a fresh note in Obsidian, then fades to grey while a small live force layout settles it. Loops while on screen;
+   reduced motion gets the finished graph, still. */
+(function () {
+  var box = document.querySelector('.gv'), cv = box && box.querySelector('canvas');
+  var ctx = cv && cv.getContext && cv.getContext('2d');
+  if (!ctx) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // [label, links to (older notes)]: the first link is the note it grows out of
+  var D = [
+    ['Interview', []],
+    ['Operating Manual', [0]], ['Identity', [0]], ['Tool Roles', [0]],
+    ['School', [1]], ['Work', [1]], ['Club', [1]],
+    ['', [5]], ['', [5, 4]], ['', [4]], ['', [6, 5]], ['', [6]],
+    ['', [5]], ['', [12, 5]],
+    ['Claude', [3]], ['Obsidian', [3]], ['Google Drive', [3, 15]],
+    ['Daily log', [1]], ['', [17, 5]], ['', [17, 4]], ['', [17]], ['', [17, 6]], ['', [17, 14]],
+    ['Projects', [1]], ['', [23, 5]], ['', [23, 12]], ['', [23, 2]]
+  ];
+  var N = D.length, nodes = [], edges = [];
+  var seed = 7;
+  function rnd() { seed = seed * 16807 % 2147483647; return (seed - 1) / 2147483646; }
+  D.forEach(function (d, i) {
+    var n = { label: d[0], p: d[1].length ? d[1][0] : -1, deg: 0, t0: .3 + i * .26, x: 0, y: 0, vx: 0, vy: 0, on: false, dir: rnd() * 6.283 };
+    nodes.push(n);
+    d[1].forEach(function (j, k) { edges.push({ a: j, b: i, extra: k > 0, t0: n.t0 + (k > 0 ? .25 : 0) }); nodes[j].deg++; n.deg++; });
+  });
+  nodes.forEach(function (n) { n.r = 2.6 + Math.sqrt(n.deg) * 1.5; });
+
+  var BUILD = nodes[N - 1].t0 + 1.4, HOLD = 3.4, FADE = .7, CYCLE = BUILD + HOLD + FADE;
+  var W = 0, H = 0, dpr = 1, S = 1, font = '';
+  var GREY = [150, 150, 160], NODE = [205, 205, 212], ACC = [127, 109, 242];
+  function size() {
+    var r = cv.getBoundingClientRect();
+    W = r.width; H = r.height; dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    S = Math.min(W, H * 1.4) / 240;
+    font = '500 ' + (W < 420 ? 10 : 11) + 'px ' + getComputedStyle(box).fontFamily;
+  }
+  function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+  function back(v) { var c = 1.7; return 1 + (c + 1) * Math.pow(v - 1, 3) + c * Math.pow(v - 1, 2); }
+  function out(v) { return 1 - Math.pow(1 - v, 3); }
+  function rgba(c1, c2, k, a) {
+    return 'rgba(' + Math.round(c1[0] + (c2[0] - c1[0]) * k) + ',' + Math.round(c1[1] + (c2[1] - c1[1]) * k) + ',' + Math.round(c1[2] + (c2[2] - c1[2]) * k) + ',' + a.toFixed(3) + ')';
+  }
+
+  /* Live layout in units of about 1px at a 220px wide graph, cooled like d3-force: every force is scaled by `heat`,
+     which decays toward zero so the graph comes to rest instead of trembling. A new note warms it a little. */
+  var heat = 0;
+  function step(t) {
+    nodes.forEach(function (n) {
+      if (!n.on && t >= n.t0) {
+        n.on = true;
+        var p = nodes[n.p];
+        if (p) { n.x = p.x + Math.cos(n.dir) * 10; n.y = p.y + Math.sin(n.dir) * 10; } else { n.x = n.y = 0; }
+        n.vx = n.vy = 0;
+        n.dx = n.x; n.dy = n.y; n.la = 0;
+        heat = Math.max(heat, .55);
+      }
+    });
+    heat *= .985;
+    if (heat < .002) return;
+    var live = nodes.filter(function (n) { return n.on; });
+    live.forEach(function (n) { n.fx = -n.x * .02; n.fy = -n.y * .03; });
+    for (var i = 0; i < live.length; i++) for (var j = i + 1; j < live.length; j++) {
+      var a = live[i], b = live[j], dx = a.x - b.x, dy = a.y - b.y, d2 = dx * dx + dy * dy + 40, d = Math.sqrt(d2), f = 420 / d2 / d;
+      a.fx += dx * f; a.fy += dy * f; b.fx -= dx * f; b.fy -= dy * f;
+    }
+    edges.forEach(function (e) {
+      var a = nodes[e.a], b = nodes[e.b];
+      if (!a.on || !b.on) return;
+      var dx = b.x - a.x, dy = b.y - a.y, len = Math.sqrt(dx * dx + dy * dy) || 1, rest = a.deg > 3 && b.deg > 3 ? 58 : 30;
+      var f = (len - rest) / len * .06;
+      a.fx += dx * f; a.fy += dy * f; b.fx -= dx * f; b.fy -= dy * f;
+    });
+    live.forEach(function (n) {
+      n.vx = n.vx * .6 + n.fx * heat; n.vy = n.vy * .6 + n.fy * heat;
+      var sp = Math.hypot(n.vx, n.vy); if (sp > 3) { n.vx *= 3 / sp; n.vy *= 3 / sp; } // no sudden jumps
+      n.x += n.vx; n.y += n.vy;
+    });
+  }
+  // What's drawn trails the layout slightly, so any leftover wobble is smoothed away
+  function ease(k) { nodes.forEach(function (n) { if (n.on) { n.dx += (n.x - n.dx) * k; n.dy += (n.y - n.dy) * k; } }); }
+
+  function draw(t, alpha) {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    var cx = W / 2, cy = H / 2;
+    function fresh(t0) { return reduce ? 0 : 1 - clamp((t - t0 - .3) / 1.3); }
+    ctx.lineCap = 'round';
+    edges.forEach(function (e) {
+      var a = nodes[e.a], b = nodes[e.b];
+      if (!a.on || !b.on || t < e.t0) return;
+      var g = e.extra && !reduce ? out(clamp((t - e.t0) / .45)) : 1, fr = fresh(e.t0);
+      var x1 = cx + b.dx * S, y1 = cy + b.dy * S, x2 = cx + a.dx * S, y2 = cy + a.dy * S;
+      ctx.strokeStyle = rgba(GREY, ACC, fr, (.32 + .4 * fr) * alpha);
+      ctx.lineWidth = .9 + fr * .6;
+      ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x1 + (x2 - x1) * g, y1 + (y2 - y1) * g); ctx.stroke();
+    });
+    nodes.forEach(function (n) {
+      if (!n.on) return;
+      var s = reduce ? 1 : back(clamp((t - n.t0) / .4)), fr = fresh(n.t0), r = Math.max(.1, n.r * Math.min(1.25, S) * s);
+      var x = cx + n.dx * S, y = cy + n.dy * S;
+      if (fr > 0) { ctx.fillStyle = rgba(ACC, ACC, 0, .22 * fr * alpha); ctx.beginPath(); ctx.arc(x, y, r * 2.6, 0, 6.283); ctx.fill(); }
+      ctx.fillStyle = rgba(NODE, ACC, fr, (n.label ? 1 : .8) * alpha);
+      ctx.beginPath(); ctx.arc(x, y, r, 0, 6.283); ctx.fill();
+      n.sx = x; n.sy = y; n.sr = r;
+    });
+    // Labels: biggest notes first. One that would overlap a placed label fades out (and back in) over a few
+    // frames instead of blinking, so crowded moments stay calm.
+    ctx.font = font; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+    var placed = [];
+    nodes.filter(function (n) { return n.on && n.label; }).sort(function (a, b) { return b.deg - a.deg; }).forEach(function (n) {
+      var w = ctx.measureText(n.label).width, box = { x: n.sx - w / 2 - 3, y: n.sy + n.sr + 3, w: w + 6, h: 15 };
+      var clear = !placed.some(function (q) { return box.x < q.x + q.w && q.x < box.x + box.w && box.y < q.y + q.h && q.y < box.y + box.h; });
+      var want = clear && t >= n.t0 + .15 ? 1 : 0;
+      n.la = reduce ? want : n.la + (want - n.la) * .12;
+      if (clear) placed.push(box);
+      if (n.la < .02) return;
+      ctx.fillStyle = 'rgba(190,190,198,' + (.85 * n.la * alpha).toFixed(3) + ')';
+      ctx.fillText(n.label, n.sx, box.y + 1);
+    });
+  }
+
+  function reset() { nodes.forEach(function (n) { n.on = false; }); heat = 0; }
+  size();
+  if (reduce) {
+    for (var k = 0; k < 900; k++) { step(BUILD); heat = Math.max(heat, .3); }
+    ease(1);
+    draw(BUILD, 1);
+    if ('ResizeObserver' in window) new ResizeObserver(function () { size(); draw(BUILD, 1); }).observe(cv);
+    return;
+  }
+
+  var raf = 0, last = 0, clock = 0;
+  function frame(now) {
+    raf = requestAnimationFrame(frame);
+    var dt = last ? Math.min(.05, (now - last) / 1000) : 0; last = now;
+    clock += dt;
+    if (clock > CYCLE) { clock = 0; reset(); }
+    step(clock);
+    ease(1 - Math.pow(.82, dt * 60)); // same smoothing at 60 or 120 Hz
+    var alpha = clock > BUILD + HOLD ? 1 - clamp((clock - BUILD - HOLD) / FADE) : 1;
+    draw(clock, alpha);
+  }
+  function play() { if (!raf) { last = 0; raf = requestAnimationFrame(frame); } }
+  function pause() { if (raf) { cancelAnimationFrame(raf); raf = 0; } }
+  if ('ResizeObserver' in window) new ResizeObserver(function () { size(); }).observe(cv);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) {
+      if (en[0].isIntersecting) { clock = 0; reset(); play(); } else pause();
+    }, { threshold: .25 }).observe(box);
+  } else play();
 })();
 </script>
 </body>
