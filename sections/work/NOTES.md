@@ -2,6 +2,8 @@
 
 Replaces both `#work` (the stack cards) and `#building` (the bento) in the current `index.html`. Four projects live here: 2nd Brain, READ Market Engine, CCR Research Pipeline, AIM Resume Checker. SIE Prep App (and its quiz) and AIM Slack Bot were removed on Oct 28, 2026 at Cole's request.
 
+**Nov 1, 2026:** Cole cut READ Market Engine ("we could go back to that") and AIM Resume Checker. Two tiles remain: 2nd Brain (feature, image left) and CCR Research Pipeline (now a feature too, `wk-flip`, image right, numbered 02). The showcase wall uses only the brain and ccr covers, four per set in a different order per column. The `read-*` and `resume-*` covers stay in `img/work/`, so READ can come back: restore its `<li>` from git history (commit 3670732 or earlier) as `wk-span-7` and put CCR back to `wk-span-5`. The tile and anchor notes below describe the older four-tile layout.
+
 Preview: `work` server on 8772, open `http://localhost:8772/sections/work/demo.html`.
 
 ## What it does

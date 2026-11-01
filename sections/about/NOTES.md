@@ -45,9 +45,9 @@ Built only from the facts given. Nothing here is live until Cole signs off.
 >
 > I grew up on my family's farm in Agawam, Massachusetts. Now I study Finance and Accounting at UMass Lowell and graduate in May 2027. I co-founded Commonwealth Capital Research, serve as Senior Class President, and co-captain the Intercollegiate Sales Team.
 >
-> I also build AI tools. My flagship is Ownerhound. Away from work it is rugby, powerlifting, snowboarding, and watches.
+> I also build AI tools. My flagship is Ownerhound. Away from work it is rugby, powerlifting, and snowboarding.
 >
-> **Facts row:** Home: Agawam, MA. School: UMass Lowell, May 2027. Building: Ownerhound. Off the clock: Rugby, powerlifting, snowboarding, watches.
+> **Facts row:** Home: Agawam, MA. School: UMass Lowell, May 2027. Building: Ownerhound. Off the clock: Rugby, powerlifting, snowboarding. (Watches cut Nov 1, 2026.)
 
 "Ownerhound" links to https://ownerhound.com in a new tab.
 
