@@ -4,6 +4,8 @@ Replaces both `#work` (the stack cards) and `#building` (the bento) in the curre
 
 **Nov 1, 2026:** Cole cut READ Market Engine ("we could go back to that") and AIM Resume Checker. Two tiles remain: 2nd Brain (feature, image left) and CCR Research Pipeline (now a feature too, `wk-flip`, image right, numbered 02). The showcase wall uses only the brain and ccr covers, four per set in a different order per column. The `read-*` and `resume-*` covers stay in `img/work/`, so READ can come back: restore its `<li>` from git history (commit 3670732 or earlier) as `wk-span-7` and put CCR back to `wk-span-5`. The tile and anchor notes below describe the older four-tile layout.
 
+**Nov 1, 2026, later:** the "Built for real work" showcase wall is gone from the markup (Cole: it was recycling two projects; may come back). Its `.wk-show*` styles and the showcase block in `section.js` are left in place, and the JS does nothing when the markup is missing; restore the `<div class="wk-show" data-wk-show>` block from git history (commit 12a9ecb or earlier) to bring it back. CCR's second image is now `ccr-c`: page 1 of the CCR Q3 2026 issue "From Subs to Stocks" (Neel Phansalkar, analyst), rendered from `Downloads/2026/CCR/Newsletters/JerseyMikesIssue.pdf` and framed like `ccr-a`. `ccr-b` (the exhibit) stays in `img/work/` but nothing uses it.
+
 Preview: `work` server on 8772, open `http://localhost:8772/sections/work/demo.html`.
 
 ## What it does

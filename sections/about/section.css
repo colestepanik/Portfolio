@@ -49,6 +49,17 @@
 }
 .ab-lead { margin: 0; font: 300 clamp(30px, 3.4vw, 46px)/1.1 var(--sans); letter-spacing: -.025em; color: var(--fg, #f2f2f3); text-wrap: balance; }
 .ab-lead em { font: italic 400 1.14em/1 var(--serif); letter-spacing: -.01em; }
+
+/* Massachusetts under the headline: white outline, a dot for home, school and Boston */
+.ab-map { display: block; width: 100%; max-width: 460px; height: auto; margin-top: clamp(28px, 4vw, 56px); overflow: visible; }
+.ab-ma path { fill: rgb(255 255 255 / .025); stroke: rgb(255 255 255 / .62); stroke-width: 1.2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.ab-pin circle { fill: #fff; }
+.ab-pin .ab-ring { fill: none; stroke: rgb(255 255 255 / .4); stroke-width: 1; vector-effect: non-scaling-stroke; transform-box: fill-box; transform-origin: center; }
+.ab-pin text { font: 500 13px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; fill: var(--fg-2, #a1a1a8); }
+@media (prefers-reduced-motion: no-preference) {
+  .ab-pin .ab-ring { animation: ab-ping 2.4s var(--d, 0s) ease-out infinite; }
+}
+@keyframes ab-ping { 0% { opacity: .9; transform: scale(.5); } 80%, 100% { opacity: 0; transform: scale(1.9); } }
 .ab-text p { margin: 0 0 16px; font-size: 17px; line-height: 1.65; color: var(--fg-2, #a1a1a8); }
 .ab-text a { color: var(--fg, #f2f2f3); text-decoration-color: rgb(255 255 255 / .3); text-underline-offset: 3px; transition: text-decoration-color .25s; }
 .ab-text a:hover { text-decoration-color: currentColor; }
@@ -64,6 +75,8 @@
   .ab-body { grid-template-columns: minmax(0, 1fr); gap: 24px; margin-top: -4px; }
   .ab-text p { font-size: 16px; }
   .ab-facts dd { font-size: 16px; }
+  .ab-map { max-width: 360px; margin-top: 24px; }
+  .ab-pin text { font-size: 16px; }
 }
 
 /* Scroll-in: the word rises, then the figure settles. Scrubbed by scroll where supported. */

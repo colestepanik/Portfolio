@@ -47,6 +47,8 @@ Built only from the facts given. Nothing here is live until Cole signs off.
 >
 > I also build AI tools. My flagship is Ownerhound. Away from work it is rugby, powerlifting, and snowboarding.
 >
+> **Headline (Nov 1, 2026):** "Raised on a farm. Pursuing *finance.*" Under it, a white outline of Massachusetts (`.ab-map`, traced from Cole's reference image, in that image's 612px coordinates) with pulsing dots for Agawam, Lowell and Boston, placed by a lon/lat fit to six landmarks on the outline.
+>
 > **Facts row:** Home: Agawam, MA. School: UMass Lowell, May 2027. Building: Ownerhound. Off the clock: Rugby, powerlifting, snowboarding. (Watches cut Nov 1, 2026.)
 
 "Ownerhound" links to https://ownerhound.com in a new tab.
