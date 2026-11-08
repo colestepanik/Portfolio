@@ -194,12 +194,12 @@ button { font: inherit; color: inherit; }
 .nav-pill .nav-cta, .nav-pill .nav-cta:hover { background: var(--fg); color: #111113; font-weight: 500; }
 .nav-pill a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 .nav--pill.nav-on-light { background: transparent; border-bottom-color: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
-.nav--pill.nav-on-light.scrolled { background: rgb(220 220 218 / .7); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.nav--pill.nav-on-light.scrolled { background: rgb(232 232 230 / .7); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
 .nav-on-light .brand { color: #0e0e0f; }
 .nav-on-light .nav-pill { background: #0e0e0f; border-color: #0e0e0f; }
-.nav-on-light .nav-pill a { color: rgb(220 220 218 / .75); }
-.nav-on-light .nav-pill a:hover { color: #dcdcda; background: rgb(255 255 255 / .1); }
-.nav-on-light .nav-pill .nav-cta { background: #dcdcda; color: #0e0e0f; }
+.nav-on-light .nav-pill a { color: rgb(232 232 230 / .75); }
+.nav-on-light .nav-pill a:hover { color: #e8e8e6; background: rgb(255 255 255 / .1); }
+.nav-on-light .nav-pill .nav-cta { background: #e8e8e6; color: #0e0e0f; }
 /* The scroll progress line flips to ink over the light hero */
 .progress { mix-blend-mode: difference; }
 @media (max-width: 760px) {
@@ -210,5 +210,5 @@ button { font: inherit; color: inherit; }
 @media (max-width: 360px) { .nav-pill a { padding: 0 10px; } .nav--pill .brand { font-size: 23px; } }
 @media (prefers-reduced-transparency: reduce) {
   .nav-pill { background: var(--surface); backdrop-filter: none; -webkit-backdrop-filter: none; }
-  .nav--pill.nav-on-light.scrolled { background: #dcdcda; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .nav--pill.nav-on-light.scrolled { background: #e8e8e6; backdrop-filter: none; -webkit-backdrop-filter: none; }
 }

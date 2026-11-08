@@ -4,7 +4,7 @@
    The fixed nav reads the light hero through .nav-on-light, set by section.js. */
 
 .hx {
-  --hx-concrete: #dcdcda;
+  --hx-concrete: #e8e8e6;
   --hx-ink: #0e0e0f;
   --hx-ink-2: #4e4e52;
   --hx-ease: var(--ease, cubic-bezier(.16, 1, .3, 1));
@@ -74,6 +74,10 @@
   object-fit: cover; border-radius: 10px; background: #1a1a1c;
 }
 @media (max-width: 640px) { .hx-band--photos { --hx-ph: 132px; --hx-loop: 55s; } .hx-band--photos .hx-group { gap: 8px; padding-right: 8px; } }
+/* Fade behind the photos: the band starts just above them and the concrete-to-black gradient runs down through
+   most of their height, so the photos sit across the change instead of below it. */
+.hx-band--over { --hx-top: clamp(8px, 1.6vh, 18px); --hx-fade: calc(var(--hx-top) + var(--hx-ph) * .8); padding-top: var(--hx-top); }
+.hx-band--over::before { top: calc(var(--hx-ph) * .2); height: var(--hx-ph); }
 @media (prefers-reduced-motion: no-preference) {
   .hx-track { animation: hx-slide var(--hx-loop) linear infinite; }
   .hx.hx-off .hx-track { animation-play-state: paused; }
@@ -89,10 +93,38 @@
 @keyframes hx-rise { from { opacity: 0; transform: translateY(.35em); } }
 @keyframes hx-fade { from { opacity: 0; } }
 
+/* Typing (section.js). Each character is a span that stays in the layout while hidden, so nothing shifts as it types.
+   The caret is an underscore with zero net width (its margin cancels it), and blinks once typing is done. */
+.hx-will-type .hx-name, .hx-will-type .hx-sub { visibility: hidden; }
+.hx-typing .hx-name, .hx-typing .hx-sub { visibility: visible; animation: none; }
+.hx-ch { visibility: hidden; }
+.hx-ch.on { visibility: visible; }
+/* The lines under the name fade in with the wave instead of popping on */
+.hx-sub .hx-ch { visibility: visible; opacity: 0; transition: opacity .38s ease-out; }
+.hx-sub .hx-ch.on { opacity: 1; }
+.hx-caret {
+  display: inline-block; position: relative; width: .5em; height: .07em; margin: 0 -.5em 0 0; vertical-align: -.02em;
+  background: currentColor; pointer-events: none;
+}
+.hx-caret.idle { animation: hx-blink 1.05s steps(1, end) infinite; }
+.hx-name .hx-caret { margin-left: .11em; height: .055em; } /* clears the k despite the tight -.045em tracking */@keyframes hx-blink { 50% { opacity: 0; } }
+
+/* Photo band shadow: a soft dark pool behind the photos, cast up onto the concrete. It lifts and spreads as you scroll (--hx-p, 0 to 1, set by section.js). */
+.hx-band--photos::before {
+  content: ""; position: absolute; z-index: 0; left: 4%; right: 4%; pointer-events: none;
+  top: calc(var(--hx-fade) - clamp(18px, 3vh, 34px)); height: calc(var(--hx-ph) * .7);
+  background: radial-gradient(closest-side, rgb(0 0 0 / .5), rgb(0 0 0 / .18) 60%, transparent);
+  filter: blur(16px); opacity: calc(.55 + var(--hx-p, 0) * .45);
+  transform: translateY(calc(var(--hx-p, 0) * -26px)) scaleY(calc(1 + var(--hx-p, 0) * .5));
+  will-change: transform, opacity;
+}
+.hx-band--photos .hx-track { position: relative; z-index: 1; }
+
 /* Phones: the name breaks onto two lines, still edge to edge */
 @media (max-width: 640px) {
   .hx { --hx-gut: 16px; }
   .hx-name { font-size: 26vw; font-size: 28cqi; line-height: .88; }
-  .hx-name > span { display: block; }
+  .hx-name > span:not(.hx-sr), .hx-name > [aria-hidden] > span:not(.hx-ch):not(.hx-caret) { display: block; } /* the second selector covers the typed copy */
+  .hx-name .hx-caret { width: .13em; margin-right: -.13em; margin-left: .05em; } /* "Stepanik" nearly reaches the edge: a short underscore still fits in the gutter */
   .hx-sub { font-size: 16px; gap: 20px; }
 }
